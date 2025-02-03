@@ -1,0 +1,111 @@
+.education-port {
+    display: flex;
+}
+
+.image-holder {
+    display: flex;
+    height: 90vh;
+}
+
+.image-holder div {
+    height: 100%;
+}
+
+.image-holder div:last-child {
+    position: relative;
+    left: 10px;
+    bottom: -10%;
+}
+
+.image-holder div > img {
+    height: 90%;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 80px;
+}
+
+.title {
+    font-size: 40px;
+    padding: 10px 1px;
+    position: relative;
+    left: -1px;
+    margin-bottom: 10px;
+}
+
+.title:after {
+    content: '';
+    position: absolute;
+    background-color: var(--white-color);
+    height: 1px;
+    width: 80px;
+    bottom: 0;
+    left: 0;
+}
+
+.subtitle {
+    font-size: 25px;
+}
+
+.subsubtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+.body-text {
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.courses-head {
+    font-size: 13px;
+}
+
+.courses-lists {
+    font-size: 12px;
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease;
+}
+
+.courses-lists:hover {
+    left: 10px;
+}
+
+@media (max-width: 975px) {
+    .image-holder {
+    }
+
+    .image-holder > div:last-child {
+        display: none;
+    }
+
+    .image-holder div > img {
+        height: 100%;
+    }
+
+    .education-container {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 630px) {
+    .image-holder > div:first-child {
+        display: none;
+    }
+
+    .education-container {
+        justify-content: stretch;
+    }
+
+    .title,
+    .subtitle,
+    .body-text {
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+}

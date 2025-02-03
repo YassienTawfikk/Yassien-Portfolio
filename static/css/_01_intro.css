@@ -1,0 +1,161 @@
+/* -------------------------------------------------- */
+/* General Layout                                    */
+/* -------------------------------------------------- */
+.intro-wrapper {
+    display: flex;
+}
+
+/* -------------------------------------------------- */
+/* Profile Section Styling                           */
+/* -------------------------------------------------- */
+.profile-section {
+    background-color: var(--photo-bg);
+    width: 450px;
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-section > img {
+    width: 90%;
+    margin: 0 calc((450px - 90%) / 2);
+    position: absolute;
+    bottom: -15px;
+}
+
+/* -------------------------------------------------- */
+/* Heading Section Styling                           */
+/* -------------------------------------------------- */
+.heading-section {
+    width: calc(100% - 700px);
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+/* -------------------------------------------------- */
+/* Name Title Styling                                */
+/* -------------------------------------------------- */
+.name-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.name-title::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 500px;
+    background-color: var(--white-color);
+    left: 260px;
+    top: 105px;
+}
+
+.name-title > span {
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.first-name {
+    position: relative;
+    bottom: -45px;
+    left: -100px;
+}
+
+/* -------------------------------------------------- */
+/* Intro Brief Styling                                */
+/* -------------------------------------------------- */
+.intro-brief {
+    margin-bottom: 50px;
+    font-size: 12px;
+}
+
+/* -------------------------------------------------- */
+/* Responsive Adjustments                            */
+/* -------------------------------------------------- */
+@media (max-width: 860px) {
+
+    .profile-section {
+        width: 40%;
+    }
+
+
+    .profile-section > img {
+        margin: 0 auto;
+    }
+
+    .name-title::after {
+        content: initial;
+    }
+
+    .first-name {
+        left: -10px
+    }
+
+    .heading-section {
+        width: 50%;
+    }
+}
+
+@media (max-width: 580px) {
+    .main-container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .intro-wrapper {
+        flex-direction: column;
+    }
+
+    .profile-section {
+        width: 100%;
+        height: 50vh;
+    }
+
+
+    .profile-section > img {
+        width: 230px;
+        margin: 0 calc((100% - 230px) / 2);
+    }
+
+    .heading-section {
+        width: 100%;
+        margin: 0;
+    }
+
+    .name-title {
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 15px;
+    }
+
+    .name-title > span {
+        font-size: 45px;
+        margin-right: 10px;
+    }
+
+    .first-name {
+        position: initial;
+    }
+
+
+    .intro-brief {
+        text-align: center;
+        margin: auto 15px;
+    }
+
+
+    .heading-section > a {
+        text-align: center;
+        width: initial;
+    }
+
+    .heading-section > a > button {
+        margin-top: 20px;
+        width: 50%;
+        height: 50px;
+        font-size: 25px;
+    }
+}

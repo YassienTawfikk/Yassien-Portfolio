@@ -1,0 +1,155 @@
+.title {
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 8px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.title:after {
+    content: '';
+    background-color: var(--white-color);
+    position: absolute;
+    height: 1px;
+    width: 200px;
+    bottom: 0;
+    left: calc(50% - 100px);
+}
+
+.involvements-holder {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    scroll-behavior: smooth;
+    width: 95%;
+}
+
+.involvements-holder::-webkit-scrollbar {
+    display: none;
+}
+
+.involvements-holder {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.involvement-box {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    position: relative;
+    transition: .5s;
+    margin-left: 70px;
+}
+
+.involvement-box:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(100, 100, 100, 0.15);
+    transition: 250ms;
+    border-radius: 25px;
+}
+
+.involvement-box:hover:after {
+    width: 100%;
+}
+
+.member-fig {
+    display: flex;
+}
+
+.member-fig > .image {
+    width: 285px;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+    right: 50px;
+    z-index: 1;
+}
+
+.member-fig > span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: var(--secondary-white-color);
+    padding-top: 50px;
+    position: relative;
+    right: 20px;
+}
+
+.member-icons {
+    z-index: 1;
+}
+
+.society-card-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    padding-top: 5px;
+    margin-bottom: -5px;
+    color: var(--secondary-white-color);
+}
+
+.card-subtitle {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--secondary-white-color);
+}
+
+.card-paragraph {
+    font-size: 12px;
+    color: var(--white-color);
+    padding: 10px;
+}
+
+#scroll-left, #scroll-right {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    width: fit-content;
+    z-index: 2;
+    height: 520px;
+    background-color: transparent;
+}
+
+#scroll-left i, #scroll-right i {
+    font-size: 30px;
+    color: var(--white-color);
+    transition: 250ms;
+}
+
+
+#scroll-left:hover i, #scroll-right:hover i {
+    transform: scale(1.5);
+    color: grey;
+}
+
+i {
+    cursor: pointer;
+    z-index: 1;
+}
+
+#scroll-right {
+    right: 0;
+}
+
+#scroll-left {
+    left: 0;
+}
+
+.social-icons:hover {
+    transition: 250ms;
+    transform: scale(1.25);
+}
+

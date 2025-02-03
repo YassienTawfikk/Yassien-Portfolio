@@ -1,0 +1,25 @@
+{
+    "image_01": "https://i.postimg.cc/tTkNyMv6/Educational-Photo-01.jpg",
+    "image_02": "https://i.postimg.cc/qBmx5W3V/Educational-Photo-02.jpg",
+    "university": "Cairo University",
+    "faculty": "Faculty of Engineering",
+    "degree": "Bachelor of Biomedical Engineering",
+    "expected_graduation": "2026",
+    "description": "My academic journey at Cairo University has provided me with a strong foundation in biomedical engineering and a deep understanding of how technology can address healthcare challenges. Through rigorous coursework and hands-on projects, I’ve developed critical skills to analyze, design, and innovate.",
+    "key_courses": {
+        "biomedical": [
+            "Medical Equipments",
+            "Physiology",
+            "Biostatistics"
+        ],
+        "technical": [
+            "Digital Signal Processing",
+            "Computer Graphics",
+            "Programming Fundamentals"
+        ],
+        "mathematics": [
+            "Partial Differential Equations (PDE)",
+            "Numerical Analysis"
+        ]
+    }
+}
