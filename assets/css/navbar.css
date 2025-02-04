@@ -80,13 +80,17 @@
 
 @media (max-width: 580px) {
     .navbar {
-        height: 15vh;
+        height: 12vh;
         flex-direction: column;
         padding: 0;
     }
 
+    .signature {
+        padding: 0;
+    }
+
     .navbar-nav {
-        margin: 2px auto;
+        margin: 0 auto;
     }
 
     .navblock {
