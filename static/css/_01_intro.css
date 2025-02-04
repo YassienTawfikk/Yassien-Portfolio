@@ -149,12 +149,13 @@
 
     .heading-section > a {
         text-align: center;
-        width: initial;
+        width: 50%;
+        margin: auto;
     }
 
     .heading-section > a > button {
         margin-top: 5px;
-        width: 50%;
+        width: 100%;
         height: 50px;
         font-size: 25px;
     }
