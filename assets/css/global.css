@@ -91,7 +91,7 @@ button {
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: 500;
-
+    color: var(--black-color);
 }
 
 button:hover {
