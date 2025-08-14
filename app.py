@@ -12,7 +12,8 @@ app.title = "Yassien Tawfik | Portfolio"
 server = app.server
 
 # Import pages for the routing
-from pages import _01_intro, _02_about, _03_projects, _04_education, _05_skills, _06_society, _07_certificates, _08_contact
+from pages import _01_intro, _02_about, _03_projects, _04_education, _05_skills, _06_society, _07_certificates, \
+    _08_contact
 
 
 # Routing callback
@@ -21,7 +22,7 @@ from pages import _01_intro, _02_about, _03_projects, _04_education, _05_skills,
     [Input('url', 'pathname')]
 )
 def display_page(pathname):
-    if pathname in ['/', '/intro']:
+    if pathname in ('/', '/intro'):
         return _01_intro.layout
     elif pathname == '/about':
         return _02_about.layout
@@ -37,28 +38,28 @@ def display_page(pathname):
         return _07_certificates.layout
     elif pathname == '/contact':
         return _08_contact.layout
-    else:
-        return html.H1("404: Page Not Found", style={"textAlign": "center"})
+    return html.H1("404: Page Not Found", style={"textAlign": "center"})
 
 
 # Define app layout
 app.layout = html.Div([
-    html.Script("static/js/navbar.js"),
+    # Place your JS file in ./assets/navbar.js (Dash auto-serves it). No need for html.Script here.
     html.Div(className='main-container navbar', children=[
-        html.Span(children=[html.A(_01_intro.signature, className="signature", href="/")]),
+        html.Span(children=[dcc.Link(_01_intro.signature, className="signature", href="/")]),
         html.Div(className="navbar-nav body-font", children=[
-            html.Span(children=[html.A("Home", href="/")]),
-            html.Span(children=[html.A("About", href="/about")]),
-            html.Span(children=[html.A("Projects", href="/projects")]),
-            html.Span(children=[html.Img(src="https://i.postimg.cc/MZQ0s1M1/icons.png", className="image", id="hover-trigger")]),
-            html.Div(className="navblock", children=[
-                html.Span(children=[html.A("Education", href="/education")]),
-                html.Span(children=[html.A("Skills", href="/skills")]),
-                html.Span(children=[html.A("Society", href="/society")]),
-                html.Span(children=[html.A("Certificates", href="/certificates")]),
-                html.Span(children=[html.A("Contact", href="/contact")])
-            ], id="nav-block")
-        ])
+            html.Span(children=[dcc.Link("Home", href="/")]),
+            html.Span(children=[dcc.Link("About", href="/about")]),
+            html.Span(children=[dcc.Link("Projects", href="/projects")]),
+            html.Span(children=[
+                html.Img(src="https://i.postimg.cc/MZQ0s1M1/icons.png", className="image", id="hover-trigger")]),
+            html.Div(className="navblock", id="nav-block", children=[
+                html.Span(children=[dcc.Link("Education", href="/education")]),
+                html.Span(children=[dcc.Link("Skills", href="/skills")]),
+                html.Span(children=[dcc.Link("Society", href="/society")]),
+                html.Span(children=[dcc.Link("Certificates", href="/certificates")]),
+                html.Span(children=[dcc.Link("Contact", href="/contact")]),
+            ]),
+        ]),
     ]),
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content'),
@@ -68,5 +69,6 @@ app.layout = html.Div([
 clean_cache.remove_directories()
 
 # Main execution
+server = app.server
 if __name__ == "__main__":
-    app.run_server(debug=True, host="127.0.0.1", port=8050)
+    app.run(debug=True)
