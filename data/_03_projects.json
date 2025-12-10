@@ -1,0 +1,489 @@
+{
+  "Projects": [
+    {
+      "title": "Image FT Mixer Pro",
+      "short_description": "Desktop application for analyzing, visualizing, and mixing Fourier Transform components from up to four images.",
+      "overview_image": "https://github.com/user-attachments/assets/b8ffaf4a-2fec-4b79-bf3a-53575c012cdb",
+      "github_link": "https://github.com/YassienTawfikk/Image-FT-Mixer-Pro.git",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "OpenCV",
+        "NumPy"
+      ],
+      "tags": [
+        "Fourier Transform",
+        "Image Processing",
+        "Desktop Application",
+        "PyQt",
+        "Frequency Domain Analysis",
+        "Visualization Tools"
+      ],
+      "highlights": [
+        "Supports four simultaneous image viewports with automatic grayscale and unified resizing.",
+        "Interactive FT visualization with magnitude, phase, real, and imaginary modes.",
+        "Brightness and contrast adjustment using intuitive mouse drag controls.",
+        "Advanced frequency-domain mixing using Gaussian region masks.",
+        "Asynchronous processing with worker threads for responsive UI.",
+        "Dual output viewports with export support."
+      ],
+      "year": "2024",
+      "long_description": "Image FT Mixer Pro is a frequency-domain image manipulation tool that enables mixing and visualizing Fourier Transform components across up to four images. It provides interactive FT analysis modes (Magnitude/Phase and Real/Imaginary), dynamic brightness/contrast adjustments, and advanced mixing via weighted components or Gaussian region masks for low- and high-frequency separation. The application features a responsive PyQt5 interface powered by asynchronous workers to keep the UI fluid during heavy FFT computations. Outputs can be previewed and exported in common formats."
+    },
+    {
+      "title": "LifeStream",
+      "short_description": "Mobile health and safety platform integrating a wearable ESP32 device for real-time heart monitoring, SOS alerts, and live location tracking.",
+      "overview_image": "https://github.com/user-attachments/assets/eb1e40a7-ed4f-4ad9-9b31-8aa658e2ed8d",
+      "github_link": "https://github.com/YassienTawfikk/LifeStream",
+      "tech_stack": [
+        "Flutter",
+        "Firebase",
+        "OpenStreetMap",
+        "Riverpod",
+        "GoRouter",
+        "ESP32",
+        "ESP8266",
+        "Arduino",
+        "PPG Sensor"
+      ],
+      "tags": [
+        "Mobile App",
+        "Wearable Device",
+        "Health Monitoring",
+        "Emergency Response",
+        "Real-time Systems",
+        "IoT",
+        "Biomedical Engineering",
+        "Cross-platform",
+        "Safety Tech"
+      ],
+      "highlights": [
+        "Real-time BPM streaming from ESP32 wearable using Firebase Realtime Database.",
+        "ECG-style waveform visualization with dynamic heart rhythm tracking.",
+        "Automatic SOS alerts delivering location and heart rate to trusted contacts.",
+        "Live location tracking mode during emergencies using OpenStreetMap.",
+        "Full friend system with real-time profile sync and status indicators.",
+        "AES-256 encrypted local storage and secure Firebase authentication.",
+        "Clean architecture with Riverpod and modular feature-first structure.",
+        "End-to-end firmware + mobile app ecosystem built from scratch."
+      ],
+      "year": "2025",
+      "long_description": "LifeStream is a full-stack mobile and wearable ecosystem enabling real-time heart monitoring and emergency response. The Flutter app connects to a custom ESP32-based device that streams BPM readings directly to Firebase. Users get an ECG-style live graph, anomaly detection alerts, and an integrated SOS mechanism that sends precise coordinates and heart-rate data to trusted contacts. The system supports live location tracking, friend management, profile synchronization, and privacy-first design using encrypted local storage and secure Firebase authentication. Alongside the mobile application, the project includes hardware firmware for ESP32/ESP8266 with pulse-sensor processing and seamless cloud integration."
+    },
+    {
+      "title": "DigitalVision Toolkit",
+      "short_description": "Umbrella repository of advanced computer vision projects demonstrating edge detection, segmentation, feature matching, and image filtering using Python and OpenCV.",
+      "overview_image": "https://github.com/user-attachments/assets/0aa92ef3-5098-45b9-a77f-ede290870fc6",
+      "github_link": "https://github.com/YassienTawfikk/DigitalVision.git",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "Matplotlib",
+        "Git Submodules"
+      ],
+      "tags": [
+        "Computer Vision",
+        "Image Processing",
+        "Edge Detection",
+        "Segmentation",
+        "Feature Matching",
+        "Machine Learning",
+        "Educational Toolkit",
+        "Research Prototype"
+      ],
+      "highlights": [
+        "Includes five modular projects: EdgeEnhance, SIFT-See, Pixelizer, SegmaVision, and FaceVector.",
+        "Over 95% of features implemented manually, showcasing deep algorithmic understanding.",
+        "Supports real-time image filtering, noise simulation, and histogram equalization.",
+        "Edge detection and shape extraction using Canny, Hough Transform, and Active Contours.",
+        "Feature detection and matching with Harris Corners, SIFT descriptors, SSD/NCC methods.",
+        "Segmentation with Otsu, Spectral, K-Means, Mean Shift, Agglomerative Clustering, and Region Growing.",
+        "Real-time PCA-based face recognition with eigenfaces."
+      ],
+      "year": "2024",
+      "long_description": "DigitalVision Toolkit is a curated collection of five advanced computer vision projects, each designed as an independent module with detailed documentation and visual examples. The toolkit demonstrates hands-on implementation of edge detection, feature matching, segmentation, filtering, and face recognition techniques using Python and OpenCV. All modules emphasize manual implementation to reinforce understanding of the underlying algorithms, making the toolkit ideal for research, educational purposes, and benchmarking in computer vision."
+    },
+    {
+      "title": "Elevvo AI Internship 2025",
+      "short_description": "Umbrella repository of six AI/ML projects covering clustering, predictive modeling, recommendation systems, deep learning, and time-series forecasting.",
+      "overview_image": "https://github.com/user-attachments/assets/bd1b9599-6aa1-4bc4-8483-9645eb71598c",
+      "github_link": "https://github.com/YassienTawfikk/Elevvo-AI-Internship-2025.git",
+      "tech_stack": [
+        "Python",
+        "Scikit-learn",
+        "XGBoost",
+        "Pandas",
+        "NumPy",
+        "TensorFlow",
+        "Keras",
+        "PyTorch",
+        "CNN",
+        "MobileNetV2"
+      ],
+      "tags": [
+        "Machine Learning",
+        "Deep Learning",
+        "Time-Series Forecasting",
+        "Recommendation Systems",
+        "Predictive Modeling",
+        "Clustering",
+        "Computer Vision",
+        "AI Internship",
+        "Educational Projects"
+      ],
+      "highlights": [
+        "MediCluster: Patient segmentation using K-Means and PCA visualization.",
+        "PredictiLoan: Loan approval prediction using Logistic Regression and SVM with class imbalance handling.",
+        "MusicSpectroNet: Dual-modality music genre classification using tabular ML and CNN on spectrograms.",
+        "SmartRetailRegressor: Sales forecasting using XGBoost with date, store, and holiday features.",
+        "MovieMatch100K: Movie recommendation system via collaborative filtering and SVD with ranking metrics.",
+        "DriveSafe-Sign-Detection: Traffic sign detection using custom CNN and MobileNetV2, achieving high accuracy."
+      ],
+      "year": "2025",
+      "long_description": "Elevvo AI Internship 2025 is a comprehensive collection of six modular AI/ML projects developed during the internship. The repository demonstrates advanced techniques in clustering, classification, regression, recommendation systems, deep learning, and time-series forecasting. Each project includes preprocessing pipelines, model comparison, and performance evaluation, providing practical implementations of both classical machine learning and modern deep learning workflows. The projects are integrated as Git submodules, allowing easy exploration of each standalone module while maintaining a unified toolkit for showcasing AI skills in research and prototyping."
+    },
+    {
+      "title": "PulseSpy",
+      "short_description": "Advanced biomedical desktop application for real-time ECG visualization, heart rate monitoring, and arrhythmia detection using signal processing and deep learning.",
+      "overview_image": "https://github.com/user-attachments/assets/e843b8d5-dc87-43bc-9672-68e6d9f01aa6",
+      "github_link": "https://github.com/YassienTawfikk/PulseSpy.git",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "pyqtgraph",
+        "NumPy",
+        "SciPy",
+        "TensorFlow/Keras",
+        "pandas",
+        "wfdb",
+        "QSound"
+      ],
+      "tags": [
+        "Biomedical Engineering",
+        "ECG",
+        "Arrhythmia Detection",
+        "Real-Time Monitoring",
+        "Signal Processing",
+        "Deep Learning",
+        "Healthcare AI",
+        "Clinical Applications"
+      ],
+      "highlights": [
+        "Real-time ECG signal visualization and live heart rate monitoring.",
+        "Arrhythmia detection and classification including Tachycardia, Bradycardia, and AFib.",
+        "Pre-trained CNN model for heartbeat classification performing inference on segmented beats.",
+        "Alarm system with ON/OFF and pause functions for clinical relevance.",
+        "Upload and playback of ECG recordings with session management controls.",
+        "Clinically inspired PyQt5 interface with clear visualization of vital signals."
+      ],
+      "year": "2025",
+      "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications."
+    },
+    {
+      "title": "Oral Cancer Prediction",
+      "short_description": "Machine learning pipeline for predicting oral cancer from microbiome data, with SHAP-based explainability and a PyTorch Lightning-style CLI.",
+      "overview_image": "https://github.com/user-attachments/assets/a122a6bc-91ce-4a14-bfc7-4a503c579fb7",
+      "github_link": "https://github.com/YassienTawfikk/OralCancerPrediction.git",
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "PyTorch Lightning",
+        "scikit-learn",
+        "pandas",
+        "matplotlib",
+        "shap",
+        "jsonargparse"
+      ],
+      "tags": [
+        "Biomedical Engineering",
+        "Microbiome Analysis",
+        "Oral Cancer",
+        "Machine Learning",
+        "Random Forest",
+        "Explainable AI",
+        "Data Science",
+        "Healthcare AI"
+      ],
+      "highlights": [
+        "Non-invasive oral cancer prediction using microbiome profiles from TCMA.",
+        "Random Forest classifier with class weighting for balanced performance.",
+        "SHAP-based feature explainability highlighting influential microbial taxa.",
+        "Professional CLI for flexible hyperparameter tuning and data configuration.",
+        "High predictive performance: 92.89% accuracy, AUROC 0.9714, PR-AUC 0.9588.",
+        "Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization."
+      ],
+      "year": "2024",
+      "long_description": "This project implements a robust machine learning pipeline for predicting oral cancer from microbiome data (16S rRNA and WGS) using Random Forests. It integrates professional CLI tools for experiment reproducibility and flexible configuration, while SHAP explainability provides insights into the most influential microbial features. The system achieves high predictive performance and supports both research and clinical-focused applications, demonstrating the potential of microbiome-based non-invasive diagnostics."
+    },
+    {
+      "title": "STM32LabSuite",
+      "short_description": "Modular umbrella repository of three STM32F401VE embedded projects with real-time control, interrupt handling, and modular driver abstraction.",
+      "overview_image": "https://github.com/user-attachments/assets/984412f8-db41-4e62-95c0-4b706ce76adc",
+      "github_link": "https://github.com/YassienTawfikk/STM32LabSuite",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "STM32CubeIDE",
+        "Proteus Simulation",
+        "Embedded Systems",
+        "Interrupt Handling",
+        "PWM Control",
+        "GPIO Multiplexing"
+      ],
+      "tags": [
+        "Embedded Systems",
+        "Real-Time Control",
+        "STM32",
+        "Industrial Automation",
+        "Proteus Simulation",
+        "Hardware Interfacing",
+        "Low-Level Drivers"
+      ],
+      "highlights": [
+        "Umbrella project with three subprojects: ConveyorX, InterruptHandler, Press2Display.",
+        "Real-time EXTI interrupt handling with ISR-driven display logic.",
+        "Keypad input with GPIO remapping and software-based display multiplexing.",
+        "Smart conveyor control with ADC-based PWM and IR object detection.",
+        "Modular driver architecture for GPIO, TIM, EXTI, ADC, LCD.",
+        "Proteus simulation included for each subproject and deployable on STM32 hardware."
+      ],
+      "year": "2025",
+      "long_description": "STM32LabSuite is a modular collection of three STM32F401VE embedded systems projects that showcase real-time control, interrupt-driven processing, and modular driver abstraction. Each project focuses on a key embedded concept: EXTI-based real-time counting and display, keypad-driven display logic with GPIO remapping, and conveyor control with motor PWM and IR-based object detection. Designed for both Proteus simulation and hardware deployment, the suite provides hands-on experience with low-level STM32 peripherals, structured C programming, and industrial automation techniques."
+    },
+    {
+      "title": "NeuroPathX",
+      "short_description": "End-to-end web platform for MRI brain tumor analysis using an Xception-based deep learning model with real-time inference and automated clinical reporting.",
+      "overview_image": "https://github.com/user-attachments/assets/f0f406b3-1b7e-4adb-beb7-5713a7293933",
+      "github_link": "https://github.com/YassienTawfikk/NeuroPathX",
+      "tech_stack": [
+        "Python",
+        "TensorFlow",
+        "FastAPI",
+        "NumPy",
+        "scikit-learn",
+        "Pillow",
+        "HTML/CSS/JS"
+      ],
+      "tags": [
+        "Deep Learning",
+        "Medical Imaging",
+        "MRI",
+        "Brain Tumor Classification",
+        "Web Application",
+        "Real-Time Inference",
+        "Clinical Reporting"
+      ],
+      "highlights": [
+        "Xception-based CNN achieving 92% accuracy on brain tumor MRI classification.",
+        "Classifies Glioma, Meningioma, Pituitary tumors, and No Tumor.",
+        "Automated PDF-style clinical report generation for each scan.",
+        "Frontend-backend web platform with FastAPI and simple HTTP server frontend.",
+        "Includes test dataset with sample MRIs for end-to-end validation.",
+        "Visualizations include model architecture, confusion matrix, and prediction insights."
+      ],
+      "year": "2025",
+      "long_description": "NeuroPathX is a fully integrated web platform for MRI brain tumor classification using deep learning. It leverages an Xception-based model for multi-class tumor detection and provides real-time inference, visualization, and structured clinical reporting. The platform supports end-to-end testing with a sample MRI dataset and is ideal for medical imaging applications requiring automated diagnostic assistance and transparent model insights."
+    },
+    {
+      "title": "BreastCancer-XAI-Evaluation",
+      "short_description": "Exploring explainable AI for breast cancer classification with SHAP interpretability, precision-recall metrics, and handling imbalanced datasets.",
+      "overview_image": "https://github.com/user-attachments/assets/11d71549-8165-4a51-a4cb-5ff939f30c27",
+      "github_link": "https://github.com/YassienTawfikk/BreastCancer-XAI-Evaluation",
+      "tech_stack": [
+        "Python",
+        "scikit-learn",
+        "pandas",
+        "matplotlib",
+        "seaborn",
+        "imbalanced-learn",
+        "SHAP",
+        "argparse/jsonargparse"
+      ],
+      "tags": [
+        "Machine Learning",
+        "Medical AI",
+        "Explainable AI",
+        "SHAP",
+        "Breast Cancer",
+        "Binary Classification",
+        "Clinical Evaluation",
+        "Imbalanced Data Handling"
+      ],
+      "highlights": [
+        "Binary classification of breast tumors (benign vs malignant) using Logistic Regression, Random Forest, and SVM.",
+        "High performance across models: Accuracy 95–96%, ROC-AUC 0.99, Precision & Recall 95–97%.",
+        "Class imbalance addressed via SMOTE to improve model reliability.",
+        "Global and local explainability with SHAP summary and waterfall plots.",
+        "Clinical-style evaluation metrics: Precision, Recall, F1-score, ROC-AUC, PR curves.",
+        "Transparent pipeline emphasizing trustworthiness in medical AI applications."
+      ],
+      "year": "2025",
+      "long_description": "BreastCancer-XAI-Evaluation is a medical AI project focused on building reliable and explainable breast cancer classifiers. Using clinical diagnostic features, the pipeline trains multiple ML models while handling class imbalance with SMOTE. SHAP is leveraged to provide global and local interpretability, ensuring that predictions are transparent and clinically trustworthy. Extensive evaluation metrics are included, emphasizing precision and recall alongside accuracy for real-world relevance."
+    },
+    {
+      "title": "MR Frequency Sculptor",
+      "short_description": "Interactive Python tool for exploring k-space manipulations in MRI, visualizing reconstruction effects, and analyzing image quality.",
+      "overview_image": "https://github.com/user-attachments/assets/1379a938-ab7e-4788-99de-fb53e9e042e4",
+      "github_link": "https://github.com/YassienTawfikk/MR-Frequency-Sculptor",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter",
+        "SciPy"
+      ],
+      "tags": [
+        "Medical Imaging",
+        "MRI",
+        "K-space",
+        "Image Reconstruction",
+        "Fourier Transform",
+        "Python",
+        "Visualization",
+        "Signal Processing"
+      ],
+      "highlights": [
+        "Full, partial, low-pass, and high-pass k-space reconstruction methods for MRI images.",
+        "Interactive GUI for real-time visualization and comparison of reconstructed images.",
+        "Quantitative metrics including sharpness, noise, and mean absolute error (MAE).",
+        "Supports synthetic phantoms (Shepp-Logan), real MRI slices, and custom images.",
+        "Illustrates Fourier relationships between k-space and spatial domain, and artifacts from undersampling."
+      ],
+      "year": "2025",
+      "long_description": "MR Frequency Sculptor is a Python-based tool designed to explore MRI frequency domain manipulations. Users can apply full, partial, low-pass, or high-pass k-space filters to images and visualize the impact on reconstruction quality. The project emphasizes understanding the physics behind MRI reconstruction, including the Fourier relationship between k-space and spatial images. It provides both GUI and CLI workflows, supports multiple data sources, computes quantitative metrics, and generates automated analysis reports for comprehensive experimentation."
+    },
+    {
+      "title": "2D Beamforming Simulator",
+      "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
+      "overview_image": "https://github.com/user-attachments/assets/dc2b35f6-d83d-47d4-816d-8e1e244de49b",
+      "github_link": "https://github.com/YassienTawfikk/2D-Beamforming-Simulator",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter"
+      ],
+      "tags": [
+        "Beamforming",
+        "Phased Arrays",
+        "2D Simulation",
+        "Signal Processing",
+        "Ultrasound",
+        "5G",
+        "Tumor Ablation",
+        "Visualization",
+        "Physics Simulation"
+      ],
+      "highlights": [
+        "Real-time beam steering with adjustable angles and multiple array units.",
+        "Supports linear and curved array geometries with customizable parameters.",
+        "Visualizes constructive/destructive interference and beam profiles.",
+        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
+        "Equations implemented for phase shift, intensity maps, and array factor computations."
+      ],
+      "year": "2025",
+      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios—5G communications, ultrasound imaging, and tumor ablation—demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization."
+    },
+    {
+      "title": "Automated Defibrillator System",
+      "short_description": "Prototype system integrating real-time ECG analysis with Arduino-controlled shock delivery for arrhythmia detection and safe hardware simulation.",
+      "overview_image": "https://github.com/user-attachments/assets/73fc50e2-1b82-4d26-bae6-f91fa06e2fbf",
+      "github_link": "https://github.com/YassienTawfikk/Automated_Defibrillator.git",
+      "tech_stack": [
+        "Python",
+        "Arduino",
+        "ECG Signal Processing",
+        "PyQt / Tkinter",
+        "Bluetooth Communication"
+      ],
+      "tags": [
+        "Biomedical Signal Processing",
+        "Embedded Systems",
+        "ECG Analysis",
+        "Arduino",
+        "Hardware-in-the-Loop",
+        "Real-Time Monitoring",
+        "Safety Simulation",
+        "GUI Visualization"
+      ],
+      "highlights": [
+        "Real-time ECG analysis for tachycardia and bradycardia detection.",
+        "Automated shock delivery using Arduino with safe low-voltage simulation.",
+        "Temperature monitoring to ensure safe hardware operation.",
+        "Interactive GUI displaying ECG signals, BPM, alerts, and shock logs.",
+        "Bluetooth communication links software detection with hardware execution."
+      ],
+      "year": "2025",
+      "long_description": "The Automated Defibrillator System bridges software and embedded hardware for safe arrhythmia detection and response. ECG signals are processed in real-time by a desktop application that calculates BPM and identifies tachycardia or bradycardia events. Upon detecting an arrhythmia, the system commands an Arduino-controlled circuit to deliver a controlled low-voltage shock. The system includes temperature monitoring, GUI visualization, and logging, providing a safe, educational environment for understanding biomedical signal processing and hardware integration."
+    },
+    {
+      "title": "AudiophileEQ",
+      "short_description": "A versatile desktop signal equalizer for audio, music, speech, and biomedical signals, allowing dynamic frequency adjustments with interactive visualization.",
+      "overview_image": "https://github.com/user-attachments/assets/9d02efe0-0fa9-4b17-9eca-d4f69d7c0b2c",
+      "github_link": "https://github.com/YassienTawfikk/AudiophileEQ.git",
+      "tech_stack": [
+        "Python",
+        "PyQt / Tkinter",
+        "Signal Processing",
+        "Spectrogram Analysis",
+        "Wiener Filtering"
+      ],
+      "tags": [
+        "Audio Processing",
+        "Signal Equalization",
+        "Spectrogram Visualization",
+        "Biomedical Signal Analysis",
+        "Interactive GUI",
+        "Noise Reduction",
+        "Multi-Mode Processing",
+        "Real-Time Playback"
+      ],
+      "highlights": [
+        "Multiple equalizer modes including uniform range, instrument-specific, vowel removal, and Wiener filter for noise reduction.",
+        "Interactive GUI with dynamic sliders, spectrogram visualization, and playback controls.",
+        "Supports audio, musical, and biomedical signals for versatile experimentation.",
+        "Real-time reconstruction of adjusted signals for intuitive audio manipulation.",
+        "Audiogram scale and hybrid sound modes for advanced signal analysis."
+      ],
+      "year": "2025",
+      "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications."
+    },
+    {
+      "title": "Hospital System Website",
+      "short_description": "A comprehensive Hospital Management System built with Flask, providing seamless interactions for patients, doctors, and administrators with appointments, prescriptions, and profiles.",
+      "overview_image": "https://github.com/user-attachments/assets/c3a1a1a3-6fb9-4060-a294-c1f1ea6dacc3",
+      "github_link": "https://github.com/YassienTawfikk/Hospital-System-Website",
+      "live_demo": "https://hospital-system-website.vercel.app/login",
+      "tech_stack": [
+        "Python",
+        "Flask",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "tags": [
+        "Web Application",
+        "Hospital Management",
+        "Patient Profiles",
+        "Doctor Profiles",
+        "Appointment Management",
+        "Prescription Management",
+        "Dark Mode UI",
+        "Responsive Design"
+      ],
+      "highlights": [
+        "Role-based system supporting patients, doctors, and nurses.",
+        "Interactive appointment booking and management.",
+        "Prescription and diagnostic report creation by doctors.",
+        "Secure database integration with PostgreSQL.",
+        "Dark mode interface for comfortable browsing.",
+        "Detailed profiles and reviews for doctors."
+      ],
+      "year": "2025",
+      "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations."
+    }
+  ]
+}
