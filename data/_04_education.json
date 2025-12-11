@@ -1,11 +1,11 @@
 {
-    "image_01": "assets/images/educational/Educational-Photo-01.jpg",
+    "image_01": "assets/images/educational/Educational-Photo-01.png",
     "image_02": "assets/images/educational/Educational-Photo-02.jpg",
     "university": "Cairo University",
     "faculty": "Faculty of Engineering",
     "degree": "B.Sc. in Biomedical Engineering",
     "expected_graduation": "2026",
-    "gpa": "3.62",
+    "gpa": "3.4",
     "description": "Pursuing a rigorous intersection of Biomedical Engineering and Artificial Intelligence. Specializing in Deep Learning, Computer Vision, and Signal Processing, with a focus on developing scalable ML pipelines for medical diagnostics. Committed to bridging the gap between clinical requirements and cutting-edge technical solutions to power the next generation of intelligent healthcare systems.",
     "key_courses": {
         "ai_and_cs": [

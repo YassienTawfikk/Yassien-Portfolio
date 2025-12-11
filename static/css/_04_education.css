@@ -4,9 +4,9 @@
 
 .image-holder {
     display: flex;
-    height: 90vh;
+    height: 100vh;
     position: sticky;
-    top: 5vh;
+    top: 0;
 }
 
 .image-holder div {
@@ -21,6 +21,7 @@
 
 .image-holder div>img {
     height: 90%;
+    filter: grayscale(100%);
 }
 
 .education-container {
