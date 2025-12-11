@@ -484,6 +484,241 @@
       ],
       "year": "2025",
       "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations."
+    },
+    {
+      "title": "SequenceAlignX",
+      "short_description": "Interactive local sequence alignment tool with stepwise matrix filling, real-time tracing, and quiz-style 'Guess Mode' for learning.",
+      "overview_image": "https://github.com/user-attachments/assets/2e022254-7dcc-4b06-9e7a-383f640398bc",
+      "github_link": "https://github.com/YassienTawfikk/SequenceAlignX",
+      "live_demo": "https://yassientawfikk.github.io/SequenceAlignX/",
+      "tech_stack": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "tags": [
+        "Bioinformatics",
+        "Sequence Alignment",
+        "Local Alignment",
+        "Educational Tool",
+        "Interactive Visualization"
+      ],
+      "highlights": [
+        "Stepwise matrix filling for Needleman-Wunsch and Smith-Waterman algorithms.",
+        "Real-time alignment tracing for better understanding.",
+        "Optional quiz 'Guess Mode' to test alignment skills.",
+        "Fully web-based, no installation required.",
+        "Responsive and interactive UI for learning and demonstration purposes."
+      ],
+      "year": "2025",
+      "long_description": "SequenceAlignX is an educational web application that demonstrates local sequence alignment in bioinformatics. It provides a stepwise filling of the alignment matrix, visual tracing of optimal paths, and an optional 'Guess Mode' where users predict alignment steps. The tool helps students and researchers understand alignment algorithms interactively."
+    },
+    {
+      "title": "Digital Filter Application",
+      "short_description": "Interactive tool for designing, visualizing, and applying digital filters using z-plane zero-pole manipulation, with real-time frequency response and signal processing.",
+      "overview_image": "https://github.com/user-attachments/assets/d2611c72-3b8d-4661-a156-95f2d52faa55",
+      "github_link": "https://github.com/YassienTawfikk/Z-Domain-Filter",
+      "tech_stack": [
+        "Python",
+        "Tkinter / PyQt",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "tags": [
+        "Digital Signal Processing",
+        "Z-Plane",
+        "Filter Design",
+        "Real-time Visualization",
+        "Educational Tool"
+      ],
+      "highlights": [
+        "Interactive z-plane interface for placing zeros and poles.",
+        "Real-time magnitude and phase response updates.",
+        "Built-in library with 10+ standard digital filters (Butterworth, Chebyshev, Bessel, Elliptic, etc.).",
+        "Real-time signal processing with adjustable temporal resolution.",
+        "Phase correction using all-pass filters with customizable coefficients.",
+        "Export filter configurations to C code and save/load in CSV or text format."
+      ],
+      "year": "2024",
+      "long_description": "The Digital Filter Application allows users to design and experiment with digital filters interactively. Users can manipulate zeros and poles on the z-plane, visualize the resulting magnitude and phase response in real time, and apply the filters to arbitrary signals. Advanced features include filter libraries, all-pass phase correction, signal playback with variable speed, and exporting configurations to C code for practical use."
+    },
+    {
+      "title": "Dynamic Multi-Channel Signal Viewer",
+      "short_description": "Python & Qt-based desktop app for visualizing, customizing, and managing multiple medical signals (ECG, EMG, EEG) with playback, linking, and reporting features.",
+      "overview_image": "https://github.com/user-attachments/assets/f8afb6e1-5fb5-4b46-b0bb-be5f1eb6881e",
+      "github_link": "https://github.com/YassienTawfikk/Dynamic-Multi-Channel-Signal-Viewer",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "tags": [
+        "Medical Signal Processing",
+        "ECG",
+        "EMG",
+        "EEG",
+        "Real-time Visualization",
+        "PDF Reporting"
+      ],
+      "highlights": [
+        "Dynamic playback controls with adjustable speed and signal switching.",
+        "Graph linking/unlinking for synchronized viewing of multiple signals.",
+        "Add, merge, or overlay signals for comparison.",
+        "Signal customization: color, labels, titles, zoom/pan.",
+        "Glue window to combine signals and generate PDF reports.",
+        "Circular signal visualization and real-time weather signal indication."
+      ],
+      "year": "2024",
+      "long_description": "The Dynamic Multi-Channel Signal Viewer provides a versatile platform for visualizing and managing medical signals like ECG, EMG, and EEG. Users can manipulate multiple graphs, link/unlink playback, customize signal appearance, and generate PDF reports using the Glue Window. Advanced features include circular signal plotting and real-time weather signal indication for enhanced monitoring and analysis."
+    },
+    {
+      "title": "Signal Reconstruction Application",
+      "short_description": "Educational desktop app demonstrating signal sampling and reconstruction techniques, illustrating the Nyquist rate and interpolation methods.",
+      "overview_image": "https://github.com/user-attachments/assets/405f6756-7cfe-4b54-abe8-7c4276e5f837",
+      "github_link": "https://github.com/YassienTawfikk/Nyquist-Signal-Reconstructor.git",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "tags": [
+        "Signal Processing",
+        "Sampling",
+        "Interpolation",
+        "Nyquist Theorem",
+        "Frequency Analysis",
+        "Educational Tool"
+      ],
+      "highlights": [
+        "Visualize original and reconstructed signals with sampling points.",
+        "Compare interpolation methods: Shannon, Lanczos, Step.",
+        "Frequency domain inspection to detect aliasing.",
+        "Customizable signal composer with multiple sinusoidal terms.",
+        "Adjustable sampling frequency with quick validation.",
+        "Add noise to study its effect on reconstruction.",
+        "Real-time updates and resizable, responsive UI."
+      ],
+      "year": "2024",
+      "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist–Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing."
+    },
+    {
+      "title": "BioRhythm Analyzer",
+      "short_description": "CTG Heart Failure Monitoring System analyzing HRV and FHR signals to detect potential abnormalities, combining advanced signal processing with an intuitive GUI.",
+      "overview_image": "https://github.com/user-attachments/assets/6c8a327b-7ff4-43be-8d97-aa36962327a5",
+      "github_link": "https://github.com/YassienTawfikk/CTG-Monitor.git",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "tags": [
+        "Biomedical Signal Processing",
+        "Heart Rate Variability",
+        "Fetal Heart Monitoring",
+        "CTG",
+        "Healthcare",
+        "Medical Application"
+      ],
+      "highlights": [
+        "Real-time HRV analysis with SDNN, RMSSD, pNN50 metrics.",
+        "Filtered and raw signal visualization for detailed analysis.",
+        "FHR monitoring with baseline, STV, and acceleration/deceleration detection.",
+        "Color-coded anomaly indicators for quick assessment.",
+        "Graphical interface designed for healthcare professionals.",
+        "Detailed statistics including RR interval histograms and outlier detection."
+      ],
+      "year": "2024",
+      "long_description": "BioRhythm Analyzer is a desktop application designed for healthcare professionals to monitor and analyze fetal and maternal heart rate signals. It offers real-time HRV and FHR signal analysis, highlighting critical events with visual indicators and detailed metrics. The system supports advanced filtering, signal visualization, and statistical reporting, making it an essential tool for fetal monitoring and heart failure detection in clinical environments."
+    },
+    {
+      "title": "Soundprints",
+      "short_description": "Shazam-like audio recognition app using spectrogram-based fingerprinting and similarity analysis, with support for audio mixing.",
+      "overview_image": "https://github.com/user-attachments/assets/03c0c329-ff26-4ec5-bfbc-db4e7fa3f55b",
+      "github_link": "https://github.com/YassienTawfikk/Soundprints.git",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "SciPy",
+        "Librosa",
+        "Matplotlib",
+        "Tkinter / PyQt"
+      ],
+      "tags": [
+        "Audio Processing",
+        "Music Recognition",
+        "Signal Analysis",
+        "Fingerprinting",
+        "Spectrogram",
+        "Audio Mixing",
+        "Machine Learning"
+      ],
+      "highlights": [
+        "Generates spectrograms for songs, vocals, and instruments.",
+        "Extracts spectral, tonal, temporal features and MFCCs.",
+        "Perceptual hashing for efficient audio fingerprinting.",
+        "Similarity analysis with sortable match table.",
+        "Weighted audio mixing and recognition.",
+        "Database stored locally with future server scalability in mind.",
+        "First-run preprocessing with reuse for subsequent runs."
+      ],
+      "year": "2024",
+      "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
+    },
+    {
+      "title": "Maze Game",
+      "short_description": "Interactive maze game with Mini and Mega sizes, solved using dynamic programming and visualized paths.",
+      "overview_image": "https://github.com/user-attachments/assets/2dcba5c4-82d0-419e-9796-0554785a10c5",
+      "github_link": "https://github.com/YassienTawfikk/Maze-Game.git",
+      "tech_stack": [
+        "Python",
+        "Tkinter / Pygame",
+        "Dynamic Programming"
+      ],
+      "tags": [
+        "Game",
+        "Maze",
+        "Pathfinding",
+        "Dynamic Programming",
+        "Visualization"
+      ],
+      "highlights": [
+        "Mini and Mega maze options.",
+        "Interactive start point selection.",
+        "Dynamic programming algorithm for optimized pathfinding.",
+        "Visual representation of trajectories for both maze sizes."
+      ],
+      "year": "2024",
+      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding."
+    },
+    {
+      "title": "CheckMate - Chess Game",
+      "short_description": "Two-player chess game with GUI using Java Swing, featuring move validation, themes, and gameplay tracking.",
+      "overview_image": "https://github.com/user-attachments/assets/0ecf3834-e9da-4303-b3cf-6fd690b9257e",
+      "github_link": "https://github.com/YassienTawfikk/CheckMate.git",
+      "tech_stack": [
+        "Java",
+        "Java Swing",
+        "GUI Development"
+      ],
+      "tags": [
+        "Game",
+        "Chess",
+        "GUI",
+        "Java Swing",
+        "Two Player"
+      ],
+      "highlights": [
+        "Graphical interface with dynamic themes.",
+        "Full chess rules implementation including check/checkmate.",
+        "Interactive gameplay with valid move highlighting.",
+        "Tracks captured pieces and player timers."
+      ],
+      "year": "2024",
+      "long_description": "CheckMate is a Java-based chess game with a GUI built using Java Swing. Players can customize their names and themes, move pieces according to chess rules, and visualize valid moves. The application provides an interactive experience with gameplay tracking, captured piece display, and theme selection for enhanced engagement."
     }
   ]
 }
