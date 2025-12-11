@@ -1,6 +1,6 @@
 {
-    "image_01": "https://i.postimg.cc/tTkNyMv6/Educational-Photo-01.jpg",
-    "image_02": "https://i.postimg.cc/qBmx5W3V/Educational-Photo-02.jpg",
+    "image_01": "assets/images/educational/Educational-Photo-01.jpg",
+    "image_02": "assets/images/educational/Educational-Photo-02.jpg",
     "university": "Cairo University",
     "faculty": "Faculty of Engineering",
     "degree": "Bachelor of Biomedical Engineering",
