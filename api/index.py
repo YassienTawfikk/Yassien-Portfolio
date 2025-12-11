@@ -1,15 +1,17 @@
 import os
 import sys
 
-# 1. Determine the root folder (one level up from 'api')
-root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Get the directory of this script (api/index.py)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# The project root is one level up from 'api'
+root_dir = os.path.dirname(current_dir)
 
-# 2. Add root to the system path (so we can import 'app.py')
+# CRITICAL: Add the root directory to Python's path so 'app' and 'utils' can be imported
 sys.path.append(root_dir)
 
-# 3. CRITICAL: Change the working directory to root
-# This ensures that open("data/file.json") finds the file!
+# CRITICAL: Change the working directory to the project root.
+# This makes file paths like "data/*.json" resolve correctly.
 os.chdir(root_dir)
 
-# 4. Import the server
+# Import the main application server
 from app import server as app
