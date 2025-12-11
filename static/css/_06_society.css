@@ -1,7 +1,8 @@
 .title {
     font-size: 40px;
     width: fit-content;
-    margin: 0 auto 8px;
+    margin: 40px auto 30px;
+    /* Improved vertical spacing */
     text-align: center;
     position: relative;
     padding: 10px;
@@ -20,12 +21,30 @@
 .involvements-holder {
     display: flex;
     overflow-x: auto;
-    gap: 30px;
+    gap: 40px;
     justify-content: start;
     align-items: center;
-    padding: 20px;
+    /*
+       Padding Fix:
+       Right Padding: 80px
+       Left Padding: 10px + First Item Margin-Left (70px) = 80px Total Visual Space
+    */
+    padding: 40px 80px 40px 10px;
     scroll-behavior: smooth;
-    width: 95%;
+    width: 100%;
+    margin: 0;
+    max-width: none;
+    min-height: 60vh;
+    /* Ensure it takes up good vertical space */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .involvements-holder {
+        width: 100%;
+        padding: 40px 5%;
+        gap: 20px;
+    }
 }
 
 .involvements-holder::-webkit-scrollbar {
@@ -65,7 +84,7 @@
     display: flex;
 }
 
-.member-fig > .image {
+.member-fig>.image {
     width: 285px;
     overflow: hidden;
     border-radius: 25px;
@@ -74,7 +93,7 @@
     z-index: 1;
 }
 
-.member-fig > span {
+.member-fig>span {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -113,26 +132,48 @@
     padding: 10px;
 }
 
-#scroll-left, #scroll-right {
+#scroll-left,
+#scroll-right {
     position: absolute;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
-    width: fit-content;
-    z-index: 2;
-    height: 520px;
-    background-color: transparent;
+    width: 60px;
+    /* Slightly larger clickable area */
+    height: 60px;
+    z-index: 100;
+    /* Ensure on top of everything */
+    background-color: rgba(30, 30, 30, 0.6);
+    /* Semi-transparent background */
+    backdrop-filter: blur(4px);
+    /* Professional glass effect */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-#scroll-left i, #scroll-right i {
-    font-size: 30px;
+#scroll-left:hover,
+#scroll-right:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+#scroll-left i,
+#scroll-right i {
+    font-size: 40px;
     color: var(--white-color);
     transition: 250ms;
 }
 
-
-#scroll-left:hover i, #scroll-right:hover i {
-    transform: scale(1.5);
-    color: grey;
+#scroll-left:hover i,
+#scroll-right:hover i {
+    transform: scale(1.1);
+    color: var(--white-color);
 }
 
 i {
@@ -141,15 +182,24 @@ i {
 }
 
 #scroll-right {
-    right: 0;
+    right: 2%;
+    /* Responsive positioning */
 }
 
 #scroll-left {
-    left: 0;
+    left: 2%;
+}
+
+/* Hide scroll buttons on mobile where touch works better */
+@media (max-width: 768px) {
+
+    #scroll-left,
+    #scroll-right {
+        display: none;
+    }
 }
 
 .social-icons:hover {
     transition: 250ms;
     transform: scale(1.25);
 }
-
