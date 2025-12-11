@@ -66,7 +66,7 @@ app.layout = html.Div([
 ])
 
 # Clean up cache directories
-clean_cache.remove_directories()
+# clean_cache.remove_directories()
 
 # Main execution
 
