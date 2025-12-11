@@ -190,12 +190,85 @@ i {
     left: 2%;
 }
 
-/* Hide scroll buttons on mobile where touch works better */
+/* Mobile Rebuild */
 @media (max-width: 768px) {
 
+    /* 1. Reset Container for Snapping */
+    .involvements-holder {
+        width: 100%;
+        padding: 20px 5%;
+        /* Balanced padding */
+        gap: 20px;
+        scroll-snap-type: x mandatory;
+        /* Snap effect */
+    }
+
+    /* 2. Hide Desktop Buttons */
     #scroll-left,
     #scroll-right {
         display: none;
+    }
+
+    /* 3. Rebuild Card Layout */
+    .involvement-box {
+        margin-left: 0;
+        /* Reset desktop margin */
+        width: 85vw;
+        /* Mobile width */
+        max-width: 350px;
+        min-width: unset;
+        /* Override any absolute min-width */
+        scroll-snap-align: center;
+        /* Center card on stop */
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+        /* Allow height to grow */
+    }
+
+    /* 4. Vertical Stack: Image Top */
+    .member-fig {
+        flex-direction: column;
+        align-items: center;
+        /* Center items */
+        margin-bottom: 20px;
+    }
+
+    .member-fig>.image {
+        right: 0;
+        /* Reset relative header shift */
+        width: 100%;
+        max-width: 200px;
+        /* Limit image size */
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+
+    .member-fig>span {
+        right: 0;
+        /* Reset relative shift */
+        padding-top: 0;
+        flex-direction: row;
+        /* Horizontal icons */
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* 5. Text Styling */
+    .society-card-text {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-paragraph {
+        font-size: 14px;
+        /* Readable text */
     }
 }
 
