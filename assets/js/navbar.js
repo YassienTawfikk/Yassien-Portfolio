@@ -8,23 +8,51 @@ document.addEventListener('DOMContentLoaded', function () {
         if (trigger && navBlock) {
             console.log('Trigger and NavBlock found, adding event listeners.');
 
-            // Display navBlock when hovering over the trigger span
+            // Desktop Hover Logic
             trigger.addEventListener('mouseover', function () {
-                clearTimeout(timer); // Clear any previous timer
-                navBlock.style.display = 'flex'; // Apply display flex to show navBlock
-                navBlock.style.flexDirection = 'column'; // Ensure flex direction is column as per CSS
+                if (window.innerWidth > 768) {
+                    clearTimeout(timer);
+                    navBlock.style.display = 'flex';
+                    navBlock.style.flexDirection = 'column';
+                }
             });
 
-            // Hide navBlock when the mouse leaves, with a delay
             navBlock.addEventListener('mouseleave', function () {
-                timer = setTimeout(() => {
-                    navBlock.style.display = 'none'; // Hide navBlock after delay
-                }, 250); // 2.5-millisecond delay before hiding
+                if (window.innerWidth > 768) {
+                    timer = setTimeout(() => {
+                        navBlock.style.display = 'none';
+                    }, 250);
+                }
             });
 
-            // Cancel the timer if the mouse re-enters the navBlock
             navBlock.addEventListener('mouseover', function () {
-                clearTimeout(timer); // Stop the hide timer
+                if (window.innerWidth > 768) {
+                    clearTimeout(timer);
+                }
+            });
+
+            // Mobile Click Logic
+            trigger.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.stopPropagation(); // Prevent immediate close by document listener
+                    // Toggle visibility
+                    if (navBlock.style.display === 'flex') {
+                        navBlock.style.display = 'none';
+                    } else {
+                        navBlock.style.display = 'flex';
+                        navBlock.style.flexDirection = 'column';
+                    }
+                }
+            });
+
+            // Close menu when clicking outside (Mobile)
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    // If click is outside trigger AND outside navBlock
+                    if (!trigger.contains(e.target) && !navBlock.contains(e.target)) {
+                        navBlock.style.display = 'none';
+                    }
+                }
             });
         } else {
             console.log('Trigger or NavBlock not found, retrying...');

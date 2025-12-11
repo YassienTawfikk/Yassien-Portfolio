@@ -17,7 +17,7 @@
     bottom: -10%;
 }
 
-.image-holder div > img {
+.image-holder div>img {
     height: 90%;
 }
 
@@ -77,14 +77,11 @@
 }
 
 @media (max-width: 975px) {
-    .image-holder {
-    }
-
-    .image-holder > div:last-child {
+    .image-holder>div:last-child {
         display: none;
     }
 
-    .image-holder div > img {
+    .image-holder div>img {
         height: 100%;
     }
 
@@ -93,19 +90,75 @@
     }
 }
 
-@media (max-width: 630px) {
-    .image-holder > div:first-child {
+/* Mobile Rebuild */
+@media (max-width: 768px) {
+    .education-port {
+        flex-direction: column;
+    }
+
+    .image-holder {
+        height: 40vh;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .image-holder div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ensure first image is shown, second hidden (already handled by 975px rule but good to be explicit or safe) */
+    .image-holder>div:first-child {
+        display: flex;
+        /* Force display */
+    }
+
+    .image-holder>div:last-child {
         display: none;
     }
 
-    .education-container {
-        justify-content: stretch;
+    .image-holder div>img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .title,
-    .subtitle,
-    .body-text {
-        margin-bottom: 30px;
-        margin-top: 10px;
+    .education-container {
+        margin-left: 0;
+        padding: 0 20px 40px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        left: 0;
+        /* Reset relative positioning */
+    }
+
+    .title:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .subsubtitle {
+        font-size: 13px;
+        color: var(--secondary-white-color);
+    }
+
+    .courses-container {
+        text-align: left;
+        width: 100%;
     }
 }

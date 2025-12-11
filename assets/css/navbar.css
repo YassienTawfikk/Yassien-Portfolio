@@ -29,7 +29,7 @@
     font-weight: 100;
 }
 
-.navbar-nav > span {
+.navbar-nav>span {
     padding: 10px;
     margin-right: 50px;
 }
@@ -38,7 +38,7 @@
     height: 24px;
 }
 
-.navbar-nav > span:nth-child(4) {
+.navbar-nav>span:nth-child(4) {
     margin-right: 10px;
 }
 
@@ -67,10 +67,13 @@
     z-index: 10;
 }
 
-.navbar-nav span:nth-child(4):hover + .navblock,
-.navblock:hover {
-    display: flex;
-    flex-direction: column;
+@media (min-width: 769px) {
+
+    .navbar-nav span:nth-child(4):hover+.navblock,
+    .navblock:hover {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .navblock span {
