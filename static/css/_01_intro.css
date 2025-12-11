@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.profile-section > img {
+.profile-section>img {
     width: 90%;
     margin: 0 calc((450px - 90%) / 2);
     position: absolute;
@@ -53,7 +53,7 @@
     top: 105px;
 }
 
-.name-title > span {
+.name-title>span {
     font-size: 80px;
     font-weight: 800;
 }
@@ -82,7 +82,7 @@
     }
 
 
-    .profile-section > img {
+    .profile-section>img {
         margin: 0 auto;
     }
 
@@ -103,61 +103,99 @@
     .main-container {
         padding: 0;
         margin: 0;
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
     }
 
     .intro-wrapper {
         flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
     }
 
     .profile-section {
         width: 100%;
-        height: 48vh;
+        height: auto;
+        min-height: 40vh;
+        /* Give it some space but let it grow */
+        position: relative;
+        overflow: visible;
+        /* Allow image to breathe if needed */
+        margin-bottom: 20px;
+        background-color: var(--photo-bg);
     }
 
-
-    .profile-section > img {
-        width: 230px;
-        margin: 0 calc((100% - 230px) / 2);
+    .profile-section>img {
+        width: auto;
+        max-width: 250px;
+        /* Limit width */
+        height: auto;
+        max-height: 40vh;
+        /* Don't be too tall */
+        position: relative;
+        display: block;
+        margin: 20px auto 0 auto;
+        /* Center with top margin */
+        bottom: 0;
     }
 
     .heading-section {
         width: 100%;
         margin: 0;
+        padding: 0 20px 40px 20px;
+        /* Add padding for content */
+        box-sizing: border-box;
+        text-align: center;
     }
 
     .name-title {
-        flex-direction: row;
+        flex-direction: column;
+        /* Stack names on very small screens if needed, or row */
         justify-content: center;
-        margin: 0 auto;
+        align-items: center;
+        margin: 0 auto 20px auto;
+        flex-wrap: wrap;
     }
 
-    .name-title > span {
-        font-size: 45px;
-        margin-right: 10px;
+    .name-title>span {
+        font-size: 40px;
+        /* Smaller font size */
+        margin: 0 5px;
+        line-height: 1.2;
     }
 
     .first-name {
-        position: initial;
+        position: static;
+        /* Remove relative positioning offsets */
+        left: auto;
+        bottom: auto;
     }
 
+    .name-title::after {
+        content: none;
+        /* Hide the decorative line on mobile */
+    }
 
     .intro-brief {
         text-align: center;
-        margin: auto 15px;
-    }
-
-
-    .heading-section > a {
-        text-align: center;
-        width: 50%;
-        margin: auto;
-
-    }
-
-    .heading-section > a > button {
-        margin-top: 5px;
+        margin: 0 auto 30px auto;
         width: 100%;
+        line-height: 1.6;
+    }
+
+    .heading-section>a {
+        text-align: center;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .heading-section>a>button {
+        margin-top: 10px;
+        width: 200px;
+        /* Fixed reasonable width */
         height: 50px;
-        font-size: 25px;
+        font-size: 20px;
     }
 }

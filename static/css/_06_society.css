@@ -121,13 +121,13 @@
 }
 
 .card-subtitle {
-    font-size: 15px;
+    font-size: 18px;
     margin-bottom: 10px;
     color: var(--secondary-white-color);
 }
 
 .card-paragraph {
-    font-size: 12px;
+    font-size: 15px;
     color: var(--white-color);
     padding: 10px;
 }
@@ -223,6 +223,7 @@ i {
         display: flex;
         flex-direction: column;
         padding: 20px;
+        min-height: fit-content;
         height: 75vh;
         /* Allow height to grow */
     }
@@ -266,7 +267,7 @@ i {
     }
 
     .card-paragraph {
-        font-size: 14px;
+        font-size: 16px;
         /* Readable text */
     }
 }
