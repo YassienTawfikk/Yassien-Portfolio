@@ -215,8 +215,7 @@ i {
         /* Reset desktop margin */
         width: 85vw;
         /* Mobile width */
-        max-width: 350px;
-        min-width: unset;
+        min-width: 350px;
         /* Override any absolute min-width */
         scroll-snap-align: center;
         /* Center card on stop */
@@ -224,7 +223,7 @@ i {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        height: auto;
+        height: 75vh;
         /* Allow height to grow */
     }
 
