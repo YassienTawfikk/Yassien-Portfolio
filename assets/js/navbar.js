@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let timer;  // Declare timer globally to manage hover interactions
 
     function setupNavInteraction() {
-        const trigger = document.querySelector('.navbar-nav span:nth-child(4)');  // Select the fourth span as hover trigger
-        const navBlock = document.querySelector('.navbar-nav .navblock');  // Select the navigation block
+        const trigger = document.getElementById('hover-trigger');  // Select by ID
+        const navBlock = document.getElementById('nav-block');  // Select by ID
 
         if (trigger && navBlock) {
             console.log('Trigger and NavBlock found, adding event listeners.');

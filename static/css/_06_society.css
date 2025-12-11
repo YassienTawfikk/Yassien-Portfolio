@@ -38,6 +38,12 @@
     /* Ensure it takes up good vertical space */
 }
 
+.society-content-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
 /* Responsive adjustment */
 @media (max-width: 768px) {
     .involvements-holder {
@@ -203,10 +209,20 @@ i {
         /* Snap effect */
     }
 
-    /* 2. Hide Desktop Buttons */
+    /* 2. Show Mobile Buttons */
     #scroll-left,
     #scroll-right {
-        display: none;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        background-color: rgba(30, 30, 30, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #scroll-left i,
+    #scroll-right i {
+        font-size: 20px;
     }
 
     /* 3. Rebuild Card Layout */

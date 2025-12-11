@@ -31,8 +31,7 @@ def display_page(pathname):
 
 
 app.layout = html.Div([
-    html.Script("static/js/navbar.js"),
-    html.Div(className='main-container navbar', children=[
+    html.Div(className='navbar', children=[
         # html.Span(intro.signature, className="signature"),
         html.Span(children=[html.A(_01_intro.signature, className="signature", href="/")]),
         html.Div(className="navbar-nav body-font", children=[
