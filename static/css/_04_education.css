@@ -117,6 +117,9 @@
         width: 100%;
         justify-content: center;
         margin-bottom: 20px;
+        position: relative;
+        /* Disable sticky on mobile */
+        top: auto;
     }
 
     .image-holder div {
