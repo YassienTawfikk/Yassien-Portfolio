@@ -15,9 +15,9 @@ image01, image02, university, faculty, degree, expected_graduation, description,
             ("degree",),
             ("expected_graduation",),
             ("description",),
-            ("key_courses", "biomedical"),
-            ("key_courses", "technical"),
-            ("key_courses", "mathematics"),
+            ("key_courses", "biomedical_engineering"),
+            ("key_courses", "ai_and_cs"),
+            ("key_courses", "mathematics_and_theory"),
         ])
     )
 

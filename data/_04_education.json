@@ -3,23 +3,31 @@
     "image_02": "assets/images/educational/Educational-Photo-02.jpg",
     "university": "Cairo University",
     "faculty": "Faculty of Engineering",
-    "degree": "Bachelor of Biomedical Engineering",
+    "degree": "B.Sc. in Biomedical Engineering",
     "expected_graduation": "2026",
-    "description": "My academic journey at Cairo University has provided me with a strong foundation in biomedical engineering and a deep understanding of how technology can address healthcare challenges. Through rigorous coursework and hands-on projects, I’ve developed critical skills to analyze, design, and innovate.",
+    "gpa": "3.62",
+    "description": "Pursuing a rigorous intersection of Biomedical Engineering and Artificial Intelligence. Specializing in Deep Learning, Computer Vision, and Signal Processing, with a focus on developing scalable ML pipelines for medical diagnostics. Committed to bridging the gap between clinical requirements and cutting-edge technical solutions to power the next generation of intelligent healthcare systems.",
     "key_courses": {
-        "biomedical": [
-            "Medical Equipments",
-            "Physiology",
-            "Biostatistics"
+        "ai_and_cs": [
+            "Deep Learning",
+            "Computer Vision",
+            "Machine Learning",
+            "Data Structures",
+            "Embedded Systems",
+            "IoT"
         ],
-        "technical": [
-            "Digital Signal Processing",
-            "Computer Graphics",
-            "Programming Fundamentals"
+        "biomedical_engineering": [
+            "Digital Signal Processing (DSP)",
+            "Biosignals",
+            "Medical Instrumentation",
+            "Clinical Engineering",
+            "Physiology & Anatomy"
         ],
-        "mathematics": [
-            "Partial Differential Equations (PDE)",
-            "Numerical Analysis"
+        "mathematics_and_theory": [
+            "Linear Algebra",
+            "Statistics & Probability",
+            "Numerical Methods",
+            "Control Systems"
         ]
     }
 }

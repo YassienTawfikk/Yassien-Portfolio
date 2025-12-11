@@ -5,6 +5,8 @@
 .image-holder {
     display: flex;
     height: 90vh;
+    position: sticky;
+    top: 5vh;
 }
 
 .image-holder div {
@@ -29,11 +31,13 @@
 }
 
 .title {
-    font-size: 40px;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 1px;
     padding: 10px 1px;
     position: relative;
-    left: -1px;
-    margin-bottom: 10px;
+    left: -2px;
+    margin-bottom: 15px;
 }
 
 .title:after {
@@ -47,26 +51,37 @@
 }
 
 .subtitle {
-    font-size: 25px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .subsubtitle {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+    display: block;
 }
 
 
 .body-text {
-    font-size: 15px;
-    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    max-width: 90%;
 }
 
 .courses-head {
-    font-size: 16px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .courses-lists {
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.6;
     position: relative;
     left: 0;
     transition: left 0.5s ease;
@@ -137,8 +152,8 @@
     }
 
     .title {
-        font-size: 32px;
-        margin-bottom: 20px;
+        font-size: 38px;
+        margin-bottom: 15px;
         left: 0;
         /* Reset relative positioning */
     }
@@ -149,11 +164,11 @@
     }
 
     .subtitle {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .subsubtitle {
-        font-size: 15px;
+        font-size: 17px;
         color: var(--secondary-white-color);
     }
 
