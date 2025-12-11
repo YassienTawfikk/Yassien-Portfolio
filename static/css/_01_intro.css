@@ -17,7 +17,7 @@
 }
 
 .profile-section>img {
-    width: 120%;
+    width: 100%;
     /* max-width: 90%; */
     /* Use transform for robust centering on specific widths */
     left: 50%;
