@@ -69,7 +69,6 @@ app.layout = html.Div([
 # clean_cache.remove_directories()
 
 # Main execution
-
 server = app.server
 if __name__ == "__main__":
     app.run(debug=True)
