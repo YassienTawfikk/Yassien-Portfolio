@@ -933,12 +933,13 @@
       "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
     },
     {
-      "title": "Maze Game",
+      "title": "CyberMazer-2077",
       "short_description": "Interactive maze game with Mini and Mega sizes, solved using dynamic programming and visualized paths.",
-      "overview_image": "assets/images/projects_poster/Maze_Game.png",
-      "github_link": "https://github.com/YassienTawfikk/Maze-Game.git",
+      "overview_image": "assets/images/projects_poster/CyberMazer.png",
+      "github_link": "https://github.com/YassienTawfikk/CyberMazer-2077.git",
+      "live_demo": "https://yassientawfikk.github.io/CyberMazer-2077/",
       "tech_stack": [
-        "Python",
+        "HTML/CSS/JS",
         "Tkinter / Pygame",
         "Dynamic Programming"
       ],
