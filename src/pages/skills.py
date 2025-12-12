@@ -1,10 +1,9 @@
 from dash import html
-from utils.json_utils import get_json_values
-from components.footer_navigation import FooterNavigation
+from src.utils.json_utils import get_json_values
+from src.components.footer_navigation import FooterNavigation
 
 # Constants for paths
-CONFIG_FILE_PATH = "data/_05_skills.json"
-CSS_FILE_PATH = "../static/css/_05_skills.css"
+CONFIG_FILE_PATH = "src/data/skills.json"
 
 # Load data
 skill_categories = get_json_values(CONFIG_FILE_PATH, [("skill_categories",)])
@@ -47,7 +46,6 @@ def create_category_section(category):
 
 # Define layout
 layout = html.Div([
-    html.Link(rel="stylesheet", href=CSS_FILE_PATH),
     html.Div([
         html.Span('Skills', className='title head-font'),
         # Container

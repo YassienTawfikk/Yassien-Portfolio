@@ -1,10 +1,9 @@
 from dash import html
 import json
-from components.footer_navigation import FooterNavigation
+from src.components.footer_navigation import FooterNavigation
 import os
 
-CONFIG_FILE_PATH = "data/_03_projects.json"
-CSS_FILE_PATH = "../static/css/_03_projects.css" 
+CONFIG_FILE_PATH = "src/data/projects.json"
 
 # Load data
 projects_list = []
@@ -121,43 +120,6 @@ categories = {
 
 for p in other_projects:
     tags_str = " ".join(p.get("tags", [])).lower()
-    
-    if "game" in tags_str:
-        categories["Game Development"].append(p)
-    elif any(kw in tags_str for kw in ["deep learning", "machine learning", "data", "regression", "prediction", "analytics", "svm", "forest", "xgboost", "ml"]):
-        categories["AI & Data Science"].append(p)
-    elif "computer vision" in tags_str or "image" in tags_str:
-        categories["Computer Vision & Image Processing"].append(p)
-    elif "embedded" in tags_str or "arduino" in tags_str:
-        categories["Embedded Systems & IoT"].append(p)
-    elif "medical" in tags_str or "biomedical" in tags_str or "signal" in tags_str or "audio" in tags_str:
-        categories["Biomedical & Signal Processing"].append(p)
-    else:
-        # Default fallback
-        categories["Web, Mobile & Software"].append(p)
-
-# Specific re-assignment for user feedback consistency
-# Ensure "LifeStream" is in Web/Mobile if it got caught elsewhere (e.g. Biomedical)
-# And ensures typical categorization flow is respected.
-# Actually, let's just move LifeStream manually if needed or adjust logic.
-# LifeStream has "Mobile App", let's prioritize "Mobile App" check if we want it there,
-# BUT identifying "Biomedical" projects vs "Mobile" projects that are biomedical is tricky.
-# Simplest fix for LifeStream: Explicit override or check "mobile app" before biomedical.
-
-# Let's refine the logic block above entirely to be cleaner.
-# Resetting categories to refill properly.
-
-categories = {
-    "AI & Data Science": [],
-    "Computer Vision & Image Processing": [],
-    "Biomedical & Signal Processing": [],
-    "Web, Mobile & Software": [],
-    "Embedded Systems & IoT": [],
-    "Game Development": []
-}
-
-for p in other_projects:
-    tags_str = " ".join(p.get("tags", [])).lower()
     title = p.get("title", "").lower()
     
     # Specific Overrides/Priority
@@ -201,9 +163,7 @@ for category, projects in categories.items():
         ]))
 
 layout = html.Div([
-    html.Link(rel="stylesheet", href=CSS_FILE_PATH),
-    html.Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"),
-    
+    # CSS is auto-loaded from assets/
     html.Div(className='projects-page-container main-container', children=sections),
     FooterNavigation("Education", "/education")
 ])

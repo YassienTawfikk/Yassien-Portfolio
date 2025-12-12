@@ -1,11 +1,10 @@
 from dash import html
-from utils.json_utils import get_json_values
-from components.footer_navigation import FooterNavigation
+from src.utils.json_utils import get_json_values
+from src.components.footer_navigation import FooterNavigation
 
 # Constants for paths
-CONFIG_FILE_PATH = "data/_01_intro.json"
-CONFIG_DB_FILE_PATH = "data/db_data.json"
-CSS_FILE_PATH = "../static/css/_01_intro.css"
+CONFIG_FILE_PATH = "src/data/intro.json"
+CONFIG_DB_FILE_PATH = "src/data/db_data.json"
 
 # Fetch data safely
 full_name = get_json_values(CONFIG_DB_FILE_PATH, [("personal_information", "name")])
@@ -20,7 +19,7 @@ intro_brief, IMAGE_SRC, CV_SRC = get_json_values(CONFIG_FILE_PATH, [
 
 # Define layout
 layout = html.Div([
-    html.Link(rel="stylesheet", href=CSS_FILE_PATH),
+    # CSS is auto-loaded from assets/ folder
     html.Div(className="intro-wrapper", children=[
         html.Div(className="profile-section", children=[
             html.Img(src=IMAGE_SRC)

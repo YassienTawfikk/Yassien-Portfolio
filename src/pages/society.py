@@ -1,18 +1,18 @@
 from dash import html
 import json
-from components.footer_navigation import FooterNavigation
-from utils.json_utils import get_json_values
+from src.components.footer_navigation import FooterNavigation
+from src.utils.json_utils import get_json_values
 
-CSS_FILE_PATH = "../static/css/_06_society.css"
-ICN_FILE_PATH = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-CONFIG_FILE_PATH = "data/_06_society.json"
+CONFIG_FILE_PATH = "src/data/society.json"
 
 with open(CONFIG_FILE_PATH, 'r') as file:
     data = json.load(file)
 
 # Extracting all data for every entry in the 'society' section
 society_data = []
-for index in range(len(data['society'])):  # Accessing the length of 'society' list in the data
+# It's cleaner to just iterate over data['society'] directly, but keeping original logic structure for safety
+# except for using the new path and imports.
+for index in range(len(data['society'])):
     entry_data = get_json_values(CONFIG_FILE_PATH, [
         ("society", index, "role"),
         ("society", index, "organization"),
@@ -27,8 +27,7 @@ for index in range(len(data['society'])):  # Accessing the length of 'society' l
 
 # Define layout
 layout = html.Div([
-    html.Link(rel="stylesheet", href=CSS_FILE_PATH),
-    html.Link(rel="stylesheet", href=ICN_FILE_PATH),
+    # CSS auto-loaded
     html.Div("Society Involvement", className='title head-font'),
     html.Div(className='society-content-wrapper', children=[
         html.Button(id='scroll-left', children=[html.I(className="fa-solid fa-circle-chevron-left")]),
@@ -69,5 +68,3 @@ layout = html.Div([
 
 ],
     className='society-port')
-
-
