@@ -1,5 +1,6 @@
 from dash import html
 from utils.json_utils import get_json_values
+from components.footer_navigation import FooterNavigation
 
 # Constants for paths
 CONFIG_FILE_PATH = "data/_01_intro.json"
@@ -36,5 +37,6 @@ layout = html.Div([
                 target="_blank"
             )
         ])
-    ])
+    ]),
+    FooterNavigation("About Me", "/about", style={'marginTop': '0'})
 ])

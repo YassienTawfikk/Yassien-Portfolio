@@ -1,5 +1,6 @@
 from dash import html
 from utils.json_utils import get_json_values
+from components.footer_navigation import FooterNavigation
 
 # Constants for paths
 CONFIG_FILE_PATH = "data/_02_about.json"
@@ -35,5 +36,6 @@ layout = html.Div([
                 html.Span(className='body-font', children=mission)
             ])
         ])
-    ])
+    ]),
+    FooterNavigation("Projects", "/projects")
 ])

@@ -5,7 +5,10 @@ from utils import clean_cache  # Ensure this module is defined and accessible
 # Initialize the Dash app with Bootstrap support
 app = Dash(
     __name__,
-    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    external_stylesheets=[
+        dbc.themes.BOOTSTRAP,
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    ],
     suppress_callback_exceptions=True
 )
 app.title = "Yassien Tawfik | Portfolio"

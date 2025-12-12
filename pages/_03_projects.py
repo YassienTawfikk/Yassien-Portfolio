@@ -1,5 +1,6 @@
 from dash import html
 import json
+from components.footer_navigation import FooterNavigation
 import os
 
 CONFIG_FILE_PATH = "data/_03_projects.json"
@@ -203,5 +204,6 @@ layout = html.Div([
     html.Link(rel="stylesheet", href=CSS_FILE_PATH),
     html.Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"),
     
-    html.Div(className='projects-page-container main-container', children=sections)
+    html.Div(className='projects-page-container main-container', children=sections),
+    FooterNavigation("Education", "/education")
 ])

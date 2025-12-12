@@ -1,5 +1,6 @@
 from dash import html
 from utils.json_utils import get_json_values
+from components.footer_navigation import FooterNavigation
 
 # Constants for paths
 CONFIG_FILE_PATH = "data/_05_skills.json"
@@ -52,6 +53,7 @@ layout = html.Div([
         # Container
         html.Div([
             create_category_section(cat) for cat in skill_categories
-        ], className='all-skills-container')
-    ], className='skills-page')
+        ], className='all-skills-container'),
+    ], className='skills-page main-container'),
+    FooterNavigation("Society", "/society")
 ])

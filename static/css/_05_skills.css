@@ -1,6 +1,7 @@
 /* Base Layout */
 .skills-page {
-    padding: 60px 80px;
+    padding-top: 50px;
+    /* padding-bottom: 50px; */
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
@@ -8,16 +9,18 @@
     background: transparent;
 }
 
-/* Typography - Matching Education/Standard Page Style */
+/* Typography - Matching Projects Page Style */
 .title {
     font-size: 52px;
     font-weight: 700;
     letter-spacing: 1px;
     padding: 10px 1px;
     position: relative;
-    /* Aligning left adjustments matches other pages */
+    /* Aligning with projects page */
     left: -2px;
     margin-bottom: 50px;
+    color: var(--white-color);
+    text-align: left;
     display: inline-block;
 }
 
@@ -28,7 +31,7 @@
     height: 1px;
     width: 80px;
     bottom: 0;
-    left: 1px;
+    left: 0;
 }
 
 /* Grid Layout */
@@ -170,7 +173,7 @@
 /* Responsiveness */
 @media (max-width: 1024px) {
     .skills-page {
-        padding: 50px 40px;
+        padding: 50px 40px 0 40px;
     }
 }
 

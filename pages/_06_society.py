@@ -1,5 +1,6 @@
 from dash import html
 import json
+from components.footer_navigation import FooterNavigation
 from utils.json_utils import get_json_values
 
 CSS_FILE_PATH = "../static/css/_06_society.css"
@@ -64,6 +65,7 @@ layout = html.Div([
         ]),
         html.Button(id='scroll-right', children=[html.I(className="fa-solid fa-circle-chevron-right")]),
     ]),
+    FooterNavigation("Certificates", "/certificates")
 
 ],
     className='society-port')

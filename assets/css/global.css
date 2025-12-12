@@ -118,3 +118,66 @@ button:hover {
 .image>img {
     width: 100%;
 }
+
+/* -------------------------------------------------- */
+/* Footer Navigation                                  */
+/* -------------------------------------------------- */
+.footer-nav-container {
+    margin-top: 80px;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    transform: translateY(-5px);
+}
+
+.footer-nav-label {
+    font-size: 0.85rem;
+    color: var(--secondary-white-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.footer-nav-link:hover .footer-nav-label {
+    opacity: 1;
+}
+
+.footer-nav-title {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-arrow {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-nav-link:hover .footer-arrow {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .footer-nav-title {
+        font-size: 1.5rem;
+    }
+}

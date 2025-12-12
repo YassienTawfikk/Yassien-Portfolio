@@ -92,6 +92,10 @@
     left: 10px;
 }
 
+.courses-container {
+    margin-bottom: 50px;
+}
+
 @media (max-width: 975px) {
     .image-holder>div:last-child {
         display: none;
@@ -104,6 +108,11 @@
     .education-container {
         margin-left: 10px;
     }
+
+    .courses-container {
+        margin-bottom: 0;
+    }
+
 }
 
 @media (max-width: 860px) {
