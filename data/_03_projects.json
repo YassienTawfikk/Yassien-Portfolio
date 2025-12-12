@@ -962,7 +962,7 @@
     {
       "title": "CheckMate - Chess Game",
       "short_description": "Two-player chess game with GUI using Java Swing, featuring move validation, themes, and gameplay tracking.",
-      "overview_image": "assets/images/projects_poster/CheckMate_-_Chess_Game.png",
+      "overview_image": "assets/images/projects_poster/CheckMate.png",
       "github_link": "https://github.com/YassienTawfikk/CheckMate.git",
       "tech_stack": [
         "Java",
