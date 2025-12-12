@@ -15,7 +15,44 @@ except Exception as e:
     print(f"Error loading projects data: {e}")
     projects_list = []
 
-def create_project_card(project):
+def get_project_domain(title, tags):
+    """
+    Infers the primary domain/direction from tags and title.
+    Returns a tuple (Domain Name, Icon Class).
+    """
+    tags_str = " ".join(tags).lower()
+    title_lower = title.lower()
+    
+    # Explicit Overrides
+    if "soundprints" in title_lower or "audiophileeq" in title_lower:
+        return "Audio & Signal Processing", "fa-solid fa-wave-square"
+    if "lifestream" in title_lower:
+        return "Mobile & IoT System", "fa-solid fa-mobile-screen"
+    if "sequencealignx" in title_lower:
+        return "Biomedical Engineering", "fa-solid fa-heart-pulse"
+    if "smartretailregressor" in title_lower or "predictiloan" in title_lower:
+        return "Data Science & analytics", "fa-solid fa-chart-line"
+    
+    if "game" in tags_str:
+        return "Game Development", "fa-solid fa-gamepad"
+    if "medical" in tags_str or "biomedical" in tags_str or "healthcare" in tags_str:
+        if "ai" in tags_str or "learning" in tags_str:
+            return "Medical AI", "fa-solid fa-brain"
+        return "Biomedical Engineering", "fa-solid fa-heart-pulse"
+    if "deep learning" in tags_str or "machine learning" in tags_str or "data" in tags_str:
+        return "AI & Data Science", "fa-solid fa-robot"
+    if "computer vision" in tags_str or "image" in tags_str:
+        return "Computer Vision", "fa-solid fa-eye"
+    if "embedded" in tags_str or "hardware" in tags_str or "iot" in tags_str:
+        return "Embedded Systems", "fa-solid fa-microchip"
+    if "audio" in tags_str or "signal" in tags_str:
+        return "Signal Processing", "fa-solid fa-wave-square"
+    if "web" in tags_str or "mobile" in tags_str or "app" in tags_str:
+        return "Web & Mobile App", "fa-solid fa-laptop-code"
+    
+    return "Software Engineering", "fa-solid fa-code"
+
+def create_project_card(project, is_featured=False):
     """
     Creates a Dash HTML component for a single project card.
     """
@@ -27,44 +64,144 @@ def create_project_card(project):
     github_link = project.get("github_link", "")
     live_demo = project.get("live_demo", "")
     
-    # Limit displayed tags and tech stack to avoid clutter
-    display_tags = tags[:3]
+    domain_name, domain_icon = get_project_domain(title, tags)
+    
+    # Limit displayed tech stack to avoid clutter
     display_tech = tech_stack[:5]
 
-    return html.Div(className='project-card', children=[
+    card_class = 'project-card featured-card' if is_featured else 'project-card'
+
+    return html.Div(className=card_class, children=[
         html.Div(className='project-image-container', children=[
-            html.Img(src=image_url, className='project-image', alt=f"{title} Overview")
+            html.Img(src=image_url, className='project-image', alt=f"{title} Overview"),
+            html.Div(className="live-badge", children="LIVE DEMO") if is_featured else None
         ]),
         html.Div(className='project-content', children=[
-            html.H3(title, className='project-title head-font'),
-            
-            html.Div(className='project-tags', children=[
-                html.Span(tag, className='project-tag body-font') for tag in display_tags
+            # Domain Badge
+            html.Div(className='project-domain-badge', children=[
+                html.I(className=f"{domain_icon} domain-icon"),
+                html.Span(domain_name, className='domain-text body-font')
             ]),
+            
+            html.H3(title, className='project-title head-font'),
             
             html.P(short_desc, className='project-description body-font'),
             
-            html.Div(className='project-tech-stack', children=[
-                 html.Span(tech, className='tech-badge body-font') for tech in display_tech
+            # Tech Stack Section
+            html.Div(className='tech-stack-section', children=[
+                html.P("Tech Stack", className='tech-section-label head-font'),
+                html.Div(className='project-tech-stack', children=[
+                     html.Span(tech, className='tech-badge body-font') for tech in display_tech
+                ])
             ]),
             
             html.Div(className='project-links', children=[
-                html.A("Code", href=github_link, target="_blank", className='project-link-btn body-font') if github_link else None,
-                html.A("Live Demo", href=live_demo, target="_blank", className='project-link-btn secondary body-font') if live_demo else None
+                html.A([html.I(className="fab fa-github"), " Code"], href=github_link, target="_blank", className='project-link-btn body-font') if github_link else None,
+                html.A([html.I(className="fas fa-play"), " Live Demo"], href=live_demo, target="_blank", className='project-link-btn secondary body-font') if live_demo else None
             ])
         ])
     ])
 
+# --- Processing & Categorization ---
+
+# 1. Identify Featured Projects (Live Demos)
+featured_projects = [p for p in projects_list if p.get("live_demo")]
+other_projects = [p for p in projects_list if not p.get("live_demo")]
+
+# 2. Categorize Other Projects
+categories = {
+    "AI & Data Science": [],
+    "Computer Vision & Image Processing": [],
+    "Biomedical & Signal Processing": [],
+    "Web, Mobile & Software": [],
+    "Embedded Systems & IoT": [],
+    "Game Development": []
+}
+
+for p in other_projects:
+    tags_str = " ".join(p.get("tags", [])).lower()
+    
+    if "game" in tags_str:
+        categories["Game Development"].append(p)
+    elif any(kw in tags_str for kw in ["deep learning", "machine learning", "data", "regression", "prediction", "analytics", "svm", "forest", "xgboost", "ml"]):
+        categories["AI & Data Science"].append(p)
+    elif "computer vision" in tags_str or "image" in tags_str:
+        categories["Computer Vision & Image Processing"].append(p)
+    elif "embedded" in tags_str or "arduino" in tags_str:
+        categories["Embedded Systems & IoT"].append(p)
+    elif "medical" in tags_str or "biomedical" in tags_str or "signal" in tags_str or "audio" in tags_str:
+        categories["Biomedical & Signal Processing"].append(p)
+    else:
+        # Default fallback
+        categories["Web, Mobile & Software"].append(p)
+
+# Specific re-assignment for user feedback consistency
+# Ensure "LifeStream" is in Web/Mobile if it got caught elsewhere (e.g. Biomedical)
+# And ensures typical categorization flow is respected.
+# Actually, let's just move LifeStream manually if needed or adjust logic.
+# LifeStream has "Mobile App", let's prioritize "Mobile App" check if we want it there,
+# BUT identifying "Biomedical" projects vs "Mobile" projects that are biomedical is tricky.
+# Simplest fix for LifeStream: Explicit override or check "mobile app" before biomedical.
+
+# Let's refine the logic block above entirely to be cleaner.
+# Resetting categories to refill properly.
+
+categories = {
+    "AI & Data Science": [],
+    "Computer Vision & Image Processing": [],
+    "Biomedical & Signal Processing": [],
+    "Web, Mobile & Software": [],
+    "Embedded Systems & IoT": [],
+    "Game Development": []
+}
+
+for p in other_projects:
+    tags_str = " ".join(p.get("tags", [])).lower()
+    title = p.get("title", "").lower()
+    
+    # Specific Overrides/Priority
+    if "lifestream" in title or "soundprints" in title:
+         categories["Web, Mobile & Software"].append(p)
+         continue
+         
+    if "game" in tags_str:
+        categories["Game Development"].append(p)
+    elif any(kw in tags_str for kw in ["deep learning", "machine learning", "data", "regression", "prediction", "analytics", "svm", "forest", "xgboost", "ml"]):
+        categories["AI & Data Science"].append(p)
+    elif "computer vision" in tags_str or "image" in tags_str:
+        categories["Computer Vision & Image Processing"].append(p)
+    elif "embedded" in tags_str or "arduino" in tags_str:
+        categories["Embedded Systems & IoT"].append(p)
+    elif "medical" in tags_str or "biomedical" in tags_str or "signal" in tags_str or "audio" in tags_str:
+        categories["Biomedical & Signal Processing"].append(p)
+    else:
+        categories["Web, Mobile & Software"].append(p)
+
 # Define layout
+sections = []
+
+# Title
+sections.append(html.H1("Projects", className='page-title head-font'))
+
+# featured Section
+if featured_projects:
+    sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], className='section-title featured-title head-font'))
+    sections.append(html.Div(className='projects-grid featured-grid', children=[
+        create_project_card(proj, is_featured=True) for proj in featured_projects
+    ]))
+    sections.append(html.Hr(className="section-divider"))
+
+# Category Sections
+for category, projects in categories.items():
+    if projects:
+        sections.append(html.H2(category, className='section-title head-font'))
+        sections.append(html.Div(className='projects-grid', children=[
+            create_project_card(proj, is_featured=False) for proj in projects
+        ]))
+
 layout = html.Div([
     html.Link(rel="stylesheet", href=CSS_FILE_PATH),
-    html.Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"), # Ensure icons work if needed, generic import
+    html.Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"),
     
-    html.Div(className='projects-page-container main-container', children=[
-        html.H1("Projects", className='page-title head-font'),
-        
-        html.Div(className='projects-grid', children=[
-            create_project_card(proj) for proj in projects_list
-        ])
-    ])
+    html.Div(className='projects-page-container main-container', children=sections)
 ])

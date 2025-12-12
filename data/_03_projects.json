@@ -835,6 +835,33 @@
       "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications."
     },
     {
+      "title": "CyberMazer-2077",
+      "short_description": "Interactive maze game with Mini and Mega sizes, solved using dynamic programming and visualized paths.",
+      "overview_image": "assets/images/projects_poster/CyberMazer.png",
+      "github_link": "https://github.com/YassienTawfikk/CyberMazer-2077.git",
+      "live_demo": "https://yassientawfikk.github.io/CyberMazer-2077/",
+      "tech_stack": [
+        "HTML/CSS/JS",
+        "Tkinter / Pygame",
+        "Dynamic Programming"
+      ],
+      "tags": [
+        "Game",
+        "Maze",
+        "Pathfinding",
+        "Dynamic Programming",
+        "Visualization"
+      ],
+      "highlights": [
+        "Mini and Mega maze options.",
+        "Interactive start point selection.",
+        "Dynamic programming algorithm for optimized pathfinding.",
+        "Visual representation of trajectories for both maze sizes."
+      ],
+      "year": "2024",
+      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding."
+    },
+    {
       "title": "Hospital System Website",
       "short_description": "A comprehensive Hospital Management System built with Flask, providing seamless interactions for patients, doctors, and administrators with appointments, prescriptions, and profiles.",
       "overview_image": "assets/images/projects_poster/Hospital_System_Website.png",
@@ -931,33 +958,6 @@
       ],
       "year": "2024",
       "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
-    },
-    {
-      "title": "CyberMazer-2077",
-      "short_description": "Interactive maze game with Mini and Mega sizes, solved using dynamic programming and visualized paths.",
-      "overview_image": "assets/images/projects_poster/CyberMazer.png",
-      "github_link": "https://github.com/YassienTawfikk/CyberMazer-2077.git",
-      "live_demo": "https://yassientawfikk.github.io/CyberMazer-2077/",
-      "tech_stack": [
-        "HTML/CSS/JS",
-        "Tkinter / Pygame",
-        "Dynamic Programming"
-      ],
-      "tags": [
-        "Game",
-        "Maze",
-        "Pathfinding",
-        "Dynamic Programming",
-        "Visualization"
-      ],
-      "highlights": [
-        "Mini and Mega maze options.",
-        "Interactive start point selection.",
-        "Dynamic programming algorithm for optimized pathfinding.",
-        "Visual representation of trajectories for both maze sizes."
-      ],
-      "year": "2024",
-      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding."
     },
     {
       "title": "CheckMate - Chess Game",
