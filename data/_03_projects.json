@@ -837,7 +837,7 @@
     {
       "title": "Hospital System Website",
       "short_description": "A comprehensive Hospital Management System built with Flask, providing seamless interactions for patients, doctors, and administrators with appointments, prescriptions, and profiles.",
-      "overview_image": "assets/images/projects_poster/Hospital_System_Website.jpg",
+      "overview_image": "assets/images/projects_poster/Hospital_System_Website.png",
       "github_link": "https://github.com/YassienTawfikk/Hospital-System-Website",
       "live_demo": "https://hospital-system-website.vercel.app/login",
       "tech_stack": [
