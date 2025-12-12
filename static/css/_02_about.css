@@ -143,6 +143,7 @@
         width: 100%;
         display: block;
         margin-left: 0;
+        font-size: var(--mobile-font-h1);
     }
 
     .about-title:after {

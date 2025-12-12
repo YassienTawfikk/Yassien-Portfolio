@@ -163,7 +163,8 @@
     }
 
     .name-title>span {
-        font-size: 40px;
+        /* Intro needs to be larger than standard H1 to be a "hero" */
+        font-size: calc(var(--mobile-font-h1) * 1.5);
         /* Smaller font size */
         margin: 0 5px;
         line-height: 1.2;

@@ -13,6 +13,13 @@
     --white-color: #ffffff;
     --secondary-white-color: #cccccc;
     --photo-bg: #c4c4c4;
+
+    /* Standardized Mobile Font Sizes */
+    --mobile-font-h1: 36px;
+    --mobile-font-h2: 24px;
+    --mobile-font-h3: 20px;
+    --mobile-font-p: 15px;
+    --mobile-font-small: 13px;
 }
 
 /* -------------------------------------------------- */

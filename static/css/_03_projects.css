@@ -174,7 +174,20 @@
     }
 
     .page-title {
-        font-size: 2rem;
+        font-size: var(--mobile-font-h1);
         margin-bottom: 30px;
+    }
+
+    .project-title {
+        font-size: var(--mobile-font-h3);
+    }
+
+    .project-description {
+        font-size: var(--mobile-font-p);
+    }
+
+    .project-tag,
+    .tech-badge {
+        font-size: var(--mobile-font-small);
     }
 }

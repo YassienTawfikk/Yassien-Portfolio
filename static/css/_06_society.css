@@ -245,6 +245,34 @@ i {
     }
 
     /* 4. Vertical Stack: Image Top */
+    .page-title {
+        font-size: var(--mobile-font-h1);
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 25px;
+    }
+
+    .page-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .subtitle {
+        font-size: var(--mobile-font-h2);
+    }
+
+    .role-title {
+        font-size: var(--mobile-font-h3);
+    }
+
+    .timeline {
+        font-size: var(--mobile-font-small);
+    }
+
+    .description {
+        font-size: var(--mobile-font-p);
+    }
+
     .member-fig {
         flex-direction: column;
         align-items: center;
