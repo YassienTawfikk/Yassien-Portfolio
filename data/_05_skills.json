@@ -1,0 +1,146 @@
+{
+    "skill_categories": [
+        {
+            "category": "AI & Deep Learning",
+            "category_icon": "fa-solid fa-brain",
+            "description": "Designing robust neural networks and deep learning pipelines for medical diagnostics.",
+            "skills": [
+                {
+                    "name": "Neural Network Design",
+                    "image_url": "https://img.icons8.com/color/96/brain.png"
+                },
+                {
+                    "name": "Medical Image Segmentation",
+                    "image_url": "https://i.postimg.cc/rwCr7vdn/brain-imaging.png",
+                    "details": "U-Net, nnU-Net"
+                },
+                {
+                    "name": "Explainable AI (XAI)",
+                    "image_url": "https://img.icons8.com/color/96/search-property.png",
+                    "details": "SHAP, Grad-CAM"
+                },
+                {
+                    "name": "EfficientNet",
+                    "image_url": "https://img.icons8.com/color/96/processor.png"
+                }
+            ]
+        },
+        {
+            "category": "Computer Vision & Imaging",
+            "category_icon": "fa-solid fa-eye",
+            "description": "Processing multi-modal medical images (MRI/CT) and extracting clinical features.",
+            "skills": [
+                {
+                    "name": "Image Preprocessing",
+                    "image_url": "https://img.icons8.com/color/96/image-file.png",
+                    "details": "MRI, CT, Denoising"
+                },
+                {
+                    "name": "Feature Extraction",
+                    "image_url": "https://img.icons8.com/color/96/barcode.png"
+                },
+                {
+                    "name": "Dimensionality Reduction",
+                    "image_url": "https://img.icons8.com/color/96/collapse.png",
+                    "details": "PCA, t-SNE"
+                },
+                {
+                    "name": "Multi-modal Analysis",
+                    "image_url": "https://img.icons8.com/color/96/collage.png"
+                }
+            ]
+        },
+        {
+            "category": "Frameworks & Tools",
+            "category_icon": "fa-solid fa-toolbox",
+            "description": "Industry-standard libraries for data science, machine learning, and signal processing.",
+            "skills": [
+                {
+                    "name": "PyTorch",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                },
+                {
+                    "name": "TensorFlow",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                },
+                {
+                    "name": "MONAI",
+                    "image_url": "https://raw.githubusercontent.com/Project-MONAI/MONAI/dev/docs/images/MONAI-logo-color.png"
+                },
+                {
+                    "name": "Scikit-learn",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                },
+                {
+                    "name": "OpenCV",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+                },
+                {
+                    "name": "Pandas",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                },
+                {
+                    "name": "SciPy",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                }
+            ]
+        },
+        {
+            "category": "Software Engineering",
+            "category_icon": "fa-solid fa-code",
+            "description": "Full-stack development capabilities and GUI application design.",
+            "skills": [
+                {
+                    "name": "Python",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                },
+                {
+                    "name": "C++",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                },
+                {
+                    "name": "Java",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                },
+                {
+                    "name": "JavaScript",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                },
+                {
+                    "name": "HTML5 & CSS3",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                },
+                {
+                    "name": "GUI Development",
+                    "image_url": "https://img.icons8.com/color/96/web-design.png",
+                    "details": "PyQt, Tkinter"
+                }
+            ]
+        },
+        {
+            "category": "Biomedical & Embedded",
+            "category_icon": "fa-solid fa-heart-pulse",
+            "description": "Bridging hardware and software for real-time signal processing and device control.",
+            "skills": [
+                {
+                    "name": "Signal Processing",
+                    "image_url": "https://img.icons8.com/color/96/audio-wave.png",
+                    "details": "ECG, EEG, Filtering"
+                },
+                {
+                    "name": "STM32",
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg"
+                },
+                {
+                    "name": "Embedded Systems",
+                    "image_url": "https://img.icons8.com/color/96/integrated-circuit.png"
+                },
+                {
+                    "name": "Bioinformatics",
+                    "image_url": "https://img.icons8.com/color/96/dna-helix.png",
+                    "details": "Genomics, Microbiome"
+                }
+            ]
+        }
+    ]
+}
