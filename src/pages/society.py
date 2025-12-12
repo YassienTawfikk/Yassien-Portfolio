@@ -28,7 +28,7 @@ for index in range(len(data['society'])):
 # Define layout
 layout = html.Div([
     # CSS auto-loaded
-    html.Div("Society Involvement", className='title head-font'),
+    html.Div("Society Involvement", className='society-title head-font'),
     html.Div(className='society-content-wrapper', children=[
         html.Button(id='scroll-left', children=[html.I(className="fa-solid fa-circle-chevron-left")]),
         html.Div(className='involvements-holder main-container', id='involvements-id', children=[

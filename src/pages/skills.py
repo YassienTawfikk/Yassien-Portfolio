@@ -47,7 +47,7 @@ def create_category_section(category):
 # Define layout
 layout = html.Div([
     html.Div([
-        html.Span('Skills', className='title head-font'),
+        html.Span('Skills', className='skills-title head-font'),
         # Container
         html.Div([
             create_category_section(cat) for cat in skill_categories

@@ -10,28 +10,32 @@
 }
 
 /* Typography - Matching Projects Page Style */
-.title {
+/* Typography - Matching Projects Page Style */
+.skills-title {
     font-size: 52px;
     font-weight: 700;
     letter-spacing: 1px;
     padding: 10px 1px;
     position: relative;
-    /* Aligning with projects page */
-    left: -2px;
     margin-bottom: 50px;
     color: var(--white-color);
-    text-align: left;
+    text-align: center;
     display: inline-block;
+    /* Becomes block in flex parent if we want full width centering, but inline-block allows underline to match text width? No, traditionally title blocks are block or use text-align center on parent. The parent is flex column. */
+    /* Let's double check parent */
+    width: 100%;
+    /* Ensure it takes full width for centering */
 }
 
-.title:after {
+.skills-title:after {
     content: '';
     position: absolute;
     background-color: var(--white-color);
     height: 1px;
     width: 80px;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Grid Layout */
