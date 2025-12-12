@@ -111,9 +111,7 @@
         display: none;
     }
 
-    .image-holder {
-        display: none;
-    }
+    /* .image-holder { display: none; } removed to allow first image to show */
 
     .education-container {
         margin: 0;
