@@ -64,16 +64,14 @@
     color: var(--white-color);
     justify-content: space-between;
     display: none;
+    /* Hidden by default on ALL screens */
     z-index: 10;
 }
 
-@media (min-width: 769px) {
-
-    .navbar-nav span:nth-child(4):hover+.navblock,
-    .navblock:hover {
-        display: flex;
-        flex-direction: column;
-    }
+/* Universal Toggle Class */
+.navblock.nav-open {
+    display: flex;
+    flex-direction: column;
 }
 
 .navblock span {
@@ -81,7 +79,8 @@
     padding: 10px;
 }
 
-@media (max-width: 580px) {
+/* Mobile Layout Styling */
+@media (max-width: 768px) {
     .navbar {
         height: 15vh;
         flex-direction: column;
