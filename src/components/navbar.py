@@ -4,22 +4,45 @@ from src.pages import home
 def Navbar():
     """
     Returns the application navigation bar.
+    Rebuilt with semantic HTML5 and cleaner structure.
     """
-    return html.Div(className='main-container navbar', children=[
-        html.Span(children=[dcc.Link(home.signature, className="signature", href="/")]),
-        html.Div(className="navbar-nav body-font", children=[
-            html.Span(children=[dcc.Link("Home", href="/")]),
-            html.Span(children=[dcc.Link("About", href="/about")]),
-            html.Span(children=[dcc.Link("Projects", href="/projects")]),
-            html.Span(children=[
-                html.I(className="fa-solid fa-bars", id="hover-trigger")
-            ]),
-            html.Div(className="navblock", id="nav-block", children=[
-                html.Span(children=[dcc.Link("Education", href="/education")]),
-                html.Span(children=[dcc.Link("Skills", href="/skills")]),
-                html.Span(children=[dcc.Link("Society", href="/society")]),
-                html.Span(children=[dcc.Link("Certificates", href="/certificates")]),
-                html.Span(children=[dcc.Link("Contact", href="/contact")]),
-            ]),
-        ]),
+    nav_links = [
+        ("Home", "/"),
+        ("About", "/about"),
+        ("Projects", "/projects"),
+        ("Education", "/education"),
+        ("Skills", "/skills"),
+        ("Society", "/society"),
+        ("Certificates", "/certificates"),
+        ("Contact", "/contact"),
+    ]
+
+    return html.Nav(className="navbar", children=[
+        html.Div(className="navbar-container", children=[
+            # 1. Logo / Signature
+            dcc.Link(
+                html.Span(home.signature, className="navbar-logo"),
+                href="/",
+                className="navbar-brand"
+            ),
+
+            # 2. Mobile Menu Toggle
+            html.Button(
+                children=[
+                    html.Span(className="hamburger-line"),
+                    html.Span(className="hamburger-line"),
+                    html.Span(className="hamburger-line"),
+                ],
+                id="navbar-toggle-btn",
+                className="navbar-toggle",
+                **{"aria-label": "Toggle navigation", "aria-expanded": "false"}
+            ),
+
+            # 3. Navigation Links
+            html.Ul(id="navbar-menu-list", className="navbar-menu", children=[
+                html.Li(
+                    dcc.Link(label, href=href, className="nav-link")
+                ) for label, href in nav_links
+            ])
+        ])
     ])

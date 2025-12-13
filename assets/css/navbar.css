@@ -1,98 +1,159 @@
 /* -------------------------------------------------- */
-/* Navbar Styling                                     */
+/* Navbar Styling - Zen Mode                          */
 /* -------------------------------------------------- */
+
 .navbar {
     background-color: var(--secondary-color);
-    color: #ffffff;
     width: 100%;
-    height: 10vh;
+    height: 80px;
+    /* Fixed height for consistency */
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Very subtle shadow */
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
     padding: 0 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.signature {
-    font-family: "Mrs Saint Delafield", serif;
-    font-size: 35px;
-    padding: 5px;
-}
-
-.navbar-nav {
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin-left: auto;
-    padding: 0;
-    font-size: 15px;
-    font-weight: 100;
-}
-
-.navbar-nav>span {
-    padding: 10px;
-    margin-right: 50px;
-}
-
-.navbar-nav .image {
-    height: 24px;
-}
-
-.navbar-nav>span:nth-child(4) {
-    margin-right: 10px;
-}
-
-.navbar-nav a {
-    color: var(--white-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.navbar-nav a:hover {
-    color: var(--secondary-white-color);
-    cursor: pointer;
-}
-
-.navblock {
-    position: absolute;
-    right: 2.5%;
-    top: 102%;
-    height: 350px;
-    width: 20%;
-    border-radius: 20px;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
     justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------------------------------------------- */
+/* Brand / Logo                                       */
+/* -------------------------------------------------- */
+.navbar-brand {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.navbar-logo {
+    font-family: "Mrs Saint Delafield", cursive;
+    font-size: 2.2rem;
+    color: var(--white-color);
+    letter-spacing: 1px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    opacity: 1;
+}
+
+/* -------------------------------------------------- */
+/* Navigation Links (Desktop)                         */
+/* -------------------------------------------------- */
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    /* Light font for calm vibe */
+    color: var(--secondary-white-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Micro-interaction: opacity change only */
+.nav-link:hover {
+    color: var(--white-color);
+    opacity: 1;
+}
+
+/* -------------------------------------------------- */
+/* Mobile Toggle (Hamburger)                          */
+/* -------------------------------------------------- */
+.navbar-toggle {
     display: none;
-    z-index: 10;
+    /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    /* Above overlay */
 }
 
-@media (min-width: 769px) {
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--white-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
 
-    .navbar-nav span:nth-child(4):hover+.navblock,
-    .navblock:hover {
+/* -------------------------------------------------- */
+/* Mobile Styles                                      */
+/* -------------------------------------------------- */
+@media (max-width: 900px) {
+    .navbar-toggle {
         display: flex;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(45, 45, 45, 0.98);
+        /* Almost opaque overlay */
         flex-direction: column;
-    }
-}
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
 
-.navblock span {
-    margin: 10px;
-    padding: 10px;
-}
+        /* Hidden state */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 1000;
 
-@media (max-width: 580px) {
-    .navbar {
-        height: 15vh;
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .navbar-nav {
-        margin: 2px auto;
+        /* Prevent scroll on body when open handled by JS usually, 
+           but for simple overlay this is okay */
     }
 
-    .navblock {
-        width: 95%;
+    /* Active State (toggled by JS) */
+    .navbar-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--white-color);
+    }
+
+    /* Hamburger Animation to X */
+    .navbar-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
     }
 }
