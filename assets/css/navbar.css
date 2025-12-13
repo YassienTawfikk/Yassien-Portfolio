@@ -40,6 +40,7 @@
     letter-spacing: 1px;
     opacity: 0.9;
     transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .navbar-brand:hover .navbar-logo {
