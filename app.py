@@ -11,6 +11,9 @@ app = Dash(
         dbc.themes.BOOTSTRAP,
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     ],
+    external_scripts=[
+        "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ],
     suppress_callback_exceptions=True,
     title="Yassien Tawfik | Portfolio"
 )
