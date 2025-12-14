@@ -138,6 +138,7 @@ button:hover {
     align-items: center;
     text-decoration: none;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .footer-nav-link:hover {
@@ -152,6 +153,7 @@ button:hover {
     margin-bottom: 12px;
     opacity: 0.6;
     transition: opacity 0.3s ease;
+    cursor: inherit;
 }
 
 .footer-nav-link:hover .footer-nav-label {
@@ -164,7 +166,7 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 15px;
-    cursor: pointer;
+    cursor: inherit;
 }
 
 .footer-arrow {

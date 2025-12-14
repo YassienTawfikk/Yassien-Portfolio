@@ -1,0 +1,123 @@
+// assets/js/contact.js
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // --- 1. CONFIGURATION ---
+    const EMAILJS_PUBLIC_KEY = "A03Gz-zzs0j09uVz3";
+    const EMAILJS_SERVICE_ID = "service_2k9xyz";
+    const EMAILJS_TEMPLATE_ID = "template_d4ryemm";
+
+    // --- 2. INITIALIZATION ---
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    } else {
+        console.warn("EmailJS SDK not loaded. Form functionality disabled.");
+    }
+
+    // --- 3. COPY TO CLIPBOARD LOGIC ---
+    // Helper function
+    function setupCopyButton(btnId, textId, feedbackId) {
+        const btn = document.getElementById(btnId);
+        const textEl = document.getElementById(textId); // Or simply pass the string
+        const feedback = document.getElementById(feedbackId);
+
+        if (btn && textEl) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const textToCopy = textEl.innerText || textEl.textContent;
+
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Success Feedback
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i>'; // Change icon to check
+                    if (feedback) {
+                        feedback.innerText = "Copied!";
+                        feedback.classList.add('visible');
+                    }
+
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i>'; // Revert icon
+                        if (feedback) {
+                            feedback.classList.remove('visible');
+                        }
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        }
+    }
+
+    // Initialize Copy Buttons (Wait for Dash to render if using Dash, but this is pure JS running on loaded DOM)
+    // Since Dash renders dynamically, we might need a MutationObserver or a delay.
+    // However, if we put this script in assets/ it loads early. 
+    // We'll use a MutationObserver to watch for the elements appearing.
+
+    const observer = new MutationObserver(function (mutations, me) {
+        const emailBtn = document.getElementById('copy-email-btn');
+        if (emailBtn) {
+            setupCopyButton('copy-email-btn', 'contact-email-text', 'email-copy-feedback');
+            setupCopyButton('copy-phone-btn', 'contact-phone-text', 'phone-copy-feedback');
+            me.disconnect(); // Stop observing once found
+            // Re-attach listener for form submission since it might have been missed
+            attachFormListener();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    // Fallback for form listener
+    function attachFormListener() {
+        const contactForm = document.getElementById('zen-contact-form');
+        const submitBtn = document.getElementById('zen-submit-btn');
+        const feedbackEl = document.getElementById('zen-form-feedback');
+
+        if (contactForm && !contactForm.dataset.listenerAttached) {
+            contactForm.dataset.listenerAttached = "true"; // Prevent double binding
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Loading State
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = "Processing...";
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.5";
+
+                // Clear previous feedback
+                feedbackEl.classList.remove('visible');
+                feedbackEl.innerText = "";
+
+                // Collect Data
+                const params = {
+                    from_name: document.getElementById('from_name').value,
+                    reply_to: document.getElementById('reply_to').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Send Email
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+                    .then(function () {
+                        feedbackEl.innerText = "Message received. Thank you.";
+                        feedbackEl.classList.add('visible');
+                        contactForm.reset();
+                        submitBtn.innerText = "Sent";
+                        setTimeout(() => {
+                            submitBtn.innerText = originalBtnText;
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = "1";
+                        }, 3000);
+                    }, function (error) {
+                        console.error('EmailJS Error:', error);
+                        feedbackEl.innerText = "Transmission failed. Please try again.";
+                        feedbackEl.classList.add('visible');
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = "1";
+                    });
+            });
+        }
+    }
+});
