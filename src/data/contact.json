@@ -1,0 +1,31 @@
+{
+    "profile": {
+        "name": "Yassien Tawfik",
+        "description": "",
+        "location": "Cairo, Egypt",
+        "image": "/assets/images/contact/contact.jpg"
+    },
+    "direct_contact": {
+        "email": "Yassien.m.m.tawfik@gmail.com",
+        "phone": "+201096835548"
+    },
+    "social_channels": [
+        {
+            "platform": "LinkedIn",
+            "url": "https://linkedin.com/in/yassien-tawfik"
+        },
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/YassienTawfikk"
+        }
+    ],
+    "form_configuration": {
+        "provider": "EmailJS",
+        "public_key": "A03Gz-zzs0j09uVz3",
+        "service_id": "service_2k9xyz",
+        "templates": {
+            "message_submission": "template_d4ryemm",
+            "auto_reply": "template_bir13y8"
+        }
+    }
+}
