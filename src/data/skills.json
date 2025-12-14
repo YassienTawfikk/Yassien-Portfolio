@@ -3,142 +3,167 @@
         {
             "category": "AI & Deep Learning",
             "category_icon": "fa-solid fa-brain",
-            "description": "Designing robust neural networks and deep learning pipelines for medical diagnostics.",
+            "description": "Architecting advanced deep learning architectures and end-to-end pipelines for precision medical diagnostics and clinical decision support.",
             "skills": [
                 {
                     "name": "Neural Network Design",
-                    "image_url": "https://img.icons8.com/color/96/brain.png"
+                    "image_url": "https://img.icons8.com/color/96/brain.png",
+                    "description": "Engineered custom model architectures (CNNs, Transformers) optimized for complex feature extraction in high-dimensional biomedical data."
                 },
                 {
                     "name": "Medical Image Segmentation",
                     "image_url": "https://i.postimg.cc/rwCr7vdn/brain-imaging.png",
-                    "details": "U-Net, nnU-Net"
+                    "details": "U-Net, nnU-Net",
+                    "description": "Deployed state-of-the-art segmentation networks (U-Net, nnU-Net) to automate precise delineation of anatomical structures and pathologies in volumetric scans."
                 },
                 {
                     "name": "Explainable AI (XAI)",
                     "image_url": "https://img.icons8.com/color/96/search-property.png",
-                    "details": "SHAP, Grad-CAM"
+                    "details": "SHAP, Grad-CAM",
+                    "description": "Integrated interpretability frameworks to demystify black-box models, ensuring clinical trust through feature attribution and saliency mapping."
                 },
                 {
                     "name": "EfficientNet",
-                    "image_url": "https://img.icons8.com/color/96/processor.png"
+                    "image_url": "https://img.icons8.com/color/96/processor.png",
+                    "description": "Leveraged compound scaling methods to optimize model performance, balancing accuracy with computational efficiency for resource-constrained deployment."
                 }
             ]
         },
         {
             "category": "Computer Vision & Imaging",
             "category_icon": "fa-solid fa-eye",
-            "description": "Processing multi-modal medical images (MRI/CT) and extracting clinical features.",
+            "description": "Processing multi-modal medical imaging datasets (MRI/CT) to extract high-fidelity clinical biomarkers for diagnostic enhancement.",
             "skills": [
                 {
                     "name": "Image Preprocessing",
                     "image_url": "https://img.icons8.com/color/96/image-file.png",
-                    "details": "MRI, CT, Denoising"
+                    "details": "MRI, CT, Denoising",
+                    "description": "Implemented rigorous preprocessing pipelines including normalization, artifact removal, and bias field correction to standardize input data."
                 },
                 {
                     "name": "Feature Extraction",
-                    "image_url": "https://img.icons8.com/color/96/barcode.png"
+                    "image_url": "https://img.icons8.com/color/96/barcode.png",
+                    "description": "Deriving quantitative radiomic features and texture descriptors to characterize tissue heterogeneity and disease progression."
                 },
                 {
                     "name": "Dimensionality Reduction",
                     "image_url": "https://img.icons8.com/color/96/collapse.png",
-                    "details": "PCA, t-SNE"
+                    "details": "PCA, t-SNE",
+                    "description": "Applied manifold learning techniques to project high-dimensional feature spaces into interpretable latent representations."
                 },
                 {
                     "name": "Multi-modal Analysis",
-                    "image_url": "https://img.icons8.com/color/96/collage.png"
+                    "image_url": "https://img.icons8.com/color/96/collage.png",
+                    "description": "Synthesized heterogeneous data streams (MRI, CT, Clinical Metadata) to construct holistic patient profiles for robust predictive modeling."
                 }
             ]
         },
         {
             "category": "Frameworks & Tools",
             "category_icon": "fa-solid fa-toolbox",
-            "description": "Industry-standard libraries for data science, machine learning, and signal processing.",
+            "description": "Leveraging industry-standard ecosystems for scalable data science, machine learning, and computational bio-signal processing.",
             "skills": [
                 {
                     "name": "PyTorch",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+                    "description": "Developed and trained dynamic neural networks for research-grade medical imaging and sequence modeling applications."
                 },
                 {
                     "name": "TensorFlow",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+                    "description": "Orchestrated production-ready deep learning pipelines and model serving infrastructure for scalable clinical deployment."
                 },
                 {
                     "name": "MONAI",
-                    "image_url": "https://raw.githubusercontent.com/Project-MONAI/MONAI/dev/docs/images/MONAI-logo-color.png"
+                    "image_url": "https://raw.githubusercontent.com/Project-MONAI/MONAI/dev/docs/images/MONAI-logo-color.png",
+                    "description": "Utilized domain-specific frameworks to accelerate development of healthcare imaging workflows, ensuring reproducibility and standard compliance."
                 },
                 {
                     "name": "Scikit-learn",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg",
+                    "description": "Implemented classical machine learning algorithms for robust classification, regression, and clustering analysis on tabular clinical data."
                 },
                 {
                     "name": "OpenCV",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+                    "description": "Engineered real-time image processing solutions for geometric transformation, filtering, and object detection tasks."
                 },
                 {
                     "name": "Pandas",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+                    "description": "Performed high-volume data manipulation, cleaning, and time-series analysis to structure unstructured medical datasets."
                 },
                 {
                     "name": "SciPy",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+                    "description": "Computed advanced mathematical operations for spectral analysis, optimization, and statistical modeling in biomedical research."
                 }
             ]
         },
         {
             "category": "Software Engineering",
             "category_icon": "fa-solid fa-code",
-            "description": "Full-stack development capabilities and GUI application design.",
+            "description": "Delivering full-stack software solutions and intuitive GUI applications with a focus on modular architecture and user experience.",
             "skills": [
                 {
                     "name": "Python",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+                    "description": "Utilized as the primary driver for AI pipelines, scripting automation, and rapid prototyping of biomedical applications."
                 },
                 {
                     "name": "C++",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+                    "description": "Optimized low-level system performance for resource-intensive medical imaging algorithms and embedded device control."
                 },
                 {
                     "name": "Java",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+                    "description": "Architected object-oriented solutions for scalable enterprise healthcare systems and Android-based mHealth applications."
                 },
                 {
                     "name": "JavaScript",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+                    "description": "Enabled dynamic client-side interactivity and asynchronous data visualization for web-based medical dashboards."
                 },
                 {
                     "name": "HTML5 & CSS3",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+                    "description": "Structured semantic content and implemented responsive design principles to ensure accessibility across clinical interfaces."
                 },
                 {
                     "name": "GUI Development",
                     "image_url": "https://img.icons8.com/color/96/web-design.png",
-                    "details": "PyQt, Tkinter"
+                    "details": "PyQt, Tkinter",
+                    "description": "Designed ergonomic graphical user interfaces to facilitate clinician-software interaction and visualization of complex data."
                 }
             ]
         },
         {
             "category": "Biomedical & Embedded",
             "category_icon": "fa-solid fa-heart-pulse",
-            "description": "Bridging hardware and software for real-time signal processing and device control.",
+            "description": "Bridging biological interfaces and digital systems through real-time signal processing and embedded firmware development.",
             "skills": [
                 {
                     "name": "Signal Processing",
                     "image_url": "https://img.icons8.com/color/96/audio-wave.png",
-                    "details": "ECG, EEG, Filtering"
+                    "details": "ECG, EEG, Filtering",
+                    "description": "Applied digital signal processing techniques (FFT, Wavelet Transforms) to extract physiological markers from noisy biosignals."
                 },
                 {
                     "name": "STM32",
-                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg"
+                    "image_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg",
+                    "description": "Programmed ARM Cortex-M microcontrollers for precise peripheral control and data acquisition in portable medical devices."
                 },
                 {
                     "name": "Embedded Systems",
-                    "image_url": "https://img.icons8.com/color/96/integrated-circuit.png"
+                    "image_url": "https://img.icons8.com/color/96/integrated-circuit.png",
+                    "description": "Engineered firmware for real-time monitoring systems, prioritizing power efficiency and reliability in critical care hardware."
                 },
                 {
                     "name": "Bioinformatics",
                     "image_url": "https://img.icons8.com/color/96/dna-helix.png",
-                    "details": "Genomics, Microbiome"
+                    "details": "Genomics, Microbiome",
+                    "description": "Analyzed high-throughput genomic and microbiome data to uncover biomarkers and support personalized medicine initiatives."
                 }
             ]
         }

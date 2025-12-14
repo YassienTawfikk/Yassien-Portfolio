@@ -10,7 +10,6 @@
 }
 
 /* Typography - Matching Projects Page Style */
-/* Typography - Matching Projects Page Style */
 .skills-title {
     font-size: 52px;
     font-weight: 700;
@@ -21,10 +20,7 @@
     color: var(--white-color);
     text-align: center;
     display: inline-block;
-    /* Becomes block in flex parent if we want full width centering, but inline-block allows underline to match text width? No, traditionally title blocks are block or use text-align center on parent. The parent is flex column. */
-    /* Let's double check parent */
     width: 100%;
-    /* Ensure it takes full width for centering */
 }
 
 .skills-title:after {
@@ -38,7 +34,6 @@
     transform: translateX(-50%);
 }
 
-/* Grid Layout */
 /* Grid Layout */
 .all-skills-container {
     display: flex;
@@ -74,6 +69,7 @@
     margin-right: 12px;
     color: var(--secondary-white-color);
     opacity: 0.7;
+    cursor: default;
 }
 
 .category-title {
@@ -102,14 +98,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    /* Fallback to grid if preferred, but flex wrap is better for perfect centering of variable count items */
-    /* If grid is needed for strict sizing: */
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(130px, 150px)); */
-    /* justify-content: center; */
 }
 
-/* Re-enforcing specific width for flex items if using flexbox for grid-like behavior */
 /* Minimalist Card */
 .skill-card {
     width: 130px;
@@ -124,7 +114,12 @@
     text-align: center;
     /* Subtle transition */
     transition: all 0.3s ease;
-    cursor: default;
+    cursor: pointer;
+}
+
+/* Force all children to have pointer cursor */
+.skill-card * {
+    cursor: pointer;
 }
 
 /* Micro-interactions on Hover */
@@ -172,6 +167,119 @@
     margin-top: 6px;
     color: var(--secondary-white-color);
     opacity: 0.4;
+}
+
+/* Modal Styling */
+.skill-modal-custom .modal-dialog {
+    max-width: 600px !important;
+    /* Cap width for readability */
+    width: fit-content !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.skill-modal-custom .modal-content {
+    background-color: #1a1a1a !important;
+    /* Dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    color: var(--white-color) !important;
+    /* Adaptive width settings */
+    width: auto !important;
+    overflow: visible !important;
+    /* Allow button to hang out if needed */
+}
+
+.modal-header-custom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 20px 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center the content */
+    position: relative;
+    /* For absolute positioning of close button */
+    width: 100%;
+}
+
+.modal-title-custom {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: var(--white-color) !important;
+    text-align: center;
+    /* unified centering */
+    width: 100%;
+}
+
+.modal-close-btn {
+    background: transparent !important;
+    border: none !important;
+    color: var(--secondary-white-color) !important;
+    font-size: 24px;
+    line-height: 1;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    /* Absolute positioning to put it in the corner without affecting title centering */
+    position: absolute;
+    right: -30px;
+    /* Shifted to corner/edge as requested */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-close-btn:hover {
+    color: var(--white-color) !important;
+    transform: translateY(-50%) rotate(90deg);
+    /* Maintain vertical center during rotation */
+}
+
+.modal-body-custom {
+    padding: 40px 30px;
+    /* More breathing room */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* unified centering */
+}
+
+.modal-skill-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    /* Strict Grayscale as requested */
+    filter: grayscale(100%) opacity(0.9);
+    transition: all 0.5s ease;
+}
+
+/* Optional: minimal color restore on hover if they want to see it, 
+   but user said "grayscale note colored" implying generally grayscale.
+   I will add a very subtle opacity change instead of color to keep it "calm". */
+.modal-skill-icon:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.modal-skill-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    /* improved readability */
+    color: var(--secondary-white-color);
+    /* Allow adaptive width but cap it for readability */
+    width: 100%;
+    max-width: 500px;
+    font-weight: 300;
+    /* Lighter weight for "calm" feel */
+    text-align: center;
+    /* Explicitly center */
 }
 
 /* Responsiveness */
