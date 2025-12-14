@@ -22,7 +22,7 @@ layout = html.Div([
     # CSS is auto-loaded from assets/ folder
     html.Div(className="intro-wrapper", children=[
         html.Div(className="profile-section", children=[
-            html.Img(src=IMAGE_SRC)
+            html.Img(src=IMAGE_SRC, key="home-intro-image")
         ]),
         html.Div(className="heading-section", children=[
             html.Span(className="name-title", children=[

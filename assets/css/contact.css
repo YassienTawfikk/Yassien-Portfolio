@@ -3,9 +3,15 @@
 /* -------------------------------------------------- */
 /* General Layout                                     */
 /* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* General Layout                                     */
+/* -------------------------------------------------- */
 .contact-wrapper {
     display: flex;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 /* -------------------------------------------------- */
@@ -26,7 +32,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    /* ------------------------------------------------------ 
+       EDIT HERE to adjust image focus:
+       Change 'top center' to 'center center' or 'X% Y%'
+       (e.g., '50% 20%' shifts focus horizontally and vertically)
+    ------------------------------------------------------ */
     object-position: top center;
+
     position: absolute;
     bottom: 0;
     left: 0;
@@ -38,11 +51,14 @@
 /* Content Section (Right)                           */
 /* -------------------------------------------------- */
 .contact-content-section {
-    width: calc(100% - 700px);
+    width: calc(100% - 35vw);
+    /* fill remaining width */
     display: flex;
     flex-direction: column;
-    margin: 50px auto;
-    padding-right: 50px;
+    justify-content: center;
+    padding: 0 8%;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 /* -------------------------------------------------- */
@@ -52,25 +68,31 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
 }
 
 .contact-title-block h1 {
-    font-size: 60px;
+    /* Fluid typography: shrinks gracefully from 60px to 36px */
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin: 0;
     line-height: 1.1;
     color: var(--white-color);
+    letter-spacing: -1px;
 }
 
 .contact-title-block::after {
     content: '';
     position: absolute;
     height: 1px;
-    width: 300px;
+    width: 150px;
+    /* Shortened for elegance */
     background-color: var(--white-color);
-    left: 420px;
-    top: 35px;
+    left: 0;
+    /* Aligned left with title */
+    bottom: -15px;
+    /* Underneath title */
+    top: auto;
     opacity: 0.5;
 }
 
@@ -78,33 +100,61 @@
 /* Info Brief & Copy Logic                            */
 /* -------------------------------------------------- */
 .contact-info-brief {
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
     color: var(--secondary-white-color);
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    /* Vertical spacing between email and phone */
+    gap: 1.2rem;
 }
 
 /* Container for text + copy button */
 .copy-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
     width: fit-content;
+    max-width: 100%;
+    /* Ensure it doesn't exceed parent width */
 }
 
 .contact-direct-link {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: var(--white-color);
     text-decoration: none;
     transition: opacity 0.3s ease;
     cursor: pointer;
+    position: relative;
+
+    /* Allow wrapping on small screens */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: left;
+}
+
+.contact-direct-link:hover {
+    opacity: 0.8;
+}
+
+.contact-direct-link::after {
+    /* Subtle hover underline interaction */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--white-color);
+    transition: width 0.3s ease;
+}
+
+.contact-direct-link:hover::after {
+    width: 100%;
 }
 
 .contact-phone-text {
-    font-size: 16px;
+    font-size: 1.1rem;
     color: var(--secondary-white-color);
     opacity: 0.7;
     margin: 0;
@@ -113,22 +163,29 @@
 /* Copy Icon Button */
 .copy-btn {
     background: transparent;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    /* Circular button */
     color: var(--secondary-white-color);
-    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
     cursor: pointer;
-    opacity: 0.4;
+    opacity: 0.5;
     transition: all 0.3s ease;
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    /* Prevent button from shrinking */
 }
 
 .copy-btn:hover {
     opacity: 1;
     color: var(--white-color);
-    transform: scale(1.1);
+    border-color: var(--white-color);
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.05);
 }
 
 .copy-btn:active {
@@ -137,11 +194,13 @@
 
 /* Tooltip/Feedback for Copy */
 .copy-feedback {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--white-color);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .copy-feedback.visible {
@@ -153,12 +212,12 @@
 /* -------------------------------------------------- */
 .contact-social-row {
     display: flex;
-    gap: 25px;
-    margin-bottom: 50px;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .contact-social-row a {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--secondary-white-color);
     opacity: 0.5;
     transition: all 0.3s ease;
@@ -175,24 +234,48 @@
 /* -------------------------------------------------- */
 .contact-form-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
+    /* Allow wider form for grid */
 }
 
+/* Grid Layout for the Form */
+#zen-contact-form>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Name and Email side-by-side */
+    gap: 2rem;
+    /* Spacious gap */
+    width: 100%;
+}
+
+/* Input Group Styling */
 .zen-group {
-    margin-bottom: 2.5rem;
-    /* Spacious */
     position: relative;
+    margin: 0;
+    /* Remove default margins, grid handles gap */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make Message, Submit, and Feedback span full width */
+.zen-group:nth-child(3),
+/* Message is 3rd */
+.zen-submit,
+.zen-feedback,
+#zen-form-feedback {
+    grid-column: 1 / -1;
 }
 
 .zen-label {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--secondary-white-color);
     opacity: 0.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     transition: opacity 0.3s;
+    font-weight: 500;
 }
 
 /* The actual input field */
@@ -200,22 +283,32 @@
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    /* Slightly thicker base border */
-    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
     color: var(--white-color);
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
-    outline: solid grey;
+    outline: none;
+    /* Removed default outline */
     transition: all 0.4s ease;
     border-radius: 0;
+}
+
+/* Override Dash/Browser default invalid styles */
+input.dash-input:invalid,
+.zen-input:invalid {
+    outline: none !important;
+    box-shadow: none !important;
+    border: solid grey 1px;
 }
 
 /* Focus State */
 .zen-input:focus {
     border-bottom-color: var(--white-color);
-    background: linear-gradient(to bottom, transparent 95%, rgba(255, 255, 255, 0.02) 100%);
+    padding-left: 10px;
+    /* Subtle text shift */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
 }
 
 .zen-group:focus-within .zen-label {
@@ -223,45 +316,49 @@
     color: var(--white-color);
 }
 
+/* Textarea height */
+textarea.zen-input {
+    min-height: 80px;
+    resize: vertical;
+}
+
 /* Submit Button */
-.zen-submit {
+#zen-contact-form .zen-submit {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--white-color);
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
     font-weight: 500;
+    border-radius: 2px;
     cursor: pointer;
     transition: all 0.4s ease;
     margin-top: 1rem;
-    width: auto;
+    width: fit-content;
+    justify-self: start;
 }
 
-.zen-submit:hover {
+#zen-contact-form .zen-submit:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: var(--white-color);
-    letter-spacing: 5px;
-    /* Subtle expansion effect */
+    letter-spacing: 4px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 /* Feedback Msg */
 .zen-feedback {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     color: var(--secondary-white-color);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     opacity: 0;
     transition: opacity 0.5s;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .zen-feedback.visible {
-    opacity: 0.8;
-}
-
-input.dash-input:invalid,
-.message {
-    outline: solid grey;
+    opacity: 0.9;
 }
 
 
@@ -269,77 +366,235 @@ input.dash-input:invalid,
 /* Responsive Logic                                   */
 /* -------------------------------------------------- */
 
-@media (max-width: 860px) {
-    .contact-visual-section {
-        width: 45%;
-    }
-
+/* Tablet & Smaller Laptops */
+@media (max-width: 1024px) {
     .contact-content-section {
-        width: 50%;
-        padding-right: 20px;
+        padding: 0 5%;
     }
 
-    .contact-title-block h1 {
-        font-size: 40px;
-    }
-
-    .contact-title-block::after {
-        content: initial;
-    }
-
-    .contact-direct-link {
-        font-size: 1.5rem;
+    #zen-contact-form>div {
+        gap: 1.5rem;
+        /* Tighter gap for smaller screens */
     }
 }
 
-@media (max-width: 580px) {
-    .main-container {
-        overflow-x: hidden;
-    }
-
+/* Mobile & Vertical Layouts */
+@media (max-width: 860px) {
     .contact-wrapper {
         flex-direction: column;
-        justify-content: flex-start;
     }
 
     .contact-visual-section {
         width: 100%;
-        height: 50vh;
-        min-height: 300px;
-        margin-bottom: 20px;
+        height: 30vh;
+        /* Slightly smaller to prioritize content */
+        min-height: 200px;
+        max-width: none;
     }
 
     .contact-content-section {
         width: 100%;
         margin: 0;
-        padding: 0 20px 40px 20px;
-        text-align: center;
-        align-items: center;
+        padding: 40px 6% 60px 6%;
+        /* Balanced padding */
     }
 
+    /* Stack grid items */
+    #zen-contact-form>div {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Ensure title fits */
     .contact-title-block h1 {
-        font-size: 36px;
+        font-size: 2.5rem;
     }
 
     .contact-title-block::after {
-        content: none;
+        left: 0;
+        width: 100px;
     }
 
-    .contact-info-brief {
-        align-items: center;
+    /* Mobile specific button polish - ensure easy tapping */
+    #zen-contact-form .zen-submit {
         width: 100%;
+        /* Full width for easy thumb reach */
+        text-align: center;
+        justify-self: stretch;
+        /* Re-add touch padding for mobile */
+        margin-top: 1.5rem;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .contact-title-block h1 {
+        font-size: 2rem;
     }
 
-    /* Ensure copy button container is centered on mobile */
-    .copy-container {
-        justify-content: center;
+    .contact-direct-link {
+        font-size: 1rem;
+        /* Reduce font size to fit */
     }
 
     .zen-input {
         padding: 15px 0;
+        /* Larger touch targets */
+        font-size: 1rem;
+        /* Prevent zoom on iOS */
     }
 
-    .zen-submit {
-        width: 100%;
+    .zen-group {
+        margin-bottom: 0;
+        /* Grid gap handles it */
     }
+}
+
+/* Landscape Mode for Phones */
+@media (max-height: 600px) and (orientation: landscape) {
+    .contact-visual-section {
+        display: none;
+        /* Hide image on short landscape screens to show form */
+    }
+}
+
+/* -------------------------------------------------- */
+/* Page-Specific Overrides                            */
+/* -------------------------------------------------- */
+
+/* Remove footer margin specifically on Contact page */
+.contact-wrapper+.footer-nav-container {
+    margin-top: 0;
+    border-top: none;
+    /* Optional: remove border if it looks detached, but margin-top: 0 is the request */
+}
+
+/* -------------------------------------------------- */
+/* Notification Modal                                  */
+/* -------------------------------------------------- */
+/* Container (Fixed, Full Screen, click-through? No, catches layout) */
+.modal-backdrop {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* No background color here */
+}
+
+/* The actual dark background (Sibling to content) */
+/* The actual dark background (Sibling to content) */
+.modal-overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Very light overlay to show blur */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    /* Below content */
+    cursor: pointer;
+    /* Indicate clickable */
+}
+
+/* Content wrapper (Above background) */
+.modal-backdrop .viewer {
+    z-index: 2;
+    /* Content on top */
+    position: relative;
+    /* Establish stacking context */
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+}
+
+body.modal-open {
+    overflow: hidden;
+    /* Prevent scrolling */
+}
+
+.notification-box {
+    background-color: #1f2020;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop.show .notification-box {
+    transform: scale(1);
+}
+
+.notification-title {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', serif;
+}
+
+.notification-message {
+    color: var(--secondary-white-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.notification-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.action-btn {
+    padding: 12px 24px;
+    width: auto;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.ok-btn {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border: none;
+    font-weight: 600;
+}
+
+.ok-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Close/Cancel button (optional if user wants one, logic implies clicking outside closes too) */
+.cancel-btn {
+    background-color: transparent;
+    color: var(--secondary-white-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancel-btn:hover {
+    border-color: var(--white-color);
+    color: var(--white-color);
 }
