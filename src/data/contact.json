@@ -7,7 +7,7 @@
     },
     "direct_contact": {
         "email": "Yassien.m.m.tawfik@gmail.com",
-        "phone": "+201096835548"
+        "phone": "+20-109-683-5548"
     },
     "social_channels": [
         {
@@ -17,6 +17,12 @@
         {
             "platform": "GitHub",
             "url": "https://github.com/YassienTawfikk"
+        },
+        {
+            "platform": "Tinkercad",
+            "url": "https://www.tinkercad.com/users/2vAATFFVET6?type=circuits",
+            "notification_title": "Tinkercad Access",
+            "notification_description": "Tinkercad requires a free account to ensure projects are visible. Log in to the website to view th projects."
         }
     ],
     "form_configuration": {
