@@ -459,17 +459,6 @@ textarea.zen-input {
 }
 
 /* -------------------------------------------------- */
-/* Page-Specific Overrides                            */
-/* -------------------------------------------------- */
-
-/* Remove footer margin specifically on Contact page */
-.contact-wrapper+.footer-nav-container {
-    margin-top: 0;
-    border-top: none;
-    /* Optional: remove border if it looks detached, but margin-top: 0 is the request */
-}
-
-/* -------------------------------------------------- */
 /* Notification Modal                                  */
 /* -------------------------------------------------- */
 /* Container (Fixed, Full Screen, click-through? No, catches layout) */

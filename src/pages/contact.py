@@ -152,7 +152,7 @@ layout = html.Div([
         ], className="viewer notification-viewer", id="confirm-modal-content")
     ], id="cv-modal", className="modal-backdrop"),
 
-    FooterNavigation("Back to Home", "/")
+    FooterNavigation("Back to Home", "/", style={'marginTop': '0'})
 ])
 
 # Clientside Callback for Modal Logic
