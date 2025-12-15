@@ -87,7 +87,7 @@ layout = html.Div([
             html.Div([
                 # Check if social item needs notification
                 html.A(
-                    html.I(className=f"fa-brands fa-{social.get('platform', '').lower()}" if social.get('platform', '').lower() != 'tinkercad' else "fa-solid fa-cube"),
+                    html.I(className=f"fa-brands fa-{social.get('platform', '').lower()}" if social.get('platform', '').lower() != 'linkhub' else "fa-solid fa-link"),
                     id={'type': 'social-link', 'index': i},
                     title=social.get('platform'),
                     **({

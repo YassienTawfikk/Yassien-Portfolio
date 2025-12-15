@@ -24,7 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (btn && textEl) {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
-                const textToCopy = textEl.innerText || textEl.textContent;
+                let textToCopy = textEl.innerText || textEl.textContent;
+
+                // Special handling for phone number to remove dashes/spaces
+                if (textId === 'contact-phone-text') {
+                    textToCopy = textToCopy.replace(/[^\d+]/g, '');
+                }
 
                 navigator.clipboard.writeText(textToCopy).then(() => {
                     // Success Feedback

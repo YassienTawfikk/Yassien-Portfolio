@@ -19,10 +19,8 @@
             "url": "https://github.com/YassienTawfikk"
         },
         {
-            "platform": "Tinkercad",
-            "url": "https://www.tinkercad.com/users/2vAATFFVET6?type=circuits",
-            "notification_title": "Tinkercad Access",
-            "notification_description": "Tinkercad requires a free account to ensure projects are visible. Log in to the website to view th projects."
+            "platform": "Linkhub",
+            "url": "https://yassien-tawfik-linkhub.vercel.app"
         }
     ],
     "form_configuration": {
