@@ -506,7 +506,7 @@ textarea.zen-input {
 }
 
 .modal-backdrop.show {
-    opacity: 1;
+    opacity: 0.95;
 }
 
 body.modal-open {
