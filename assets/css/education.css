@@ -208,7 +208,7 @@
     }
 
     .title {
-        font-size: 38px;
+        font-size: var(--mobile-font-h1);
         margin-bottom: 15px;
         left: 0;
         /* Reset relative positioning */
@@ -220,12 +220,20 @@
     }
 
     .subtitle {
-        font-size: 26px;
+        font-size: var(--mobile-font-h2);
     }
 
     .subsubtitle {
-        font-size: 17px;
+        font-size: var(--mobile-font-h3);
         color: var(--secondary-white-color);
+    }
+
+    .courses-head {
+        font-size: var(--mobile-font-h3);
+    }
+
+    .courses-lists {
+        font-size: var(--mobile-font-p);
     }
 
     .courses-container {
