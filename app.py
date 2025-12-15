@@ -42,7 +42,7 @@ app.index_string = '''
         {%css%}
         <!-- Web App Icons -->
         <link rel="apple-touch-icon" href="/assets/images/icon/apple-touch-icon.png"/>
-        <link rel="icon" sizes="192x192" href="/assets/images/icon/icon-192.png"/>
+        <link rel="icon" sizes="192x192" href="/assets/images/icon/icon-250.png"/>
         <link rel="icon" sizes="512x512" href="/assets/images/icon/icon-512.png"/>
     </head>
     <body>
