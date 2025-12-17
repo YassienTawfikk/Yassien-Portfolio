@@ -96,20 +96,63 @@ i {
     cursor: pointer;
 }
 
-button {
-    padding: 10px;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
+/* -------------------------------------------------- */
+/* Standard Button System (Unified Card Style)        */
+/* -------------------------------------------------- */
+.std-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    /* Rounded Rect (Credentials Style) */
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--black-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    outline: none;
+    letter-spacing: 0.5px;
+    user-select: none;
+    -webkit-user-select: none;
+    min-width: 100px;
+    /* Default min-width for consistency */
+    flex: 1;
 }
 
-button:hover {
-    font-weight: 650;
+/* Primary: Subtle Fill (Like GitHub button in Credits) */
+.std-button-primary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white-color);
+}
+
+.std-button-primary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white-color);
+}
+
+/* Secondary: Bordered / Ghost (Like Website button in Credits) */
+.std-button-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--secondary-white-color);
+}
+
+.std-button-secondary:hover {
+    border-color: var(--white-color);
+    color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Large Variant (for Home Resume / Main CTAs) */
+.std-button-lg {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    min-width: 160px;
 }
 
 /* -------------------------------------------------- */

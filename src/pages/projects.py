@@ -76,7 +76,6 @@ def create_project_card(project, is_featured=False):
             html.Div(className="live-badge", children="LIVE DEMO") if is_featured else None
         ]),
         html.Div(className='project-content', children=[
-            # Domain Badge
             html.Div(className='project-domain-badge', children=[
                 html.I(className=f"{domain_icon} domain-icon"),
                 html.Span(domain_name, className='domain-text body-font')
@@ -86,7 +85,8 @@ def create_project_card(project, is_featured=False):
             
             html.P(short_desc, className='project-description body-font'),
             
-            # Tech Stack Section
+            html.P(short_desc, className='project-description body-font'),
+            
             html.Div(className='tech-stack-section', children=[
                 html.P("Tech Stack", className='tech-section-label head-font'),
                 html.Div(className='project-tech-stack', children=[
@@ -95,13 +95,11 @@ def create_project_card(project, is_featured=False):
             ]),
             
             html.Div(className='project-links', children=[
-                html.A([html.I(className="fab fa-github"), " Code"], href=github_link, target="_blank", className='project-link-btn body-font') if github_link else None,
-                html.A([html.I(className="fas fa-play"), " Live Demo"], href=live_demo, target="_blank", className='project-link-btn secondary body-font') if live_demo else None
+                html.A([html.I(className="fab fa-github"), " Code"], href=github_link, target="_blank", className='std-button std-button-primary') if github_link else None,
+                html.A([html.I(className="fas fa-play"), " Live Demo"], href=live_demo, target="_blank", className='std-button std-button-secondary') if live_demo else None
             ])
         ])
     ])
-
-# --- Processing & Categorization ---
 
 featured_projects = [p for p in projects_list if p.get("live_demo")]
 other_projects = [p for p in projects_list if not p.get("live_demo")]
@@ -136,7 +134,6 @@ for p in other_projects:
     else:
         categories["Web, Mobile & Software"].append(p)
 
-# Define layout
 sections = []
 
 sections.append(html.H1("Projects", className='page-title head-font'))

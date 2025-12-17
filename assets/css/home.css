@@ -202,9 +202,6 @@
 
     .heading-section>a>button {
         margin-top: 10px;
-        width: 200px;
-        /* Fixed reasonable width */
-        height: 50px;
-        font-size: 20px;
+        /* Let std button handle sizing */
     }
 }

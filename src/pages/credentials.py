@@ -10,7 +10,7 @@ def load_credentials_data():
 
 data = load_credentials_data()
 
-# Unified list for Gallery Navigation (Preserving order)
+# Unified list for Gallery Navigation
 ALL_GALLERY_ITEMS = data["fieldExperience"]["items"] + data["coursesAndCertificates"]["items"]
 
 
@@ -46,13 +46,12 @@ def create_credential_card(item, card_type="internship"):
         github_link = None # Certs usually don't have code, but if needed can add
 
     
-    # Image Container (Trigger for Modal) - With Overlay Icon
+    # Image Container (Trigger for Modal)
     image_section = html.Div(
         className="card-image-container",
         id={'type': 'cert-thumb', 'index': item['id']}, # Universal ID pattern
         children=[
             html.Img(src=image_src, className="card-image"),
-            # New Overlay Icon for Affordance
             html.Div(
                 html.I(className="fas fa-expand"),
                 className="card-overlay-icon"
@@ -60,31 +59,28 @@ def create_credential_card(item, card_type="internship"):
         ]
     )
     
-    # Subtitle (Organization/Issuer) - Keep original link for redundancy
+    # Subtitle (Organization/Issuer)
     if subtitle_link:
         subtitle_comp = html.A(subtitle_text, href=subtitle_link, target="_blank", className="card-org-link body-font")
     else:
         subtitle_comp = html.Span(subtitle_text, className="card-org-link body-font", style={"borderBottom": "none", "pointerEvents": "none"})
         
-    # Action Buttons (Footer)
     action_buttons = []
     
-    # Website Button
     if subtitle_link:
         action_buttons.append(html.A(
             [html.I(className="fas fa-globe"), html.Span("Website")],
             href=subtitle_link,
             target="_blank",
-            className="action-btn website-btn body-font"
+            className="std-button std-button-secondary"
         ))
         
-    # GitHub Button
     if github_link:
         action_buttons.append(html.A(
             [html.I(className="fab fa-github"), html.Span("Code")],
             href=github_link,
             target="_blank",
-            className="action-btn github-btn body-font"
+            className="std-button std-button-primary"
         ))
 
     action_footer = None
@@ -136,7 +132,6 @@ modal = dbc.Modal(
             html.Div(
                 className="gallery-container",
                 children=[
-                    # Previous Button
                     html.Button(
                         html.I(className="fas fa-chevron-left"),
                         id="btn-prev",
@@ -144,14 +139,12 @@ modal = dbc.Modal(
                         title="Previous (Left Arrow)"
                     ),
                     
-                    # Image
                     html.Img(
                         id="modal-cert-image",
                         src="",
                         className="gallery-image"
                     ),
                     
-                    # Next Button
                     html.Button(
                         html.I(className="fas fa-chevron-right"),
                         id="btn-next",
@@ -161,7 +154,7 @@ modal = dbc.Modal(
                 ]
             )
         ),
-        # Invisible div to attach keydown event listener via clientside callback
+        # Invisible div for listener
         html.Div(id="keyboard-listener-trigger", style={"display": "none"})
     ],
     id="certificate-modal",
@@ -193,9 +186,7 @@ layout = html.Div(children=[
 ])
 
 
-# --- Callbacks ---
-
-# 1. Open Modal and Initialize State
+# Open Modal and Initialize State
 @callback(
     [Output("certificate-modal", "is_open"), 
      Output("gallery-state", "data")],
@@ -223,7 +214,6 @@ def open_modal(n_clicks, current_data):
     return True, {'index': new_index}
 
 
-# 2. Update Image based on State
 @callback(
     Output("modal-cert-image", "src"),
     Input("gallery-state", "data")
@@ -239,7 +229,7 @@ def update_gallery_image(state_data):
     return ""
 
 
-# 3. Handle Navigation (Next/Prev Buttons & Keyboard)
+# Handle Navigation (Next/Prev Buttons & Keyboard)
 @callback(
     Output("gallery-state", "data", allow_duplicate=True),
     [Input("btn-prev", "n_clicks"),
@@ -264,7 +254,7 @@ def navigate_gallery(prev_clicks, next_clicks, state_data):
     return {'index': current_index}
 
 
-# 4. Clientside Callback for Keyboard Navigation (Arrow Keys)
+# Clientside Callback for Keyboard Navigation (Arrow Keys)
 clientside_callback(
     """
     function(isOpen) {

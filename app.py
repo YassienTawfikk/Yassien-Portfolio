@@ -16,13 +16,13 @@ app = Dash(
     suppress_callback_exceptions=True,
     title="Yassien Tawfik | Portfolio",
     meta_tags=[
-        # Open Graph / Facebook / LinkedIn / WhatsApp
+        # Social Media Meta Tags (OG, Twitter)
         {'property': 'og:type', 'content': 'website'},
         {'property': 'og:title', 'content': 'Yassien Tawfik · Portfolio'},
         {'property': 'og:description', 'content': 'Explore my projects, skills, and professional experience.'},
         {'property': 'og:url', 'content': 'https://ytawfik-portfolio.vercel.app/'},
         {'property': 'og:image', 'content': 'https://ytawfik-portfolio.vercel.app/assets/images/icon/icon-512.png'},
-        # Twitter - X Card
+
         {'name': 'twitter:card', 'content': 'summary'},
         {'name': 'twitter:title', 'content': 'Yassien Tawfik · Portfolio'},
         {'name': 'twitter:description', 'content': 'Explore my projects, skills, and professional experience.'},
@@ -30,7 +30,7 @@ app = Dash(
     ]
 )
 
-# Configures the HTML index template to include Web App Icons and meta tags.
+# Template configuration for Dash to include Web App Icons and meta tags.
 app.index_string = '''
 <!DOCTYPE html>
 <html>

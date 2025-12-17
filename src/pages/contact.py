@@ -30,20 +30,13 @@ social_metadata = {
 
 layout = html.Div([
     
-    # Store for metadata
     dcc.Store(id='social-metadata', data=social_metadata),
-
     html.Div([
-        
-        # Left Side (Visual)
         html.Div([
             html.Img(src=profile.get('image'), alt="Contact Visual")
         ], className="contact-visual-section"),
 
-        # Right Side (Content)
         html.Div([
-            
-            # Title Area
             html.Div([
                 html.H1("Let's Connect", className="head-font")
             ], className="contact-title-block"),
@@ -165,14 +158,11 @@ clientside_callback(
                 
                 // If this link has notification data
                 if (linkData) {
-                    // Update Modal Content and Show it
                     document.getElementById('notification-title').textContent = linkData['data-notify-title'];
                     document.getElementById('confirm-message-text').textContent = linkData['data-notify-desc'];
                     
-                    // Store the target URL on the OK button for easy access
                     document.getElementById('confirm-ok').dataset.targetUrl = linkData['data-href'];
                     
-                    // Show Modal
                     const modal = document.getElementById('cv-modal');
                     modal.style.display = 'flex';
                     // Trigger reflow for transition
@@ -203,16 +193,13 @@ clientside_callback(
         const modal = document.getElementById('cv-modal');
         
         if (triggerId === 'confirm-ok.n_clicks') {
-            // Get URL and navigate
             const targetUrl = document.getElementById('confirm-ok').dataset.targetUrl;
             if (targetUrl) {
                 window.open(targetUrl, '_blank');
             }
         }
         
-        // Close Modal (for both OK and Outside Click)
-        // If trigger was 'modal-overlay-bg.n_clicks', we just close.
-        
+        // Close Modal
         modal.classList.remove('show');
         document.body.classList.remove('modal-open');
         setTimeout(() => {

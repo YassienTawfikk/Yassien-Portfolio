@@ -26,7 +26,7 @@ layout = html.Div([
             ]),
             html.Span(intro_brief, className="intro-brief body-font"),
             html.A(
-                html.Button("Résumé", className="resume-button"),
+                html.Button("Résumé", className="std-button std-button-secondary std-button-lg"),
                 href=CV_SRC,
                 target="_blank"
             )
