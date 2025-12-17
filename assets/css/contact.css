@@ -337,6 +337,7 @@ textarea.zen-input {
     margin-top: 1rem;
     width: fit-content;
     justify-self: start;
+    padding: 12px 24px;
 }
 
 #zen-contact-form .zen-submit:hover {

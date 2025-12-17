@@ -45,6 +45,9 @@ app.index_string = '''
         <link rel="icon" sizes="512x512" href="/assets/images/icon/icon-512.png"/>
     </head>
     <body>
+        <div id="global-preloader">
+            <h1 class="zen-signature">Yassien Tawfik</h1>
+        </div>
         {%app_entry%}
         <footer>
             {%config%}

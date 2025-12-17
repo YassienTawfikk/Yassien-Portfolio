@@ -1,0 +1,83 @@
+/* Global Preloader - Zen Aesthetic */
+#global-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    /* Matches site dark theme */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    /* Slower fade for zen feel */
+}
+
+#global-preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Zen Signature Animation */
+.zen-signature {
+    font-family: 'Satoshi', 'Inter', sans-serif;
+    /* Use minimalist sans */
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0.5;
+    animation: zen-pulse 3s infinite ease-in-out;
+    position: relative;
+}
+
+/* Optional: Add a subtle underline line */
+.zen-signature::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: zen-line-expand 3s infinite ease-in-out;
+}
+
+@keyframes zen-pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        color: #666666;
+        letter-spacing: 0.3em;
+    }
+
+    50% {
+        opacity: 1;
+        color: #ffffff;
+        letter-spacing: 0.35em;
+        /* Subtle expansion */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+}
+
+@keyframes zen-line-expand {
+
+    0%,
+    100% {
+        width: 20px;
+        opacity: 0.2;
+    }
+
+    50% {
+        width: 60px;
+        opacity: 0.6;
+    }
+}
