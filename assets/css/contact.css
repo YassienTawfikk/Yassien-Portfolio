@@ -593,23 +593,21 @@ body.modal-open {
 /* -------------------------------------------------- */
 @media (max-width: 860px) {
     .contact-visual-section {
-        height: auto;
+        height: 250px;
+        /* Force a reasonable height */
         min-height: unset;
-        /* Allow it to shrink to fit image if needed */
-        max-height: none;
-        /* Remove invalid restriction if any, or let image dictate */
+        width: 100%;
+        overflow: hidden;
     }
 
     .contact-visual-section>img {
         position: relative;
-        /* crucial to allow container to wrap it */
         width: 100%;
-        height: auto;
-        object-fit: contain;
-        /* Ensures full image visibility */
-        top: auto;
-        left: auto;
-        transform: none;
-        /* Reset distinct transformations */
+        height: 100%;
+        /* Fill container */
+        object-fit: cover;
+        /* Crop to fit, don't stretch */
+        object-position: center center;
+        /* Focus on face/center */
     }
 }

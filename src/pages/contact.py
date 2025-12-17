@@ -38,7 +38,7 @@ layout = html.Div([
         
         # Left Side (Visual)
         html.Div([
-            html.Img(src="/assets/images/contact/contact.jpg", alt="Contact Visual", key="contact-intro-image")
+            html.Img(src=profile.get('image'), alt="Contact Visual")
         ], className="contact-visual-section"),
 
         # Right Side (Content)
