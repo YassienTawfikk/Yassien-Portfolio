@@ -1,4 +1,9 @@
-/* Page Title & Section Titles */
+/* =========================================================
+   Page Title & Section Titles
+   ========================================================= */
+
+/* Main page title
+   Centered with decorative underline animation */
 .page-title {
     font-size: 52px;
     font-weight: 700;
@@ -12,6 +17,7 @@
     width: 100%;
 }
 
+/* Decorative underline */
 .page-title:after {
     content: '';
     position: absolute;
@@ -36,7 +42,6 @@
 
 .featured-title {
     color: var(--white-color);
-    /* Strict grayscale */
 }
 
 .section-divider {
@@ -46,51 +51,57 @@
     margin: 30px 0;
 }
 
-/* Grid Layouts */
+/* =========================================================
+   Grid Layouts
+   ========================================================= */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
 }
 
+/* Featured grid
+   Slightly larger minimum width for emphasis */
 .featured-grid {
-    /* Featured items slightly larger minimum width if space allows */
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
 }
 
-/* Card Styling */
+/* =========================================================
+   Card Styling
+   ========================================================= */
+
 .project-card {
     background-color: var(--secondary-color);
     border-radius: 15px;
     overflow: hidden;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    /* Removed transform */
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
 }
 
+/* Featured card variant with elevated shadow */
 .featured-card {
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Remove gold border */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
     border-color: rgba(255, 255, 255, 0.3);
     background-color: #2a2a2a;
-    /* Removed heavy transform translateY */
 }
 
 .featured-card:hover {
     border-color: rgba(255, 255, 255, 0.5);
-    /* Whiter border on hover */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    /* Subtle shadow increase */
 }
 
-/* Image Section */
+/* =========================================================
+   Image Section
+   ========================================================= */
+
 .project-image-container {
     width: 100%;
     aspect-ratio: 16/11;
@@ -99,27 +110,27 @@
     background-color: #000;
 }
 
+/* Project image
+   Grayscale by default, full color on hover */
 .project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: filter 0.6s ease;
-    /* Removed scale transform */
     filter: grayscale(100%) brightness(0.9);
 }
 
 .project-card:hover .project-image {
     filter: grayscale(0%) brightness(1);
-    /* Removed scale transform */
 }
 
+/* Live status badge */
 .live-badge {
     position: absolute;
     top: 15px;
     left: 15px;
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--white-color);
-    /* Grayscale */
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 6px 12px;
     border-radius: 6px;
@@ -131,7 +142,10 @@
 }
 
 
-/* Content Section */
+/* =========================================================
+   Content Section
+   ========================================================= */
+
 .project-content {
     padding: 25px;
     flex: 1;
@@ -139,7 +153,7 @@
     flex-direction: column;
 }
 
-/* Domain/Direction Badge */
+/* Domain/Direction badge */
 .project-domain-badge {
     display: inline-flex;
     align-items: center;
@@ -155,7 +169,6 @@
 .domain-icon {
     font-size: 0.9rem;
     color: var(--white-color);
-    /* Neutral white or could use accent */
     opacity: 0.9;
 }
 
@@ -184,7 +197,10 @@
     opacity: 0.9;
 }
 
-/* Tech Stack Section */
+/* =========================================================
+   Tech Stack Section
+   ========================================================= */
+
 .tech-stack-section {
     margin-top: auto;
     padding-top: 15px;
@@ -228,7 +244,10 @@
     gap: 15px;
 }
 
-/* Response adjustments */
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+
 @media (max-width: 768px) {
 
     .projects-grid,
@@ -249,7 +268,6 @@
 
     .project-title {
         font-size: 1.3rem;
-        /* Adjusted for mobile */
     }
 
     .project-description {

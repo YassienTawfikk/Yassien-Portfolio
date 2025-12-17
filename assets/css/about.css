@@ -1,27 +1,28 @@
-/* About Page Styling - Fixed Layout */
+/* =========================================================
+   About Page Layout
+   ========================================================= */
 
+/* Hero images container
+   Fixed height constraint ensures layout stability
+   Uses vw/vh units with min/max safety bounds */
 .images-holder {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 450px;
-    /* CONSTANT Fixed height constraint. Using px as safer default, or 40vh if preferred. User requested "e.g. 40vh or 450px". I will use 40vh with a min-px to be safe, or just fixed constraint. Let's use 40vh as base but ensure it doesn't shrink. */
     height: 40vh;
     max-height: 500px;
-    /* Constraint */
     min-height: 300px;
-    /* Safety */
     margin-bottom: 30px;
     gap: 10px;
     overflow: hidden;
 }
 
+/* Image wrapper with smooth width transition */
 .image-box {
     overflow: hidden;
     height: 100%;
     position: relative;
     transition: width 0.3s ease;
-    /* Smooth width transition */
 }
 
 /* Width Distribution (35% | 35% | 30%) */
@@ -43,7 +44,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Crucial */
     transition: transform 0.5s ease, filter 0.5s ease;
     filter: grayscale(100%);
 }
@@ -52,6 +52,10 @@
 .image-box:hover img {
     transform: scale(1.025);
 }
+
+/* =========================================================
+   Content Section
+   ========================================================= */
 
 .about-title {
     font-size: 40px;
@@ -78,7 +82,7 @@
     margin-bottom: 60px;
 }
 
-/* Topic (Text Columns) Styling */
+/* Left column alignment */
 .topic:first-child {
     width: 35%;
     position: relative;
@@ -101,30 +105,29 @@
 }
 
 
-/* --- Responsive Logic --- */
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
 
-/* Tablet/Small Desktop Breakpoint: Hide 3rd Image */
+/* Tablet Optimization
+   Hides 3rd image, remaining 2 split evenly */
 @media (max-width: 900px) {
     .about-title {
         margin-left: initial;
     }
 
-    /* Hide 3rd Image */
     .image-box:nth-child(3) {
         display: none;
     }
 
-    /* Remaining 2 images split space evenly */
     .image-box:nth-child(1),
     .image-box:nth-child(2) {
         min-width: 49%;
     }
-
 }
 
-/* Mobile Layout Adjustments (Text, etc.) */
+/* Mobile Optimization */
 @media (max-width: 768px) {
-    /* DO NOT change height here. Height stays constant from main rule */
 
     .images-holder {
         gap: 5px;
@@ -162,15 +165,14 @@
     }
 }
 
-/* Small Mobile Breakpoint (< 450px): Hide 2nd Image */
+/* Small Mobile Optimization
+   Shows only 1 image full width */
 @media (max-width: 450px) {
 
-    /* Hide 2nd Image */
     .image-box:nth-child(2) {
         display: none;
     }
 
-    /* 1st Image takes full width */
     .image-box:nth-child(1) {
         width: 100%;
     }

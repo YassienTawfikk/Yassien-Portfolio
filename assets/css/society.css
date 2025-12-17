@@ -1,8 +1,13 @@
+/* =========================================================
+   Society Page Layout
+   ========================================================= */
+
+/* Page title
+   Centered layout with decorative underline */
 .society-title {
     font-size: 40px;
     width: fit-content;
     margin: 40px auto 30px;
-    /* Improved vertical spacing */
     text-align: center;
     position: relative;
     padding: 10px;
@@ -18,24 +23,21 @@
     left: calc(50% - 100px);
 }
 
+/* Horizontal scroll container
+   Padding calculation ensures visual balance:
+   Right 80px matches Left (10px padding + 70px first-item margin) */
 .involvements-holder {
     display: flex;
     overflow-x: auto;
     gap: 40px;
     justify-content: start;
     align-items: center;
-    /*
-       Padding Fix:
-       Right Padding: 80px
-       Left Padding: 10px + First Item Margin-Left (70px) = 80px Total Visual Space
-    */
     padding: 40px 80px 40px 10px;
     scroll-behavior: smooth;
     width: 100%;
     margin: 0;
     max-width: none;
     min-height: 60vh;
-    /* Ensure it takes up good vertical space */
 }
 
 .society-content-wrapper {
@@ -44,7 +46,7 @@
 }
 
 
-/* Responsive adjustment */
+/* Responsive container adjustment */
 @media (max-width: 768px) {
     .involvements-holder {
         width: 100%;
@@ -138,20 +140,22 @@
     padding: 10px;
 }
 
+/* =========================================================
+   Navigation Controls
+   ========================================================= */
+
+/* Scroll buttons
+   Floating action buttons with glassmorphism effect */
 #scroll-left,
 #scroll-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 60px;
-    /* Slightly larger clickable area */
     height: 60px;
     z-index: 100;
-    /* Ensure on top of everything */
     background-color: rgba(30, 30, 30, 0.6);
-    /* Semi-transparent background */
     backdrop-filter: blur(4px);
-    /* Professional glass effect */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -196,20 +200,21 @@ i {
     left: 2%;
 }
 
-/* Mobile Rebuild */
+/* =========================================================
+   Mobile Optimization
+   ========================================================= */
+
 @media (max-width: 768px) {
 
-    /* 1. Reset Container for Snapping */
+    /* Snap scrolling container */
     .involvements-holder {
         width: 100%;
         padding: 20px 5%;
-        /* Balanced padding */
         gap: 20px;
         scroll-snap-type: x mandatory;
-        /* Snap effect */
     }
 
-    /* 2. Show Mobile Buttons */
+    /* Navigation buttons visibility */
     #scroll-left,
     #scroll-right {
         display: flex;
@@ -225,26 +230,22 @@ i {
         font-size: 20px;
     }
 
-    /* 3. Rebuild Card Layout */
+    /* Card layout adaptation
+       Adjusts for vertical scrolling and screen fit */
     .involvement-box {
         margin-left: 0;
-        /* Reset desktop margin */
         width: 85vw;
-        /* Mobile width */
         min-width: 350px;
-        /* Override any absolute min-width */
         scroll-snap-align: center;
-        /* Center card on stop */
         margin-right: 0;
         display: flex;
         flex-direction: column;
         padding: 20px;
         min-height: fit-content;
         height: 75vh;
-        /* Allow height to grow */
     }
 
-    /* 4. Vertical Stack: Image Top */
+    /* Vertical stack alignment */
     .page-title {
         font-size: var(--mobile-font-h1);
         text-align: center;
@@ -276,32 +277,27 @@ i {
     .member-fig {
         flex-direction: column;
         align-items: center;
-        /* Center items */
         margin-bottom: 20px;
     }
 
     .member-fig>.image {
         right: 0;
-        /* Reset relative header shift */
         width: 100%;
         max-width: 200px;
-        /* Limit image size */
         margin-bottom: 15px;
         border-radius: 15px;
     }
 
     .member-fig>span {
         right: 0;
-        /* Reset relative shift */
         padding-top: 0;
         flex-direction: row;
-        /* Horizontal icons */
         justify-content: center;
         width: 100%;
         gap: 20px;
     }
 
-    /* 5. Text Styling */
+    /* Typography adjustments */
     .society-card-text {
         text-align: center;
     }
@@ -312,7 +308,6 @@ i {
 
     .card-paragraph {
         font-size: 16px;
-        /* Readable text */
     }
 }
 

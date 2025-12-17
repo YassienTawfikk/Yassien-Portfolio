@@ -1,23 +1,23 @@
 /* assets/css/contact.css */
 
-/* -------------------------------------------------- */
-/* General Layout                                     */
-/* -------------------------------------------------- */
-/* -------------------------------------------------- */
-/* General Layout                                     */
-/* -------------------------------------------------- */
+/* =========================================================
+   General Layout
+   ========================================================= */
+
+/* Contact wrapper
+   Flex container preventing horizontal overflow */
 .contact-wrapper {
     display: flex;
     font-family: 'Roboto', sans-serif;
     width: 100%;
     overflow-x: hidden;
     align-items: stretch;
-    /* Prevent horizontal scroll */
 }
 
-/* -------------------------------------------------- */
-/* Visual Section (Left)                              */
-/* -------------------------------------------------- */
+/* =========================================================
+   Visual Section (Left)
+   ========================================================= */
+
 .contact-visual-section {
     background-color: var(--photo-bg);
     width: 35vw;
@@ -28,18 +28,13 @@
     position: relative;
 }
 
+/* Image positioning
+   Object-position is adjustable to focus on key elements */
 .contact-visual-section>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    /* ------------------------------------------------------ 
-       EDIT HERE to adjust image focus:
-       Change 'top center' to 'center center' or 'X% Y%'
-       (e.g., '50% 20%' shifts focus horizontally and vertically)
-    ------------------------------------------------------ */
     object-position: top center;
-
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,12 +42,14 @@
     transition: transform 0.5s ease;
 }
 
-/* -------------------------------------------------- */
-/* Content Section (Right)                           */
-/* -------------------------------------------------- */
+/* =========================================================
+   Content Section (Right)
+   ========================================================= */
+
+/* Main content area
+   Calculated width fills remaining space minus visual section */
 .contact-content-section {
     width: calc(100% - 35vw);
-    /* fill remaining width */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,9 +58,10 @@
     margin-top: 20px;
 }
 
-/* -------------------------------------------------- */
-/* Title Block                                        */
-/* -------------------------------------------------- */
+/* =========================================================
+   Title Block
+   ========================================================= */
+
 .contact-title-block {
     display: flex;
     flex-direction: column;
@@ -71,8 +69,8 @@
     margin-bottom: 3rem;
 }
 
+/* Fluid typography for responsive scaling */
 .contact-title-block h1 {
-    /* Fluid typography: shrinks gracefully from 60px to 36px */
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin: 0;
@@ -81,24 +79,23 @@
     letter-spacing: -1px;
 }
 
+/* Decorative underline */
 .contact-title-block::after {
     content: '';
     position: absolute;
     height: 1px;
     width: 150px;
-    /* Shortened for elegance */
     background-color: var(--white-color);
     left: 0;
-    /* Aligned left with title */
     bottom: -15px;
-    /* Underneath title */
     top: auto;
     opacity: 0.5;
 }
 
-/* -------------------------------------------------- */
-/* Info Brief & Copy Logic                            */
-/* -------------------------------------------------- */
+/* =========================================================
+   Info Brief & Copy Logic
+   ========================================================= */
+
 .contact-info-brief {
     margin-bottom: 3rem;
     color: var(--secondary-white-color);
@@ -107,16 +104,17 @@
     gap: 1.2rem;
 }
 
-/* Container for text + copy button */
+/* Flex container for text and copy button */
 .copy-container {
     display: flex;
     align-items: center;
     gap: 1rem;
     width: fit-content;
     max-width: 100%;
-    /* Ensure it doesn't exceed parent width */
 }
 
+/* Interactable contact link
+   Supports wrapping and word breaks on small screens */
 .contact-direct-link {
     font-size: 1.5rem;
     font-weight: 300;
@@ -125,8 +123,6 @@
     transition: opacity 0.3s ease;
     cursor: pointer;
     position: relative;
-
-    /* Allow wrapping on small screens */
     white-space: normal;
     overflow-wrap: anywhere;
     word-break: break-word;
@@ -137,8 +133,8 @@
     opacity: 0.8;
 }
 
+/* Hover underline effect */
 .contact-direct-link::after {
-    /* Subtle hover underline interaction */
     content: '';
     position: absolute;
     width: 0;
@@ -160,12 +156,11 @@
     margin: 0;
 }
 
-/* Copy Icon Button */
+/* Circular copy button styling */
 .copy-btn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    /* Circular button */
     color: var(--secondary-white-color);
     width: 32px;
     height: 32px;
@@ -177,7 +172,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    /* Prevent button from shrinking */
 }
 
 .copy-btn:hover {
@@ -207,9 +201,9 @@
     opacity: 0.7;
 }
 
-/* -------------------------------------------------- */
-/* Social Icons                                       */
-/* -------------------------------------------------- */
+/* =========================================================
+   Social Icons
+   ========================================================= */
 .contact-social-row {
     display: flex;
     gap: 2rem;
@@ -229,37 +223,35 @@
     color: var(--white-color);
 }
 
-/* -------------------------------------------------- */
-/* Premium Zen Form Inputs                            */
-/* -------------------------------------------------- */
+/* =========================================================
+   Premium Zen Form Inputs
+   ========================================================= */
+
 .contact-form-container {
     width: 100%;
     max-width: 800px;
-    /* Allow wider form for grid */
 }
 
-/* Grid Layout for the Form */
+/* Form grid layout
+   Two-column structure for Name/Email, full width for others */
 #zen-contact-form>div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Name and Email side-by-side */
     gap: 2rem;
-    /* Spacious gap */
     width: 100%;
 }
 
-/* Input Group Styling */
+/* Input group styling
+   Maintains relative positioning for labels/inputs */
 .zen-group {
     position: relative;
     margin: 0;
-    /* Remove default margins, grid handles gap */
     display: flex;
     flex-direction: column;
 }
 
-/* Make Message, Submit, and Feedback span full width */
+/* Full-width span for specific elements */
 .zen-group:nth-child(3),
-/* Message is 3rd */
 .zen-submit,
 .zen-feedback,
 #zen-form-feedback {
@@ -278,7 +270,7 @@
     font-weight: 500;
 }
 
-/* The actual input field */
+/* Minimalist input field styling */
 .zen-input {
     width: 100%;
     background: transparent;
@@ -290,7 +282,6 @@
     font-size: 1.1rem;
     font-weight: 300;
     outline: none;
-    /* Removed default outline */
     transition: all 0.4s ease;
     border-radius: 0;
 }
@@ -303,11 +294,10 @@ input.dash-input:invalid,
     border: solid grey 1px;
 }
 
-/* Focus State */
+/* Focus state with gradient underline highlight */
 .zen-input:focus {
     border-bottom-color: var(--white-color);
     padding-left: 10px;
-    /* Subtle text shift */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
 }
 
@@ -363,11 +353,11 @@ textarea.zen-input {
 }
 
 
-/* -------------------------------------------------- */
-/* Responsive Logic                                   */
-/* -------------------------------------------------- */
+/* =========================================================
+   Responsive Logic
+   ========================================================= */
 
-/* Tablet & Smaller Laptops */
+/* Tablet Optimization */
 @media (max-width: 1024px) {
     .contact-content-section {
         padding: 0 5%;
@@ -375,7 +365,6 @@ textarea.zen-input {
 
     #zen-contact-form>div {
         gap: 1.5rem;
-        /* Tighter gap for smaller screens */
     }
 }
 
@@ -388,7 +377,6 @@ textarea.zen-input {
     .contact-visual-section {
         width: 100%;
         height: 30vh;
-        /* Slightly smaller to prioritize content */
         min-height: 200px;
         max-width: none;
     }
@@ -397,7 +385,6 @@ textarea.zen-input {
         width: 100%;
         margin: 0;
         padding: 40px 6% 60px 6%;
-        /* Balanced padding */
     }
 
     /* Stack grid items */
@@ -416,13 +403,11 @@ textarea.zen-input {
         width: 100px;
     }
 
-    /* Mobile specific button polish - ensure easy tapping */
+    /* Mobile specific button polish */
     #zen-contact-form .zen-submit {
         width: 100%;
-        /* Full width for easy thumb reach */
         text-align: center;
         justify-self: stretch;
-        /* Re-add touch padding for mobile */
         margin-top: 1.5rem;
     }
 }
@@ -435,19 +420,15 @@ textarea.zen-input {
 
     .contact-direct-link {
         font-size: 1rem;
-        /* Reduce font size to fit */
     }
 
     .zen-input {
         padding: 15px 0;
-        /* Larger touch targets */
         font-size: 1rem;
-        /* Prevent zoom on iOS */
     }
 
     .zen-group {
         margin-bottom: 0;
-        /* Grid gap handles it */
     }
 }
 
@@ -455,17 +436,16 @@ textarea.zen-input {
 @media (max-height: 600px) and (orientation: landscape) {
     .contact-visual-section {
         display: none;
-        /* Hide image on short landscape screens to show form */
     }
 }
 
-/* -------------------------------------------------- */
-/* Notification Modal                                  */
-/* -------------------------------------------------- */
-/* Container (Fixed, Full Screen, click-through? No, catches layout) */
+/* =========================================================
+   Notification Modal
+   ========================================================= */
+
+/* Modal backdrop container */
 .modal-backdrop {
     display: none;
-    /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
@@ -476,11 +456,9 @@ textarea.zen-input {
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    /* No background color here */
 }
 
-/* The actual dark background (Sibling to content) */
-/* The actual dark background (Sibling to content) */
+/* Dark blur overlay */
 .modal-overlay-bg {
     position: absolute;
     top: 0;
@@ -488,22 +466,16 @@ textarea.zen-input {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    /* Very light overlay to show blur */
     backdrop-filter: blur(10px);
-    /* Blur effect */
     -webkit-backdrop-filter: blur(10px);
     z-index: 1;
-    /* Below content */
     cursor: pointer;
-    /* Indicate clickable */
 }
 
-/* Content wrapper (Above background) */
+/* Content wrapper */
 .modal-backdrop .viewer {
     z-index: 2;
-    /* Content on top */
     position: relative;
-    /* Establish stacking context */
 }
 
 .modal-backdrop.show {
@@ -512,7 +484,6 @@ textarea.zen-input {
 
 body.modal-open {
     overflow: hidden;
-    /* Prevent scrolling */
 }
 
 .notification-box {
@@ -577,7 +548,7 @@ body.modal-open {
     transform: translateY(-2px);
 }
 
-/* Close/Cancel button (optional if user wants one, logic implies clicking outside closes too) */
+/* Secondary/Cancel button */
 .cancel-btn {
     background-color: transparent;
     color: var(--secondary-white-color);
@@ -589,13 +560,13 @@ body.modal-open {
     color: var(--white-color);
 }
 
-/* -------------------------------------------------- */
-/* Mobile Image Fix                                   */
-/* -------------------------------------------------- */
+/* =========================================================
+   Mobile Image Fix
+   ========================================================= */
+
 @media (max-width: 860px) {
     .contact-visual-section {
         height: 250px;
-        /* Force a reasonable height */
         min-height: unset;
         width: 100%;
         overflow: hidden;
@@ -605,10 +576,7 @@ body.modal-open {
         position: relative;
         width: 100%;
         height: 100%;
-        /* Fill container */
         object-fit: cover;
-        /* Crop to fit, don't stretch */
         object-position: center center;
-        /* Focus on face/center */
     }
 }

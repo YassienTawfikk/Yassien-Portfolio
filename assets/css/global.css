@@ -1,11 +1,11 @@
-/* -------------------------------------------------- */
-/* Import Google Fonts                                */
-/* -------------------------------------------------- */
+/* =========================================================
+   Import Google Fonts
+   ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* -------------------------------------------------- */
-/* Root Variables                                     */
-/* -------------------------------------------------- */
+/* =========================================================
+   Root Variables
+   ========================================================= */
 :root {
     --main-color: #1f2020;
     --secondary-color: #2d2d2d;
@@ -22,9 +22,9 @@
     --mobile-font-small: 13px;
 }
 
-/* -------------------------------------------------- */
-/* Global Reset                                       */
-/* -------------------------------------------------- */
+/* =========================================================
+   Global Reset
+   ========================================================= */
 html,
 body {
     margin: 0;
@@ -34,28 +34,28 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Global enforcement for consistent sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     cursor: default;
-    /* Global enforcement */
 }
 
-/* -------------------------------------------------- */
-/* Typography                                         */
-/* -------------------------------------------------- */
+/* =========================================================
+   Typography
+   ========================================================= */
 input,
 textarea {
     cursor: text;
 }
 
+/* Default cursor enforcement */
 body {
     font-family: "Roboto", sans-serif;
     background-color: var(--main-color);
     color: var(--white-color);
     cursor: default;
-    /* Ensure default cursor explicitly */
 }
 
 .head-font {
@@ -69,17 +69,17 @@ body {
 }
 
 
-/* -------------------------------------------------- */
-/* Selection Highlight                                */
-/* -------------------------------------------------- */
+/* =========================================================
+   Selection Highlight
+   ========================================================= */
 ::selection {
     background: var(--secondary-white-color);
     color: var(--main-color);
 }
 
-/* -------------------------------------------------- */
-/* Links and Lists                                    */
-/* -------------------------------------------------- */
+/* =========================================================
+   Links and Lists
+   ========================================================= */
 a {
     display: block;
     width: fit-content;
@@ -96,9 +96,9 @@ i {
     cursor: pointer;
 }
 
-/* -------------------------------------------------- */
-/* Standard Button System (Unified Card Style)        */
-/* -------------------------------------------------- */
+/* =========================================================
+   Standard Button System
+   ========================================================= */
 .std-button {
     display: inline-flex;
     align-items: center;
@@ -106,7 +106,6 @@ i {
     gap: 8px;
     padding: 8px 16px;
     border-radius: 6px;
-    /* Rounded Rect (Credentials Style) */
     font-family: "Roboto", sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
@@ -119,7 +118,6 @@ i {
     user-select: none;
     -webkit-user-select: none;
     min-width: 100px;
-    /* Default min-width for consistency */
     flex: 1;
 }
 
@@ -155,35 +153,33 @@ i {
     min-width: 160px;
 }
 
-/* -------------------------------------------------- */
-/* Containers                                         */
-/* -------------------------------------------------- */
+/* =========================================================
+   Containers
+   ========================================================= */
 .main-container {
     padding: 0 15px;
     margin: 0 auto;
 }
 
-/* -------------------------------------------------- */
-/* Image Styling                                      */
-/* -------------------------------------------------- */
+/* =========================================================
+   Image Styling
+   ========================================================= */
 .image>img {
     width: 100%;
 }
 
-/* -------------------------------------------------- */
-/* Navbar Styling - Zen Mode                          */
-/* -------------------------------------------------- */
+/* =========================================================
+   Navbar Styling
+   ========================================================= */
 
 .navbar {
     background-color: var(--secondary-color);
     width: 100%;
     height: 80px;
-    /* Fixed height for consistency */
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    /* Very subtle shadow */
     position: relative;
     z-index: 1000;
 }
@@ -197,9 +193,9 @@ i {
     align-items: center;
 }
 
-/* -------------------------------------------------- */
-/* Brand / Logo                                       */
-/* -------------------------------------------------- */
+/* =========================================================
+   Brand / Logo
+   ========================================================= */
 .navbar-brand {
     text-decoration: none;
     color: var(--white-color);
@@ -219,9 +215,9 @@ i {
     opacity: 1;
 }
 
-/* -------------------------------------------------- */
-/* Navigation Links (Desktop)                         */
-/* -------------------------------------------------- */
+/* =========================================================
+   Navigation Links
+   ========================================================= */
 .navbar-menu {
     display: flex;
     gap: 30px;
@@ -235,7 +231,6 @@ i {
     font-family: "Roboto", sans-serif;
     font-size: 0.95rem;
     font-weight: 300;
-    /* Light font for calm vibe */
     color: var(--secondary-white-color);
     text-decoration: none;
     transition: opacity 0.3s ease, color 0.3s ease;
@@ -248,12 +243,11 @@ i {
     opacity: 1;
 }
 
-/* -------------------------------------------------- */
-/* Mobile Toggle (Hamburger)                          */
-/* -------------------------------------------------- */
+/* =========================================================
+   Mobile Toggle
+   ========================================================= */
 .navbar-toggle {
     display: none;
-    /* Hidden on desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -263,7 +257,6 @@ i {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
-    /* Above overlay */
 }
 
 .hamburger-line {
@@ -274,9 +267,9 @@ i {
     border-radius: 2px;
 }
 
-/* -------------------------------------------------- */
-/* Mobile Styles                                      */
-/* -------------------------------------------------- */
+/* =========================================================
+   Mobile Styles
+   ========================================================= */
 @media (max-width: 900px) {
     .navbar-toggle {
         display: flex;
@@ -289,7 +282,6 @@ i {
         width: 100%;
         height: 100vh;
         background-color: rgba(45, 45, 45, 0.98);
-        /* Almost opaque overlay */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -300,9 +292,6 @@ i {
         visibility: hidden;
         transition: opacity 0.4s ease, visibility 0.4s ease;
         z-index: 1000;
-
-        /* Prevent scroll on body when open handled by JS usually, 
-           but for simple overlay this is okay */
     }
 
     /* Active State (toggled by JS) */
@@ -331,9 +320,9 @@ i {
     }
 }
 
-/* -------------------------------------------------- */
-/* Footer Navigation                                  */
-/* -------------------------------------------------- */
+/* =========================================================
+   Footer Navigation
+   ========================================================= */
 .footer-nav-container {
     margin-top: 80px;
     padding: 60px 0;

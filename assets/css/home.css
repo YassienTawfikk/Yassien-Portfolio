@@ -1,16 +1,19 @@
-/* -------------------------------------------------- */
-/* General Layout                                    */
-/* -------------------------------------------------- */
+/* =========================================================
+   General Layout
+   ========================================================= */
+
+/* Main wrapper
+   Prevents horizontal scroll from long lines */
 .intro-wrapper {
     display: flex;
     width: 100%;
     overflow-x: hidden;
-    /* Prevent horiz scroll from long line */
 }
 
-/* -------------------------------------------------- */
-/* Profile Section Styling                           */
-/* -------------------------------------------------- */
+/* =========================================================
+   Profile Section Styling
+   ========================================================= */
+
 .profile-section {
     background-color: var(--photo-bg);
     width: 35vw;
@@ -33,9 +36,10 @@
     filter: grayscale(100%);
 }
 
-/* -------------------------------------------------- */
-/* Heading Section Styling                           */
-/* -------------------------------------------------- */
+/* =========================================================
+   Heading Section Styling
+   ========================================================= */
+
 .heading-section {
     width: calc(100% - 700px);
     display: flex;
@@ -43,24 +47,27 @@
     margin: 50px auto;
 }
 
-/* -------------------------------------------------- */
-/* Name Title Styling                                */
-/* -------------------------------------------------- */
+/* =========================================================
+   Name Title Styling
+   ========================================================= */
+
+/* Name title alignment
+   Shifted right by 15px for visual balance */
 .name-title {
     display: flex;
     flex-direction: column;
     position: relative;
     margin-bottom: 30px;
     left: 15px;
-    /* Shift right by 15px */
 }
 
+/* Decorative line
+   Extends to end of screen (200vw) */
 .name-title::after {
     content: '';
     position: absolute;
     height: 1px;
     width: 200vw;
-    /* Extend to end of screen */
     background-color: var(--white-color);
     left: 260px;
     top: 105px;
@@ -77,17 +84,19 @@
     left: -100px;
 }
 
-/* -------------------------------------------------- */
-/* Intro Brief Styling                                */
-/* -------------------------------------------------- */
+/* =========================================================
+   Intro Brief Styling
+   ========================================================= */
+
 .intro-brief {
     margin-bottom: 50px;
     font-size: 12px;
 }
 
-/* -------------------------------------------------- */
-/* Responsive Adjustments                            */
-/* -------------------------------------------------- */
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+
 @media (max-width: 860px) {
 
     .profile-section {
@@ -112,11 +121,12 @@
 }
 
 @media (max-width: 768px) {
+
+    /* Prevent horizontal overflow on mobile */
     .main-container {
         padding: 0;
         margin: 0;
         overflow-x: hidden;
-        /* Prevent horizontal scroll */
     }
 
     .intro-wrapper {
@@ -152,38 +162,34 @@
         width: 100%;
         margin: 0;
         padding: 0 20px 40px 20px;
-        /* Add padding for content */
         box-sizing: border-box;
         text-align: center;
     }
 
+    /* Flexible text alignment */
     .name-title {
         flex-direction: column;
-        /* Stack names on very small screens if needed, or row */
         justify-content: center;
         align-items: center;
         margin: 0 auto 20px auto;
         flex-wrap: wrap;
     }
 
+    /* Font scaling */
     .name-title>span {
-        /* Intro needs to be larger than standard H1 to be a "hero" */
         font-size: calc(var(--mobile-font-h1) * 1.5);
-        /* Smaller font size */
         margin: 0 5px;
         line-height: 1.2;
     }
 
     .first-name {
         position: static;
-        /* Remove relative positioning offsets */
         left: auto;
         bottom: auto;
     }
 
     .name-title::after {
         content: none;
-        /* Hide the decorative line on mobile */
     }
 
     .intro-brief {
@@ -202,6 +208,5 @@
 
     .heading-section>a>button {
         margin-top: 10px;
-        /* Let std button handle sizing */
     }
 }

@@ -1,7 +1,12 @@
+/* =========================================================
+   Education Page Layout
+   ========================================================= */
+
 .education-port {
     display: flex;
 }
 
+/* Sticky image sidebar */
 .image-holder {
     display: flex;
     height: 100vh;
@@ -24,12 +29,20 @@
     filter: grayscale(100%);
 }
 
+/* =========================================================
+   Content Section
+   ========================================================= */
+
 .education-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 80px;
 }
+
+/* =========================================================
+   Text Styling
+   ========================================================= */
 
 .title {
     font-size: 52px;
@@ -64,13 +77,16 @@
     display: block;
 }
 
-
 .body-text {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 35px;
     max-width: 90%;
 }
+
+/* =========================================================
+   Courses Section
+   ========================================================= */
 
 .courses-head {
     font-size: 1.1rem;
@@ -96,6 +112,10 @@
     margin-bottom: 50px;
 }
 
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+
 @media (max-width: 975px) {
     .image-holder>div:last-child {
         display: none;
@@ -120,8 +140,6 @@
         display: none;
     }
 
-    /* .image-holder { display: none; } removed to allow first image to show */
-
     .education-container {
         margin: 0;
         padding: 50px 20px;
@@ -132,7 +150,6 @@
     .title {
         font-size: var(--mobile-font-h1);
         display: inline-block;
-        /* Center underline effect behavior */
         margin-left: auto;
         margin-right: auto;
     }
@@ -146,7 +163,6 @@
     }
 
     .body-text {
-        /* Changed from .text-body to .body-text to match existing class */
         font-size: var(--mobile-font-p);
     }
 
@@ -154,8 +170,6 @@
         left: 50%;
         transform: translateX(-50%);
     }
-
-    /* .education-box is not present in the original document, so it's omitted */
 }
 
 /* Mobile Rebuild */
@@ -170,7 +184,6 @@
         justify-content: center;
         margin-bottom: 20px;
         position: relative;
-        /* Disable sticky on mobile */
         top: auto;
     }
 
@@ -181,10 +194,9 @@
         align-items: center;
     }
 
-    /* Ensure first image is shown, second hidden (already handled by 975px rule but good to be explicit or safe) */
+    /* Ensure first image is shown */
     .image-holder>div:first-child {
         display: flex;
-        /* Force display */
     }
 
     .image-holder>div:last-child {
@@ -211,7 +223,6 @@
         font-size: var(--mobile-font-h1);
         margin-bottom: 15px;
         left: 0;
-        /* Reset relative positioning */
     }
 
     .title:after {
