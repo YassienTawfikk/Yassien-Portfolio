@@ -1,5 +1,5 @@
 from dash import html
-from src.pages import home, about, projects, education, skills, society, certificates, contact
+from src.pages import home, about, projects, education, skills, society, credentials, contact
 
 def render_page_content(pathname):
     """
@@ -17,8 +17,8 @@ def render_page_content(pathname):
         return skills.layout
     elif pathname == '/society':
         return society.layout
-    elif pathname == '/certificates':
-        return certificates.layout
+    elif pathname == '/credentials':
+        return credentials.layout
     elif pathname == '/contact':
         return contact.layout
     else:

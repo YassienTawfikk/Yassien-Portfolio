@@ -39,15 +39,23 @@ body {
     padding: 0;
     box-sizing: border-box;
     cursor: default;
+    /* Global enforcement */
 }
 
 /* -------------------------------------------------- */
 /* Typography                                         */
 /* -------------------------------------------------- */
+input,
+textarea {
+    cursor: text;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: var(--main-color);
     color: var(--white-color);
+    cursor: default;
+    /* Ensure default cursor explicitly */
 }
 
 .head-font {

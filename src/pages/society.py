@@ -64,7 +64,7 @@ layout = html.Div([
         ]),
         html.Button(id='scroll-right', children=[html.I(className="fa-solid fa-circle-chevron-right")]),
     ]),
-    FooterNavigation("Certificates", "/certificates")
+    FooterNavigation("Credentials", "/credentials")
 
 ],
     className='society-port')

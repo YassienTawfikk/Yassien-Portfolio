@@ -13,7 +13,7 @@ def Navbar():
         ("Education", "/education"),
         ("Skills", "/skills"),
         ("Society", "/society"),
-        ("Certificates", "/certificates"),
+        ("Credentials", "/credentials"),
         ("Contact", "/contact"),
     ]
 
