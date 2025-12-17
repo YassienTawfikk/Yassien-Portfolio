@@ -2,7 +2,7 @@ from dash import html
 from src.utils.json_utils import get_json_values
 from src.components.footer_navigation import FooterNavigation
 
-# Constants for paths
+
 CONFIG_FILE_PATH = "src/data/education.json"
 
 image01, image02, university, faculty, degree, expected_graduation, gpa, description, biomedical_courses, technical_courses, mathematics_courses = \
@@ -22,7 +22,6 @@ image01, image02, university, faculty, degree, expected_graduation, gpa, descrip
         ])
     )
 
-# Define layout
 layout = html.Div([
     html.Div([
         html.Div(className='image-holder', children=[

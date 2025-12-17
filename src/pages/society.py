@@ -10,8 +10,6 @@ with open(CONFIG_FILE_PATH, 'r') as file:
 
 # Extracting all data for every entry in the 'society' section
 society_data = []
-# It's cleaner to just iterate over data['society'] directly, but keeping original logic structure for safety
-# except for using the new path and imports.
 for index in range(len(data['society'])):
     entry_data = get_json_values(CONFIG_FILE_PATH, [
         ("society", index, "role"),
@@ -25,9 +23,7 @@ for index in range(len(data['society'])):
     ])
     society_data.append(entry_data)
 
-# Define layout
 layout = html.Div([
-    # CSS auto-loaded
     html.Div("Society Involvement", className='society-title head-font'),
     html.Div(className='society-content-wrapper', children=[
         html.Button(id='scroll-left', children=[html.I(className="fa-solid fa-circle-chevron-left")]),

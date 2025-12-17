@@ -2,7 +2,7 @@ from dash import html
 from src.utils.json_utils import get_json_values
 from src.components.footer_navigation import FooterNavigation
 
-# Constants for paths
+
 CONFIG_FILE_PATH = "src/data/about.json"
 
 image01, image02, image03, description, vision, mission = get_json_values(CONFIG_FILE_PATH, [
@@ -14,7 +14,6 @@ image01, image02, image03, description, vision, mission = get_json_values(CONFIG
     ("mission",),
 ])
 
-# Define layout
 layout = html.Div([
     html.Div(className='images-holder', children=[
         html.Span(className='image-box image', children=[html.Img(src=image01)]),

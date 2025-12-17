@@ -5,7 +5,6 @@ import os
 
 CONFIG_FILE_PATH = "src/data/projects.json"
 
-# Load data
 projects_list = []
 try:
     with open(CONFIG_FILE_PATH, 'r') as f:
@@ -104,11 +103,9 @@ def create_project_card(project, is_featured=False):
 
 # --- Processing & Categorization ---
 
-# 1. Identify Featured Projects (Live Demos)
 featured_projects = [p for p in projects_list if p.get("live_demo")]
 other_projects = [p for p in projects_list if not p.get("live_demo")]
 
-# 2. Categorize Other Projects
 categories = {
     "AI & Data Science": [],
     "Computer Vision & Image Processing": [],
@@ -122,7 +119,6 @@ for p in other_projects:
     tags_str = " ".join(p.get("tags", [])).lower()
     title = p.get("title", "").lower()
     
-    # Specific Overrides/Priority
     if "lifestream" in title or "soundprints" in title:
          categories["Web, Mobile & Software"].append(p)
          continue
@@ -143,10 +139,8 @@ for p in other_projects:
 # Define layout
 sections = []
 
-# Title
 sections.append(html.H1("Projects", className='page-title head-font'))
 
-# featured Section
 if featured_projects:
     sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], className='section-title featured-title head-font'))
     sections.append(html.Div(className='projects-grid featured-grid', children=[
@@ -154,7 +148,6 @@ if featured_projects:
     ]))
     sections.append(html.Hr(className="section-divider"))
 
-# Category Sections
 for category, projects in categories.items():
     if projects:
         sections.append(html.H2(category, className='section-title head-font'))
@@ -163,7 +156,6 @@ for category, projects in categories.items():
         ]))
 
 layout = html.Div([
-    # CSS is auto-loaded from assets/
     html.Div(className='projects-page-container main-container', children=sections),
     FooterNavigation("Credentials", "/credentials")
 ])

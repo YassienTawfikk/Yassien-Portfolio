@@ -2,7 +2,7 @@ from dash import html, dcc
 import json
 from src.components.footer_navigation import FooterNavigation
 
-# Load data
+
 try:
     with open('src/data/contact.json', 'r') as f:
         contact_data = json.load(f)
@@ -17,7 +17,7 @@ profile = contact_data.get('profile', {})
 direct = contact_data.get('direct_contact', {})
 socials = contact_data.get('social_channels', [])
 
-# Prepare metadata for clientside callback
+
 social_metadata = {
     str(i): {
         'data-notify-title': social.get('notification_title'),
@@ -33,7 +33,6 @@ layout = html.Div([
     # Store for metadata
     dcc.Store(id='social-metadata', data=social_metadata),
 
-    # Mirroring the 'intro-wrapper' structure from Home
     html.Div([
         
         # Left Side (Visual)
@@ -49,10 +48,8 @@ layout = html.Div([
                 html.H1("Let's Connect", className="head-font")
             ], className="contact-title-block"),
 
-            # Info Brief with Copy Buttons
             html.Div([
                 
-                # Email Group
                 html.Div([
                     html.A(
                         direct.get('email', 'Email Me'), 
@@ -69,7 +66,6 @@ layout = html.Div([
                     html.Span("", id="email-copy-feedback", className="copy-feedback")
                 ], className="copy-container"),
 
-                # Phone Group
                 html.Div([
                     html.P(direct.get('phone', ''), className="contact-phone-text", id="contact-phone-text"),
                     html.Button(
@@ -83,7 +79,6 @@ layout = html.Div([
 
             ], className="contact-info-brief"),
 
-            # Socials
             html.Div([
                 # Check if social item needs notification
                 html.A(
@@ -101,29 +96,24 @@ layout = html.Div([
                 ) for i, social in enumerate(socials)
             ], className="contact-social-row"),
 
-            # The Form
             html.Form([
                 
                 html.Div([
-                    # Name
                     html.Div([
                         html.Label("Name", htmlFor="from_name", className="zen-label"),
                         dcc.Input(id="from_name", type="text", className="zen-input", required=True, autoComplete="off")
                     ], className="zen-group"),
 
-                    # Email
                     html.Div([
                         html.Label("Email", htmlFor="reply_to", className="zen-label"),
                         dcc.Input(id="reply_to", type="email", className="zen-input", required=True, autoComplete="off")
                     ], className="zen-group"),
 
-                    # Message
                     html.Div([
                         html.Label("Message", htmlFor="message", className="zen-label"),
                         dcc.Textarea(id="message", className="zen-input", required=True, rows=3)
                     ], className="zen-group"),
 
-                    # Submit
                     html.Button("Send Message", type="submit", className="zen-submit", id="zen-submit-btn"),
                     html.Div(id="zen-form-feedback", className="zen-feedback")
                 ])
@@ -134,12 +124,9 @@ layout = html.Div([
 
     ], className="contact-wrapper"),
 
-    # Hidden Notification Modal
     html.Div([
-        # Clickable Background Overlay (Sibling to content)
         html.Div(id='modal-overlay-bg', className='modal-overlay-bg'),
 
-        # Content Wrapper
         html.Div([
             html.Div([
                 html.H2("", className="notification-title", id="notification-title"),
@@ -155,11 +142,10 @@ layout = html.Div([
     FooterNavigation("Back to Home", "/", style={'marginTop': '0'})
 ])
 
-# Clientside Callback for Modal Logic
 from dash import clientside_callback, Input, Output, State, MATCH, ALL
 
 clientside_callback(
-    """
+    r"""
     function(n_clicks, metadata) {
         // Identify which input triggered the callback
         const ctx = dash_clientside.callback_context;
@@ -207,7 +193,6 @@ clientside_callback(
     State('social-metadata', 'data'), 
 )
 
-# Separate callback for closing/continuing
 clientside_callback(
     """
     function(ok_clicks, bg_clicks) {

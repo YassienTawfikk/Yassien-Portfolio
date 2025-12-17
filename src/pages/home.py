@@ -2,9 +2,8 @@ from dash import html
 from src.utils.json_utils import get_json_values
 from src.components.footer_navigation import FooterNavigation
 
-# Constants for paths
+
 CONFIG_FILE_PATH = "src/data/home.json"
-# Fetch data safely
 full_name, intro_brief, IMAGE_SRC, CV_SRC = get_json_values(CONFIG_FILE_PATH, [
     ("name",),
     ("brief",),
@@ -15,9 +14,7 @@ full_name, intro_brief, IMAGE_SRC, CV_SRC = get_json_values(CONFIG_FILE_PATH, [
 names = full_name.split() if full_name else ["Unknown"]
 signature = names[0] + names[1]
 
-# Define layout
 layout = html.Div([
-    # CSS is auto-loaded from assets/ folder
     html.Div(className="intro-wrapper", children=[
         html.Div(className="profile-section", children=[
             html.Img(src=IMAGE_SRC, key="home-intro-image")

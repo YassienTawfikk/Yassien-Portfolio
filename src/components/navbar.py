@@ -3,8 +3,7 @@ from src.pages import home
 
 def Navbar():
     """
-    Returns the application navigation bar.
-    Rebuilt with semantic HTML5 and cleaner structure.
+    Returns the application navigation bar component.
     """
     nav_links = [
         ("Home", "/"),
@@ -19,14 +18,12 @@ def Navbar():
 
     return html.Nav(className="navbar", children=[
         html.Div(className="navbar-container", children=[
-            # 1. Logo / Signature
             dcc.Link(
                 html.Span(home.signature, className="navbar-logo"),
                 href="/",
                 className="navbar-brand"
             ),
 
-            # 2. Mobile Menu Toggle
             html.Button(
                 children=[
                     html.Span(className="hamburger-line"),
@@ -38,7 +35,6 @@ def Navbar():
                 **{"aria-label": "Toggle navigation", "aria-expanded": "false"}
             ),
 
-            # 3. Navigation Links
             html.Ul(id="navbar-menu-list", className="navbar-menu", children=[
                 html.Li(
                     dcc.Link(label, href=href, className="nav-link")

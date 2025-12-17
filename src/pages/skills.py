@@ -6,19 +6,16 @@ from src.components.footer_navigation import FooterNavigation
 # Constants for paths
 CONFIG_FILE_PATH = "src/data/skills.json"
 
-# Load data
 skill_categories = get_json_values(CONFIG_FILE_PATH, [("skill_categories",)])
 
 
 def create_skill_card(skill):
     """Create a large card focused on the skill icon (image)."""
     children = [
-        # Use html.Img instead of html.I
         html.Img(src=skill.get('image_url', ''), className='skill-icon'),
         html.Span(skill['name'], className='skill-name body-font'),
     ]
     
-    # Optionally display details if present
     if 'details' in skill:
         children.append(html.Span(skill['details'], className='skill-details-hint body-font'))
         
@@ -33,23 +30,19 @@ def create_skill_card(skill):
 def create_category_section(category):
     """Create a section for a category with a grid of skill cards."""
     return html.Div([
-        # Header Section
         html.Div([
             html.I(className=f"{category['category_icon']} category-icon"),
             html.Span(category['category'], className='category-title head-font'),
         ], className='category-header'),
         
-        # Description
         html.P(category['description'], className='category-desc body-font'),
         
-        # Skills Grid
         html.Div([
             create_skill_card(skill) for skill in category['skills']
         ], className='skills-grid')
         
     ], className='category-section')
 
-# Modal Component
 modal = dbc.Modal(
     [
         dbc.ModalHeader(
@@ -69,11 +62,9 @@ modal = dbc.Modal(
     backdrop=True,
 )
 
-# Define layout
 layout = html.Div([
     html.Div([
         html.Span('Skills', className='skills-title head-font'),
-        # Container
         html.Div([
             create_category_section(cat) for cat in skill_categories
         ], className='all-skills-container'),
@@ -98,15 +89,10 @@ def toggle_modal(card_clicks, close_clicks, is_open):
     if not triggered_id:
         return no_update, no_update, no_update
         
-    # Check if close button was clicked
     if triggered_id == "modal-close":
         return False, no_update, no_update
         
-    # Check if a card was clicked
     if isinstance(triggered_id, dict) and triggered_id.get('type') == 'skill-card':
-        # Ensure the click count is actually > 0 (prevents firing on init if n_clicks=None)
-        # But prevent_initial_call=True handles most, just being safe.
-        
         skill_name = triggered_id['index']
         
         # Find the skill description
@@ -124,7 +110,6 @@ def toggle_modal(card_clicks, close_clicks, is_open):
         if found_skill:
             description = found_skill.get('description', description)
             
-            # Content of the modal
             content = html.Div([
                 html.Img(src=found_skill.get('image_url', ''), className='modal-skill-icon'),
                 html.P(description, className='modal-skill-desc')

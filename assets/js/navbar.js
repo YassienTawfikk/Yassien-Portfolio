@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let timer;  // Declare timer globally to manage hover interactions
+    let timer;
 
     function setupNavInteraction() {
-        const trigger = document.getElementById('hover-trigger');  // Select by ID
-        const navBlock = document.getElementById('nav-block');  // Select by ID
+        const trigger = document.getElementById('hover-trigger');
+        const navBlock = document.getElementById('nav-block');
 
         if (trigger && navBlock) {
             console.log('Trigger and NavBlock found, adding event listeners.');
 
-            // Desktop Hover Logic
+
             trigger.addEventListener('mouseover', function () {
                 if (window.innerWidth > 768) {
                     clearTimeout(timer);
@@ -31,11 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // Mobile Click Logic
+
             trigger.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
-                    e.stopPropagation(); // Prevent immediate close by document listener
-                    // Toggle visibility
+                    e.stopPropagation();
                     if (navBlock.style.display === 'flex') {
                         navBlock.style.display = 'none';
                     } else {
@@ -45,10 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // Close menu when clicking outside (Mobile)
             document.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
-                    // If click is outside trigger AND outside navBlock
                     if (!trigger.contains(e.target) && !navBlock.contains(e.target)) {
                         navBlock.style.display = 'none';
                     }

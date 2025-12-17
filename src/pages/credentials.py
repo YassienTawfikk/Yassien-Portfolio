@@ -3,14 +3,14 @@ import dash_bootstrap_components as dbc
 from dash import html, callback, Input, Output, ALL, ctx
 from src.components.footer_navigation import FooterNavigation
 
-# Load Data
+
 def load_credentials_data():
     with open('src/data/credentials.json', 'r') as f:
         return json.load(f)
 
 data = load_credentials_data()
 
-# --- Universal Card Generator ---
+
 
 def create_credential_card(item, card_type="internship"):
     """
@@ -18,18 +18,13 @@ def create_credential_card(item, card_type="internship"):
     Includes explicit Action Footer for better Link UX.
     Includes Overlay Icon for Image Affordance (Mobile).
     """
-    # 1. Extract Common Data
-    # Image
     image_src = item.get("certificateImage", "/assets/images/placeholder.jpg")
     
-    # Title & Subtitle logic
     if card_type == "internship":
         title = item.get("role", "Unknown Role")
         subtitle_text = item.get("organization", "")
-        # Link for Organization
         subtitle_link = item.get("organizationLink") # Can be None
         
-        # Meta
         date_str = item.get("date", "")
         type_str = item.get("type", "Experience")
         
@@ -47,8 +42,6 @@ def create_credential_card(item, card_type="internship"):
         description = None
         github_link = None # Certs usually don't have code, but if needed can add
 
-    
-    # 2. Build Components
     
     # Image Container (Trigger for Modal) - With Overlay Icon
     image_section = html.Div(
@@ -91,32 +84,23 @@ def create_credential_card(item, card_type="internship"):
             className="action-btn github-btn body-font"
         ))
 
-    # Action Footer Container
     action_footer = None
     if action_buttons:
         action_footer = html.Div(className="card-actions", children=action_buttons)
         
-    # Card Body construction
     card_body = html.Div(className="card-content", children=[
-        # Title
-        html.H3(title, className="card-title head-font"),
-        
-        # Org / Issuer
         html.Div(className="card-subtitle-row", children=[
             subtitle_comp
         ]),
         
-        # Meta
         html.Div(className="card-meta-row body-font", children=[
             html.Span(date_str),
             html.Span("•"),
             html.Span(type_str, className="card-badge")
         ]),
         
-        # Description (if exists)
         html.P(description, className="card-description body-font") if description else None,
         
-        # Footer Action (Explicit Buttons)
         action_footer
     ])
     
@@ -126,9 +110,6 @@ def create_credential_card(item, card_type="internship"):
     ])
 
 
-# --- Layout Construction ---
-
-# Section A: Internships (Using Grid)
 field_experience_section = html.Div(children=[
     html.H2(data["fieldExperience"]["displayTitle"], className="section-title head-font"),
     html.Div(className="credentials-grid", children=[
@@ -136,7 +117,6 @@ field_experience_section = html.Div(children=[
     ])
 ])
 
-# Section B: Certifications (Using Grid)
 certifications_section = html.Div(children=[
     html.H2(data["coursesAndCertificates"]["displayTitle"], className="section-title head-font"),
     html.Div(className="credentials-grid", children=[
@@ -177,7 +157,8 @@ layout = html.Div(children=[
 ])
 
 
-# --- Callback Logic ---
+
+
 
 @callback(
     [Output("certificate-modal", "is_open"), Output("modal-cert-image", "src")],

@@ -37,7 +37,6 @@ def get_json_values(file_path, queries):
     for query in queries:
         value = data
         for key in query:
-            # If key is an integer, we try list indexing
             if isinstance(key, int):
                 if isinstance(value, list) and 0 <= key < len(value):
                     value = value[key]
@@ -45,7 +44,8 @@ def get_json_values(file_path, queries):
                     print(f"Index '{key}' not found (out of range or not a list) at current step.")
                     value = None
                     break
-            # If key is a string, we do dict access
+                    value = None
+                    break
             else:
                 if isinstance(value, dict) and key in value:
                     value = value[key]

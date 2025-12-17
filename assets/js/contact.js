@@ -2,20 +2,19 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- 1. CONFIGURATION ---
+
     const EMAILJS_PUBLIC_KEY = "A03Gz-zzs0j09uVz3";
     const EMAILJS_SERVICE_ID = "service_2k9xyz";
     const EMAILJS_TEMPLATE_ID = "template_d4ryemm";
 
-    // --- 2. INITIALIZATION ---
+
     if (typeof emailjs !== 'undefined') {
         emailjs.init(EMAILJS_PUBLIC_KEY);
     } else {
         console.warn("EmailJS SDK not loaded. Form functionality disabled.");
     }
 
-    // --- 3. COPY TO CLIPBOARD LOGIC ---
-    // Helper function
+
     function setupCopyButton(btnId, textId, feedbackId) {
         const btn = document.getElementById(btnId);
         const textEl = document.getElementById(textId); // Or simply pass the string
@@ -26,13 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 let textToCopy = textEl.innerText || textEl.textContent;
 
-                // Special handling for phone number to remove dashes/spaces
+
                 if (textId === 'contact-phone-text') {
                     textToCopy = textToCopy.replace(/[^\d+]/g, '');
                 }
 
                 navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Success Feedback
                     const originalIcon = btn.innerHTML;
                     btn.innerHTML = '<i class="fa-solid fa-check"></i>'; // Change icon to check
                     if (feedback) {
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i>'; // Revert icon
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
                         if (feedback) {
                             feedback.classList.remove('visible');
                         }
@@ -52,11 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-
-    // Initialize Copy Buttons (Wait for Dash to render if using Dash, but this is pure JS running on loaded DOM)
-    // Since Dash renders dynamically, we might need a MutationObserver or a delay.
-    // However, if we put this script in assets/ it loads early. 
-    // We'll use a MutationObserver to watch for the elements appearing.
 
     const observer = new MutationObserver(function (mutations, me) {
         const emailBtn = document.getElementById('copy-email-btn');
@@ -74,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         subtree: true
     });
 
-    // Fallback for form listener
     function attachFormListener() {
         const contactForm = document.getElementById('zen-contact-form');
         const submitBtn = document.getElementById('zen-submit-btn');
@@ -85,24 +77,22 @@ document.addEventListener('DOMContentLoaded', function () {
             contactForm.addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                // Loading State
                 const originalBtnText = submitBtn.innerText;
                 submitBtn.innerText = "Processing...";
                 submitBtn.disabled = true;
                 submitBtn.style.opacity = "0.5";
 
-                // Clear previous feedback
                 feedbackEl.classList.remove('visible');
                 feedbackEl.innerText = "";
 
-                // Collect Data
                 const params = {
                     from_name: document.getElementById('from_name').value,
                     reply_to: document.getElementById('reply_to').value,
                     message: document.getElementById('message').value
                 };
 
-                // Send Email
+
+
                 emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
                     .then(function () {
                         feedbackEl.innerText = "Message received. Thank you.";

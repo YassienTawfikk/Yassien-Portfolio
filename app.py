@@ -4,7 +4,6 @@ from src.components.navbar import Navbar
 from src.routes import render_page_content
 from src.utils import clean_cache
 
-# Initialize the Dash app
 app = Dash(
     __name__,
     external_stylesheets=[
@@ -31,7 +30,7 @@ app = Dash(
     ]
 )
 
-# Custom index string to include Web App Icons
+# Configures the HTML index template to include Web App Icons and meta tags.
 app.index_string = '''
 <!DOCTYPE html>
 <html>
@@ -58,14 +57,12 @@ app.index_string = '''
 
 server = app.server
 
-# Define app layout
 app.layout = html.Div([
     Navbar(),
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content'),
 ])
 
-# Routing callback
 @app.callback(
     Output('page-content', 'children'),
     [Input('url', 'pathname')]
@@ -73,7 +70,6 @@ app.layout = html.Div([
 def display_page(pathname):
     return render_page_content(pathname)
 
-# Clean up cache if needed
 try:
     clean_cache.remove_directories()
 except Exception as e:
