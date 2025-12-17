@@ -315,3 +315,9 @@ i {
     transition: 250ms;
     transform: scale(1.25);
 }
+
+.cert-icon-container {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}

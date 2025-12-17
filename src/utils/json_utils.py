@@ -50,7 +50,7 @@ def get_json_values(file_path, queries):
                 if isinstance(value, dict) and key in value:
                     value = value[key]
                 else:
-                    print(f"Key '{key}' not found at current step.")
+                    # print(f"Key '{key}' not found at current step.")
                     value = None
                     break
         results.append(value)

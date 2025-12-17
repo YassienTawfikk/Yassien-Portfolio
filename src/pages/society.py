@@ -1,4 +1,5 @@
-from dash import html
+from dash import html, callback, Input, Output, State, ALL, ctx
+import dash_bootstrap_components as dbc
 import json
 from src.components.footer_navigation import FooterNavigation
 from src.utils.json_utils import get_json_values
@@ -20,6 +21,7 @@ for index in range(len(data['society'])):
         ("society", index, "instagram_url"),
         ("society", index, "youtube_url"),
         ("society", index, "website_url"),
+        ("society", index, "certficates"),
     ])
     society_data.append(entry_data)
 
@@ -49,6 +51,10 @@ layout = html.Div([
                         html.A(href=society_data[i][7], target='_blank', children=[
                             html.I(className='fa-solid fa-globe social-icons')
                         ]) if len(society_data[i]) > 7 and society_data[i][7] != "" else None,
+
+                        html.Div(id={'type': 'society-cert-btn', 'index': i}, className='cert-icon-container', children=[
+                            html.I(className='fa-solid fa-scroll social-icons')
+                        ]) if len(society_data[i]) > 8 and society_data[i][8] else None,
                     ])
                 ]),
                 html.Div(className='society-card-text', children=[
@@ -60,7 +66,57 @@ layout = html.Div([
         ]),
         html.Button(id='scroll-right', children=[html.I(className="fa-solid fa-circle-chevron-right")]),
     ]),
-    FooterNavigation("Get In Touch", "/contact")
+    FooterNavigation("Get In Touch", "/contact"),
+
+    # Certificate Modal
+    dbc.Modal(
+        [
+            dbc.ModalHeader(dbc.ModalTitle("Certificate View"), close_button=True),
+            dbc.ModalBody(
+                html.Div(
+                    className="gallery-container",
+                    children=[
+                        html.Img(
+                            id="society-modal-cert-image",
+                            src="",
+                            className="gallery-image"
+                        ),
+                    ]
+                )
+            ),
+        ],
+        id="society-certificate-modal",
+        size="xl",
+        is_open=False,
+        centered=True,
+        className="gallery-modal"
+    )
 
 ],
     className='society-port')
+
+
+@callback(
+    [Output("society-certificate-modal", "is_open"),
+     Output("society-modal-cert-image", "src")],
+    [Input({'type': 'society-cert-btn', 'index': ALL}, 'n_clicks')],
+    [State("society-certificate-modal", "is_open")],
+    prevent_initial_call=True
+)
+def toggle_society_modal(n_clicks, is_open):
+    if not any(n_clicks):
+        return is_open, ""
+
+    triggered_id = ctx.triggered_id
+    if not triggered_id or triggered_id['type'] != 'society-cert-btn':
+        return is_open, ""
+
+    clicked_index = triggered_id['index']
+    
+    # Retrieve the image path from the pre-loaded data
+    # Structure: society_data[i][8] is the certificate path
+    if 0 <= clicked_index < len(society_data):
+        image_src = society_data[clicked_index][8]
+        return True, image_src
+    
+    return is_open, ""
