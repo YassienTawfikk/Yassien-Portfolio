@@ -53,5 +53,5 @@ layout = html.Div([
             ], className='courses-container'),
         ]),
     ], className='education-port'),
-    FooterNavigation("Skills", "/skills", style={'marginTop': '0'})
+    FooterNavigation("Society", "/society", style={'marginTop': '0'})
 ])

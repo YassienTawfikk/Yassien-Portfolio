@@ -80,7 +80,7 @@ layout = html.Div([
     ], className='skills-page main-container'),
     
     modal,
-    FooterNavigation("Society", "/society")
+    FooterNavigation("About Me", "/about")
 ])
 
 @callback(

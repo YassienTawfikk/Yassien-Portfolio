@@ -173,7 +173,7 @@ layout = html.Div(children=[
         modal
     ]),
     
-    FooterNavigation("Get In Touch", "/contact")
+    FooterNavigation("Skills", "/skills")
 ])
 
 

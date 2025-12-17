@@ -4,18 +4,16 @@ from src.components.footer_navigation import FooterNavigation
 
 # Constants for paths
 CONFIG_FILE_PATH = "src/data/home.json"
-CONFIG_DB_FILE_PATH = "src/data/db_data.json"
-
 # Fetch data safely
-full_name = get_json_values(CONFIG_DB_FILE_PATH, [("personal_information", "name")])
-names = full_name.split() if full_name else ["Unknown"]
-signature = names[0] + names[1]
-
-intro_brief, IMAGE_SRC, CV_SRC = get_json_values(CONFIG_FILE_PATH, [
+full_name, intro_brief, IMAGE_SRC, CV_SRC = get_json_values(CONFIG_FILE_PATH, [
+    ("name",),
     ("brief",),
     ("profile photo",),
     ("cv",),
 ])
+
+names = full_name.split() if full_name else ["Unknown"]
+signature = names[0] + names[1]
 
 # Define layout
 layout = html.Div([
@@ -37,5 +35,5 @@ layout = html.Div([
             )
         ])
     ]),
-    FooterNavigation("About Me", "/about", style={'marginTop': '0'})
+    FooterNavigation("Projects", "/projects", style={'marginTop': '0'})
 ])

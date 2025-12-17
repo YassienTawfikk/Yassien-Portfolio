@@ -165,5 +165,5 @@ for category, projects in categories.items():
 layout = html.Div([
     # CSS is auto-loaded from assets/
     html.Div(className='projects-page-container main-container', children=sections),
-    FooterNavigation("Education", "/education")
+    FooterNavigation("Credentials", "/credentials")
 ])

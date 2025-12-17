@@ -35,5 +35,5 @@ layout = html.Div([
             ])
         ])
     ]),
-    FooterNavigation("Projects", "/projects")
+    FooterNavigation("Education", "/education")
 ])

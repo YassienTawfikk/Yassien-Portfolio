@@ -8,12 +8,12 @@ def Navbar():
     """
     nav_links = [
         ("Home", "/"),
-        ("About", "/about"),
         ("Projects", "/projects"),
-        ("Education", "/education"),
-        ("Skills", "/skills"),
-        ("Society", "/society"),
         ("Credentials", "/credentials"),
+        ("Skills", "/skills"),
+        ("About", "/about"),
+        ("Education", "/education"),
+        ("Society", "/society"),
         ("Contact", "/contact"),
     ]
 
