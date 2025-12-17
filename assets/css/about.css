@@ -1,18 +1,51 @@
+/* About Page Styling - Fixed Layout */
+
 .images-holder {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: fit-content;
-    margin-bottom: 20px;
+    height: 450px;
+    /* CONSTANT Fixed height constraint. Using px as safer default, or 40vh if preferred. User requested "e.g. 40vh or 450px". I will use 40vh with a min-px to be safe, or just fixed constraint. Let's use 40vh as base but ensure it doesn't shrink. */
+    height: 40vh;
+    max-height: 500px;
+    /* Constraint */
+    min-height: 300px;
+    /* Safety */
+    margin-bottom: 30px;
+    gap: 10px;
+    overflow: hidden;
 }
 
 .image-box {
     overflow: hidden;
+    height: 100%;
+    position: relative;
+    transition: width 0.3s ease;
+    /* Smooth width transition */
 }
 
+/* Width Distribution (35% | 35% | 30%) */
+.image-box:nth-child(1) {
+    width: 35%;
+}
+
+.image-box:nth-child(2) {
+    width: 35%;
+    min-width: 450px;
+}
+
+.image-box:nth-child(3) {
+    width: 30%;
+}
+
+
 .image-box img {
+    width: 100%;
     height: 100%;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    /* Crucial */
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%);
 }
 
 
@@ -25,6 +58,7 @@
     margin-left: 30px;
     padding-bottom: 2px;
     position: relative;
+    display: table;
 }
 
 .about-title:after {
@@ -32,7 +66,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 90px;
+    width: 80%;
     height: 1px;
     background-color: var(--white-color);
 }
@@ -40,9 +74,11 @@
 .about-content {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 25px
+    margin-top: 25px;
+    margin-bottom: 60px;
 }
 
+/* Topic (Text Columns) Styling */
 .topic:first-child {
     width: 35%;
     position: relative;
@@ -54,69 +90,52 @@
     flex-direction: column;
     width: 15%;
     font-size: 15px;
+    line-height: 1.6;
+    color: var(--secondary-white-color);
 }
 
 .topic .head-font {
     font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--white-color);
 }
 
 
-@media (max-width: 810px) {
+/* --- Responsive Logic --- */
+
+/* Tablet/Small Desktop Breakpoint: Hide 3rd Image */
+@media (max-width: 900px) {
     .about-title {
         margin-left: initial;
     }
-}
 
-/* Mobile Rebuild */
-@media (max-width: 768px) {
-    .images-holder {
-        height: 40vh;
-        width: 100%;
-        margin-bottom: 20px;
-        display: flex;
-        /* Ensure flex is active */
-        justify-content: center;
-    }
-
-    .image-box {
-        position: relative;
-        /* Reset from absolute if set elsewhere */
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-
-    .image-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Show only first image, no animation */
-    .image-box:nth-child(1) {
-        display: flex;
-        animation: none;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .image-box:nth-child(2),
+    /* Hide 3rd Image */
     .image-box:nth-child(3) {
         display: none;
+    }
+
+    /* Remaining 2 images split space evenly */
+    .image-box:nth-child(1),
+    .image-box:nth-child(2) {
+        min-width: 49%;
+    }
+
+}
+
+/* Mobile Layout Adjustments (Text, etc.) */
+@media (max-width: 768px) {
+    /* DO NOT change height here. Height stays constant from main rule */
+
+    .images-holder {
+        gap: 5px;
     }
 
     .about-content {
         flex-direction: column;
         width: 90%;
         margin: auto;
-        margin-top: 20px;
-        gap: 20px;
-        text-align: justify;
+        margin-top: 30px;
+        gap: 30px;
     }
 
     .topic:first-child {
@@ -127,9 +146,6 @@
 
     .topic {
         width: 100%;
-        height: auto;
-        margin-top: 10px;
-        margin-bottom: 0;
     }
 
     .about-title {
@@ -143,5 +159,19 @@
     .about-title:after {
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+/* Small Mobile Breakpoint (< 450px): Hide 2nd Image */
+@media (max-width: 450px) {
+
+    /* Hide 2nd Image */
+    .image-box:nth-child(2) {
+        display: none;
+    }
+
+    /* 1st Image takes full width */
+    .image-box:nth-child(1) {
+        width: 100%;
     }
 }
