@@ -92,6 +92,7 @@ def create_credential_card(item, card_type="internship"):
         action_footer = html.Div(className="card-actions", children=action_buttons)
         
     card_body = html.Div(className="card-content", children=[
+        html.H3(title, className="card-title head-font"),
         html.Div(className="card-subtitle-row", children=[
             subtitle_comp
         ]),
