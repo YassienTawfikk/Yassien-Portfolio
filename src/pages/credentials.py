@@ -1,6 +1,6 @@
 import json
 import dash_bootstrap_components as dbc
-from dash import html, callback, Input, Output, ALL, ctx
+from dash import html, callback, clientside_callback, Input, Output, State, ALL, ctx, dcc
 from src.components.footer_navigation import FooterNavigation
 
 
@@ -9,6 +9,9 @@ def load_credentials_data():
         return json.load(f)
 
 data = load_credentials_data()
+
+# Unified list for Gallery Navigation (Preserving order)
+ALL_GALLERY_ITEMS = data["fieldExperience"]["items"] + data["coursesAndCertificates"]["items"]
 
 
 
@@ -124,22 +127,54 @@ certifications_section = html.Div(children=[
     ])
 ])
 
-# Modal
+# Modal (Interactive Gallery)
 modal = dbc.Modal(
     [
         dbc.ModalHeader(dbc.ModalTitle("Certificate View"), close_button=True),
         dbc.ModalBody(
-            html.Img(id="modal-cert-image", src="", style={"width": "100%", "height": "auto", "borderRadius": "8px"})
+            html.Div(
+                className="gallery-container",
+                children=[
+                    # Previous Button
+                    html.Button(
+                        html.I(className="fas fa-chevron-left"),
+                        id="btn-prev",
+                        className="gallery-nav prev",
+                        title="Previous (Left Arrow)"
+                    ),
+                    
+                    # Image
+                    html.Img(
+                        id="modal-cert-image",
+                        src="",
+                        className="gallery-image"
+                    ),
+                    
+                    # Next Button
+                    html.Button(
+                        html.I(className="fas fa-chevron-right"),
+                        id="btn-next",
+                        className="gallery-nav next",
+                        title="Next (Right Arrow)"
+                    ),
+                ]
+            )
         ),
+        # Invisible div to attach keydown event listener via clientside callback
+        html.Div(id="keyboard-listener-trigger", style={"display": "none"})
     ],
     id="certificate-modal",
-    size="lg",
+    size="xl", 
     is_open=False,
-    centered=True
+    centered=True,
+    className="gallery-modal"
 )
 
 
 layout = html.Div(children=[
+    # State Store for tracking current image index
+    dcc.Store(id='gallery-state', data={'index': 0}),
+    
     html.Div(className="main-container", children=[
         
         html.H1("Credentials", className="page-title head-font"),
@@ -157,32 +192,98 @@ layout = html.Div(children=[
 ])
 
 
+# --- Callbacks ---
 
-
-
+# 1. Open Modal and Initialize State
 @callback(
-    [Output("certificate-modal", "is_open"), Output("modal-cert-image", "src")],
+    [Output("certificate-modal", "is_open"), 
+     Output("gallery-state", "data")],
     [Input({'type': 'cert-thumb', 'index': ALL}, 'n_clicks')],
+    [State("gallery-state", "data")],
     prevent_initial_call=True
 )
-def display_certificate(n_clicks):
+def open_modal(n_clicks, current_data):
     if not any(n_clicks):
-         return False, ""
+        return False, current_data
     
     triggered_id = ctx.triggered_id
     if not triggered_id or triggered_id['type'] != 'cert-thumb':
-        return False, ""
+        return False, current_data
 
     clicked_id = triggered_id['index']
     
-    image_src = ""
-    
-    # Efficient Search: Combine both lists
-    all_items = data["coursesAndCertificates"]["items"] + data["fieldExperience"]["items"]
-    
-    for item in all_items:
+    # Find index of clicked item
+    new_index = 0
+    for i, item in enumerate(ALL_GALLERY_ITEMS):
         if item["id"] == clicked_id:
-            image_src = item.get("certificateImage", "")
+            new_index = i
             break
             
-    return True, image_src
+    return True, {'index': new_index}
+
+
+# 2. Update Image based on State
+@callback(
+    Output("modal-cert-image", "src"),
+    Input("gallery-state", "data")
+)
+def update_gallery_image(state_data):
+    if not state_data:
+        return ""
+    
+    idx = state_data.get('index', 0)
+    # Safety check
+    if 0 <= idx < len(ALL_GALLERY_ITEMS):
+        return ALL_GALLERY_ITEMS[idx].get("certificateImage", "/assets/images/placeholder.jpg")
+    return ""
+
+
+# 3. Handle Navigation (Next/Prev Buttons & Keyboard)
+@callback(
+    Output("gallery-state", "data", allow_duplicate=True),
+    [Input("btn-prev", "n_clicks"),
+     Input("btn-next", "n_clicks")],
+    [State("gallery-state", "data")],
+    prevent_initial_call=True
+)
+def navigate_gallery(prev_clicks, next_clicks, state_data):
+    if not state_data:
+        return {'index': 0}
+    
+    current_index = state_data.get('index', 0)
+    total = len(ALL_GALLERY_ITEMS)
+    
+    trigger = ctx.triggered_id
+    
+    if trigger == "btn-next":
+        current_index = (current_index + 1) % total
+    elif trigger == "btn-prev":
+        current_index = (current_index - 1 + total) % total
+        
+    return {'index': current_index}
+
+
+# 4. Clientside Callback for Keyboard Navigation (Arrow Keys)
+clientside_callback(
+    """
+    function(isOpen) {
+        if (isOpen) {
+            document.onkeydown = function(event) {
+                if (event.key === 'ArrowRight') {
+                    const btn = document.getElementById('btn-next');
+                    if (btn) btn.click();
+                } else if (event.key === 'ArrowLeft') {
+                    const btn = document.getElementById('btn-prev');
+                    if (btn) btn.click();
+                }
+            };
+            return "Listening";
+        } else {
+            document.onkeydown = null;
+            return "Not Listening";
+        }
+    }
+    """,
+    Output("keyboard-listener-trigger", "children"),
+    Input("certificate-modal", "is_open")
+)
