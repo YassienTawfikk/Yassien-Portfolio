@@ -268,6 +268,7 @@ clientside_callback(
     """
     function(isOpen) {
         if (isOpen) {
+            // Keyboard Navigation
             document.onkeydown = function(event) {
                 if (event.key === 'ArrowRight') {
                     const btn = document.getElementById('btn-next');
@@ -277,9 +278,42 @@ clientside_callback(
                     if (btn) btn.click();
                 }
             };
-            return "Listening";
+            
+            // Swipe Navigation (Mobile)
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const threshold = 50; // Minimum distance for swipe
+            
+            function handleGesture() {
+                if (touchEndX < touchStartX - threshold) {
+                    // Swipe Left -> Next
+                    const btn = document.getElementById('btn-next');
+                    if (btn) btn.click();
+                }
+                if (touchEndX > touchStartX + threshold) {
+                    // Swipe Right -> Prev
+                    const btn = document.getElementById('btn-prev');
+                    if (btn) btn.click();
+                }
+            }
+            
+            // Attach to the modal content or document
+            // Attaching to document ensures we catch swipes anywhere
+            document.ontouchstart = function(event) {
+                touchStartX = event.changedTouches[0].screenX;
+            };
+            
+            document.ontouchend = function(event) {
+                touchEndX = event.changedTouches[0].screenX;
+                handleGesture();
+            };
+            
+            return "Listening (Keys + Touch)";
         } else {
+            // Cleanup
             document.onkeydown = null;
+            document.ontouchstart = null;
+            document.ontouchend = null;
             return "Not Listening";
         }
     }
