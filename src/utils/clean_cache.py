@@ -29,7 +29,3 @@ def remove_directories(base_path=None, dir_names=None):
                     shutil.rmtree(target_path, ignore_errors=False)  # Remove directory
                 except Exception as e:
                     print(f"Error removing {target_path}: {e}")
-
-
-if __name__ == "__main__":
-    remove_directories()
