@@ -94,18 +94,26 @@ window.dash_clientside.gallery = {
         // ANIMATION LOGIC
         const image_el = document.getElementById('modal-cert-image');
         if (image_el && direction) {
-            // 1. Remove existing animation classes
+            // 1. Hide immediately to prevent ghosting of old image
+            image_el.classList.add('is-switching');
             image_el.classList.remove('anim-next', 'anim-prev');
-            
-            // 2. Force browser reflow (void offset) to restart animation
-            void image_el.offsetWidth;
-            
-            // 3. Add the appropriate class
-            if (direction === 'next') {
-                image_el.classList.add('anim-next');
-            } else {
-                image_el.classList.add('anim-prev');
-            }
+
+            // 2. Wait for Dash to update the src (approx 50-100ms) + buffer
+            setTimeout(() => {
+                // Safari Fix: Double RAF ensures the 'hidden' state is fully painted 
+                // before the new animation class is applied.
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        // 3. Unhide and animate
+                        image_el.classList.remove('is-switching');
+                        if (direction === 'next') {
+                            image_el.classList.add('anim-next');
+                        } else {
+                            image_el.classList.add('anim-prev');
+                        }
+                    });
+                });
+            }, 250); // 250ms delay to ensure source is swapped
         }
 
         return [new_src, new_index];
