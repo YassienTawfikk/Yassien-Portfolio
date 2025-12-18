@@ -79,14 +79,34 @@ window.dash_clientside.gallery = {
         const trigger_id = triggered[0].prop_id;
         const total = gallery_data.length;
         let new_index = current_index;
+        let direction = null;
 
         if (trigger_id.includes('btn-next')) {
             new_index = (current_index + 1) % total;
+            direction = 'next';
         } else if (trigger_id.includes('btn-prev')) {
             new_index = (current_index - 1 + total) % total;
+            direction = 'prev';
         }
 
         const new_src = gallery_data[new_index].certificateImage || "/assets/images/placeholder.jpg";
+
+        // ANIMATION LOGIC
+        const image_el = document.getElementById('modal-cert-image');
+        if (image_el && direction) {
+            // 1. Remove existing animation classes
+            image_el.classList.remove('anim-next', 'anim-prev');
+            
+            // 2. Force browser reflow (void offset) to restart animation
+            void image_el.offsetWidth;
+            
+            // 3. Add the appropriate class
+            if (direction === 'next') {
+                image_el.classList.add('anim-next');
+            } else {
+                image_el.classList.add('anim-prev');
+            }
+        }
 
         return [new_src, new_index];
     }
