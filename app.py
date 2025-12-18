@@ -37,12 +37,12 @@ app.index_string = '''
     <head>
         {%metas%}
         <title>{%title%}</title>
-        {%favicon%}
+        <link rel="icon" type="image/x-icon" href="/assets/images/icon/favicon.ico?v=2">
         {%css%}
         <!-- Web App Icons -->
-        <link rel="apple-touch-icon" href="/assets/images/icon/apple-touch-icon.png"/>
-        <link rel="icon" sizes="192x192" href="/assets/images/icon/icon-250.png"/>
-        <link rel="icon" sizes="512x512" href="/assets/images/icon/icon-512.png"/>
+        <link rel="apple-touch-icon" href="/assets/images/icon/apple-touch-icon.png?v=2"/>
+        <link rel="icon" sizes="192x192" href="/assets/images/icon/icon-250.png?v=2"/>
+        <link rel="icon" sizes="512x512" href="/assets/images/icon/icon-512.png?v=2"/>
     </head>
     <body>
         <div id="global-preloader">
