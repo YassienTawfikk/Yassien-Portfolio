@@ -165,9 +165,20 @@ modal = dbc.Modal(
 )
 
 
+
+# ----------------------------------------------------------------------------------
+# CLIENTSIDE INTERACTION LOGIC
+# ----------------------------------------------------------------------------------
+# All modal interactions (Open, Next, Prev) are handled via Clientside Callbacks
+# in assets/js/gallery_callbacks.js to ensure Zero Latency and Atomic UI updates.
+# ----------------------------------------------------------------------------------
+
 layout = html.Div(children=[
-    # State Store for tracking current image index
-    dcc.Store(id='gallery-state', data={'index': 0}),
+    # DATA STORE: Holds all certificate data client-side for instant access
+    dcc.Store(id='gallery-data', data=ALL_GALLERY_ITEMS),
+    
+    # STATE STORE: Tracks just the current numeric index
+    dcc.Store(id='current-index', data=0),
     
     html.Div(className="main-container", children=[
         
@@ -186,75 +197,34 @@ layout = html.Div(children=[
 ])
 
 
-# Open Modal and Initialize State
-@callback(
-    [Output("certificate-modal", "is_open"), 
-     Output("gallery-state", "data")],
-    [Input({'type': 'cert-thumb', 'index': ALL}, 'n_clicks')],
-    [State("gallery-state", "data")],
-    prevent_initial_call=True
-)
-def open_modal(n_clicks, current_data):
-    if not any(n_clicks):
-        return False, current_data
-    
-    triggered_id = ctx.triggered_id
-    if not triggered_id or triggered_id['type'] != 'cert-thumb':
-        return False, current_data
 
-    clicked_id = triggered_id['index']
-    
-    # Find index of clicked item
-    new_index = 0
-    for i, item in enumerate(ALL_GALLERY_ITEMS):
-        if item["id"] == clicked_id:
-            new_index = i
-            break
-            
-    return True, {'index': new_index}
-
-
-@callback(
+# 1. ATOMIC OPENING (Clientside)
+# Instantly opens modal AND sets the correct image same-frame.
+clientside_callback(
+    "window.dash_clientside.gallery.open_gallery_modal",
+    Output("certificate-modal", "is_open"),
     Output("modal-cert-image", "src"),
-    Input("gallery-state", "data")
-)
-def update_gallery_image(state_data):
-    if not state_data:
-        return ""
-    
-    idx = state_data.get('index', 0)
-    # Safety check
-    if 0 <= idx < len(ALL_GALLERY_ITEMS):
-        return ALL_GALLERY_ITEMS[idx].get("certificateImage", "/assets/images/placeholder.jpg")
-    return ""
-
-
-# Handle Navigation (Next/Prev Buttons & Keyboard)
-@callback(
-    Output("gallery-state", "data", allow_duplicate=True),
-    [Input("btn-prev", "n_clicks"),
-     Input("btn-next", "n_clicks")],
-    [State("gallery-state", "data")],
+    Output("current-index", "data"),
+    Input({'type': 'cert-thumb', 'index': ALL}, 'n_clicks'),
+    State("gallery-data", "data"),
     prevent_initial_call=True
 )
-def navigate_gallery(prev_clicks, next_clicks, state_data):
-    if not state_data:
-        return {'index': 0}
-    
-    current_index = state_data.get('index', 0)
-    total = len(ALL_GALLERY_ITEMS)
-    
-    trigger = ctx.triggered_id
-    
-    if trigger == "btn-next":
-        current_index = (current_index + 1) % total
-    elif trigger == "btn-prev":
-        current_index = (current_index - 1 + total) % total
-        
-    return {'index': current_index}
 
+# 2. ZERO-LATENCY NAVIGATION (Clientside)
+# Handles Next/Prev buttons instantly.
+clientside_callback(
+    "window.dash_clientside.gallery.navigate_gallery",
+    Output("modal-cert-image", "src", allow_duplicate=True),
+    Output("current-index", "data", allow_duplicate=True),
+    Input("btn-prev", "n_clicks"),
+    Input("btn-next", "n_clicks"),
+    State("gallery-data", "data"),
+    State("current-index", "data"),
+    prevent_initial_call=True
+)
 
-# Clientside Callback for Keyboard Navigation (Arrow Keys)
+# 3. KEYBOARD SHORTCUTS (Clientside)
+# Listens for ArrowRight/ArrowLeft and triggers the buttons.
 clientside_callback(
     """
     function(isOpen) {
@@ -288,8 +258,6 @@ clientside_callback(
                 }
             }
             
-            // Attach to the modal content or document
-            // Attaching to document ensures we catch swipes anywhere
             document.ontouchstart = function(event) {
                 touchStartX = event.changedTouches[0].screenX;
             };
