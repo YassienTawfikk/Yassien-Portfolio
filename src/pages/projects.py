@@ -85,7 +85,7 @@ def create_project_card(project, is_featured=False):
             
             html.P(short_desc, className='project-description body-font'),
             
-            html.P(short_desc, className='project-description body-font'),
+
             
             html.Div(className='tech-stack-section', children=[
                 html.P("Tech Stack", className='tech-section-label head-font'),
