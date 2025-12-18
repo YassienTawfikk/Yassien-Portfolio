@@ -26,7 +26,7 @@ for index in range(len(data['society'])):
     society_data.append(entry_data)
 
 layout = html.Div([
-    html.Div("Society Involvement", className='society-title head-font'),
+    html.Div("Society Involvement", className='unified-page-title title-center underline-200px'),
     html.Div(className='society-content-wrapper', children=[
         html.Button(id='scroll-left', children=[html.I(className="fa-solid fa-circle-chevron-left")]),
         html.Div(className='involvements-holder main-container', id='involvements-id', children=[

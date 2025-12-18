@@ -44,25 +44,7 @@
    Text Styling
    ========================================================= */
 
-.title {
-    font-size: 52px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 10px 1px;
-    position: relative;
-    left: -2px;
-    margin-bottom: 15px;
-}
-
-.title:after {
-    content: '';
-    position: absolute;
-    background-color: var(--white-color);
-    height: 1px;
-    width: 80px;
-    bottom: 0;
-    left: 0;
-}
+/* title removed - replaced by unified-page-title */
 
 .subtitle {
     font-size: 1.5rem;

@@ -136,7 +136,7 @@ for p in other_projects:
 
 sections = []
 
-sections.append(html.H1("Projects", className='page-title head-font'))
+sections.append(html.H1("Projects", className='unified-page-title title-center underline-80px'))
 
 if featured_projects:
     sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], className='section-title featured-title head-font'))

@@ -21,7 +21,7 @@ layout = html.Div([
         html.Span(className='image-box image', children=[html.Img(src=image03)])
     ]),
     html.Div(className='main-container', children=[
-        html.Span(className='about-title head-font', children="About Me"),
+        html.Span(className='unified-page-title title-left underline-80percent', children="About Me"),
         html.Div(className='about-content', children=[
             html.Div(className='body-font topic', children=description),
             html.Div(className='topic', children=[

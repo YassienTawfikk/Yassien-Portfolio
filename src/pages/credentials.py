@@ -182,7 +182,7 @@ layout = html.Div(children=[
     
     html.Div(className="main-container", children=[
         
-        html.H1("Credentials", className="page-title head-font"),
+        html.H1("Credentials", className="unified-page-title title-center underline-80px"),
         
         field_experience_section,
         

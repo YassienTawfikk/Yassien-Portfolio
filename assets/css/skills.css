@@ -5,40 +5,16 @@
 /* Page container
    Uses full viewport height to avoid short-page visual gaps */
 .skills-page {
-    padding-top: 50px;
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
     background: transparent;
+    display: block;
 }
 
 /* Page title
    Mirrors typography scale used on the Projects page for consistency */
-.skills-title {
-    font-size: 52px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 10px 1px;
-    position: relative;
-    margin-bottom: 50px;
-    color: var(--white-color);
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-}
-
-/* Decorative underline
-   Implemented via pseudo-element to avoid additional markup */
-.skills-title:after {
-    content: '';
-    position: absolute;
-    background-color: var(--white-color);
-    height: 1px;
-    width: 80px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+/* skills-title removed - replaced by unified-page-title */
 
 /* =========================================================
    Skills Sections Layout
@@ -74,11 +50,14 @@
 }
 
 .category-icon {
-    font-size: 20px;
+    font-size: 24px;
     margin-right: 12px;
-    color: var(--secondary-white-color);
-    opacity: 0.7;
+    color: var(--white-color);
+    opacity: 0.9;
     cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: visible;
 }
 
 .category-title {
@@ -291,16 +270,8 @@
    Responsive Adjustments
    ========================================================= */
 
-@media (max-width: 1024px) {
-    .skills-page {
-        padding: 50px 40px 0 40px;
-    }
-}
 
 @media (max-width: 768px) {
-    .skills-page {
-        padding: 40px 20px;
-    }
 
     .title {
         font-size: var(--mobile-font-h1);

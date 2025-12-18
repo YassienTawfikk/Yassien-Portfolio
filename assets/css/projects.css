@@ -4,30 +4,7 @@
 
 /* Main page title
    Centered with decorative underline animation */
-.page-title {
-    font-size: 52px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 10px 1px;
-    position: relative;
-    margin-bottom: 30px;
-    color: var(--white-color);
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-}
-
-/* Decorative underline */
-.page-title:after {
-    content: '';
-    position: absolute;
-    background-color: var(--white-color);
-    height: 1px;
-    width: 80px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+/* page-title removed - replaced by unified-page-title */
 
 .section-title {
     font-size: 32px;

@@ -62,35 +62,7 @@
    Title Block
    ========================================================= */
 
-.contact-title-block {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 3rem;
-}
-
-/* Fluid typography for responsive scaling */
-.contact-title-block h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    margin: 0;
-    line-height: 1.1;
-    color: var(--white-color);
-    letter-spacing: -1px;
-}
-
-/* Decorative underline */
-.contact-title-block::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 150px;
-    background-color: var(--white-color);
-    left: 0;
-    bottom: -15px;
-    top: auto;
-    opacity: 0.5;
-}
+/* contact-title-block removed - replaced by unified-page-title */
 
 /* =========================================================
    Info Brief & Copy Logic

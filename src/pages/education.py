@@ -29,7 +29,7 @@ layout = html.Div([
             html.Div(children=[html.Img(src=image02)])
         ]),
         html.Div(className='education-container', children=[
-            html.Span('Education', className='head-font title'),
+            html.Span('Education', className='unified-page-title title-left underline-80px'),
             html.Span(university + " - " + faculty, className='subtitle body-font'),
             html.Span(degree + ' - Expected Graduation: ' + expected_graduation + ' - GPA: ' + gpa, className='subsubtitle body-font'),
             html.Span(description, className='body-text body-font'),

@@ -64,7 +64,7 @@ modal = dbc.Modal(
 
 layout = html.Div([
     html.Div([
-        html.Span('Skills', className='skills-title head-font'),
+        html.Span('Skills', className='unified-page-title title-center underline-80px'),
         html.Div([
             create_category_section(cat) for cat in skill_categories
         ], className='all-skills-container'),

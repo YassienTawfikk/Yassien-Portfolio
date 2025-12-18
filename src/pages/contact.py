@@ -37,9 +37,9 @@ layout = html.Div([
         ], className="contact-visual-section"),
 
         html.Div([
-            html.Div([
-                html.H1("Let's Connect", className="head-font")
-            ], className="contact-title-block"),
+        html.Div([
+            html.H1("Let's Connect", className="unified-page-title title-left underline-150px")
+        ], className=""), # contact-title-block removed class name to avoid conflict but kept div for structure if needed
 
             html.Div([
                 
