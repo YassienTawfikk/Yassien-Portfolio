@@ -32,7 +32,8 @@
         "Visualizations include model architecture, confusion matrix, and prediction insights."
       ],
       "year": "2025",
-      "long_description": "NeuroPathX is a fully integrated web platform for MRI brain tumor classification using deep learning. It leverages an Xception-based model for multi-class tumor detection and provides real-time inference, visualization, and structured clinical reporting. The platform supports end-to-end testing with a sample MRI dataset and is ideal for medical imaging applications requiring automated diagnostic assistance and transparent model insights."
+      "long_description": "NeuroPathX is a fully integrated web platform for MRI brain tumor classification using deep learning. It leverages an Xception-based model for multi-class tumor detection and provides real-time inference, visualization, and structured clinical reporting. The platform supports end-to-end testing with a sample MRI dataset and is ideal for medical imaging applications requiring automated diagnostic assistance and transparent model insights.",
+      "video_demo": "https://github.com/user-attachments/assets/21eeda36-77e0-4ad1-9d48-09ac86ec6b2d"
     },
     {
       "title": "LifeStream",
@@ -181,7 +182,8 @@
         "Clinically inspired PyQt5 interface with clear visualization of vital signals."
       ],
       "year": "2025",
-      "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications."
+      "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications.",
+      "video_demo": "https://github.com/user-attachments/assets/eefadd90-89af-4b33-b589-6f108a437ca3"
     },
     {
       "title": "MR Frequency Sculptor",
@@ -213,7 +215,8 @@
         "Illustrates Fourier relationships between k-space and spatial domain, and artifacts from undersampling."
       ],
       "year": "2025",
-      "long_description": "MR Frequency Sculptor is a Python-based tool designed to explore MRI frequency domain manipulations. Users can apply full, partial, low-pass, or high-pass k-space filters to images and visualize the impact on reconstruction quality. The project emphasizes understanding the physics behind MRI reconstruction, including the Fourier relationship between k-space and spatial images. It provides both GUI and CLI workflows, supports multiple data sources, computes quantitative metrics, and generates automated analysis reports for comprehensive experimentation."
+      "long_description": "MR Frequency Sculptor is a Python-based tool designed to explore MRI frequency domain manipulations. Users can apply full, partial, low-pass, or high-pass k-space filters to images and visualize the impact on reconstruction quality. The project emphasizes understanding the physics behind MRI reconstruction, including the Fourier relationship between k-space and spatial images. It provides both GUI and CLI workflows, supports multiple data sources, computes quantitative metrics, and generates automated analysis reports for comprehensive experimentation.",
+      "video_demo": "https://github.com/user-attachments/assets/8e276210-3328-45f3-ac60-1af6480b6e21"
     },
     {
       "title": "MediCluster",
@@ -306,7 +309,8 @@
         "Detailed statistics including RR interval histograms and outlier detection."
       ],
       "year": "2024",
-      "long_description": "BioRhythm Analyzer is a desktop application designed for healthcare professionals to monitor and analyze fetal and maternal heart rate signals. It offers real-time HRV and FHR signal analysis, highlighting critical events with visual indicators and detailed metrics. The system supports advanced filtering, signal visualization, and statistical reporting, making it an essential tool for fetal monitoring and heart failure detection in clinical environments."
+      "long_description": "BioRhythm Analyzer is a desktop application designed for healthcare professionals to monitor and analyze fetal and maternal heart rate signals. It offers real-time HRV and FHR signal analysis, highlighting critical events with visual indicators and detailed metrics. The system supports advanced filtering, signal visualization, and statistical reporting, making it an essential tool for fetal monitoring and heart failure detection in clinical environments.",
+      "video_demo": "https://github.com/user-attachments/assets/81f050d4-e398-4a57-8f2a-261e20b89963"
     },
     {
       "title": "Image FT Mixer Pro",
@@ -336,7 +340,8 @@
         "Dual output viewports with export support."
       ],
       "year": "2024",
-      "long_description": "Image FT Mixer Pro is a frequency-domain image manipulation tool that enables mixing and visualizing Fourier Transform components across up to four images. It provides interactive FT analysis modes (Magnitude/Phase and Real/Imaginary), dynamic brightness/contrast adjustments, and advanced mixing via weighted components or Gaussian region masks for low- and high-frequency separation. The application features a responsive PyQt5 interface powered by asynchronous workers to keep the UI fluid during heavy FFT computations. Outputs can be previewed and exported in common formats."
+      "long_description": "Image FT Mixer Pro is a frequency-domain image manipulation tool that enables mixing and visualizing Fourier Transform components across up to four images. It provides interactive FT analysis modes (Magnitude/Phase and Real/Imaginary), dynamic brightness/contrast adjustments, and advanced mixing via weighted components or Gaussian region masks for low- and high-frequency separation. The application features a responsive PyQt5 interface powered by asynchronous workers to keep the UI fluid during heavy FFT computations. Outputs can be previewed and exported in common formats.",
+      "video_demo": "https://github.com/user-attachments/assets/cad8e300-f260-4d07-84e3-59fb6c6d8f17"
     },
     {
       "title": "STM32LabSuite",
@@ -432,7 +437,8 @@
         "Real-time updates and resizable, responsive UI."
       ],
       "year": "2024",
-      "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist\u2013Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing."
+      "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist\u2013Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing.",
+      "video_demo": "https://github.com/user-attachments/assets/b83ee1ba-57ab-4690-bb54-5d0bb85fbbf5"
     },
     {
       "title": "2D Beamforming Simulator",
@@ -493,7 +499,8 @@
         "Export filter configurations to C code and save/load in CSV or text format."
       ],
       "year": "2024",
-      "long_description": "The Digital Filter Application allows users to design and experiment with digital filters interactively. Users can manipulate zeros and poles on the z-plane, visualize the resulting magnitude and phase response in real time, and apply the filters to arbitrary signals. Advanced features include filter libraries, all-pass phase correction, signal playback with variable speed, and exporting configurations to C code for practical use."
+      "long_description": "The Digital Filter Application allows users to design and experiment with digital filters interactively. Users can manipulate zeros and poles on the z-plane, visualize the resulting magnitude and phase response in real time, and apply the filters to arbitrary signals. Advanced features include filter libraries, all-pass phase correction, signal playback with variable speed, and exporting configurations to C code for practical use.",
+      "video_demo": "https://github.com/user-attachments/assets/1f5dedce-a009-4fc9-8925-54ea725dcb2b"
     },
     {
       "title": "EdgeEnhance",
@@ -584,7 +591,8 @@
         "Intuitive GUI to apply various processing techniques interactively."
       ],
       "year": "2025",
-      "long_description": "Pixelizing is a Python-based image processing application built with OpenCV and PyQt. It provides tools for noise addition, filtering, edge detection, image equalization, and grayscale conversion. The toolkit emphasizes modularity through Object-Oriented Programming, allowing easy extension of new algorithms. Users can visualize effects in real time via a GUI and evaluate processing results. The project is ideal for educational purposes and practical demonstrations of fundamental image processing techniques."
+      "long_description": "Pixelizing is a Python-based image processing application built with OpenCV and PyQt. It provides tools for noise addition, filtering, edge detection, image equalization, and grayscale conversion. The toolkit emphasizes modularity through Object-Oriented Programming, allowing easy extension of new algorithms. Users can visualize effects in real time via a GUI and evaluate processing results. The project is ideal for educational purposes and practical demonstrations of fundamental image processing techniques.",
+      "video_demo": "https://github.com/user-attachments/assets/a20275b8-5615-445a-bec8-edf227da7d56"
     },
     {
       "title": "SiftSee",
@@ -832,7 +840,8 @@
         "Audiogram scale and hybrid sound modes for advanced signal analysis."
       ],
       "year": "2025",
-      "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications."
+      "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications.",
+      "video_demo": "https://github.com/user-attachments/assets/a13dae43-fa16-44d7-8f04-d47be1091a1d"
     },
     {
       "title": "CyberMazer-2077",
@@ -859,7 +868,8 @@
         "Visual representation of trajectories for both maze sizes."
       ],
       "year": "2024",
-      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding."
+      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding.",
+      "video_demo": "https://github.com/user-attachments/assets/d426bae1-6ba7-4a97-9986-0bb2eef1356e\""
     },
     {
       "title": "Hospital System Website",
@@ -895,7 +905,8 @@
         "Detailed profiles and reviews for doctors."
       ],
       "year": "2025",
-      "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations."
+      "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations.",
+      "video_demo": "https://github.com/user-attachments/assets/482d3c58-1b43-4893-b731-8c3f08c38bc4"
     },
     {
       "title": "SequenceAlignX",
@@ -923,7 +934,8 @@
         "Responsive and interactive UI for learning and demonstration purposes."
       ],
       "year": "2025",
-      "long_description": "SequenceAlignX is an educational web application that demonstrates local sequence alignment in bioinformatics. It provides a stepwise filling of the alignment matrix, visual tracing of optimal paths, and an optional 'Guess Mode' where users predict alignment steps. The tool helps students and researchers understand alignment algorithms interactively."
+      "long_description": "SequenceAlignX is an educational web application that demonstrates local sequence alignment in bioinformatics. It provides a stepwise filling of the alignment matrix, visual tracing of optimal paths, and an optional 'Guess Mode' where users predict alignment steps. The tool helps students and researchers understand alignment algorithms interactively.",
+      "video_demo": "https://github.com/user-attachments/assets/2e022254-7dcc-4b06-9e7a-383f640398bc"
     },
     {
       "title": "Soundprints",
@@ -957,7 +969,8 @@
         "First-run preprocessing with reuse for subsequent runs."
       ],
       "year": "2024",
-      "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
+      "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing.",
+      "video_demo": "https://github.com/user-attachments/assets/e653a6b5-856f-4ca1-af2c-8bf816d91121"
     },
     {
       "title": "CheckMate - Chess Game",
