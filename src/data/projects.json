@@ -114,8 +114,8 @@
     {
       "title": "Oral Cancer Prediction",
       "short_description": "Machine learning pipeline for predicting oral cancer from microbiome data, with SHAP-based explainability and a PyTorch Lightning-style CLI.",
-      "overview_image": "assets/images/projects_poster/Oral_Cancer_Prediction.png",
-      "github_link": "https://github.com/YassienTawfikk/OralCancerPrediction.git",
+      "overview_image": "https://github.com/user-attachments/assets/a122a6bc-91ce-4a14-bfc7-4a503c579fb7",
+      "github_link": "https://github.com/YassienTawfikk/Oral-Cancer-Prediction.git",
       "tech_stack": [
         "Python",
         "PyTorch",
