@@ -60,6 +60,12 @@ app.index_string = '''
 
 server = app.server
 
+@server.after_request
+def add_header(response):
+    response.cache_control.max_age = 3600
+    response.cache_control.public = True
+    return response
+
 app.layout = html.Div([
     Navbar(),
     dcc.Location(id='url', refresh=False),
