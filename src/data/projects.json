@@ -443,8 +443,8 @@
     {
       "title": "2D Beamforming Simulator",
       "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
-      "overview_image": "assets/images/projects_poster/2D_Beamforming_Simulator.png",
-      "github_link": "https://github.com/YassienTawfikk/2D-Beamforming-Simulator",
+      "overview_image": "https://github.com/user-attachments/assets/7a8045ab-8a21-4005-93f2-00203173fdc5",
+      "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
       "tech_stack": [
         "Python",
         "NumPy",
@@ -470,7 +470,8 @@
         "Equations implemented for phase shift, intensity maps, and array factor computations."
       ],
       "year": "2025",
-      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization."
+      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization.",
+      "video_demo": "https://github.com/user-attachments/assets/7af93bb1-0a6b-47ba-b021-24cd3ee387c6"
     },
     {
       "title": "Digital Filter Application",
