@@ -3,8 +3,10 @@
     {
       "title": "NeuroPathX",
       "short_description": "End-to-end web platform for MRI brain tumor analysis using an Xception-based deep learning model with real-time inference and automated clinical reporting.",
-      "overview_image": "https://github.com/user-attachments/assets/f0f406b3-1b7e-4adb-beb7-5713a7293933",
+      "overview_image": "https://github.com/user-attachments/assets/d55cddc4-67d7-4443-9b0a-83968fdc7baa",
       "github_link": "https://github.com/YassienTawfikk/NeuroPathX",
+      "live_demo": "https://neuropathx.vercel.app",
+
       "tech_stack": [
         "Python",
         "TensorFlow",
@@ -184,6 +186,39 @@
       "year": "2025",
       "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications.",
       "video_demo": "https://github.com/user-attachments/assets/eefadd90-89af-4b33-b589-6f108a437ca3"
+    },
+    {
+      "title": "2D Beamforming Simulator",
+      "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
+      "overview_image": "https://github.com/user-attachments/assets/7a8045ab-8a21-4005-93f2-00203173fdc5",
+      "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter"
+      ],
+      "tags": [
+        "Beamforming",
+        "Phased Arrays",
+        "2D Simulation",
+        "Signal Processing",
+        "Ultrasound",
+        "5G",
+        "Tumor Ablation",
+        "Visualization",
+        "Physics Simulation"
+      ],
+      "highlights": [
+        "Real-time beam steering with adjustable angles and multiple array units.",
+        "Supports linear and curved array geometries with customizable parameters.",
+        "Visualizes constructive/destructive interference and beam profiles.",
+        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
+        "Equations implemented for phase shift, intensity maps, and array factor computations."
+      ],
+      "year": "2025",
+      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization.",
+      "video_demo": "https://github.com/user-attachments/assets/7af93bb1-0a6b-47ba-b021-24cd3ee387c6"
     },
     {
       "title": "MR Frequency Sculptor",
@@ -439,39 +474,6 @@
       "year": "2024",
       "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist\u2013Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing.",
       "video_demo": "https://github.com/user-attachments/assets/b83ee1ba-57ab-4690-bb54-5d0bb85fbbf5"
-    },
-    {
-      "title": "2D Beamforming Simulator",
-      "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
-      "overview_image": "https://github.com/user-attachments/assets/7a8045ab-8a21-4005-93f2-00203173fdc5",
-      "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
-      "tech_stack": [
-        "Python",
-        "NumPy",
-        "Matplotlib",
-        "PyQt / Tkinter"
-      ],
-      "tags": [
-        "Beamforming",
-        "Phased Arrays",
-        "2D Simulation",
-        "Signal Processing",
-        "Ultrasound",
-        "5G",
-        "Tumor Ablation",
-        "Visualization",
-        "Physics Simulation"
-      ],
-      "highlights": [
-        "Real-time beam steering with adjustable angles and multiple array units.",
-        "Supports linear and curved array geometries with customizable parameters.",
-        "Visualizes constructive/destructive interference and beam profiles.",
-        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
-        "Equations implemented for phase shift, intensity maps, and array factor computations."
-      ],
-      "year": "2025",
-      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization.",
-      "video_demo": "https://github.com/user-attachments/assets/7af93bb1-0a6b-47ba-b021-24cd3ee387c6"
     },
     {
       "title": "Digital Filter Application",
