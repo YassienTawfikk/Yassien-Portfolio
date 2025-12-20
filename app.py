@@ -46,7 +46,13 @@ app.index_string = '''
     </head>
     <body>
         <div id="global-preloader">
-            <h1 class="zen-signature">Yassien Tawfik</h1>
+            <div class="preloader-container">
+                <h1 class="zen-signature">Yassien Tawfik</h1>
+                <p class="zen-subtext">
+                    Server waking up...<br>
+                    This may take up to 30 seconds.
+                </p>
+            </div>
         </div>
         {%app_entry%}
         <footer>

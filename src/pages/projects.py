@@ -1,4 +1,5 @@
-from dash import html
+from dash import html, Input, Output, State, ALL, callback, ctx
+import dash_bootstrap_components as dbc
 import json
 from src.components.footer_navigation import FooterNavigation
 import os
@@ -54,6 +55,7 @@ def get_project_domain(title, tags):
 def create_project_card(project, is_featured=False):
     """
     Creates a Dash HTML component for a single project card.
+    Handles Live Demo and Video Demo independently.
     """
     title = project.get("title", "Untitled Project")
     short_desc = project.get("short_description", "")
@@ -61,18 +63,23 @@ def create_project_card(project, is_featured=False):
     tags = project.get("tags", [])
     tech_stack = project.get("tech_stack", [])
     github_link = project.get("github_link", "")
+    
+    # Independent resources
     live_demo = project.get("live_demo", "")
+    video_demo = project.get("video_demo", "")
     
     domain_name, domain_icon = get_project_domain(title, tags)
     
     # Limit displayed tech stack to avoid clutter
     display_tech = tech_stack[:5]
 
+    # Only apply 'featured-card' styling if it's in the featured section
     card_class = 'project-card featured-card' if is_featured else 'project-card'
 
     return html.Div(className=card_class, children=[
         html.Div(className='project-image-container', children=[
             html.Img(src=image_url, className='project-image', alt=f"{title} Overview"),
+            # The Live Badge appears ONLY if it is in the Featured Section (implies Live Demo exists)
             html.Div(className="live-badge", children="LIVE DEMO") if is_featured else None
         ]),
         html.Div(className='project-content', children=[
@@ -85,8 +92,6 @@ def create_project_card(project, is_featured=False):
             
             html.P(short_desc, className='project-description body-font'),
             
-
-            
             html.Div(className='tech-stack-section', children=[
                 html.P("Tech Stack", className='tech-section-label head-font'),
                 html.Div(className='project-tech-stack', children=[
@@ -95,14 +100,34 @@ def create_project_card(project, is_featured=False):
             ]),
             
             html.Div(className='project-links', children=[
-                html.A([html.I(className="fab fa-github"), " Code"], href=github_link, target="_blank", className='std-button std-button-primary') if github_link else None,
-                html.A([html.I(className="fas fa-play"), " Live Demo"], href=live_demo, target="_blank", className='std-button std-button-secondary') if live_demo else None
+                # GitHub Link
+                html.A([html.I(className="fab fa-github"), " Code"], 
+                       href=github_link, target="_blank", 
+                       className='std-button std-button-primary') if github_link else None,
+                
+                # Live Demo Link (Independent)
+                html.A([html.I(className="fas fa-play"), " Live Demo"], 
+                       href=live_demo, target="_blank", 
+                       className='std-button std-button-secondary') if live_demo else None,
+                
+                # Video Demo Button (Independent)
+                html.Button([html.I(className="fas fa-video"), " Video Demo"],
+                            id={'type': 'video-btn', 'index': title},
+                            n_clicks=0,
+                            className='std-button std-button-secondary') if video_demo else None
             ])
         ])
     ])
 
+# --- Logic Separation ---
+# 1. Featured Live: Strictly projects that HAVE a live_demo.
 featured_projects = [p for p in projects_list if p.get("live_demo")]
-other_projects = [p for p in projects_list if not p.get("live_demo")]
+
+# 2. Featured Video: Projects that HAVE a video_demo but NO live_demo.
+featured_video_projects = [p for p in projects_list if p.get("video_demo") and not p.get("live_demo")]
+
+# 3. Others: Strictly projects that have neither live_demo nor video_demo.
+other_projects = [p for p in projects_list if not p.get("live_demo") and not p.get("video_demo")]
 
 categories = {
     "AI & Data Science": [],
@@ -138,10 +163,18 @@ sections = []
 
 sections.append(html.H1("Projects", className='unified-page-title title-center underline-80px'))
 
+# Only render Featured Section if there are actually projects with Live Demos
 if featured_projects:
     sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], className='section-title featured-title head-font'))
     sections.append(html.Div(className='projects-grid featured-grid', children=[
         create_project_card(proj, is_featured=True) for proj in featured_projects
+    ]))
+    sections.append(html.Hr(className="section-divider"))
+
+if featured_video_projects:
+    sections.append(html.H2([html.I(className="fas fa-video"), " Featured Video Demos"], className='section-title featured-title head-font'))
+    sections.append(html.Div(className='projects-grid featured-grid', children=[
+        create_project_card(proj, is_featured=True) for proj in featured_video_projects
     ]))
     sections.append(html.Hr(className="section-divider"))
 
@@ -154,5 +187,62 @@ for category, projects in categories.items():
 
 layout = html.Div([
     html.Div(className='projects-page-container main-container', children=sections),
-    FooterNavigation("Credentials", "/credentials")
+    FooterNavigation("Credentials", "/credentials"),
+    
+    # Video Modal
+    dbc.Modal(
+        [
+            dbc.ModalHeader(dbc.ModalTitle("Project Demo"), id="video-modal-header"),
+            dbc.ModalBody(html.Div(id="video-modal-body")),
+        ],
+        id="video-modal",
+        is_open=False,
+        size="lg",
+        centered=True,
+    ),
 ])
+
+
+@callback(
+    [Output("video-modal", "is_open"),
+     Output("video-modal-body", "children"),
+     Output("video-modal-header", "children")],
+    [Input({'type': 'video-btn', 'index': ALL}, 'n_clicks')],
+    [State("video-modal", "is_open")],
+    prevent_initial_call=True
+)
+def toggle_modal(video_clicks, is_open):
+    triggered_id = ctx.triggered_id
+    
+    if not triggered_id:
+        return is_open, None, "Project Demo"
+
+    # If a video button was clicked
+    if isinstance(triggered_id, dict) and triggered_id.get('type') == 'video-btn':
+        project_title = triggered_id.get('index')
+        
+        # Find the project data
+        project_data = next((p for p in projects_list if p.get("title") == project_title), None)
+        
+        if project_data:
+            video_url = project_data.get("video_demo")
+            
+            if video_url:
+                # Create video player (using HTML5 video tag)
+                video_content = html.Video(
+                    src=video_url,
+                    controls=True,
+                    autoPlay=True,
+                    style={"width": "100%", "height": "auto"}
+                )
+            else:
+                # Placeholder for missing videos (fallback)
+                video_content = html.Div([
+                    html.I(className="fas fa-video-slash", style={"fontSize": "3rem", "marginBottom": "1rem", "color": "#666"}),
+                    html.H4("Video Demo Coming Soon", style={"color": "#ccc"}),
+                    html.P("A demonstration video for this project is not yet available.", style={"color": "#888"})
+                ], style={"textAlign": "center", "padding": "3rem"})
+            
+            return True, video_content, dbc.ModalTitle(project_title)
+            
+    return is_open, None, "Project Demo"
