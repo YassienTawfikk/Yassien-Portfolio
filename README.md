@@ -1,4 +1,6 @@
-![Yassien Portfolio Poster](./assets/images/readme/poster.gif)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ec8dc3fa-1b7a-49bc-b8f8-0f07e45b8945" alt="Yassien Portfolio Poster">
+</p>
 
 ### [Portfolio Hyperlink](https://ytawfik-portfolio.vercel.app/)
 
