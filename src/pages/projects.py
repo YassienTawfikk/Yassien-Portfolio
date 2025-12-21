@@ -1,4 +1,4 @@
-from dash import html, Input, Output, State, ALL, callback, ctx
+from dash import html, Input, Output, State, ALL, callback, clientside_callback, ctx
 import dash_bootstrap_components as dbc
 import json
 from src.components.footer_navigation import FooterNavigation
@@ -198,6 +198,7 @@ layout = html.Div([
         [
             dbc.ModalHeader(dbc.ModalTitle("Project Demo"), id="video-modal-header"),
             dbc.ModalBody(html.Div(id="video-modal-body")),
+            html.Div(id="projects-keyboard-listener-trigger", style={"display": "none"})
         ],
         id="video-modal",
         is_open=False,
@@ -265,3 +266,34 @@ def toggle_modal(video_clicks, is_open):
             return True, video_content, dbc.ModalTitle(project_title)
             
     return is_open, None, "Project Demo"
+
+
+# ----------------------------------------------------------------------------------
+# KEYBOARD SHORTCUTS (Clientside)
+# Listens for Escape key to close modal without exiting Full Screen
+# ----------------------------------------------------------------------------------
+clientside_callback(
+    """
+    function(isOpen) {
+        if (isOpen) {
+            document.onkeydown = function(event) {
+                if (event.key === 'Escape') {
+                    // Prevent exiting Full Screen
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    // Manually trigger the close button
+                    const closeBtn = document.querySelector('#video-modal .btn-close');
+                    if (closeBtn) closeBtn.click();
+                }
+            };
+            return "Listening for Escape";
+        } else {
+            document.onkeydown = null;
+            return "Not Listening";
+        }
+    }
+    """,
+    Output("projects-keyboard-listener-trigger", "children"),
+    Input("video-modal", "is_open")
+)

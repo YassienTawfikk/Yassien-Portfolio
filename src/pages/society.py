@@ -1,4 +1,4 @@
-from dash import html, callback, Input, Output, State, ALL, ctx
+from dash import html, callback, clientside_callback, Input, Output, State, ALL, ctx
 import dash_bootstrap_components as dbc
 import json
 from src.components.footer_navigation import FooterNavigation
@@ -84,6 +84,7 @@ layout = html.Div([
                     ]
                 )
             ),
+            html.Div(id="society-keyboard-listener-trigger", style={"display": "none"})
         ],
         id="society-certificate-modal",
         size="xl",
@@ -120,3 +121,34 @@ def toggle_society_modal(n_clicks, is_open):
         return True, image_src
     
     return is_open, ""
+
+
+# ----------------------------------------------------------------------------------
+# KEYBOARD SHORTCUTS (Clientside)
+# Listens for Escape key to close modal without exiting Full Screen
+# ----------------------------------------------------------------------------------
+clientside_callback(
+    """
+    function(isOpen) {
+        if (isOpen) {
+            document.onkeydown = function(event) {
+                if (event.key === 'Escape') {
+                    // Prevent exiting Full Screen
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    // Manually trigger the close button
+                    const closeBtn = document.querySelector('#society-certificate-modal .btn-close');
+                    if (closeBtn) closeBtn.click();
+                }
+            };
+            return "Listening for Escape";
+        } else {
+            document.onkeydown = null;
+            return "Not Listening";
+        }
+    }
+    """,
+    Output("society-keyboard-listener-trigger", "children"),
+    Input("society-certificate-modal", "is_open")
+)

@@ -231,6 +231,17 @@ clientside_callback(
         if (isOpen) {
             // Keyboard Navigation
             document.onkeydown = function(event) {
+                if (event.key === 'Escape') {
+                    // Prevent exiting Full Screen
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    // Manually trigger the close button
+                    const closeBtn = document.querySelector('#certificate-modal .btn-close');
+                    if (closeBtn) closeBtn.click();
+                    return;
+                }
+                
                 if (event.key === 'ArrowRight') {
                     const btn = document.getElementById('btn-next');
                     if (btn) btn.click();
