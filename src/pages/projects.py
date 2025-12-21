@@ -228,14 +228,26 @@ def toggle_modal(video_clicks, is_open):
             video_url = project_data.get("video_demo")
             
             if video_url:
-                # Create video player (using HTML5 video tag)
-                video_content = html.Video(
-                    src=video_url,
-                    controls=True,
-                    autoPlay=True,
-                    muted=True,
-                    loop=True,
-                    style={"width": "100%", "height": "auto"}
+                # Embed video in an Iframe with strict no-referrer policy to bypass GitHub 403
+                video_html = f'''
+                    <!DOCTYPE html>
+                    <html style="margin: 0; padding: 0; height: 100%; overflow: hidden;">
+                    <head>
+                        <meta name="referrer" content="no-referrer">
+                        <style>
+                            body {{ margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100%; background: #000; }}
+                            video {{ width: 100%; height: 100%; object-fit: contain; }}
+                        </style>
+                    </head>
+                    <body>
+                        <video src="{video_url}" controls autoplay muted loop playsinline></video>
+                    </body>
+                    </html>
+                '''
+                
+                video_content = html.Iframe(
+                    srcDoc=video_html,
+                    style={"width": "100%", "height": "500px", "border": "none"}
                 )
             else:
                 # Placeholder for missing videos (fallback)
