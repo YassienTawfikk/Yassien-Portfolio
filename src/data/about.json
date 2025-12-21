@@ -1,7 +1,7 @@
 {
-    "image_01": "assets/images/about/about01.jpeg",
-    "image_02": "assets/images/about/about02.jpg",
-    "image_03": "assets/images/about/about03.jpg",
+    "image_01": "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/about/about01.jpeg",
+    "image_02": "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/about/about02.jpg",
+    "image_03": "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/about/about03.jpg",
     "description": "Hi, I’m Yassien Tawfik, a 22-year-old Biomedical Engineer from Cairo University, Faculty of Engineering. My journey is guided by a deep interest in how technology can address healthcare challenges and make life easier. I enjoy finding practical solutions and designing tools that improve accessibility and efficiency in healthcare. With a calm and precise approach, I focus on creating meaningful impact through innovation. Outside of my work, I’m constantly seeking opportunities to learn, grow, and contribute to shaping a better future for healthcare.",
     "vision": "To create a world where technology transforms healthcare by solving its challenges and making life easier for everyone. My vision is to ensure that innovative solutions improve both accessibility and the quality of care globally.",
     "mission": "To apply technology in practical and impactful ways to address real healthcare problems. My mission is to develop tools and solutions that simplify healthcare processes and improve the daily lives of individuals and communities."

@@ -47,7 +47,7 @@ window.dash_clientside.gallery = {
         for (let i = 0; i < gallery_data.length; i++) {
             if (gallery_data[i].id === clicked_id) {
                 new_index = i;
-                new_src = gallery_data[i].certificateImage || "/assets/images/placeholder.jpg";
+                new_src = gallery_data[i].certificateImage || "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/placeholder.jpg";
                 break;
             }
         }
@@ -89,7 +89,7 @@ window.dash_clientside.gallery = {
             direction = 'prev';
         }
 
-        const new_src = gallery_data[new_index].certificateImage || "/assets/images/placeholder.jpg";
+        const new_src = gallery_data[new_index].certificateImage || "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/placeholder.jpg";
 
         // ANIMATION LOGIC
         const image_el = document.getElementById('modal-cert-image');
