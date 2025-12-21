@@ -1,6 +1,6 @@
 {
-    "image_01": "https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/educational/educational01.png",
-    "image_02": "https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/educational/educational02.jpg",
+    "image_01": "/images/educational/educational01.avif",
+    "image_02": "/images/educational/educational02.avif",
     "university": "Cairo University",
     "faculty": "Faculty of Engineering",
     "degree": "B.Sc. in Biomedical Engineering",
