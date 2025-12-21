@@ -22,38 +22,6 @@ This is the **V2** iteration of my personal portfolio. It is a high-performance,
 - **Styling**: Bootstrap 5, FontAwesome
 - **Deployment**: Vercel (Static)
 
-## Local Development
-
-1. **Install Dependencies**:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-2. **Build the Project**:
-
-    ```bash
-    python3 scripts/build.py
-    ```
-
-    This will generate the full site in the `public/` directory.
-
-3. **Serve Locally**:
-    You can use any static file server, for example:
-
-    ```bash
-    python3 -m http.server --directory public
-    ```
-
-## Deployment
-
-This project is deployed on **Vercel** with the following configuration:
-
-- **Framework Preset**: Other
-- **Build Command**: `python3 scripts/build.py`
-- **Output Directory**: `public`
-- **Install Command**: `pip install -r requirements.txt`
-
 ---
 
 ### Author
