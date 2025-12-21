@@ -45,12 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
     function waitForImagesAndHide() {
         // give the DOM a moment to settle (unfolding logic, etc)
         setTimeout(() => {
-            const images = Array.from(document.querySelectorAll("#page-content img"));
+            // Select all images that are NOT loading="lazy"
+            // We only block the preloader for images that are critical for the initial viewport
+            const images = Array.from(document.querySelectorAll("#page-content img:not([loading='lazy'])"));
 
             if (images.length === 0) {
                 hidePreloader();
                 return;
             }
+
+            // Failsafe specifically for this wait function
+            // If images take too long (e.g., hanging network), force hide after 3 seconds
+            const loadFailsafe = setTimeout(() => {
+                console.warn("Image wait timeout reached. Forcing preloader hide.");
+                hidePreloader();
+            }, 3000);
 
             const imagePromises = images.map((img) => {
                 return new Promise((resolve) => {
@@ -67,13 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             Promise.all(imagePromises)
                 .then(() => {
-                    // All images are ready (or errored out)
+                    clearTimeout(loadFailsafe); // Clear the failsafe if we finish early
                     hidePreloader();
                 })
                 .catch((e) => {
-                    // Should be unreachable due to error handling in promises, but good practice
                     console.error("Preloader error:", e);
-                    forceHide();
+                    hidePreloader();
                 });
 
         }, DOM_STABILIZATION_DELAY);
