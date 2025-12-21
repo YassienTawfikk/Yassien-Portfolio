@@ -6,27 +6,53 @@
 
 ## Project Overview
 
-This personal portfolio application is a professional, responsive web platform designed to showcase technical skills, projects, and professional credentials. Built with Python and Dash, it offers a seamless and interactive user experience.
+This is the **V2** iteration of my personal portfolio. It is a high-performance, static web application designed to showcase my projects, skills, and credentials. Unlike the previous version, this build utilizes a custom **Python-based static site generator** to produce lightweight, SEO-friendly HTML/CSS/JS.
 
 ## Features
 
-- **Interactive Navigation**: Smooth transitions between different sections of the portfolio.
-- **Responsive Design**: Optimized for viewing on various devices, ensuring consistency across desktops and mobile platforms.
-- **Credentials Gallery**: A dedicated section to display certificates and achievements.
-- **Project Showcase**: Detailed views of personal and professional projects with links to repositories and live demos.
-- **Contact Integration**: A functional contact form for inquiries.
+- **Performance**: Static HTML generation ensures lightning-fast load times.
+- **Custom Build System**: A Python script (`scripts/build.py`) orchestrates content injection using Jinja2 templates.
+- **Responsive Design**: Built with Bootstrap 5 and custom CSS for a seamless experience on all devices.
+- **Dynamic Content**: JSON-based data management for easy updates to projects and skills.
 
 ## Tech Stack
 
-- **Python**: Core programming language.
-- **Dash**: Web application framework for Python.
-- **Flask**: Underlying web server framework.
-- **Dash Bootstrap Components**: For responsive layout and styling.
-- **HTML/CSS**: Custom styling and structure.
+- **Build Logic**: Python 3, Jinja2
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Styling**: Bootstrap 5, FontAwesome
+- **Deployment**: Vercel (Static)
+
+## Local Development
+
+1. **Install Dependencies**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. **Build the Project**:
+
+    ```bash
+    python3 scripts/build.py
+    ```
+
+    This will generate the full site in the `public/` directory.
+
+3. **Serve Locally**:
+    You can use any static file server, for example:
+
+    ```bash
+    python3 -m http.server --directory public
+    ```
 
 ## Deployment
 
-This application is configured for deployment on Vercel. Refer to `vercel.json` for configuration details.
+This project is deployed on **Vercel** with the following configuration:
+
+- **Framework Preset**: Other
+- **Build Command**: `python3 scripts/build.py`
+- **Output Directory**: `public`
+- **Install Command**: `pip install -r requirements.txt`
 
 ---
 
