@@ -143,9 +143,13 @@ for p in other_projects:
     title = p.get("title", "").lower()
     
     if "lifestream" in title or "soundprints" in title:
-         categories["Web, Mobile & Software"].append(p)
-         continue
-         
+        categories["Web, Mobile & Software"].append(p)
+        continue
+
+    if "FaceVector".lower() in title:
+        categories["Computer Vision & Image Processing"].append(p)
+        continue
+    
     if "game" in tags_str:
         categories["Game Development"].append(p)
     elif any(kw in tags_str for kw in ["deep learning", "machine learning", "data", "regression", "prediction", "analytics", "svm", "forest", "xgboost", "ml"]):

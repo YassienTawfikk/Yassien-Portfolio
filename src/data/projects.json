@@ -455,44 +455,40 @@
       "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
     },
     {
-      "title": "LifeStream",
-      "short_description": "Mobile health and safety platform integrating a wearable ESP32 device for real-time heart monitoring, SOS alerts, and live location tracking.",
-      "overview_image": "https://github.com/user-attachments/assets/eb1e40a7-ed4f-4ad9-9b31-8aa658e2ed8d",
-      "github_link": "https://github.com/YassienTawfikk/LifeStream",
+      "title": "Oral Cancer Prediction",
+      "short_description": "Machine learning pipeline for predicting oral cancer from microbiome data, with SHAP-based explainability and a PyTorch Lightning-style CLI.",
+      "overview_image": "https://github.com/user-attachments/assets/a122a6bc-91ce-4a14-bfc7-4a503c579fb7",
+      "github_link": "https://github.com/YassienTawfikk/Oral-Cancer-Prediction.git",
       "tech_stack": [
-        "Flutter",
-        "Firebase",
-        "OpenStreetMap",
-        "Riverpod",
-        "GoRouter",
-        "ESP32",
-        "ESP8266",
-        "Arduino",
-        "PPG Sensor"
+        "Python",
+        "PyTorch",
+        "PyTorch Lightning",
+        "scikit-learn",
+        "pandas",
+        "matplotlib",
+        "shap",
+        "jsonargparse"
       ],
       "tags": [
-        "Mobile App",
-        "Wearable Device",
-        "Health Monitoring",
-        "Emergency Response",
-        "Real-time Systems",
-        "IoT",
         "Biomedical Engineering",
-        "Cross-platform",
-        "Safety Tech"
+        "Microbiome Analysis",
+        "Oral Cancer",
+        "Machine Learning",
+        "Random Forest",
+        "Explainable AI",
+        "Data Science",
+        "Healthcare AI"
       ],
       "highlights": [
-        "Real-time BPM streaming from ESP32 wearable using Firebase Realtime Database.",
-        "ECG-style waveform visualization with dynamic heart rhythm tracking.",
-        "Automatic SOS alerts delivering location and heart rate to trusted contacts.",
-        "Live location tracking mode during emergencies using OpenStreetMap.",
-        "Full friend system with real-time profile sync and status indicators.",
-        "AES-256 encrypted local storage and secure Firebase authentication.",
-        "Clean architecture with Riverpod and modular feature-first structure.",
-        "End-to-end firmware + mobile app ecosystem built from scratch."
+        "Non-invasive oral cancer prediction using microbiome profiles from TCMA.",
+        "Random Forest classifier with class weighting for balanced performance.",
+        "SHAP-based feature explainability highlighting influential microbial taxa.",
+        "Professional CLI for flexible hyperparameter tuning and data configuration.",
+        "High predictive performance: 92.89% accuracy, AUROC 0.9714, PR-AUC 0.9588.",
+        "Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization."
       ],
-      "year": "2025",
-      "long_description": "LifeStream is a full-stack mobile and wearable ecosystem enabling real-time heart monitoring and emergency response. The Flutter app connects to a custom ESP32-based device that streams BPM readings directly to Firebase. Users get an ECG-style live graph, anomaly detection alerts, and an integrated SOS mechanism that sends precise coordinates and heart-rate data to trusted contacts. The system supports live location tracking, friend management, profile synchronization, and privacy-first design using encrypted local storage and secure Firebase authentication. Alongside the mobile application, the project includes hardware firmware for ESP32/ESP8266 with pulse-sensor processing and seamless cloud integration."
+      "year": "2024",
+      "long_description": "This project implements a robust machine learning pipeline for predicting oral cancer from microbiome data (16S rRNA and WGS) using Random Forests. It integrates professional CLI tools for experiment reproducibility and flexible configuration, while SHAP explainability provides insights into the most influential microbial features. The system achieves high predictive performance and supports both research and clinical-focused applications, demonstrating the potential of microbiome-based non-invasive diagnostics."
     },
     {
       "title": "BreastCancer-XAI-Evaluation",
@@ -531,42 +527,6 @@
       "long_description": "BreastCancer-XAI-Evaluation is a medical AI project focused on building reliable and explainable breast cancer classifiers. Using clinical diagnostic features, the pipeline trains multiple ML models while handling class imbalance with SMOTE. SHAP is leveraged to provide global and local interpretability, ensuring that predictions are transparent and clinically trustworthy. Extensive evaluation metrics are included, emphasizing precision and recall alongside accuracy for real-world relevance."
     },
     {
-      "title": "Oral Cancer Prediction",
-      "short_description": "Machine learning pipeline for predicting oral cancer from microbiome data, with SHAP-based explainability and a PyTorch Lightning-style CLI.",
-      "overview_image": "https://github.com/user-attachments/assets/a122a6bc-91ce-4a14-bfc7-4a503c579fb7",
-      "github_link": "https://github.com/YassienTawfikk/Oral-Cancer-Prediction.git",
-      "tech_stack": [
-        "Python",
-        "PyTorch",
-        "PyTorch Lightning",
-        "scikit-learn",
-        "pandas",
-        "matplotlib",
-        "shap",
-        "jsonargparse"
-      ],
-      "tags": [
-        "Biomedical Engineering",
-        "Microbiome Analysis",
-        "Oral Cancer",
-        "Machine Learning",
-        "Random Forest",
-        "Explainable AI",
-        "Data Science",
-        "Healthcare AI"
-      ],
-      "highlights": [
-        "Non-invasive oral cancer prediction using microbiome profiles from TCMA.",
-        "Random Forest classifier with class weighting for balanced performance.",
-        "SHAP-based feature explainability highlighting influential microbial taxa.",
-        "Professional CLI for flexible hyperparameter tuning and data configuration.",
-        "High predictive performance: 92.89% accuracy, AUROC 0.9714, PR-AUC 0.9588.",
-        "Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization."
-      ],
-      "year": "2024",
-      "long_description": "This project implements a robust machine learning pipeline for predicting oral cancer from microbiome data (16S rRNA and WGS) using Random Forests. It integrates professional CLI tools for experiment reproducibility and flexible configuration, while SHAP explainability provides insights into the most influential microbial features. The system achieves high predictive performance and supports both research and clinical-focused applications, demonstrating the potential of microbiome-based non-invasive diagnostics."
-    },
-    {
       "title": "MediCluster",
       "short_description": "Patient dataset clustering using K-Means and PCA for identifying meaningful patient subgroups.",
       "overview_image": "https://github.com/user-attachments/assets/bd1b9599-6aa1-4bc4-8483-9645eb71598c",
@@ -595,6 +555,353 @@
       ],
       "year": "2024",
       "long_description": "MediCluster is a healthcare analytics project that segments patient datasets into meaningful clusters using K-Means and PCA. It preprocesses patient data with encoding, scaling, and weighted features, then identifies optimal clusters. PCA visualizations help in interpreting patient subgroups. The project also provides a joblib inference pipeline to predict clusters directly from new patient input, making it a complete unsupervised learning solution for medical data analysis."
+    },
+    {
+      "title": "DriveSafe-Sign-Detection",
+      "short_description": "Deep learning-based traffic sign detection system using a custom CNN and MobileNetV2 for classifying 43 German traffic signs.",
+      "overview_image": "https://github.com/user-attachments/assets/252feffe-5f2e-4be9-8cc6-0b14b2d49e19",
+      "github_link": "https://github.com/YassienTawfikk/DriveSafe-Sign-Detection.git",
+      "tech_stack": [
+        "Python",
+        "TensorFlow/Keras",
+        "CNN",
+        "MobileNetV2",
+        "GTSRB Dataset"
+      ],
+      "tags": [
+        "Deep Learning",
+        "Computer Vision",
+        "Traffic Sign Detection",
+        "CNN",
+        "ADAS"
+      ],
+      "highlights": [
+        "Custom CNN achieving 96.23% accuracy on GTSRB test set.",
+        "MobileNetV2 used as baseline for comparative evaluation.",
+        "Full training pipeline with preprocessing, augmentation, and evaluation.",
+        "Comprehensive visualizations: training curves, confusion matrix, class distribution.",
+        "Modular project structure for scalability and experimentation."
+      ],
+      "year": "2024",
+      "long_description": "DriveSafe-Sign-Detection is a traffic sign recognition system developed with a custom CNN and MobileNetV2. Trained on the GTSRB dataset, the project achieves high accuracy in classifying 43 types of German traffic signs. The system includes modular components for data preprocessing, model training, evaluation, and visualization. Comparative analysis highlights the superior performance of the CNN over a frozen MobileNetV2 baseline, emphasizing end-to-end learning on task-specific features. Ideal for research, ADAS prototyping, and educational purposes."
+    },
+    {
+      "title": "MusicSpectroNet",
+      "short_description": "Music genre classification on the GTZAN dataset using tabular ML and CNN-based spectrogram analysis.",
+      "overview_image": "https://github.com/user-attachments/assets/9c70cda3-dd4a-4f54-9557-af484d182792",
+      "github_link": "https://github.com/YassienTawfikk/MusicSpectroNet.git",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Librosa",
+        "PyTorch",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "tags": [
+        "Audio Classification",
+        "Music Genre",
+        "Tabular ML",
+        "CNN",
+        "GTZAN"
+      ],
+      "highlights": [
+        "Tabular ML (XGBoost) achieved 92.64% test accuracy using extracted audio features.",
+        "CNN on spectrogram images was explored but achieved 23.33% accuracy.",
+        "Feature importance analysis highlights perceptual, spectral, and tonal characteristics as key indicators.",
+        "Pipeline supports 3-second segment feature extraction and preprocessing.",
+        "Comparison study between tabular and image-based approaches demonstrates performance trade-offs."
+      ],
+      "year": "2024",
+      "long_description": "MusicSpectroNet investigates audio genre classification using two approaches: tabular ML on extracted audio features and CNNs on spectrogram images from the GTZAN dataset. The tabular ML approach (XGBoost) achieves 92.64% accuracy, significantly outperforming the CNN model. The project includes extensive preprocessing, feature extraction, and visualization of confusion matrices and feature importance, demonstrating real-world effectiveness of tabular audio features for music genre recognition."
+    },
+    {
+      "title": "SmartRetailRegressor",
+      "short_description": "Sales forecasting for Walmart stores using Random Forest and XGBoost with advanced feature engineering.",
+      "overview_image": "https://github.com/user-attachments/assets/b9e05c58-8fd7-4e47-b21e-1e19aa52c5fe",
+      "github_link": "https://github.com/YassienTawfikk/SmartRetailRegressor.git",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "tags": [
+        "Sales Forecasting",
+        "Retail Analytics",
+        "Random Forest",
+        "XGBoost",
+        "Time-Series Features"
+      ],
+      "highlights": [
+        "Random Forest achieved 97.69% R\u00b2 score, outperforming XGBoost.",
+        "Extensive feature engineering including holiday distances, periodicity encoding, and store metadata.",
+        "Visualizations include Actual vs Predicted and feature importance for interpretability.",
+        "Pipeline supports reproducible training via shell script or CLI.",
+        "Demonstrates practical application of ensemble models for retail sales prediction."
+      ],
+      "year": "2024",
+      "long_description": "SmartRetailRegressor predicts weekly sales for Walmart stores using Random Forest and XGBoost regression models. The project combines historical sales data with engineered date-based and holiday features, achieving high accuracy and strong generalization. Visualizations, feature importances, and tree snapshots provide interpretability, with Random Forest outperforming XGBoost across all error metrics."
+    },
+    {
+      "title": "PredictiLoan",
+      "short_description": "Loan approval prediction using Logistic Regression and SVM on tabular financial data.",
+      "overview_image": "https://github.com/user-attachments/assets/d7f73d2d-63b7-4559-8534-aaf2244d7fad",
+      "github_link": "https://github.com/YassienTawfikk/PredictiLoan.git",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "tags": [
+        "Loan Prediction",
+        "Financial Risk",
+        "Logistic Regression",
+        "SVM",
+        "Tabular ML"
+      ],
+      "highlights": [
+        "SVM achieved 93.68% test accuracy, slightly outperforming Logistic Regression (91.57%).",
+        "ROC curves and confusion matrices illustrate strong classifier performance and recall.",
+        "Dataset preprocessing includes categorical encoding, scaling, and SMOTE for imbalance.",
+        "Pipeline supports end-to-end prediction from raw CSV inputs.",
+        "Shows practical comparison between linear and kernel-based models for financial risk assessment."
+      ],
+      "year": "2024",
+      "long_description": "PredictiLoan implements and compares Logistic Regression and SVM classifiers for predicting loan approval. Using a tabular dataset of applicant demographics, financial details, and credit scores, both models demonstrate high accuracy, with SVM slightly outperforming Logistic Regression. The project includes preprocessing, feature engineering, model evaluation (ROC, confusion matrices), and a ready-to-use pipeline for end-to-end predictions."
+    },
+    {
+      "title": "MovieMatch100K",
+      "short_description": "A modular movie recommendation system using the MovieLens 100K dataset with collaborative filtering and SVD.",
+      "overview_image": "https://github.com/user-attachments/assets/64ec811e-d70d-4dfc-815b-30ee1da70a54",
+      "github_link": "https://github.com/YassienTawfikk/MovieMatch100K.git",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "Surprise",
+        "PyTorch"
+      ],
+      "tags": [
+        "Machine Learning",
+        "Recommendation Systems",
+        "Collaborative Filtering",
+        "Matrix Factorization",
+        "SVD"
+      ],
+      "highlights": [
+        "Supports User-Based, Item-Based, and SVD Matrix Factorization models.",
+        "Top-k movie recommendations generated with evaluation metrics.",
+        "Precision@k and Recall@k used for practical performance evaluation.",
+        "SVD model achieves 41.78% Precision@5 and 14.75% Recall@5.",
+        "Modular design for easily switching between recommendation methods."
+      ],
+      "year": "2024",
+      "long_description": "MovieMatch100K is a modular recommendation system built on the MovieLens 100K dataset. It implements User-Based and Item-Based collaborative filtering as well as SVD matrix factorization. Each method predicts top-k movie recommendations, evaluated with Precision@k and Recall@k metrics. The system provides a clean modular design for testing multiple collaborative filtering strategies and comparing their performance. The SVD-based model achieves the best results, effectively learning latent features for improved recommendation quality."
+    },
+    {
+      "title": "FaceVector",
+      "short_description": "Modular computer vision system for face detection and recognition using PCA-based embeddings.",
+      "overview_image": "https://github.com/user-attachments/assets/617433f4-ee4e-4b1b-bafb-de1ccef0462a",
+      "github_link": "https://github.com/YassienTawfikk/FaceVector",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "PyQt5",
+        "NumPy",
+        "scikit-learn",
+        "Matplotlib"
+      ],
+      "tags": [
+        "Face Detection",
+        "Face Recognition",
+        "Computer Vision",
+        "PCA",
+        "Eigenfaces",
+        "Machine Learning"
+      ],
+      "highlights": [
+        "Real-time face detection using Haar cascades.",
+        "PCA-based face recognition with dynamic training and embedding projection.",
+        "Supports both RGB and grayscale datasets with train/test splitting.",
+        "Performance evaluation with ROC curves and classification metrics.",
+        "Intuitive GUI for selecting images, viewing results, and adjusting detection parameters."
+      ],
+      "year": "2025",
+      "long_description": "FaceVector combines classical face detection using Haar cascades with PCA-based recognition to classify identities efficiently. It flattens face images, computes eigenfaces, projects new images into eigenspace, and predicts identities using Euclidean distance. The system is optimized for small training datasets, supports RGB and grayscale images, and includes automatic caching and evaluation. Designed for fast, reproducible facial analysis with clear visualization of detection and recognition results."
+    },
+    {
+      "title": "EdgeEnhance",
+      "short_description": "Edge and boundary detection toolkit integrating Canny, Hough Transform, and Active Contour Models for image analysis.",
+      "overview_image": "https://github.com/user-attachments/assets/00d25199-949f-4fe5-b372-7c593e2dcccc",
+      "github_link": "https://github.com/YassienTawfikk/EdgeEnhance",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "Matplotlib",
+        "scikit-image"
+      ],
+      "tags": [
+        "Edge Detection",
+        "Computer Vision",
+        "Canny",
+        "Hough Transform",
+        "Active Contour Model",
+        "Shape Analysis"
+      ],
+      "highlights": [
+        "Implemented Canny edge detection with optimized parameters for fine-grained edge maps.",
+        "Applied Hough Transform to detect lines, circles, and ellipses with accumulator voting.",
+        "Active Contour Models (Snakes) used to dynamically evolve contours around objects.",
+        "Outputs metrics like area, perimeter, and chain code for extracted shapes.",
+        "Supports grayscale and color images, suitable for biomedical and structural analysis."
+      ],
+      "year": "2025",
+      "long_description": "EdgeEnhance combines classical edge detection methods (Canny) with Hough Transform-based shape detection and deformable contour models (Active Contours) to extract structural boundaries from images. The toolkit captures fine edges, detects geometric shapes like lines, circles, and ellipses, and evolves snake contours to compute metrics such as area and perimeter. Ideal for biomedical imaging, object boundary extraction, and morphological analysis, with full reproducibility via a Python pipeline."
+    },
+    {
+      "title": "SiftSee",
+      "short_description": "A feature detection and matching toolkit using Harris corners, SIFT descriptors, and template matching.",
+      "overview_image": "https://github.com/user-attachments/assets/c9dced42-db09-4306-a60b-84c498ebf52c",
+      "github_link": "https://github.com/YassienTawfikk/SIFT-See.git",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "PyQt"
+      ],
+      "tags": [
+        "Feature Detection",
+        "SIFT",
+        "Harris Corner",
+        "Template Matching",
+        "SSD",
+        "Normalized Cross Correlation",
+        "Computer Vision"
+      ],
+      "highlights": [
+        "Detect high-curvature points using Harris corner detection with threshold filtering.",
+        "Compute scale- and rotation-invariant descriptors using SIFT for robust matching.",
+        "Perform template matching using SSD and Normalized Cross-Correlation to identify correspondences.",
+        "Interactive GUI with visualizations of keypoints, descriptors, and matched pairs.",
+        "Analyze performance with timing comparisons and visual inspection."
+      ],
+      "year": "2025",
+      "long_description": "SiftSee is a Python-based computer vision toolkit for feature detection and matching. It integrates Harris corner detection and SIFT for extracting keypoints and descriptors, and performs template matching using SSD and Normalized Cross-Correlation. The interactive GUI allows visualization of keypoints, descriptors, and matched results, making it suitable for image understanding tasks in biometrics, medical imaging, and academic research. The project emphasizes reproducibility, modular design, and performance evaluation."
+    },
+    {
+      "title": "SigmaVision",
+      "short_description": "A modular image analysis toolkit combining thresholding techniques with unsupervised machine learning-based segmentation.",
+      "overview_image": "https://github.com/user-attachments/assets/b6d5490e-700e-4fbe-94b2-1ecf6a6bbc2c",
+      "github_link": "https://github.com/YassienTawfikk/SegmaVision",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "PyQt",
+        "scikit-learn"
+      ],
+      "tags": [
+        "Image Segmentation",
+        "Thresholding",
+        "K-Means",
+        "Mean Shift",
+        "Region Growing",
+        "Agglomerative Clustering",
+        "Unsupervised Learning",
+        "Computer Vision"
+      ],
+      "highlights": [
+        "Apply classical thresholding techniques: Otsu, Optimal Global, and Spectral Thresholding.",
+        "Segment images using unsupervised ML: K-Means, Region Growing, Agglomerative Clustering, and Mean Shift.",
+        "Interactive GUI visualizes results side-by-side with original images for easy comparison.",
+        "Supports both grayscale and color images with adjustable parameters for clustering algorithms.",
+        "Useful for medical imaging, pattern discovery, and teaching purposes in image processing."
+      ],
+      "year": "2025",
+      "long_description": "SigmaVision is a Python-based image analysis toolkit that integrates classical thresholding and unsupervised machine learning for segmentation tasks. It allows users to apply Otsu, Optimal, and Spectral thresholding techniques alongside clustering-based segmentation methods like K-Means, Mean Shift, Region Growing, and Agglomerative Clustering. The interactive GUI enables side-by-side visualization of original and processed images, making it ideal for research, medical imaging, and educational demonstrations in image processing."
+    },
+    {
+      "title": "Dynamic Multi-Channel Signal Viewer",
+      "short_description": "Python & Qt-based desktop app for visualizing, customizing, and managing multiple medical signals (ECG, EMG, EEG) with playback, linking, and reporting features.",
+      "overview_image": "https://github.com/user-attachments/assets/f8afb6e1-5fb5-4b46-b0bb-be5f1eb6881e",
+      "github_link": "https://github.com/YassienTawfikk/Dynamic-Multi-Channel-Signal-Viewer",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "tags": [
+        "Medical Signal Processing",
+        "ECG",
+        "EMG",
+        "EEG",
+        "Real-time Visualization",
+        "PDF Reporting"
+      ],
+      "highlights": [
+        "Dynamic playback controls with adjustable speed and signal switching.",
+        "Graph linking/unlinking for synchronized viewing of multiple signals.",
+        "Add, merge, or overlay signals for comparison.",
+        "Signal customization: color, labels, titles, zoom/pan.",
+        "Glue window to combine signals and generate PDF reports.",
+        "Circular signal visualization and real-time weather signal indication."
+      ],
+      "year": "2024",
+      "long_description": "The Dynamic Multi-Channel Signal Viewer provides a versatile platform for visualizing and managing medical signals like ECG, EMG, and EEG. Users can manipulate multiple graphs, link/unlink playback, customize signal appearance, and generate PDF reports using the Glue Window. Advanced features include circular signal plotting and real-time weather signal indication for enhanced monitoring and analysis."
+    },
+    {
+      "title": "LifeStream",
+      "short_description": "Mobile health and safety platform integrating a wearable ESP32 device for real-time heart monitoring, SOS alerts, and live location tracking.",
+      "overview_image": "https://github.com/user-attachments/assets/eb1e40a7-ed4f-4ad9-9b31-8aa658e2ed8d",
+      "github_link": "https://github.com/YassienTawfikk/LifeStream",
+      "tech_stack": [
+        "Flutter",
+        "Firebase",
+        "OpenStreetMap",
+        "Riverpod",
+        "GoRouter",
+        "ESP32",
+        "ESP8266",
+        "Arduino",
+        "PPG Sensor"
+      ],
+      "tags": [
+        "Mobile App",
+        "Wearable Device",
+        "Health Monitoring",
+        "Emergency Response",
+        "Real-time Systems",
+        "IoT",
+        "Biomedical Engineering",
+        "Cross-platform",
+        "Safety Tech"
+      ],
+      "highlights": [
+        "Real-time BPM streaming from ESP32 wearable using Firebase Realtime Database.",
+        "ECG-style waveform visualization with dynamic heart rhythm tracking.",
+        "Automatic SOS alerts delivering location and heart rate to trusted contacts.",
+        "Live location tracking mode during emergencies using OpenStreetMap.",
+        "Full friend system with real-time profile sync and status indicators.",
+        "AES-256 encrypted local storage and secure Firebase authentication.",
+        "Clean architecture with Riverpod and modular feature-first structure.",
+        "End-to-end firmware + mobile app ecosystem built from scratch."
+      ],
+      "year": "2025",
+      "long_description": "LifeStream is a full-stack mobile and wearable ecosystem enabling real-time heart monitoring and emergency response. The Flutter app connects to a custom ESP32-based device that streams BPM readings directly to Firebase. Users get an ECG-style live graph, anomaly detection alerts, and an integrated SOS mechanism that sends precise coordinates and heart-rate data to trusted contacts. The system supports live location tracking, friend management, profile synchronization, and privacy-first design using encrypted local storage and secure Firebase authentication. Alongside the mobile application, the project includes hardware firmware for ESP32/ESP8266 with pulse-sensor processing and seamless cloud integration."
     },
     {
       "title": "Automated Defibrillator System",
@@ -662,313 +969,6 @@
       ],
       "year": "2025",
       "long_description": "STM32LabSuite is a modular collection of three STM32F401VE embedded systems projects that showcase real-time control, interrupt-driven processing, and modular driver abstraction. Each project focuses on a key embedded concept: EXTI-based real-time counting and display, keypad-driven display logic with GPIO remapping, and conveyor control with motor PWM and IR-based object detection. Designed for both Proteus simulation and hardware deployment, the suite provides hands-on experience with low-level STM32 peripherals, structured C programming, and industrial automation techniques."
-    },
-    {
-      "title": "Dynamic Multi-Channel Signal Viewer",
-      "short_description": "Python & Qt-based desktop app for visualizing, customizing, and managing multiple medical signals (ECG, EMG, EEG) with playback, linking, and reporting features.",
-      "overview_image": "https://github.com/user-attachments/assets/f8afb6e1-5fb5-4b46-b0bb-be5f1eb6881e",
-      "github_link": "https://github.com/YassienTawfikk/Dynamic-Multi-Channel-Signal-Viewer",
-      "tech_stack": [
-        "Python",
-        "PyQt / Qt Designer",
-        "NumPy",
-        "Matplotlib"
-      ],
-      "tags": [
-        "Medical Signal Processing",
-        "ECG",
-        "EMG",
-        "EEG",
-        "Real-time Visualization",
-        "PDF Reporting"
-      ],
-      "highlights": [
-        "Dynamic playback controls with adjustable speed and signal switching.",
-        "Graph linking/unlinking for synchronized viewing of multiple signals.",
-        "Add, merge, or overlay signals for comparison.",
-        "Signal customization: color, labels, titles, zoom/pan.",
-        "Glue window to combine signals and generate PDF reports.",
-        "Circular signal visualization and real-time weather signal indication."
-      ],
-      "year": "2024",
-      "long_description": "The Dynamic Multi-Channel Signal Viewer provides a versatile platform for visualizing and managing medical signals like ECG, EMG, and EEG. Users can manipulate multiple graphs, link/unlink playback, customize signal appearance, and generate PDF reports using the Glue Window. Advanced features include circular signal plotting and real-time weather signal indication for enhanced monitoring and analysis."
-    },
-    {
-      "title": "EdgeEnhance",
-      "short_description": "Edge and boundary detection toolkit integrating Canny, Hough Transform, and Active Contour Models for image analysis.",
-      "overview_image": "https://github.com/user-attachments/assets/00d25199-949f-4fe5-b372-7c593e2dcccc",
-      "github_link": "https://github.com/YassienTawfikk/EdgeEnhance",
-      "tech_stack": [
-        "Python",
-        "OpenCV",
-        "NumPy",
-        "Matplotlib",
-        "scikit-image"
-      ],
-      "tags": [
-        "Edge Detection",
-        "Computer Vision",
-        "Canny",
-        "Hough Transform",
-        "Active Contour Model",
-        "Shape Analysis"
-      ],
-      "highlights": [
-        "Implemented Canny edge detection with optimized parameters for fine-grained edge maps.",
-        "Applied Hough Transform to detect lines, circles, and ellipses with accumulator voting.",
-        "Active Contour Models (Snakes) used to dynamically evolve contours around objects.",
-        "Outputs metrics like area, perimeter, and chain code for extracted shapes.",
-        "Supports grayscale and color images, suitable for biomedical and structural analysis."
-      ],
-      "year": "2025",
-      "long_description": "EdgeEnhance combines classical edge detection methods (Canny) with Hough Transform-based shape detection and deformable contour models (Active Contours) to extract structural boundaries from images. The toolkit captures fine edges, detects geometric shapes like lines, circles, and ellipses, and evolves snake contours to compute metrics such as area and perimeter. Ideal for biomedical imaging, object boundary extraction, and morphological analysis, with full reproducibility via a Python pipeline."
-    },
-    {
-      "title": "FaceVector",
-      "short_description": "Modular computer vision system for face detection and recognition using PCA-based embeddings.",
-      "overview_image": "https://github.com/user-attachments/assets/617433f4-ee4e-4b1b-bafb-de1ccef0462a",
-      "github_link": "https://github.com/YassienTawfikk/FaceVector",
-      "tech_stack": [
-        "Python",
-        "OpenCV",
-        "PyQt5",
-        "NumPy",
-        "scikit-learn",
-        "Matplotlib"
-      ],
-      "tags": [
-        "Face Detection",
-        "Face Recognition",
-        "Computer Vision",
-        "PCA",
-        "Eigenfaces",
-        "Machine Learning"
-      ],
-      "highlights": [
-        "Real-time face detection using Haar cascades.",
-        "PCA-based face recognition with dynamic training and embedding projection.",
-        "Supports both RGB and grayscale datasets with train/test splitting.",
-        "Performance evaluation with ROC curves and classification metrics.",
-        "Intuitive GUI for selecting images, viewing results, and adjusting detection parameters."
-      ],
-      "year": "2025",
-      "long_description": "FaceVector combines classical face detection using Haar cascades with PCA-based recognition to classify identities efficiently. It flattens face images, computes eigenfaces, projects new images into eigenspace, and predicts identities using Euclidean distance. The system is optimized for small training datasets, supports RGB and grayscale images, and includes automatic caching and evaluation. Designed for fast, reproducible facial analysis with clear visualization of detection and recognition results."
-    },
-    {
-      "title": "SiftSee",
-      "short_description": "A feature detection and matching toolkit using Harris corners, SIFT descriptors, and template matching.",
-      "overview_image": "https://github.com/user-attachments/assets/c9dced42-db09-4306-a60b-84c498ebf52c",
-      "github_link": "https://github.com/YassienTawfikk/SIFT-See.git",
-      "tech_stack": [
-        "Python",
-        "OpenCV",
-        "NumPy",
-        "PyQt"
-      ],
-      "tags": [
-        "Feature Detection",
-        "SIFT",
-        "Harris Corner",
-        "Template Matching",
-        "SSD",
-        "Normalized Cross Correlation",
-        "Computer Vision"
-      ],
-      "highlights": [
-        "Detect high-curvature points using Harris corner detection with threshold filtering.",
-        "Compute scale- and rotation-invariant descriptors using SIFT for robust matching.",
-        "Perform template matching using SSD and Normalized Cross-Correlation to identify correspondences.",
-        "Interactive GUI with visualizations of keypoints, descriptors, and matched pairs.",
-        "Analyze performance with timing comparisons and visual inspection."
-      ],
-      "year": "2025",
-      "long_description": "SiftSee is a Python-based computer vision toolkit for feature detection and matching. It integrates Harris corner detection and SIFT for extracting keypoints and descriptors, and performs template matching using SSD and Normalized Cross-Correlation. The interactive GUI allows visualization of keypoints, descriptors, and matched results, making it suitable for image understanding tasks in biometrics, medical imaging, and academic research. The project emphasizes reproducibility, modular design, and performance evaluation."
-    },
-    {
-      "title": "SigmaVision",
-      "short_description": "A modular image analysis toolkit combining thresholding techniques with unsupervised machine learning-based segmentation.",
-      "overview_image": "https://github.com/user-attachments/assets/b6d5490e-700e-4fbe-94b2-1ecf6a6bbc2c",
-      "github_link": "https://github.com/YassienTawfikk/SegmaVision",
-      "tech_stack": [
-        "Python",
-        "OpenCV",
-        "NumPy",
-        "PyQt",
-        "scikit-learn"
-      ],
-      "tags": [
-        "Image Segmentation",
-        "Thresholding",
-        "K-Means",
-        "Mean Shift",
-        "Region Growing",
-        "Agglomerative Clustering",
-        "Unsupervised Learning",
-        "Computer Vision"
-      ],
-      "highlights": [
-        "Apply classical thresholding techniques: Otsu, Optimal Global, and Spectral Thresholding.",
-        "Segment images using unsupervised ML: K-Means, Region Growing, Agglomerative Clustering, and Mean Shift.",
-        "Interactive GUI visualizes results side-by-side with original images for easy comparison.",
-        "Supports both grayscale and color images with adjustable parameters for clustering algorithms.",
-        "Useful for medical imaging, pattern discovery, and teaching purposes in image processing."
-      ],
-      "year": "2025",
-      "long_description": "SigmaVision is a Python-based image analysis toolkit that integrates classical thresholding and unsupervised machine learning for segmentation tasks. It allows users to apply Otsu, Optimal, and Spectral thresholding techniques alongside clustering-based segmentation methods like K-Means, Mean Shift, Region Growing, and Agglomerative Clustering. The interactive GUI enables side-by-side visualization of original and processed images, making it ideal for research, medical imaging, and educational demonstrations in image processing."
-    },
-    {
-      "title": "DriveSafe-Sign-Detection",
-      "short_description": "Deep learning-based traffic sign detection system using a custom CNN and MobileNetV2 for classifying 43 German traffic signs.",
-      "overview_image": "https://github.com/user-attachments/assets/252feffe-5f2e-4be9-8cc6-0b14b2d49e19",
-      "github_link": "https://github.com/YassienTawfikk/DriveSafe-Sign-Detection.git",
-      "tech_stack": [
-        "Python",
-        "TensorFlow/Keras",
-        "CNN",
-        "MobileNetV2",
-        "GTSRB Dataset"
-      ],
-      "tags": [
-        "Deep Learning",
-        "Computer Vision",
-        "Traffic Sign Detection",
-        "CNN",
-        "ADAS"
-      ],
-      "highlights": [
-        "Custom CNN achieving 96.23% accuracy on GTSRB test set.",
-        "MobileNetV2 used as baseline for comparative evaluation.",
-        "Full training pipeline with preprocessing, augmentation, and evaluation.",
-        "Comprehensive visualizations: training curves, confusion matrix, class distribution.",
-        "Modular project structure for scalability and experimentation."
-      ],
-      "year": "2024",
-      "long_description": "DriveSafe-Sign-Detection is a traffic sign recognition system developed with a custom CNN and MobileNetV2. Trained on the GTSRB dataset, the project achieves high accuracy in classifying 43 types of German traffic signs. The system includes modular components for data preprocessing, model training, evaluation, and visualization. Comparative analysis highlights the superior performance of the CNN over a frozen MobileNetV2 baseline, emphasizing end-to-end learning on task-specific features. Ideal for research, ADAS prototyping, and educational purposes."
-    },
-    {
-      "title": "MovieMatch100K",
-      "short_description": "A modular movie recommendation system using the MovieLens 100K dataset with collaborative filtering and SVD.",
-      "overview_image": "https://github.com/user-attachments/assets/64ec811e-d70d-4dfc-815b-30ee1da70a54",
-      "github_link": "https://github.com/YassienTawfikk/MovieMatch100K.git",
-      "tech_stack": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "scikit-learn",
-        "Surprise",
-        "PyTorch"
-      ],
-      "tags": [
-        "Machine Learning",
-        "Recommendation Systems",
-        "Collaborative Filtering",
-        "Matrix Factorization",
-        "SVD"
-      ],
-      "highlights": [
-        "Supports User-Based, Item-Based, and SVD Matrix Factorization models.",
-        "Top-k movie recommendations generated with evaluation metrics.",
-        "Precision@k and Recall@k used for practical performance evaluation.",
-        "SVD model achieves 41.78% Precision@5 and 14.75% Recall@5.",
-        "Modular design for easily switching between recommendation methods."
-      ],
-      "year": "2024",
-      "long_description": "MovieMatch100K is a modular recommendation system built on the MovieLens 100K dataset. It implements User-Based and Item-Based collaborative filtering as well as SVD matrix factorization. Each method predicts top-k movie recommendations, evaluated with Precision@k and Recall@k metrics. The system provides a clean modular design for testing multiple collaborative filtering strategies and comparing their performance. The SVD-based model achieves the best results, effectively learning latent features for improved recommendation quality."
-    },
-    {
-      "title": "MusicSpectroNet",
-      "short_description": "Music genre classification on the GTZAN dataset using tabular ML and CNN-based spectrogram analysis.",
-      "overview_image": "https://github.com/user-attachments/assets/9c70cda3-dd4a-4f54-9557-af484d182792",
-      "github_link": "https://github.com/YassienTawfikk/MusicSpectroNet.git",
-      "tech_stack": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "scikit-learn",
-        "XGBoost",
-        "Librosa",
-        "PyTorch",
-        "Matplotlib",
-        "Seaborn"
-      ],
-      "tags": [
-        "Audio Classification",
-        "Music Genre",
-        "Tabular ML",
-        "CNN",
-        "GTZAN"
-      ],
-      "highlights": [
-        "Tabular ML (XGBoost) achieved 92.64% test accuracy using extracted audio features.",
-        "CNN on spectrogram images was explored but achieved 23.33% accuracy.",
-        "Feature importance analysis highlights perceptual, spectral, and tonal characteristics as key indicators.",
-        "Pipeline supports 3-second segment feature extraction and preprocessing.",
-        "Comparison study between tabular and image-based approaches demonstrates performance trade-offs."
-      ],
-      "year": "2024",
-      "long_description": "MusicSpectroNet investigates audio genre classification using two approaches: tabular ML on extracted audio features and CNNs on spectrogram images from the GTZAN dataset. The tabular ML approach (XGBoost) achieves 92.64% accuracy, significantly outperforming the CNN model. The project includes extensive preprocessing, feature extraction, and visualization of confusion matrices and feature importance, demonstrating real-world effectiveness of tabular audio features for music genre recognition."
-    },
-    {
-      "title": "PredictiLoan",
-      "short_description": "Loan approval prediction using Logistic Regression and SVM on tabular financial data.",
-      "overview_image": "https://github.com/user-attachments/assets/d7f73d2d-63b7-4559-8534-aaf2244d7fad",
-      "github_link": "https://github.com/YassienTawfikk/PredictiLoan.git",
-      "tech_stack": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "scikit-learn",
-        "XGBoost",
-        "Matplotlib",
-        "Seaborn"
-      ],
-      "tags": [
-        "Loan Prediction",
-        "Financial Risk",
-        "Logistic Regression",
-        "SVM",
-        "Tabular ML"
-      ],
-      "highlights": [
-        "SVM achieved 93.68% test accuracy, slightly outperforming Logistic Regression (91.57%).",
-        "ROC curves and confusion matrices illustrate strong classifier performance and recall.",
-        "Dataset preprocessing includes categorical encoding, scaling, and SMOTE for imbalance.",
-        "Pipeline supports end-to-end prediction from raw CSV inputs.",
-        "Shows practical comparison between linear and kernel-based models for financial risk assessment."
-      ],
-      "year": "2024",
-      "long_description": "PredictiLoan implements and compares Logistic Regression and SVM classifiers for predicting loan approval. Using a tabular dataset of applicant demographics, financial details, and credit scores, both models demonstrate high accuracy, with SVM slightly outperforming Logistic Regression. The project includes preprocessing, feature engineering, model evaluation (ROC, confusion matrices), and a ready-to-use pipeline for end-to-end predictions."
-    },
-    {
-      "title": "SmartRetailRegressor",
-      "short_description": "Sales forecasting for Walmart stores using Random Forest and XGBoost with advanced feature engineering.",
-      "overview_image": "https://github.com/user-attachments/assets/b9e05c58-8fd7-4e47-b21e-1e19aa52c5fe",
-      "github_link": "https://github.com/YassienTawfikk/SmartRetailRegressor.git",
-      "tech_stack": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "scikit-learn",
-        "XGBoost",
-        "Matplotlib",
-        "Seaborn"
-      ],
-      "tags": [
-        "Sales Forecasting",
-        "Retail Analytics",
-        "Random Forest",
-        "XGBoost",
-        "Time-Series Features"
-      ],
-      "highlights": [
-        "Random Forest achieved 97.69% R\u00b2 score, outperforming XGBoost.",
-        "Extensive feature engineering including holiday distances, periodicity encoding, and store metadata.",
-        "Visualizations include Actual vs Predicted and feature importance for interpretability.",
-        "Pipeline supports reproducible training via shell script or CLI.",
-        "Demonstrates practical application of ensemble models for retail sales prediction."
-      ],
-      "year": "2024",
-      "long_description": "SmartRetailRegressor predicts weekly sales for Walmart stores using Random Forest and XGBoost regression models. The project combines historical sales data with engineered date-based and holiday features, achieving high accuracy and strong generalization. Visualizations, feature importances, and tree snapshots provide interpretability, with Random Forest outperforming XGBoost across all error metrics."
     },
     {
       "title": "CheckMate - Chess Game",
