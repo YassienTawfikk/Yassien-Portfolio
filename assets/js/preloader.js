@@ -86,15 +86,29 @@ document.addEventListener("DOMContentLoaded", function () {
         waitForImagesAndHide();
     });
 
+    // Track current path to detect actual page changes vs hash changes
+    let currentPath = window.location.pathname;
+
     // 2. Click Navigation (Internal Links)
     document.addEventListener("click", function (e) {
         const target = e.target.closest("a");
         if (target && target.href && target.href.startsWith(window.location.origin)) {
             const isBlank = target.getAttribute("target") === "_blank";
-            const isHash = target.href.includes("#");
-            const isSamePage = target.href === window.location.href;
 
-            if (!isBlank && !isHash && !isSamePage) {
+            // robust check for same-page hash navigation
+            // If path and query are same, but hash is different (or present), it's a local jump
+            const isSamePage = (target.pathname === window.location.pathname) &&
+                (target.search === window.location.search);
+
+            const hasHash = target.getAttribute("href").includes("#") || target.hash.length > 0;
+
+            // If it's a hash jump on the same page, do NOT show preloader
+            if (isSamePage && hasHash) {
+                return;
+            }
+
+            // Normal Navigation Check
+            if (!isBlank && !isSamePage) {
                 showPreloader();
             }
         }
@@ -102,7 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 3. History Navigation
     window.addEventListener("popstate", () => {
-        showPreloader();
+        // Only trigger if the actual path changed (ignore hash changes)
+        const newPath = window.location.pathname;
+        if (newPath !== currentPath) {
+            currentPath = newPath;
+            showPreloader();
+        }
     });
 
     // 4. Dash Content Injection (MutationObserver)

@@ -164,19 +164,29 @@ for p in other_projects:
         categories["Web, Mobile & Software"].append(p)
 
 sections = []
+nav_items = []
 
+# Page Title
 sections.append(html.H1("Projects", className='unified-page-title title-center underline-80px'))
 
 # Only render Featured Section if there are actually projects with Live Demos
 if featured_projects:
-    sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], className='section-title featured-title head-font'))
+    sect_id = "featured-live-demos"
+    nav_items.append({"id": sect_id, "label": "Featured Live"})
+    sections.append(html.H2([html.I(className="fas fa-star"), " Featured Live Demos"], 
+                            id=sect_id, 
+                            className='section-title featured-title head-font'))
     sections.append(html.Div(className='projects-grid featured-grid', children=[
         create_project_card(proj, is_featured=True) for proj in featured_projects
     ]))
     sections.append(html.Hr(className="section-divider"))
 
 if featured_video_projects:
-    sections.append(html.H2([html.I(className="fas fa-video"), " Featured Video Demos"], className='section-title featured-title head-font'))
+    sect_id = "featured-video-demos"
+    nav_items.append({"id": sect_id, "label": "Featured Video"})
+    sections.append(html.H2([html.I(className="fas fa-video"), " Featured Video Demos"], 
+                            id=sect_id, 
+                            className='section-title featured-title head-font'))
     sections.append(html.Div(className='projects-grid featured-grid', children=[
         create_project_card(proj, is_featured=True) for proj in featured_video_projects
     ]))
@@ -184,13 +194,37 @@ if featured_video_projects:
 
 for category, projects in categories.items():
     if projects:
-        sections.append(html.H2(category, className='section-title head-font'))
+        # Create a URL-friendly ID from category name
+        sect_id = category.lower().replace(" & ", "-").replace(", ", "-").replace(" ", "-")
+        label = category.split(" & ")[0] if "&" in category else category # Shorten label if long
+        # Manual overrides for nicer labels
+        if "Computer Vision" in category: label = "Computer Vision"
+        if "Web" in category: label = "Web & Mobile"
+        
+        nav_items.append({"id": sect_id, "label": label})
+        
+        sections.append(html.H2(category, id=sect_id, className='section-title head-font'))
         sections.append(html.Div(className='projects-grid', children=[
             create_project_card(proj, is_featured=False) for proj in projects
         ]))
 
+# Create Horizontal Navigation Bar
+nav_horizontal = html.Nav(className='section-nav', children=[
+    html.Ul(className='nav-list', children=[
+        html.Li(html.A(item['label'], href=f"#{item['id']}", className='nav-item-link body-font'))
+        for item in nav_items
+    ])
+])
+
 layout = html.Div([
-    html.Div(className='projects-page-container main-container', children=sections),
+    html.Div(className='projects-page-container main-container', children=[
+        
+        # Horizontal Sticky Nav
+        nav_horizontal,
+
+        # Main Content
+        html.Div(className='projects-main-content', children=sections)
+    ]),
     FooterNavigation("Credentials", "/credentials"),
     
     # Video Modal
