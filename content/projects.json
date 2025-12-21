@@ -3,7 +3,7 @@
         {
             "title": "NeuroPathX",
             "short_description": "End-to-end web platform for MRI brain tumor analysis using an Xception-based deep learning model with real-time inference and automated clinical reporting.",
-            "overview_image": "https://i.postimg.cc/yJXtmqvP/neuropathx.jpg",
+            "overview_image": "https://i.postimg.cc/gjwm9jtr/528909957-d55cddc4-67d7-4443-9b0a-83968fdc7baa.png",
             "github_link": "https://github.com/YassienTawfikk/NeuroPathX",
             "live_demo": "https://neuropathx.vercel.app",
             "tech_stack": [
