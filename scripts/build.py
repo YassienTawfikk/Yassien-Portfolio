@@ -13,7 +13,7 @@ TEMPLATE_DIR = os.path.join(PROJECT_ROOT, 'theme', 'templates')
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'public')
 STATIC_DIR = os.path.join(PROJECT_ROOT, 'theme', 'static')
 
-def setup_directories():
+def setup_directories(site_data):
     """Create output directory and copy assets."""
     if os.path.exists(OUTPUT_DIR):
         shutil.rmtree(OUTPUT_DIR)
@@ -41,9 +41,59 @@ def setup_directories():
     # The user asked to organize "assets" -> "theme/static".
     # Existing "static" folder in root (containing sw.js) is different.
     
+    # --- SERVICE WORKER INJECTION ---
     sw_src = os.path.join(PROJECT_ROOT, 'static', 'sw.js')
+    sw_dest = os.path.join(OUTPUT_DIR, 'sw.js')
+    
     if os.path.exists(sw_src):
-        shutil.copy(sw_src, os.path.join(OUTPUT_DIR, 'sw.js'))
+        # 1. Collect all images to pre-cache
+        precache_list = [
+            '/', 
+            '/index.html', 
+            '/projects.html', 
+            '/css/base/global.css',
+            '/css/base/normalize.css',
+            '/js/core/navbar.js',
+            '/js/core/preloader.js'
+        ]
+        
+        # From Projects
+        projects = site_data.get('projects', {}).get('Projects', [])
+        for p in projects:
+            if p.get('overview_image'):
+                precache_list.append(p['overview_image'])
+        
+        # From Credentials (Certificates)
+        certs = site_data.get('credentials', {}).get('coursesAndCertificates', {}).get('items', [])
+        trainings = site_data.get('credentials', {}).get('fieldExperience', {}).get('items', [])
+        for item in certs + trainings:
+            if item.get('certificateImage'):
+                precache_list.append(item['certificateImage'])
+                
+        # From Home/About
+        home = site_data.get('home', {})
+        if home.get('profile photo'): precache_list.append(home['profile photo'])
+        
+        about = site_data.get('about', {})
+        if about.get('image_01'): precache_list.append(about['image_01'])
+        if about.get('image_02'): precache_list.append(about['image_02'])
+        if about.get('image_03'): precache_list.append(about['image_03'])
+        
+        # Deduplicate
+        precache_list = list(set(precache_list))
+        
+        # 2. Read SW template
+        with open(sw_src, 'r') as f:
+            sw_content = f.read()
+            
+        # 3. Inject list
+        js_array = json.dumps(precache_list, indent=4)
+        sw_content = sw_content.replace('const PRECACHE_URLS = [];', f'const PRECACHE_URLS = {js_array};')
+        
+        # 4. Write to public/sw.js
+        with open(sw_dest, 'w') as f:
+            f.write(sw_content)
+        print(f"Service Worker injected with {len(precache_list)} assets.")
 
     return DATA_DIR, TEMPLATE_DIR, OUTPUT_DIR
 
@@ -59,13 +109,15 @@ def load_data():
 
 def build():
     print("Building static site...")
-    setup_directories()
+    
+    # Load Data FIRST
+    site_data = load_data()
+    
+    # Then setup directories with data
+    setup_directories(site_data)
     
     # Setup Jinja2
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
-    
-    # Load Data
-    site_data = load_data()
     
     # --- Projects Logic ---
     projects_list = site_data.get('projects', {}).get('Projects', [])

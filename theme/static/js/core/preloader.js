@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("global-preloader");
     const FADE_OUT_DELAY = 500;
-    const FAILSAFE_TIMEOUT = 5000;
+    const FAILSAFE_TIMEOUT = 15000;
     const DOM_STABILIZATION_DELAY = 100;
 
     let failsafeTimer;
@@ -45,21 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function waitForImagesAndHide() {
         // give the DOM a moment to settle (unfolding logic, etc)
         setTimeout(() => {
-            // Select all images that are NOT loading="lazy"
-            // We only block the preloader for images that are critical for the initial viewport
-            const images = Array.from(document.querySelectorAll("#page-content img:not([loading='lazy'])"));
+            // Select all images in the content area (including lazy loaded ones, as we want the "fully loaded" feel)
+            // Note: Since we have aggressive pre-caching, this should be fast.
+            const images = Array.from(document.querySelectorAll("#page-content img"));
 
             if (images.length === 0) {
                 hidePreloader();
                 return;
             }
 
-            // Failsafe specifically for this wait function
-            // If images take too long (e.g., hanging network), force hide after 3 seconds
+            // User requested explicit 15-second timeout or until images are loaded
             const loadFailsafe = setTimeout(() => {
-                console.warn("Image wait timeout reached. Forcing preloader hide.");
+                console.warn("Preloader timeout (15s) reached. Forcing hide.");
                 hidePreloader();
-            }, 3000);
+            }, 15000);
 
             const imagePromises = images.map((img) => {
                 return new Promise((resolve) => {

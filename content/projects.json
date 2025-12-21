@@ -3,7 +3,7 @@
         {
             "title": "NeuroPathX",
             "short_description": "End-to-end web platform for MRI brain tumor analysis using an Xception-based deep learning model with real-time inference and automated clinical reporting.",
-            "overview_image": "https://i.postimg.cc/gjwm9jtr/528909957-d55cddc4-67d7-4443-9b0a-83968fdc7baa.png",
+            "overview_image": "https://i.postimg.cc/L9DX1Zzk/528909957-d55cddc4-67d7-4443-9b0a-83968fdc7baa.png",
             "github_link": "https://github.com/YassienTawfikk/NeuroPathX",
             "live_demo": "https://neuropathx.vercel.app",
             "tech_stack": [
@@ -38,7 +38,7 @@
         {
             "title": "Hospital System Website",
             "short_description": "A comprehensive Hospital Management System built with Flask, providing seamless interactions for patients, doctors, and administrators with appointments, prescriptions, and profiles.",
-            "overview_image": "https://i.postimg.cc/68ZDQ4Rv/hospitalsystemwebsite.jpg",
+            "overview_image": "https://i.postimg.cc/mbxJQXwq/Hospital-System-Website-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Hospital-System-Website",
             "live_demo": "https://hospital-system-website.vercel.app/login?email=Patient01@gmail.com&password=Patient01&job=Patient",
             "tech_stack": [
@@ -74,7 +74,7 @@
         {
             "title": "CyberMazer-2077",
             "short_description": "Interactive maze game with Mini and Mega sizes, solved using dynamic programming and visualized paths.",
-            "overview_image": "https://i.postimg.cc/WdZQ4qr2/cybermazer2077.jpg",
+            "overview_image": "https://i.postimg.cc/qp6W6V8G/Cyber-Mazer-2077-overview.png",
             "github_link": "https://github.com/YassienTawfikk/CyberMazer-2077.git",
             "live_demo": "https://yassientawfikk.github.io/CyberMazer-2077/",
             "tech_stack": [
@@ -101,7 +101,7 @@
         {
             "title": "SequenceAlignX",
             "short_description": "Interactive local sequence alignment tool with stepwise matrix filling, real-time tracing, and quiz-style 'Guess Mode' for learning.",
-            "overview_image": "https://i.postimg.cc/06dFYgVP/sequencealignx.jpg",
+            "overview_image": "https://i.postimg.cc/NsBnnKZ3/Sequence-Align-X-overview.png",
             "github_link": "https://github.com/YassienTawfikk/SequenceAlignX",
             "live_demo": "https://yassientawfikk.github.io/SequenceAlignX/",
             "tech_stack": [
@@ -129,7 +129,7 @@
         {
             "title": "2D Beamforming Simulator",
             "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
-            "overview_image": "https://i.postimg.cc/0bFTx0zL/2dbeamformingsimulator.jpg",
+            "overview_image": "https://i.postimg.cc/wgGSBTsg/2D-Beamforming-Simulator-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
             "video_demo": "https://github.com/user-attachments/assets/d5588842-c0aa-47e6-9b5e-e1bd604a8439",
             "tech_stack": [
@@ -162,7 +162,7 @@
         {
             "title": "Image FT Mixer Pro",
             "short_description": "Desktop application for analyzing, visualizing, and mixing Fourier Transform components from up to four images.",
-            "overview_image": "https://i.postimg.cc/JyWSH7cv/imageftmixerpro.jpg",
+            "overview_image": "https://i.postimg.cc/yVF5nmpS/Image-FT-Mixer-Pro-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Image-FT-Mixer-Pro.git",
             "video_demo": "https://github.com/user-attachments/assets/cad8e300-f260-4d07-84e3-59fb6c6d8f17",
             "tech_stack": [
@@ -193,7 +193,7 @@
         {
             "title": "PulseSpy",
             "short_description": "Advanced biomedical desktop application for real-time ECG visualization, heart rate monitoring, and arrhythmia detection using signal processing and deep learning.",
-            "overview_image": "https://i.postimg.cc/5HqTBcsJ/pulsespy.jpg",
+            "overview_image": "https://i.postimg.cc/dswffhgx/Pulse-Spy-overview.png",
             "github_link": "https://github.com/YassienTawfikk/PulseSpy.git",
             "video_demo": "https://github.com/user-attachments/assets/eefadd90-89af-4b33-b589-6f108a437ca3",
             "tech_stack": [
@@ -231,7 +231,7 @@
         {
             "title": "Pixelizing",
             "short_description": "A modular image processing toolkit for noise addition, filtering, edge detection, and image enhancement.",
-            "overview_image": "https://i.postimg.cc/sB9qYFw0/pixelizing.jpg",
+            "overview_image": "https://i.postimg.cc/Zb4QQWXj/Pixelizing-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Pixelizer.git",
             "video_demo": "https://github.com/user-attachments/assets/a20275b8-5615-445a-bec8-edf227da7d56",
             "tech_stack": [
@@ -262,7 +262,7 @@
         {
             "title": "AudiophileEQ",
             "short_description": "A versatile desktop signal equalizer for audio, music, speech, and biomedical signals, allowing dynamic frequency adjustments with interactive visualization.",
-            "overview_image": "https://i.postimg.cc/ZWN1qv3C/audiophileeq.jpg",
+            "overview_image": "https://i.postimg.cc/mT1K1fQj/Audiophile-EQ-overview.png",
             "github_link": "https://github.com/YassienTawfikk/AudiophileEQ.git",
             "video_demo": "https://github.com/user-attachments/assets/a13dae43-fa16-44d7-8f04-d47be1091a1d",
             "tech_stack": [
@@ -295,7 +295,7 @@
         {
             "title": "MR Frequency Sculptor",
             "short_description": "Interactive Python tool for exploring k-space manipulations in MRI, visualizing reconstruction effects, and analyzing image quality.",
-            "overview_image": "https://i.postimg.cc/wtcZXK0Z/mrfrequencysculptor.jpg",
+            "overview_image": "https://i.postimg.cc/cx0zzvPh/MR-Frequency-Sculptor-overview.png",
             "github_link": "https://github.com/YassienTawfikk/MR-Frequency-Sculptor",
             "video_demo": "https://github.com/user-attachments/assets/8e276210-3328-45f3-ac60-1af6480b6e21",
             "tech_stack": [
@@ -328,7 +328,7 @@
         {
             "title": "BioRhythm Analyzer",
             "short_description": "CTG Heart Failure Monitoring System analyzing HRV and FHR signals to detect potential abnormalities, combining advanced signal processing with an intuitive GUI.",
-            "overview_image": "https://i.postimg.cc/hXmHGQmN/biorhythmanalyzer.jpg",
+            "overview_image": "https://i.postimg.cc/mB50r2F7/Bio-Rhythm-Analyzer-overview.png",
             "github_link": "https://github.com/YassienTawfikk/CTG-Monitor.git",
             "video_demo": "https://github.com/user-attachments/assets/81f050d4-e398-4a57-8f2a-261e20b89963",
             "tech_stack": [
@@ -360,7 +360,7 @@
         {
             "title": "Signal Reconstruction Application",
             "short_description": "Educational desktop app demonstrating signal sampling and reconstruction techniques, illustrating the Nyquist rate and interpolation methods.",
-            "overview_image": "https://i.postimg.cc/xJf7gsZV/signalreconstructionapplication.jpg",
+            "overview_image": "https://i.postimg.cc/vYhKwQdj/Signal-Reconstruction-Application-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Nyquist-Signal-Reconstructor.git",
             "video_demo": "https://github.com/user-attachments/assets/b83ee1ba-57ab-4690-bb54-5d0bb85fbbf5",
             "tech_stack": [
@@ -392,7 +392,7 @@
         {
             "title": "Digital Filter Application",
             "short_description": "Interactive tool for designing, visualizing, and applying digital filters using z-plane zero-pole manipulation, with real-time frequency response and signal processing.",
-            "overview_image": "https://i.postimg.cc/21WP5Lvr/digitalfilterapplication.jpg",
+            "overview_image": "https://i.postimg.cc/dJZgZP84/Digital-Filter-Application-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Z-Domain-Filter",
             "video_demo": "https://github.com/user-attachments/assets/1f5dedce-a009-4fc9-8925-54ea725dcb2b",
             "tech_stack": [
@@ -422,7 +422,7 @@
         {
             "title": "Soundprints",
             "short_description": "Shazam-like audio recognition app using spectrogram-based fingerprinting and similarity analysis, with support for audio mixing.",
-            "overview_image": "https://i.postimg.cc/1nmTMWdy/soundprints.jpg",
+            "overview_image": "https://i.postimg.cc/nF2WfHJJ/Soundprints-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Soundprints.git",
             "video_demo": "https://github.com/user-attachments/assets/e653a6b5-856f-4ca1-af2c-8bf816d91121",
             "tech_stack": [
@@ -457,7 +457,7 @@
         {
             "title": "Oral Cancer Prediction",
             "short_description": "Machine learning pipeline for predicting oral cancer from microbiome data, with SHAP-based explainability and a PyTorch Lightning-style CLI.",
-            "overview_image": "https://i.postimg.cc/kVFzQrfw/oralcancerprediction.avif",
+            "overview_image": "https://i.postimg.cc/tqpccs8d/Oral-Cancer-Prediction-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Oral-Cancer-Prediction.git",
             "tech_stack": [
                 "Python",
@@ -493,7 +493,7 @@
         {
             "title": "BreastCancer-XAI-Evaluation",
             "short_description": "Exploring explainable AI for breast cancer classification with SHAP interpretability, precision-recall metrics, and handling imbalanced datasets.",
-            "overview_image": "https://i.postimg.cc/svqky4BV/breastcancerxaievaluation.avif",
+            "overview_image": "https://i.postimg.cc/BJPRP9xF/Breast-Cancer-XAI-Evaluation-overview.png",
             "github_link": "https://github.com/YassienTawfikk/BreastCancer-XAI-Evaluation",
             "tech_stack": [
                 "Python",
@@ -529,7 +529,7 @@
         {
             "title": "MediCluster",
             "short_description": "Patient dataset clustering using K-Means and PCA for identifying meaningful patient subgroups.",
-            "overview_image": "https://i.postimg.cc/gwP1Lcqw/medicluster.avif",
+            "overview_image": "https://i.postimg.cc/jsz9vH35/Medi-Cluster-overview.png",
             "github_link": "https://github.com/YassienTawfikk/MediCluster.git",
             "tech_stack": [
                 "Python",
@@ -559,7 +559,7 @@
         {
             "title": "DriveSafe-Sign-Detection",
             "short_description": "Deep learning-based traffic sign detection system using a custom CNN and MobileNetV2 for classifying 43 German traffic signs.",
-            "overview_image": "https://i.postimg.cc/hXmHGQxG/drivesafesigndetection.avif",
+            "overview_image": "https://i.postimg.cc/JRHSHVbv/Drive-Safe-Sign-Detection-overview.png",
             "github_link": "https://github.com/YassienTawfikk/DriveSafe-Sign-Detection.git",
             "tech_stack": [
                 "Python",
@@ -588,7 +588,7 @@
         {
             "title": "MusicSpectroNet",
             "short_description": "Music genre classification on the GTZAN dataset using tabular ML and CNN-based spectrogram analysis.",
-            "overview_image": "https://i.postimg.cc/DWKR4fdP/musicspectronet.avif",
+            "overview_image": "https://i.postimg.cc/RMc8G7pd/Music-Spectro-Net-overview.png",
             "github_link": "https://github.com/YassienTawfikk/MusicSpectroNet.git",
             "tech_stack": [
                 "Python",
@@ -621,7 +621,7 @@
         {
             "title": "SmartRetailRegressor",
             "short_description": "Sales forecasting for Walmart stores using Random Forest and XGBoost with advanced feature engineering.",
-            "overview_image": "https://i.postimg.cc/wyqPFWrd/smartretailregressor.avif",
+            "overview_image": "https://i.postimg.cc/byg5fzhj/Smart-Retail-Regressor-overview.png",
             "github_link": "https://github.com/YassienTawfikk/SmartRetailRegressor.git",
             "tech_stack": [
                 "Python",
@@ -652,7 +652,7 @@
         {
             "title": "PredictiLoan",
             "short_description": "Loan approval prediction using Logistic Regression and SVM on tabular financial data.",
-            "overview_image": "https://i.postimg.cc/cKM2RqXP/predictiloan.avif",
+            "overview_image": "https://i.postimg.cc/TdfssKBt/Predicti-Loan-overview.png",
             "github_link": "https://github.com/YassienTawfikk/PredictiLoan.git",
             "tech_stack": [
                 "Python",
@@ -683,7 +683,7 @@
         {
             "title": "MovieMatch100K",
             "short_description": "A modular movie recommendation system using the MovieLens 100K dataset with collaborative filtering and SVD.",
-            "overview_image": "https://i.postimg.cc/SXpHYQ72/moviematch100k.avif",
+            "overview_image": "https://i.postimg.cc/tXhfD3vJ/Movie-Match100K-overview.png",
             "github_link": "https://github.com/YassienTawfikk/MovieMatch100K.git",
             "tech_stack": [
                 "Python",
@@ -713,7 +713,7 @@
         {
             "title": "FaceVector",
             "short_description": "Modular computer vision system for face detection and recognition using PCA-based embeddings.",
-            "overview_image": "https://i.postimg.cc/dhCz0ZdZ/facevector.jpg",
+            "overview_image": "https://i.postimg.cc/tX0whS5w/Face-Vector-overview.png",
             "github_link": "https://github.com/YassienTawfikk/FaceVector",
             "tech_stack": [
                 "Python",
@@ -744,7 +744,7 @@
         {
             "title": "EdgeEnhance",
             "short_description": "Edge and boundary detection toolkit integrating Canny, Hough Transform, and Active Contour Models for image analysis.",
-            "overview_image": "https://i.postimg.cc/LJPrsgfJ/edgeenhance.jpg",
+            "overview_image": "https://i.postimg.cc/XVMmwH8P/Edge-Enhance-overview.png",
             "github_link": "https://github.com/YassienTawfikk/EdgeEnhance",
             "tech_stack": [
                 "Python",
@@ -774,7 +774,7 @@
         {
             "title": "SiftSee",
             "short_description": "A feature detection and matching toolkit using Harris corners, SIFT descriptors, and template matching.",
-            "overview_image": "https://i.postimg.cc/LqBwtdxm/siftsee.jpg",
+            "overview_image": "https://i.postimg.cc/Zb4QQWX1/Sift-See-overview.png",
             "github_link": "https://github.com/YassienTawfikk/SIFT-See.git",
             "tech_stack": [
                 "Python",
@@ -804,7 +804,7 @@
         {
             "title": "SigmaVision",
             "short_description": "A modular image analysis toolkit combining thresholding techniques with unsupervised machine learning-based segmentation.",
-            "overview_image": "https://i.postimg.cc/jWQmHVMd/sigmavision.jpg",
+            "overview_image": "https://i.postimg.cc/tqpccsLy/Sigma-Vision-overview.png",
             "github_link": "https://github.com/YassienTawfikk/SegmaVision",
             "tech_stack": [
                 "Python",
@@ -836,7 +836,7 @@
         {
             "title": "Dynamic Multi-Channel Signal Viewer",
             "short_description": "Python & Qt-based desktop app for visualizing, customizing, and managing multiple medical signals (ECG, EMG, EEG) with playback, linking, and reporting features.",
-            "overview_image": "https://i.postimg.cc/5XzZtQv0/dynamicmultichannelsignalviewer.jpg",
+            "overview_image": "https://i.postimg.cc/GbT6Twk5/Dynamic-Multi-Channel-Signal-Viewer-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Dynamic-Multi-Channel-Signal-Viewer",
             "tech_stack": [
                 "Python",
@@ -866,7 +866,7 @@
         {
             "title": "LifeStream",
             "short_description": "Mobile health and safety platform integrating a wearable ESP32 device for real-time heart monitoring, SOS alerts, and live location tracking.",
-            "overview_image": "https://i.postimg.cc/hJqNQ4bL/lifestream.jpg",
+            "overview_image": "https://i.postimg.cc/D2qD5rpX/Life-Stream-overview.png",
             "github_link": "https://github.com/YassienTawfikk/LifeStream",
             "tech_stack": [
                 "Flutter",
@@ -906,7 +906,7 @@
         {
             "title": "Automated Defibrillator System",
             "short_description": "Prototype system integrating real-time ECG analysis with Arduino-controlled shock delivery for arrhythmia detection and safe hardware simulation.",
-            "overview_image": "https://i.postimg.cc/yDRwN3Rw/automateddefibrillatorsystem.avif",
+            "overview_image": "https://i.postimg.cc/4XHjHkzp/Automated-Defibrillator-System-overview.png",
             "github_link": "https://github.com/YassienTawfikk/Automated_Defibrillator.git",
             "tech_stack": [
                 "Python",
@@ -938,7 +938,7 @@
         {
             "title": "STM32LabSuite",
             "short_description": "Modular umbrella repository of three STM32F401VE embedded projects with real-time control, interrupt handling, and modular driver abstraction.",
-            "overview_image": "https://i.postimg.cc/hzDwMCYS/stm32labsuite.jpg",
+            "overview_image": "https://i.postimg.cc/6WcPx9XK/STM32Lab-Suite-overview.png",
             "github_link": "https://github.com/YassienTawfikk/STM32LabSuite",
             "tech_stack": [
                 "C",
@@ -973,7 +973,7 @@
         {
             "title": "CheckMate - Chess Game",
             "short_description": "Two-player chess game with GUI using Java Swing, featuring move validation, themes, and gameplay tracking.",
-            "overview_image": "https://i.postimg.cc/K1TdY3Lb/checkmatechessgame.jpg",
+            "overview_image": "https://i.postimg.cc/7qJjJ8gn/Check-Mate-Chess-Game-overview.png",
             "github_link": "https://github.com/YassienTawfikk/CheckMate.git",
             "tech_stack": [
                 "Java",
