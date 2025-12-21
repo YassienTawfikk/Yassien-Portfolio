@@ -21,7 +21,7 @@ def create_credential_card(item, card_type="internship"):
     Includes explicit Action Footer for better Link UX.
     Includes Overlay Icon for Image Affordance (Mobile).
     """
-    image_src = item.get("certificateImage", "https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/placeholder.jpg")
+    image_src = item.get("certificateImage", "https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/placeholder.jpg")
     
     if card_type == "internship":
         title = item.get("role", "Unknown Role")

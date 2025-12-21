@@ -22,12 +22,12 @@ app = Dash(
         {'property': 'og:title', 'content': 'Yassien Tawfik · Portfolio'},
         {'property': 'og:description', 'content': 'Explore my projects, skills, and professional experience.'},
         {'property': 'og:url', 'content': 'https://ytawfik-portfolio.vercel.app/'},
-        {'property': 'og:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/icon-512.png'},
+        {'property': 'og:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-512.png'},
 
         {'name': 'twitter:card', 'content': 'summary'},
         {'name': 'twitter:title', 'content': 'Yassien Tawfik · Portfolio'},
         {'name': 'twitter:description', 'content': 'Explore my projects, skills, and professional experience.'},
-        {'name': 'twitter:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/icon-512.png'}
+        {'name': 'twitter:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-512.png'}
     ]
 )
 
@@ -38,12 +38,12 @@ app.index_string = '''
     <head>
         {%metas%}
         <title>{%title%}</title>
-        <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/favicon.ico?v=2">
+        <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/favicon.ico?v=2">
         {%css%}
         <!-- Web App Icons -->
-        <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/apple-touch-icon.png?v=2"/>
-        <link rel="icon" sizes="192x192" href="https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/icon-250.png?v=2"/>
-        <link rel="icon" sizes="512x512" href="https://raw.githubusercontent.com/YassienTawfikk/Yassien-Portfolio-Assets/main/assets/images/icon/icon-512.png?v=2"/>
+        <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/apple-touch-icon.png?v=2"/>
+        <link rel="icon" sizes="192x192" href="https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-250.png?v=2"/>
+        <link rel="icon" sizes="512x512" href="https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-512.png?v=2"/>
     </head>
     <body>
         <div id="global-preloader">
