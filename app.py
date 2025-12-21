@@ -27,7 +27,10 @@ app = Dash(
         {'name': 'twitter:card', 'content': 'summary'},
         {'name': 'twitter:title', 'content': 'Yassien Tawfik · Portfolio'},
         {'name': 'twitter:description', 'content': 'Explore my projects, skills, and professional experience.'},
-        {'name': 'twitter:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-512.png'}
+        {'name': 'twitter:image', 'content': 'https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/icon/icon-512.png'},
+        
+        # Referrer Policy to allow GitHub Video Hotlinking
+        {'name': 'referrer', 'content': 'no-referrer'}
     ]
 )
 
