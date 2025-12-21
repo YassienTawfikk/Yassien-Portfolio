@@ -131,7 +131,7 @@
       "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
       "overview_image": "https://github.com/user-attachments/assets/7a8045ab-8a21-4005-93f2-00203173fdc5",
       "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
-      "video_demo": "https://github.com/user-attachments/assets/7af93bb1-0a6b-47ba-b021-24cd3ee387c6",
+      "video_demo": "https://github.com/user-attachments/assets/d5588842-c0aa-47e6-9b5e-e1bd604a8439",
       "tech_stack": [
         "Python",
         "NumPy",
