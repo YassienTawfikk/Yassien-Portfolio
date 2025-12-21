@@ -1,3 +1,4 @@
+from flask import send_from_directory
 from dash import Dash, html, dcc, Input, Output
 import dash_bootstrap_components as dbc
 from src.components.navbar import Navbar
@@ -71,6 +72,10 @@ def add_header(response):
     response.cache_control.max_age = 3600
     response.cache_control.public = True
     return response
+
+@server.route('/sw.js')
+def serve_sw():
+    return send_from_directory('static', 'sw.js', mimetype='application/javascript')
 
 app.layout = html.Div([
     Navbar(),

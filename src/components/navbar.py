@@ -18,7 +18,7 @@ def Navbar():
 
     return html.Nav(className="navbar", children=[
         html.Div(className="navbar-container", children=[
-            dcc.Link(
+            html.A(
                 html.Span(home.signature, className="navbar-logo"),
                 href="/",
                 className="navbar-brand"
@@ -37,7 +37,7 @@ def Navbar():
 
             html.Ul(id="navbar-menu-list", className="navbar-menu", children=[
                 html.Li(
-                    dcc.Link(label, href=href, className="nav-link")
+                    html.A(label, href=href, className="nav-link")
                 ) for label, href in nav_links
             ])
         ])
