@@ -235,7 +235,6 @@ def toggle_modal(video_clicks, is_open):
                     autoPlay=True,
                     muted=True,
                     loop=True,
-                    playsInline=True,
                     style={"width": "100%", "height": "auto"}
                 )
             else:
