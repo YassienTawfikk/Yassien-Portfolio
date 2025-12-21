@@ -1,0 +1,297 @@
+/* =========================================================
+   Skills Page Layout
+   ========================================================= */
+
+/* Page container
+   Uses full viewport height to avoid short-page visual gaps */
+.skills-page {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: transparent;
+    display: block;
+}
+
+/* Page title
+   Mirrors typography scale used on the Projects page for consistency */
+/* skills-title removed - replaced by unified-page-title */
+
+/* =========================================================
+   Skills Sections Layout
+   ========================================================= */
+
+/* Main container
+   Constrained width ensures readability on ultra-wide screens */
+.all-skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Category wrapper
+   Central alignment simplifies responsive behavior */
+.category-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding-left: 0;
+}
+
+.category-icon {
+    font-size: 24px;
+    margin-right: 12px;
+    color: var(--white-color);
+    opacity: 0.9;
+    cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: visible;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--white-color);
+    letter-spacing: 0.5px;
+}
+
+/* Description text
+   Width capped to preserve readable line length */
+.category-desc {
+    font-size: 15px;
+    color: var(--secondary-white-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.6;
+}
+
+/* =========================================================
+   Skills Grid & Cards
+   ========================================================= */
+
+/* Flexible grid
+   Flex-wrap chosen over CSS grid for simpler centering logic */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Skill card
+   Lightweight visual treatment keeps focus on content */
+.skill-card {
+    width: 130px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Ensures consistent pointer behavior across nested elements */
+.skill-card * {
+    cursor: pointer;
+}
+
+/* Hover interaction
+   Slight elevation reinforces click affordance without visual noise */
+.skill-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill icon
+   Default grayscale reduces visual competition across cards */
+.skill-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: grayscale(100%) opacity(0.8);
+    transition: all 0.3s ease;
+}
+
+/* Color restoration on hover
+   Acts as a subtle reward without breaking overall calm aesthetic */
+.skill-card:hover .skill-icon {
+    transform: scale(1.05);
+    filter: grayscale(0%) opacity(1);
+}
+
+.skill-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-white-color);
+    letter-spacing: 0.3px;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-name {
+    color: var(--white-color);
+}
+
+/* Optional hint text
+   Intentionally low contrast to avoid primary attention */
+.skill-details-hint {
+    font-size: 10px;
+    margin-top: 6px;
+    color: var(--secondary-white-color);
+    opacity: 0.4;
+}
+
+/* =========================================================
+   Skill Modal
+   ========================================================= */
+
+/* Dialog sizing
+   Width capped for readability while remaining content-driven */
+.skill-modal-custom .modal-dialog {
+    max-width: 600px !important;
+    width: fit-content !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Modal container
+   Dark theme aligned with overall site aesthetic */
+.skill-modal-custom .modal-content {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    color: var(--white-color) !important;
+    width: auto !important;
+    overflow: visible !important;
+}
+
+.modal-header-custom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 20px 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-title-custom {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: var(--white-color) !important;
+    text-align: center;
+    width: fit-content;
+}
+
+/* Close button
+   Rotation provides visual feedback without introducing icons */
+/* Close button
+   Rotation provides visual feedback without introducing icons */
+/* Animation handled globally in modals.css */
+
+.modal-body-custom {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Modal icon
+   Strict grayscale preserves consistency with card visuals */
+.modal-skill-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    filter: grayscale(100%) opacity(0.9);
+    transition: all 0.5s ease;
+}
+
+/* Hover interaction
+   Opacity-only change avoids breaking grayscale rule */
+.modal-skill-icon:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Description text
+   Line length capped for long-form readability */
+.modal-skill-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--secondary-white-color);
+    width: 100%;
+    max-width: 500px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+
+
+@media (max-width: 768px) {
+
+    .title {
+        font-size: var(--mobile-font-h1);
+        margin-bottom: 30px;
+    }
+
+    .category-title {
+        font-size: var(--mobile-font-h2);
+    }
+
+    .category-desc {
+        font-size: var(--mobile-font-p);
+    }
+
+    .all-skills-container {
+        gap: 60px;
+    }
+
+    .skills-grid {
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 20px 10px;
+    }
+
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .skill-name {
+        font-size: var(--mobile-font-small);
+    }
+}

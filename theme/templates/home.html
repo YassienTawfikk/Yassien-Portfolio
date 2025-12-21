@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ home.name }} | Portfolio{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/home.css">
+{% endblock %}
+
+{% block content %}
+<div class="intro-wrapper">
+    <div class="profile-section">
+        <img src="{{ home['profile photo'] }}" class="home-intro-image" alt="Profile Photo">
+    </div>
+    <div class="heading-section">
+        <span class="name-title">
+            {% set names = home.name.split() %}
+            <span class="head-font first-name">{{ names[0] }}</span>
+            <span class="head-font">{{ names[1] }}</span>
+        </span>
+        <span class="intro-brief body-font">{{ home.brief }}</span>
+        <a href="{{ home.cv }}" target="_blank">
+            <button class="std-button std-button-secondary std-button-lg">Résumé</button>
+        </a>
+    </div>
+</div>
+
+{% with label="Projects", url="/projects.html", style="margin-top: 0" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}

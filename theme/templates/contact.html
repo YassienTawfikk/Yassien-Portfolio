@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/contact.css">
+{% endblock %}
+
+{% block content %}
+<div class="contact-wrapper">
+    <!-- Visual Section (Left) -->
+    <div class="contact-visual-section">
+        {% if contact.profile.image %}
+        <img src="{{ contact.profile.image }}" alt="Contact Visual">
+        {% endif %}
+    </div>
+
+    <!-- Content Section (Right) -->
+    <div class="contact-content-section">
+        <!-- Title -->
+        <div>
+            <h1 class="unified-page-title title-left underline-150px">Let's Connect</h1>
+        </div>
+
+        <!-- Brief Info (Email/Phone) -->
+        <div class="contact-info-brief">
+            <div class="copy-container">
+                <a href="mailto:{{ contact.direct_contact.email }}" class="contact-direct-link head-font" id="contact-email-text">{{ contact.direct_contact.email }}</a>
+                <button class="copy-btn" id="copy-email-btn" title="Copy Email" data-text="{{ contact.direct_contact.email }}">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+                <span id="email-copy-feedback" class="copy-feedback"></span>
+            </div>
+
+            <div class="copy-container">
+                <p class="contact-phone-text" id="contact-phone-text">{{ contact.direct_contact.phone }}</p>
+                <button class="copy-btn" id="copy-phone-btn" title="Copy Phone" data-text="{{ contact.direct_contact.phone }}">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+                <span id="phone-copy-feedback" class="copy-feedback"></span>
+            </div>
+        </div>
+        
+        <!-- Socials -->
+        <div class="contact-social-row">
+            {% for social in contact.social_channels %}
+            {% set icon_class = "fa-brands fa-" + social.platform.lower() %}
+            {% if social.platform.lower() == 'linkhub' %}{% set icon_class = "fa-solid fa-link" %}{% endif %}
+            
+            <a href="{{ '#' if social.notification_title else social.url }}" 
+               title="{{ social.platform }}"
+               {% if social.notification_title %}
+               class="social-notify-trigger"
+               data-notify-title="{{ social.notification_title }}"
+               data-notify-desc="{{ social.notification_description }}"
+               data-href="{{ social.url }}"
+               {% else %}
+               target="_blank"
+               {% endif %}
+            >
+                <i class="{{ icon_class }}"></i>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-container" id="zen-contact-form">
+            <div>
+                <div class="zen-group">
+                    <label for="from_name" class="zen-label">Name</label>
+                    <input type="text" id="from_name" class="zen-input" required autocomplete="off">
+                </div>
+                <div class="zen-group">
+                    <label for="reply_to" class="zen-label">Email</label>
+                    <input type="email" id="reply_to" class="zen-input" required autocomplete="off">
+                </div>
+                <div class="zen-group">
+                    <label for="message" class="zen-label">Message</label>
+                    <textarea id="message" class="zen-input" required rows="3"></textarea>
+                </div>
+                <button type="submit" class="zen-submit" id="zen-submit-btn">Send Message</button>
+                <div id="zen-form-feedback" class="zen-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Modal -->
+    <div id="cv-modal" class="modal-backdrop" style="display: none;">
+        <div id="modal-overlay-bg" class="modal-overlay-bg"></div>
+        <div class="viewer notification-viewer" id="confirm-modal-content">
+            <div class="notification-box">
+                <h2 class="notification-title" id="notification-title"></h2>
+                <p class="notification-message" id="confirm-message-text"></p>
+                <div class="notification-actions">
+                    <button id="confirm-ok" class="action-btn ok-btn">Continue to Site</button>
+                    <button id="confirm-cancel" class="action-btn cancel-btn" style="background: #ccc; margin-left:10px;">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% with label="Back to Home", url="/", style="margin-top: 0" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="/js/pages/contact.js"></script>
+{% endblock %}

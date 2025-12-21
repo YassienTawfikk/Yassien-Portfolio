@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Education | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/education.css">
+{% endblock %}
+
+{% block content %}
+<div class="education-port">
+    <div class="image-holder">
+        <div><img src="{{ education.image_01 }}"></div>
+        <div><img src="{{ education.image_02 }}"></div>
+    </div>
+    <div class="education-container">
+        <span class="unified-page-title title-left underline-80px">Education</span>
+        <span class="subtitle body-font">{{ education.university }} - {{ education.faculty }}</span>
+        <span class="subsubtitle body-font">{{ education.degree }} - Expected Graduation: {{ education.expected_graduation }} - GPA: {{ education.gpa }}</span>
+        <span class="body-text body-font">{{ education.description }}</span>
+        
+        <div class="courses-container">
+            <span class="head-font">Key Courses</span>
+            <ul>
+                <li class="body-font courses-head">Core Biomedical Courses:</li>
+                <ul class="list-body-font">
+                    {% for course in education.key_courses.biomedical_engineering %}
+                    <li class="body-font courses-lists">{{ course }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <li class="body-font courses-head">Technical and Programming Courses:</li>
+                <ul class="list-body-font">
+                    {% for course in education.key_courses.ai_and_cs %}
+                    <li class="body-font courses-lists">{{ course }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <li class="body-font courses-head">Mathematics Courses:</li>
+                <ul class="list-body-font">
+                    {% for course in education.key_courses.mathematics_and_theory %}
+                    <li class="body-font courses-lists">{{ course }}</li>
+                    {% endfor %}
+                </ul>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% with label="Society", url="/society.html", style="margin-top: 0" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}

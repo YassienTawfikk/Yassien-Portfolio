@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% from "components/project_card.html" import project_card %}
+
+{% block title %}Projects | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/projects.css">
+{% endblock %}
+
+{% block content %}
+<div class="projects-page-container main-container">
+    
+    <!-- Horizontal Sticky Nav -->
+    <nav class="section-nav">
+        <ul class="nav-list">
+            {% if projects_context.featured_projects %}
+            <li><a href="#featured-live-demos" class="nav-item-link body-font">Featured Live</a></li>
+            {% endif %}
+            {% if projects_context.featured_video_projects %}
+            <li><a href="#featured-video-demos" class="nav-item-link body-font">Featured Video</a></li>
+            {% endif %}
+            {% for category, projects in projects_context.categories.items() %}
+                {% if projects %}
+                {% set sect_id = category.lower().replace(" & ", "-").replace(", ", "-").replace(" ", "-") %}
+                {% set label = category.split(" & ")[0] if "&" in category else category %}
+                {% if "Computer Vision" in category %}{% set label = "Computer Vision" %}{% endif %}
+                {% if "Web" in category %}{% set label = "Web & Mobile" %}{% endif %}
+                <li><a href="#{{ sect_id }}" class="nav-item-link body-font">{{ label }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <div class="projects-main-content">
+        <h1 class="unified-page-title title-center underline-80px">Projects</h1>
+
+        <!-- Featured Live -->
+        {% if projects_context.featured_projects %}
+        <h2 id="featured-live-demos" class="section-title featured-title head-font">
+            <i class="fas fa-star"></i> Featured Live Demos
+        </h2>
+        <div class="projects-grid featured-grid">
+            {% for project in projects_context.featured_projects %}
+                {{ project_card(project, is_featured=True) }}
+            {% endfor %}
+        </div>
+        <hr class="section-divider">
+        {% endif %}
+
+        <!-- Featured Video -->
+        {% if projects_context.featured_video_projects %}
+        <h2 id="featured-video-demos" class="section-title featured-title head-font">
+            <i class="fas fa-video"></i> Featured Video Demos
+        </h2>
+        <div class="projects-grid featured-grid">
+            {% for project in projects_context.featured_video_projects %}
+                {{ project_card(project, is_featured=True) }}
+            {% endfor %}
+        </div>
+        <hr class="section-divider">
+        {% endif %}
+
+        <!-- Categories -->
+        {% for category, projects in projects_context.categories.items() %}
+            {% if projects %}
+            {% set sect_id = category.lower().replace(" & ", "-").replace(", ", "-").replace(" ", "-") %}
+            <h2 id="{{ sect_id }}" class="section-title head-font">{{ category }}</h2>
+            <div class="projects-grid">
+                {% for project in projects %}
+                    {{ project_card(project, is_featured=False) }}
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% with label="Credentials", url="/credentials.html" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Project Demo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="videoModalBody">
+        <!-- Video iframe injected here -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/pages/projects.js"></script>
+{% endblock %}

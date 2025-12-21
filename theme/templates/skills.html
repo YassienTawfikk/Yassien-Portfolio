@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Skills | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/skills.css">
+{% endblock %}
+
+{% block content %}
+<div class="skills-page main-container">
+    <span class="unified-page-title title-center underline-80px">Skills</span>
+
+    <div class="all-skills-container">
+        {% for category in skills.skill_categories %}
+        <div class="category-section">
+            <div class="category-header">
+                <i class="{{ category.category_icon }} category-icon"></i>
+                <span class="category-title head-font">{{ category.category }}</span>
+            </div>
+            
+            <p class="category-desc body-font">{{ category.description }}</p>
+            
+            <div class="skills-grid">
+                {% for skill in category.skills %}
+                <div class="skill-card" data-name="{{ skill.name }}" data-desc="{{ skill.description or 'No description available.' }}" data-img="{{ skill.image_url }}">
+                    <img src="{{ skill.image_url }}" class="skill-icon">
+                    <span class="skill-name body-font">{{ skill.name }}</span>
+                    {% if skill.details %}
+                    <span class="skill-details-hint body-font">{{ skill.details }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Skill Modal -->
+    <div class="modal fade skill-modal-custom" id="skill-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title modal-title-custom" id="skill-modal-title">Skill Details</h5>
+                    <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-custom" id="skill-modal-body">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% with label="About Me", url="/about.html" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/pages/skills.js"></script>
+{% endblock %}

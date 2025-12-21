@@ -1,0 +1,472 @@
+/* =========================================================
+   Import Google Fonts
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* =========================================================
+   Root Variables
+   ========================================================= */
+:root {
+    --main-color: #1f2020;
+    --secondary-color: #2d2d2d;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --secondary-white-color: #cccccc;
+    --photo-bg: #c4c4c4;
+
+    /* Standardized Mobile Font Sizes */
+    --mobile-font-h1: 36px;
+    --mobile-font-h2: 24px;
+    --mobile-font-h3: 20px;
+    --mobile-font-p: 15px;
+    --mobile-font-small: 13px;
+}
+
+/* =========================================================
+   Global Reset
+   ========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Global enforcement for consistent sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+input,
+textarea {
+    cursor: text;
+}
+
+/* Default cursor enforcement */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    cursor: default;
+}
+
+.head-font {
+    font-family: "Poppins", serif;
+    font-weight: 800;
+}
+
+.body-font {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+
+
+/* =========================================================
+   Selection Highlight
+   ========================================================= */
+::selection {
+    background: var(--secondary-white-color);
+    color: var(--main-color);
+}
+
+/* =========================================================
+   Links and Lists
+   ========================================================= */
+a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* =========================================================
+   Standard Button System
+   ========================================================= */
+.std-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    outline: none;
+    letter-spacing: 0.5px;
+    user-select: none;
+    -webkit-user-select: none;
+    min-width: 100px;
+    flex: 1;
+}
+
+/* Primary: Subtle Fill (Like GitHub button in Credits) */
+.std-button-primary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white-color);
+}
+
+.std-button-primary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white-color);
+}
+
+/* Secondary: Bordered / Ghost (Like Website button in Credits) */
+.std-button-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--secondary-white-color);
+}
+
+.std-button-secondary:hover {
+    border-color: var(--white-color);
+    color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Large Variant (for Home Resume / Main CTAs) */
+.std-button-lg {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    min-width: 160px;
+}
+
+/* =========================================================
+   Containers
+   ========================================================= */
+.main-container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   Image Styling
+   ========================================================= */
+.image>img {
+    width: 100%;
+}
+
+/* =========================================================
+   Navbar Styling
+   ========================================================= */
+
+.navbar {
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================================================
+   Brand / Logo
+   ========================================================= */
+.navbar-brand {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.navbar-logo {
+    font-family: "Mrs Saint Delafield", cursive;
+    font-size: 2.2rem;
+    color: var(--white-color);
+    letter-spacing: 1px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar-brand:hover .navbar-logo {
+    opacity: 1;
+}
+
+/* =========================================================
+   Navigation Links
+   ========================================================= */
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--secondary-white-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Micro-interaction: opacity change only */
+.nav-link:hover {
+    color: var(--white-color);
+    opacity: 1;
+}
+
+/* =========================================================
+   Mobile Toggle
+   ========================================================= */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--white-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
+
+/* =========================================================
+   Mobile Styles
+   ========================================================= */
+@media (max-width: 900px) {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(45, 45, 45, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        /* Hidden state */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 1000;
+    }
+
+    /* Active State (toggled by JS) */
+    .navbar-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--white-color);
+    }
+
+    /* Hamburger Animation to X */
+    .navbar-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+}
+
+/* =========================================================
+   Footer Navigation
+   ========================================================= */
+.footer-nav-container {
+    margin-top: 80px;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-nav-link:hover {
+    transform: translateY(-5px);
+}
+
+.footer-nav-label {
+    font-size: 0.85rem;
+    color: var(--secondary-white-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: inherit;
+}
+
+.footer-nav-link:hover .footer-nav-label {
+    opacity: 1;
+}
+
+.footer-nav-title {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: inherit;
+}
+
+.footer-arrow {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-nav-link:hover .footer-arrow {
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    .footer-nav-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* =========================================================
+   Unified Page Title System
+   ========================================================= */
+
+.unified-page-title {
+    font-size: 52px;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    color: var(--white-color);
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: block;
+    /* Ensure it takes full width even if it's a span */
+}
+
+.unified-page-title::after {
+    content: '';
+    position: absolute;
+    background-color: var(--white-color);
+    height: 1px;
+    bottom: 0;
+}
+
+/* Modifiers for Alignment */
+.title-center {
+    text-align: center;
+}
+
+.title-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-left {
+    text-align: left;
+}
+
+.title-left::after {
+    left: 0;
+    transform: none;
+}
+
+/* Modifiers for Underline Width */
+.underline-80px::after {
+    width: 80px;
+}
+
+.underline-150px::after {
+    width: 150px;
+}
+
+.underline-200px::after {
+    width: 200px;
+}
+
+.underline-80percent {
+    display: table;
+    width: fit-content;
+}
+
+.underline-80percent::after {
+    width: 80%;
+}
+
+
+/* Responsive Font Adjustments for Unified Title */
+@media (max-width: 860px) {
+    .unified-page-title {
+        font-size: var(--mobile-font-h1);
+    }
+}
+
+@media (max-width: 768px) {
+    /* On mobile, sometimes left-aligned titles need to center */
+    /* Only if originally intended, but request says "preserve" so we stick to modifiers mostly.
+       However, checking education/about mobile styles, they often center.
+       Let's trust the modifiers to hold layout but allow font scaling. 
+       If specific pages need centering on mobile (like About), we might need media queries there
+       or a utility class. For now sticking to base definitions. */
+}

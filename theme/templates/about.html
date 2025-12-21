@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}About | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/about.css">
+{% endblock %}
+
+{% block content %}
+<div class="images-holder">
+    <span class="image-box image"><img src="{{ about.image_01 }}" loading="lazy"></span>
+    <span class="image-box image"><img src="{{ about.image_02 }}" loading="lazy"></span>
+    <span class="image-box image"><img src="{{ about.image_03 }}" loading="lazy"></span>
+</div>
+
+<div class="main-container">
+    <span class="unified-page-title title-left underline-80percent">About Me</span>
+    
+    <div class="about-content">
+        <div class="body-font topic">{{ about.description }}</div>
+        
+        <div class="topic">
+            <span class="head-font">Vision</span>
+            <span class="body-font">{{ about.vision }}</span>
+        </div>
+        
+        <div class="topic">
+            <span class="head-font">Mission</span>
+            <span class="body-font">{{ about.mission }}</span>
+        </div>
+    </div>
+</div>
+
+{% with label="Education", url="/education.html" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}

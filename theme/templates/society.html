@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Society | Yassien Tawfik{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/css/pages/society.css">
+{% endblock %}
+
+{% block content %}
+<div class="society-port">
+    <div class="unified-page-title title-center underline-200px">Society Involvement</div>
+    
+    <div class="society-content-wrapper">
+        <button id="scroll-left"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        
+        <div class="involvements-holder main-container" id="involvements-id">
+            {% for item in society.society %}
+            <div class="involvement-box">
+                <div class="member-fig">
+                    <div class="image">
+                        {% if item.image_url %}
+                        <img src="{{ item.image_url }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                    
+                    <span class="member-icons">
+                        {% if item.facebook_url %}
+                        <a href="{{ item.facebook_url }}" target="_blank"><i class="fa-brands fa-facebook social-icons"></i></a>
+                        {% endif %}
+                        {% if item.instagram_url %}
+                        <a href="{{ item.instagram_url }}" target="_blank"><i class="fa-brands fa-instagram social-icons"></i></a>
+                        {% endif %}
+                        {% if item.youtube_url %}
+                        <a href="{{ item.youtube_url }}" target="_blank"><i class="fa-brands fa-youtube social-icons"></i></a>
+                        {% endif %}
+                        {% if item.website_url %}
+                        <a href="{{ item.website_url }}" target="_blank"><i class="fa-solid fa-globe social-icons"></i></a>
+                        {% endif %}
+                        
+                        {% if item.certficates %}
+                        <div class="cert-icon-container society-cert-trigger" data-src="{{ item.certficates }}">
+                            <i class="fa-solid fa-scroll social-icons"></i>
+                        </div>
+                        {% endif %}
+                    </span>
+                </div>
+                
+                <div class="society-card-text">
+                    <span class="head-font card-title">{{ item.role or 'Unknown Title' }}</span>
+                    <span class="body-font card-subtitle">{{ item.organization or 'Unknown Subtitle' }}</span>
+                    <p class="body-font card-paragraph">{{ item.description or 'No description available.' }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <button id="scroll-right"><i class="fa-solid fa-circle-chevron-right"></i></button>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div class="modal fade gallery-modal" id="society-certificate-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Certificate View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="gallery-container">
+                        <img id="society-modal-cert-image" src="" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% with label="Get In Touch", url="/contact.html" %}
+    {% include "components/footer_nav.html" %}
+{% endwith %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/pages/society.js"></script>
+{% endblock %}

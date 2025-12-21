@@ -1,0 +1,51 @@
+{% macro project_card(project, is_featured=False) %}
+<div class="project-card {{ 'featured-card' if is_featured else '' }}">
+    <div class="project-image-container">
+        <img src="{{ project.overview_image }}" class="project-image" alt="{{ project.title }} Overview" loading="lazy">
+        {% if is_featured %}
+        <div class="live-badge">LIVE DEMO</div>
+        {% endif %}
+    </div>
+    <div class="project-content">
+        <div class="project-domain-badge">
+            <i class="{{ project.domain_icon }} domain-icon"></i>
+            <span class="domain-text body-font">{{ project.domain_name }}</span>
+        </div>
+        
+        <h3 class="project-title head-font">{{ project.title }}</h3>
+        
+        <p class="project-description body-font">{{ project.short_description }}</p>
+        
+        <div class="tech-stack-section">
+            <p class="tech-section-label head-font">Tech Stack</p>
+            <div class="project-tech-stack">
+                {% for tech in project.tech_stack[:5] %}
+                <span class="tech-badge body-font">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="project-links">
+            {% if project.github_link %}
+            <a href="{{ project.github_link }}" target="_blank" class="std-button std-button-primary">
+                <i class="fab fa-github"></i> Code
+            </a>
+            {% endif %}
+            
+            {% if project.live_demo %}
+            <a href="{{ project.live_demo }}" target="_blank" class="std-button std-button-secondary">
+                <i class="fas fa-play"></i> Live Demo
+            </a>
+            {% endif %}
+            
+            {% if project.video_demo %}
+            <button class="std-button std-button-secondary video-btn" 
+                    data-video-url="{{ project.video_demo }}"
+                    data-project-title="{{ project.title }}">
+                <i class="fas fa-video"></i> Video Demo
+            </button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endmacro %}
