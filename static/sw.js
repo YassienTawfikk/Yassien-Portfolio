@@ -27,6 +27,11 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     const requestUrl = event.request.url;
 
+    // Exclude video content (Range header issues with opaque responses interfere with playback)
+    if (event.request.destination === 'video') {
+        return;
+    }
+
     // Check if the request is for an external project image (GitHub/UserContent)
     const isTargetImage = URLS_TO_CACHE_PATTERNS.some(pattern => requestUrl.includes(pattern));
 
