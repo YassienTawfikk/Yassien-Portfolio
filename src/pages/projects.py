@@ -236,7 +236,6 @@ def toggle_modal(video_clicks, is_open):
                     muted=True,
                     loop=True,
                     playsInline=True,
-                    referrerPolicy="no-referrer",
                     style={"width": "100%", "height": "auto"}
                 )
             else:
