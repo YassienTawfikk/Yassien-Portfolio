@@ -240,14 +240,15 @@ def toggle_modal(video_clicks, is_open):
                         </style>
                     </head>
                     <body>
-                        <video src="{video_url}" controls autoplay muted loop playsinline></video>
+                        <video src="{video_url}" controls autoplay loop playsinline></video>
                     </body>
                     </html>
                 '''
                 
                 video_content = html.Iframe(
                     srcDoc=video_html,
-                    style={"width": "100%", "height": "500px", "border": "none"}
+                    style={"width": "100%", "height": "500px", "border": "none"},
+                    allow="autoplay"
                 )
             else:
                 # Placeholder for missing videos (fallback)
