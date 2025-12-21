@@ -58,13 +58,6 @@
     <script src="/js/core/navbar.js"></script>
     <script src="/js/utils/navbar_toggle.js"></script>
     <script src="/js/utils/modal_utils.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js');
-            });
-        }
-    </script>
     
     {% block scripts %}{% endblock %}
 </body>
