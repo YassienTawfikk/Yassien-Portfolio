@@ -18,9 +18,31 @@
             <span class="head-font">{{ names[1] }}</span>
         </span>
         <span class="intro-brief body-font">{{ home.brief }}</span>
-        <a href="{{ home.cv }}" target="_blank">
-            <button class="std-button std-button-secondary std-button-lg">Résumé</button>
-        </a>
+        <div class="resume-btn-container">
+            <button class="std-button std-button-secondary std-button-lg" data-bs-toggle="modal" data-bs-target="#resume-modal">Résumé</button>
+        </div>
+    </div>
+</div>
+
+<!-- Resume Modal -->
+<div class="modal fade gallery-modal" id="resume-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Résumé</h5>
+                <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+                    <a href="{{ home.cv }}" download target="_blank" title="Download PDF" style="color: var(--white-color); font-size: 1.2rem;">
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin: 0;"></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <object data="{{ home.cv }}" type="application/pdf" width="100%" style="height: 75vh; display: block;">
+                    <p style="text-align: center; padding: 20px;">Your browser does not support embedded PDFs. <a href="{{ home.cv }}" download target="_blank">Download the PDF</a> to view it.</p>
+                </object>
+            </div>
+        </div>
     </div>
 </div>
 

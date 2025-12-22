@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const target = e.target.closest("a");
         if (target && target.href && target.href.startsWith(window.location.origin)) {
             const isBlank = target.getAttribute("target") === "_blank";
+            const isDownload = target.hasAttribute("download");
 
             // robust check for same-page hash navigation
             // If path and query are same, but hash is different (or present), it's a local jump
@@ -115,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Normal Navigation Check
-            if (!isBlank && !isSamePage) {
+            if (!isBlank && !isSamePage && !isDownload) {
                 showPreloader();
             }
         }
