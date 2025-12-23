@@ -4,6 +4,7 @@
 
 {% block head_css %}
 <link rel="stylesheet" href="/css/pages/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
 {% endblock %}
 
 {% block content %}
@@ -37,10 +38,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin: 0;"></button>
                 </div>
             </div>
-            <div class="modal-body">
-                <object data="{{ home.cv }}" type="application/pdf" width="100%" style="height: 75vh; display: block;">
-                    <p style="text-align: center; padding: 20px;">Your browser does not support embedded PDFs. <a href="{{ home.cv }}" download target="_blank">Download the PDF</a> to view it.</p>
-                </object>
+            <div class="modal-body" style="padding: 0; overflow: hidden;">
+                <div id="pdf-container" style="overflow: auto; height: 75vh; position: relative; touch-action: none; background-color: #525659; display: flex; align-items: flex-start;">
+                    <div id="zoom-wrapper" style="width: 100%; box-sizing: border-box; padding: 0; margin: 20px auto; flex-shrink: 0; transform: translateZ(0);">
+                        <canvas id="the-canvas" style="display: block; width: 100%; max-width: 100%;"></canvas>
+                    </div>
+                </div>
+                 <p id="pdf-fallback" style="text-align: center; padding: 20px; display: none;">
+                    Your browser does not support PDF viewing. <a href="{{ home.cv }}" download target="_blank">Download the PDF</a> to view it.
+                 </p>
             </div>
         </div>
     </div>
@@ -49,4 +55,14 @@
 {% with label="Projects", url="/projects.html", style="margin-top: 0" %}
     {% include "components/footer_nav.html" %}
 {% endwith %}
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+    var pdfjsLib = window.pdfjsLib;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    var RESUME_URL = "{{ home.cv }}";
+</script>
+<script src="/js/pages/pdf_viewer.js?v={{ now }}_15"></script>
 {% endblock %}
