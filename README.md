@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/898b5cb8-04e6-4250-a9bb-c749c816a9f4" alt="Yassien Portfolio Poster">
+  <img src="https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766512255/Yassien_Portfolio_Poster_c8nips.webp" alt="Yassien Portfolio Poster">
 </p>
 
 ### [Portfolio Hyperlink](https://ytawfik-portfolio.vercel.app/)
