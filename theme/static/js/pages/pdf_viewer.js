@@ -281,6 +281,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener("touchmove", function (e) {
         if (e.touches.length === 2 && initialDist) {
+            e.preventDefault(); // Prevent browser interference during pinch
+
             const d = getPinchDetails(e.touches);
             const ratio = d.dist / initialDist;
             let target = initialZoomStart * ratio;
@@ -289,20 +291,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (target > maxZoom) target = maxZoom;
 
             updateLayout(target, d.cx, d.cy);
-
-            // Note: In pinch, the simple logic above assumes 'updateLayout' handles 
-            // the delta from 'currentZoom'. But 'target' is calculated from 'initialZoomStart'.
-            // This causes a jump if we don't handle it iteratively.
-            // Actually, updateLayout expects 'newZoom' and drifts from 'currentZoom'.
-            // This is compatible with iterative updates (touchmove fires many times).
-            // BUT: 'ratio' here is relative to start.
-            // So we are forcing a jump from Current to Target (which is fine, small steps).
-
-            // To be precise: updateLayout calculates delta from Current.
-            // Target is correct absolute value.
-            // The math holds.
         }
-    }, { passive: true });
+    }, { passive: false });
 
     container.addEventListener("touchend", function (e) {
         initialDist = null;
