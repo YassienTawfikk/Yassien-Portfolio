@@ -25,7 +25,9 @@
       "instagram_url": "https://www.instagram.com/tccdcommunity/",
       "youtube_url": "",
       "website_url": "",
-      "certficates": "https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/certificates/tccd_certficate.jpeg"
+      "certficates": [
+        "https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766535105/tccd_gqdscm.png"
+      ]
     },
     {
       "role": "Program Ambassador",
@@ -52,7 +54,10 @@
       "instagram_url": "https://www.instagram.com/ylyministry/",
       "youtube_url": "",
       "website_url": "",
-      "certficates": "https://raw.githubusercontent.com/YassienTawfikk/assets/main/assets/images/certificates/yly_certficate.jpeg"
+      "certficates": [
+        "https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766534803/yly_certficate_gq1pq7.jpg",
+        "https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766534803/marathon_zayed_certficate_rwllcw.jpg"
+      ]
     },
     {
       "role": "Events Organizer",
