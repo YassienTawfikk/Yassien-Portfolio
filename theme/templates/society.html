@@ -38,7 +38,7 @@
                         {% endif %}
                         
                         {% if item.certficates %}
-                        <div class="cert-icon-container society-cert-trigger" data-src="{{ item.certficates }}">
+                        <div class="cert-icon-container society-cert-trigger" data-certs='{{ (item.certficates if item.certficates is iterable and item.certficates is not string else [item.certficates]) | tojson }}'>
                             <i class="fa-solid fa-scroll social-icons"></i>
                         </div>
                         {% endif %}
@@ -48,7 +48,15 @@
                 <div class="society-card-text">
                     <span class="head-font card-title">{{ item.role or 'Unknown Title' }}</span>
                     <span class="body-font card-subtitle">{{ item.organization or 'Unknown Subtitle' }}</span>
+                    {% if item.description is iterable and item.description is not string %}
+                    <ul class="body-font card-paragraph" style="padding-left: 1.2rem; margin-top: 5px;">
+                        {% for desc in item.description %}
+                        <li style="margin-bottom: 5px;">{{ desc }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
                     <p class="body-font card-paragraph">{{ item.description or 'No description available.' }}</p>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -67,7 +75,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="gallery-container">
+                        <button class="gallery-nav prev" id="society-modal-prev" title="Previous"><i class="fas fa-chevron-left"></i></button>
                         <img id="society-modal-cert-image" src="" class="gallery-image">
+                        <button class="gallery-nav next" id="society-modal-next" title="Next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>

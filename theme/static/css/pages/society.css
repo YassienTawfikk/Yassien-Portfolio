@@ -299,8 +299,142 @@ i {
     transform: scale(1.25);
 }
 
-.cert-icon-container {
-    cursor: pointer;
+
+/* =========================================================
+   Interactive Gallery (Ported from Credentials)
+   ========================================================= */
+
+.gallery-container {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 400px;
+    overflow: hidden;
+    /* Ensure solid background to prevent stacking transparency */
+    z-index: 1;
+}
+
+.gallery-image {
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    user-select: none;
+    border-radius: 4px;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.8rem;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 15px;
+}
+
+.gallery-nav.next {
+    right: 15px;
+}
+
+@media (max-width: 768px) {
+    .gallery-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    .gallery-nav.prev {
+        left: 5px;
+    }
+
+    .gallery-nav.next {
+        right: 5px;
+    }
+}
+
+/* =========================================================
+   Modal Overrides
+   ========================================================= */
+
+.modal-content {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--white-color) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =========================================================
+   Animation Utilities
+   ========================================================= */
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.anim-next {
+    animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    transition: none !important;
+}
+
+.anim-prev {
+    animation: slideInLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    transition: none !important;
+}
+
+.is-switching {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: none !important;
+    animation: none !important;
 }
