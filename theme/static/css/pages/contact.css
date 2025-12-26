@@ -158,6 +158,26 @@
     transform: scale(0.95);
 }
 
+.copy-btn.copied {
+    border-color: var(--white-color);
+    color: var(--white-color);
+    background: rgba(255, 255, 255, 0.1);
+    animation: copy-success-pulse 0.4s ease;
+    opacity: 1;
+}
+
+@keyframes copy-success-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
+}
+
 /* Tooltip/Feedback for Copy */
 .copy-feedback {
     font-size: 0.75rem;

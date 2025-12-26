@@ -122,33 +122,36 @@ def build():
     # --- Projects Logic ---
     projects_list = site_data.get('projects', {}).get('Projects', [])
     
-    def get_project_domain(title, tags):
-        tags_str = " ".join(tags).lower()
-        title_lower = title.lower()
-        if "soundprints" in title_lower or "audiophileeq" in title_lower: return "Audio & Signal Processing", "fa-solid fa-wave-square"
-        if "lifestream" in title_lower: return "Mobile & IoT System", "fa-solid fa-mobile-screen"
-        if "sequencealignx" in title_lower: return "Biomedical Engineering", "fa-solid fa-heart-pulse"
-        if "smartretailregressor" in title_lower or "predictiloan" in title_lower: return "Data Science & analytics", "fa-solid fa-chart-line"
-        if "game" in tags_str: return "Game Development", "fa-solid fa-gamepad"
-        if "medical" in tags_str or "biomedical" in tags_str or "healthcare" in tags_str:
-            if "ai" in tags_str or "learning" in tags_str: return "Medical AI", "fa-solid fa-brain"
-            return "Biomedical Engineering", "fa-solid fa-heart-pulse"
-        if "deep learning" in tags_str or "machine learning" in tags_str or "data" in tags_str: return "AI & Data Science", "fa-solid fa-robot"
-        if "computer vision" in tags_str or "image" in tags_str: return "Computer Vision", "fa-solid fa-eye"
-        if "embedded" in tags_str or "hardware" in tags_str or "iot" in tags_str: return "Embedded Systems", "fa-solid fa-microchip"
-        if "audio" in tags_str or "signal" in tags_str: return "Signal Processing", "fa-solid fa-wave-square"
-        if "web" in tags_str or "mobile" in tags_str or "app" in tags_str: return "Web & Mobile App", "fa-solid fa-laptop-code"
-        return "Software Engineering", "fa-solid fa-code"
-
-    # Enlighten projects with domain info
+    # Logic to use pre-defined domain/category from JSON
+    # Map 'domain' object to flat structure if needed by template, 
+    # but template likely accesses p.domain.name / p.domain.icon?
+    # Let's check template usage.
+    # Template: {{ project.domain_name }} / {{ project.domain_icon }} ?
+    # Wait, the previous build.py did:
+    # p['domain_name'] = d_name
+    # p['domain_icon'] = d_icon
+    # So the template expects these keys directly on the project object.
+    # I should map p['domain']['name'] -> p['domain_name'] to maintain compatibility
+    # OR update template. Updating template is cleaner long term, but mapping here is safer short term.
+    # User asked: "add the project domain page in the @[content/projects.json] instead of making it in the html file"
+    # Actually, if I update template to use `project.domain.name`, it is cleaner.
+    # But for now, let's keep compatibility by re-assigning for the template if needed, 
+    # OR just fix the template too. 
+    # Let's check template content again.
+    # theme/templates/components/project_card.html was imported. I need to check that file.
+    # I didn't read project_card.html!
+    
+    # I'll stick to mapping in build.py for now to be safe, or just check the template in a second.
+    # Better to map in build.py for now to ensure minimal breakage.
+    
     for p in projects_list:
-        d_name, d_icon = get_project_domain(p.get("title", ""), p.get("tags", []))
-        p['domain_name'] = d_name
-        p['domain_icon'] = d_icon
+        if 'domain' in p:
+            p['domain_name'] = p['domain']['name']
+            p['domain_icon'] = p['domain']['icon']
 
     featured_projects = [p for p in projects_list if p.get("live_demo")]
-    featured_video_projects = [p for p in projects_list if p.get("video_demo") and not p.get("live_demo")]
-    other_projects = [p for p in projects_list if not p.get("live_demo") and not p.get("video_demo")]
+    # featured_video_projects removed per request. Now all non-live projects go to categories.
+    other_projects = [p for p in projects_list if not p.get("live_demo")]
 
     categories = {
         "AI & Data Science": [],
@@ -160,33 +163,22 @@ def build():
     }
 
     for p in other_projects:
-        tags_str = " ".join(p.get("tags", [])).lower()
-        title = p.get("title", "").lower()
-        
-        if "lifestream" in title or "soundprints" in title:
-            categories["Web, Mobile & Software"].append(p)
-            continue
-        if "facevector" in title:
-            categories["Computer Vision & Image Processing"].append(p)
-            continue
-        
-        if "game" in tags_str:
-            categories["Game Development"].append(p)
-        elif any(kw in tags_str for kw in ["deep learning", "machine learning", "data", "regression", "prediction", "analytics", "svm", "forest", "xgboost", "ml"]):
-            categories["AI & Data Science"].append(p)
-        elif "computer vision" in tags_str or "image" in tags_str:
-            categories["Computer Vision & Image Processing"].append(p)
-        elif "embedded" in tags_str or "arduino" in tags_str:
-            categories["Embedded Systems & IoT"].append(p)
-        elif "medical" in tags_str or "biomedical" in tags_str or "signal" in tags_str or "audio" in tags_str:
-            categories["Biomedical & Signal Processing"].append(p)
+        cat = p.get('category', 'Web, Mobile & Software')
+        if cat in categories:
+            categories[cat].append(p)
         else:
-            categories["Web, Mobile & Software"].append(p)
+            # Fallback or create new category if user adds custom one in JSON
+            if cat not in categories:
+                categories[cat] = []
+            categories[cat].append(p)
+
+    # Sort projects within each category by 'order' (default 99 for low priority)
+    for cat in categories:
+        categories[cat].sort(key=lambda x: x.get('order', 99))
 
     # Pass Processed Data to Context
     site_data['projects_context'] = {
         'featured_projects': featured_projects,
-        'featured_video_projects': featured_video_projects,
         'categories': categories
     }
 
