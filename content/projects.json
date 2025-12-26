@@ -33,7 +33,13 @@
         "Visualizations include model architecture, confusion matrix, and prediction insights."
       ],
       "year": "2025",
-      "long_description": "NeuroPathX is a fully integrated web platform for MRI brain tumor classification using deep learning. It leverages an Xception-based model for multi-class tumor detection and provides real-time inference, visualization, and structured clinical reporting. The platform supports end-to-end testing with a sample MRI dataset and is ideal for medical imaging applications requiring automated diagnostic assistance and transparent model insights."
+      "long_description": "NeuroPathX is a fully integrated web platform for MRI brain tumor classification using deep learning. It leverages an Xception-based model for multi-class tumor detection and provides real-time inference, visualization, and structured clinical reporting. The platform supports end-to-end testing with a sample MRI dataset and is ideal for medical imaging applications requiring automated diagnostic assistance and transparent model insights.",
+      "domain": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "category": "AI & Data Science",
+      "order": 1
     },
     {
       "title": "Hospital System Website",
@@ -69,7 +75,12 @@
         "Detailed profiles and reviews for doctors."
       ],
       "year": "2025",
-      "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations."
+      "long_description": "The Hospital System Website is a full-featured web application for managing hospital operations. Built with Flask and PostgreSQL, it supports role-based access for patients, doctors, and nurses. Patients can book and manage appointments, view personal health information, and access prescriptions. Doctors can create and manage prescriptions, view patient profiles, and manage appointments. The system features a dark mode interface, responsive design, and a secure backend for seamless healthcare operations.",
+      "domain": {
+        "name": "Web & Mobile App",
+        "icon": "fa-solid fa-laptop-code"
+      },
+      "category": "Web, Mobile & Software"
     },
     {
       "title": "CyberMazer-2077",
@@ -96,7 +107,12 @@
         "Visual representation of trajectories for both maze sizes."
       ],
       "year": "2024",
-      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding."
+      "long_description": "Maze Game is an interactive desktop game where users select a maze size and starting point to navigate from start to end. The path is calculated and visualized using dynamic programming, offering an educational and engaging experience in algorithmic problem solving and pathfinding.",
+      "domain": {
+        "name": "Game Development",
+        "icon": "fa-solid fa-gamepad"
+      },
+      "category": "Game Development"
     },
     {
       "title": "SequenceAlignX",
@@ -124,104 +140,12 @@
         "Responsive and interactive UI for learning and demonstration purposes."
       ],
       "year": "2025",
-      "long_description": "SequenceAlignX is an educational web application that demonstrates local sequence alignment in bioinformatics. It provides a stepwise filling of the alignment matrix, visual tracing of optimal paths, and an optional 'Guess Mode' where users predict alignment steps. The tool helps students and researchers understand alignment algorithms interactively."
-    },
-    {
-      "title": "2D Beamforming Simulator",
-      "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
-      "overview_image": "https://i.postimg.cc/wgGSBTsg/2D-Beamforming-Simulator-overview.png",
-      "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
-      "video_demo": "https://github.com/user-attachments/assets/d5588842-c0aa-47e6-9b5e-e1bd604a8439",
-      "tech_stack": [
-        "Python",
-        "NumPy",
-        "Matplotlib",
-        "PyQt / Tkinter"
-      ],
-      "tags": [
-        "Beamforming",
-        "Phased Arrays",
-        "2D Simulation",
-        "Signal Processing",
-        "Ultrasound",
-        "5G",
-        "Tumor Ablation",
-        "Visualization",
-        "Physics Simulation"
-      ],
-      "highlights": [
-        "Real-time beam steering with adjustable angles and multiple array units.",
-        "Supports linear and curved array geometries with customizable parameters.",
-        "Visualizes constructive/destructive interference and beam profiles.",
-        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
-        "Equations implemented for phase shift, intensity maps, and array factor computations."
-      ],
-      "year": "2025",
-      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization."
-    },
-    {
-      "title": "SonoMetric",
-      "short_description": "Medical-grade Pulsed Doppler Ultrasound simulation with a high-fidelity physics engine, real-time STFT spectral analysis, and laminar flow modeling.",
-      "overview_image": "https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766534803/SonoMetric_Poster_c5xwx2.png",
-      "github_link": "https://github.com/YassienTawfikk/SonoMetric.git",
-      "video_demo": "https://github.com/user-attachments/assets/092e29a9-f01c-4ec0-91c7-03a8c9e121d2",
-      "tech_stack": [
-        "Python",
-        "PyQt5",
-        "NumPy",
-        "SciPy",
-        "Multithreading"
-      ],
-      "tags": [
-        "Medical Imaging",
-        "Ultrasound",
-        "Doppler Simulation",
-        "Signal Processing",
-        "Physics Engine",
-        "STFT",
-        "Real-Time"
-      ],
-      "highlights": [
-        "Real-time physics engine simulating scatterer movement and RF signal backscattering.",
-        "Laminar flow model implementing parabolic velocity profiles.",
-        "Custom signal processing pipeline (STFT) for dynamic spectrogram visualization.",
-        "Complex-valued I/Q signal generation to distinguish flow direction.",
-        "Medically accurate configuration (5 MHz transducer, 1540 m/s speed of sound).",
-        "Real-time quantitative velocity estimation and error tracking."
-      ],
-      "year": "2025",
-      "long_description": "SonoMetric is a high-fidelity desktop application designed to simulate Pulsed Wave (PW) Doppler ultrasound signal acquisition and processing. It features a custom-built physics engine that models backscattered RF signals from scatterers moving within a laminar flow profile. The system processes these signals using a Short-Time Fourier Transform (STFT) pipeline to generate a dynamic spectrogram, mimicking clinical Spectral Doppler displays. With a focus on physical accuracy, it handles complex I/Q components to distinguish flow direction and provides real-time quantitative velocity metrics, making it a powerful tool for understanding medical imaging physics."
-    },
-    {
-      "title": "Image FT Mixer Pro",
-      "short_description": "Desktop application for analyzing, visualizing, and mixing Fourier Transform components from up to four images.",
-      "overview_image": "https://i.postimg.cc/yVF5nmpS/Image-FT-Mixer-Pro-overview.png",
-      "github_link": "https://github.com/YassienTawfikk/Image-FT-Mixer-Pro.git",
-      "video_demo": "https://github.com/user-attachments/assets/cad8e300-f260-4d07-84e3-59fb6c6d8f17",
-      "tech_stack": [
-        "Python",
-        "PyQt5",
-        "OpenCV",
-        "NumPy"
-      ],
-      "tags": [
-        "Fourier Transform",
-        "Image Processing",
-        "Desktop Application",
-        "PyQt",
-        "Frequency Domain Analysis",
-        "Visualization Tools"
-      ],
-      "highlights": [
-        "Supports four simultaneous image viewports with automatic grayscale and unified resizing.",
-        "Interactive FT visualization with magnitude, phase, real, and imaginary modes.",
-        "Brightness and contrast adjustment using intuitive mouse drag controls.",
-        "Advanced frequency-domain mixing using Gaussian region masks.",
-        "Asynchronous processing with worker threads for responsive UI.",
-        "Dual output viewports with export support."
-      ],
-      "year": "2024",
-      "long_description": "Image FT Mixer Pro is a frequency-domain image manipulation tool that enables mixing and visualizing Fourier Transform components across up to four images. It provides interactive FT analysis modes (Magnitude/Phase and Real/Imaginary), dynamic brightness/contrast adjustments, and advanced mixing via weighted components or Gaussian region masks for low- and high-frequency separation. The application features a responsive PyQt5 interface powered by asynchronous workers to keep the UI fluid during heavy FFT computations. Outputs can be previewed and exported in common formats."
+      "long_description": "SequenceAlignX is an educational web application that demonstrates local sequence alignment in bioinformatics. It provides a stepwise filling of the alignment matrix, visual tracing of optimal paths, and an optional 'Guess Mode' where users predict alignment steps. The tool helps students and researchers understand alignment algorithms interactively.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Web, Mobile & Software"
     },
     {
       "title": "PulseSpy",
@@ -259,7 +183,164 @@
         "Clinically inspired PyQt5 interface with clear visualization of vital signals."
       ],
       "year": "2025",
-      "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications."
+      "long_description": "PulseSpy is a desktop biomedical application that emulates a real-time patient monitoring system. It combines advanced signal processing techniques with deep learning to provide accurate ECG visualization, heart rate computation, and arrhythmia classification. The system continuously evaluates incoming ECG data, adapts alarm behavior based on detected conditions, and ensures a responsive, clinically inspired GUI. PulseSpy integrates preprocessing, dynamic QRS and P-wave detection, and a CNN-based arrhythmia classifier, offering a robust and practical tool for healthcare monitoring applications.",
+      "domain": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "category": "AI & Data Science",
+      "order": 2
+    },
+    {
+      "title": "2D Beamforming Simulator",
+      "short_description": "Interactive simulator for exploring 2D beamforming scenarios in communications, ultrasound, and tumor ablation with real-time visualization and array customization.",
+      "overview_image": "https://i.postimg.cc/wgGSBTsg/2D-Beamforming-Simulator-overview.png",
+      "github_link": "https://github.com/YassienTawfikk/Beamforming-Simulator.git",
+      "video_demo": "https://github.com/user-attachments/assets/d5588842-c0aa-47e6-9b5e-e1bd604a8439",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter"
+      ],
+      "tags": [
+        "Beamforming",
+        "Phased Arrays",
+        "2D Simulation",
+        "Signal Processing",
+        "Ultrasound",
+        "5G",
+        "Tumor Ablation",
+        "Visualization",
+        "Physics Simulation"
+      ],
+      "highlights": [
+        "Real-time beam steering with adjustable angles and multiple array units.",
+        "Supports linear and curved array geometries with customizable parameters.",
+        "Visualizes constructive/destructive interference and beam profiles.",
+        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
+        "Equations implemented for phase shift, intensity maps, and array factor computations."
+      ],
+      "year": "2025",
+      "long_description": "The 2D Beamforming Simulator allows users to interactively explore beamforming concepts used in communications, medical imaging, and therapy. Users can define array geometries, adjust steering angles, and visualize the resulting intensity maps and interference patterns. Three primary scenarios\u20145G communications, ultrasound imaging, and tumor ablation\u2014demonstrate practical applications. The simulator provides both intuitive visualization and underlying physics computations, emphasizing learning, experimentation, and scenario customization.",
+      "domain": {
+        "name": "Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "Biomedical & Signal Processing",
+      "order": 2
+    },
+    {
+      "title": "SonoMetric",
+      "short_description": "Medical-grade Pulsed Doppler Ultrasound simulation with a high-fidelity physics engine, real-time STFT spectral analysis, and laminar flow modeling.",
+      "overview_image": "https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766534803/SonoMetric_Poster_c5xwx2.png",
+      "github_link": "https://github.com/YassienTawfikk/SonoMetric.git",
+      "video_demo": "https://github.com/user-attachments/assets/092e29a9-f01c-4ec0-91c7-03a8c9e121d2",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "NumPy",
+        "SciPy",
+        "Multithreading"
+      ],
+      "tags": [
+        "Medical Imaging",
+        "Ultrasound",
+        "Doppler Simulation",
+        "Signal Processing",
+        "Physics Engine",
+        "STFT",
+        "Real-Time"
+      ],
+      "highlights": [
+        "Real-time physics engine simulating scatterer movement and RF signal backscattering.",
+        "Laminar flow model implementing parabolic velocity profiles.",
+        "Custom signal processing pipeline (STFT) for dynamic spectrogram visualization.",
+        "Complex-valued I/Q signal generation to distinguish flow direction.",
+        "Medically accurate configuration (5 MHz transducer, 1540 m/s speed of sound).",
+        "Real-time quantitative velocity estimation and error tracking."
+      ],
+      "year": "2025",
+      "long_description": "SonoMetric is a high-fidelity desktop application designed to simulate Pulsed Wave (PW) Doppler ultrasound signal acquisition and processing. It features a custom-built physics engine that models backscattered RF signals from scatterers moving within a laminar flow profile. The system processes these signals using a Short-Time Fourier Transform (STFT) pipeline to generate a dynamic spectrogram, mimicking clinical Spectral Doppler displays. With a focus on physical accuracy, it handles complex I/Q components to distinguish flow direction and provides real-time quantitative velocity metrics, making it a powerful tool for understanding medical imaging physics.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Biomedical & Signal Processing",
+      "order": 1
+    },
+    {
+      "title": "Image FT Mixer Pro",
+      "short_description": "Desktop application for analyzing, visualizing, and mixing Fourier Transform components from up to four images.",
+      "overview_image": "https://i.postimg.cc/yVF5nmpS/Image-FT-Mixer-Pro-overview.png",
+      "github_link": "https://github.com/YassienTawfikk/Image-FT-Mixer-Pro.git",
+      "video_demo": "https://github.com/user-attachments/assets/cad8e300-f260-4d07-84e3-59fb6c6d8f17",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "OpenCV",
+        "NumPy"
+      ],
+      "tags": [
+        "Fourier Transform",
+        "Image Processing",
+        "Desktop Application",
+        "PyQt",
+        "Frequency Domain Analysis",
+        "Visualization Tools"
+      ],
+      "highlights": [
+        "Supports four simultaneous image viewports with automatic grayscale and unified resizing.",
+        "Interactive FT visualization with magnitude, phase, real, and imaginary modes.",
+        "Brightness and contrast adjustment using intuitive mouse drag controls.",
+        "Advanced frequency-domain mixing using Gaussian region masks.",
+        "Asynchronous processing with worker threads for responsive UI.",
+        "Dual output viewports with export support."
+      ],
+      "year": "2024",
+      "long_description": "Image FT Mixer Pro is a frequency-domain image manipulation tool that enables mixing and visualizing Fourier Transform components across up to four images. It provides interactive FT analysis modes (Magnitude/Phase and Real/Imaginary), dynamic brightness/contrast adjustments, and advanced mixing via weighted components or Gaussian region masks for low- and high-frequency separation. The application features a responsive PyQt5 interface powered by asynchronous workers to keep the UI fluid during heavy FFT computations. Outputs can be previewed and exported in common formats.",
+      "domain": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "category": "Computer Vision & Image Processing"
+    },
+    {
+      "title": "BioRhythm Analyzer",
+      "short_description": "CTG Heart Failure Monitoring System analyzing HRV and FHR signals to detect potential abnormalities, combining advanced signal processing with an intuitive GUI.",
+      "overview_image": "https://i.postimg.cc/fTV2pXSq/CTG-Monitor-Design.png",
+      "github_link": "https://github.com/YassienTawfikk/CTG-Monitor.git",
+      "video_demo": "https://github.com/user-attachments/assets/bc54996a-2a32-4933-bb69-18c26dfe5d60",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "tags": [
+        "Biomedical Signal Processing",
+        "Heart Rate Variability",
+        "Fetal Heart Monitoring",
+        "CTG",
+        "Healthcare",
+        "Medical Application"
+      ],
+      "highlights": [
+        "Real-time HRV analysis with SDNN, RMSSD, pNN50 metrics.",
+        "Filtered and raw signal visualization for detailed analysis.",
+        "FHR monitoring with baseline, STV, and acceleration/deceleration detection.",
+        "Color-coded anomaly indicators for quick assessment.",
+        "Graphical interface designed for healthcare professionals.",
+        "Detailed statistics including RR interval histograms and outlier detection."
+      ],
+      "year": "2024",
+      "long_description": "BioRhythm Analyzer is a desktop application designed for healthcare professionals to monitor and analyze fetal and maternal heart rate signals. It offers real-time HRV and FHR signal analysis, highlighting critical events with visual indicators and detailed metrics. The system supports advanced filtering, signal visualization, and statistical reporting, making it an essential tool for fetal monitoring and heart failure detection in clinical environments.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "Pixelizing",
@@ -290,7 +371,12 @@
         "Intuitive GUI to apply various processing techniques interactively."
       ],
       "year": "2025",
-      "long_description": "Pixelizing is a Python-based image processing application built with OpenCV and PyQt. It provides tools for noise addition, filtering, edge detection, image equalization, and grayscale conversion. The toolkit emphasizes modularity through Object-Oriented Programming, allowing easy extension of new algorithms. Users can visualize effects in real time via a GUI and evaluate processing results. The project is ideal for educational purposes and practical demonstrations of fundamental image processing techniques."
+      "long_description": "Pixelizing is a Python-based image processing application built with OpenCV and PyQt. It provides tools for noise addition, filtering, edge detection, image equalization, and grayscale conversion. The toolkit emphasizes modularity through Object-Oriented Programming, allowing easy extension of new algorithms. Users can visualize effects in real time via a GUI and evaluate processing results. The project is ideal for educational purposes and practical demonstrations of fundamental image processing techniques.",
+      "domain": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "AudiophileEQ",
@@ -323,7 +409,12 @@
         "Audiogram scale and hybrid sound modes for advanced signal analysis."
       ],
       "year": "2025",
-      "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications."
+      "long_description": "AudiophileEQ is a desktop signal equalizer designed for audio, speech, and biomedical signal processing. Users can adjust frequency magnitudes using sliders across multiple modes: uniform ranges, musical instruments, vowel elimination, and Wiener filter noise reduction. The application provides interactive spectrogram visualizations, synchronous playback, and real-time reconstruction of the modified signal. It supports both linear and audiogram frequency views, enabling precise analysis and intuitive signal manipulation for research, music, and biomedical applications.",
+      "domain": {
+        "name": "Audio & Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "MR Frequency Sculptor",
@@ -356,39 +447,12 @@
         "Illustrates Fourier relationships between k-space and spatial domain, and artifacts from undersampling."
       ],
       "year": "2025",
-      "long_description": "MR Frequency Sculptor is a Python-based tool designed to explore MRI frequency domain manipulations. Users can apply full, partial, low-pass, or high-pass k-space filters to images and visualize the impact on reconstruction quality. The project emphasizes understanding the physics behind MRI reconstruction, including the Fourier relationship between k-space and spatial images. It provides both GUI and CLI workflows, supports multiple data sources, computes quantitative metrics, and generates automated analysis reports for comprehensive experimentation."
-    },
-    {
-      "title": "BioRhythm Analyzer",
-      "short_description": "CTG Heart Failure Monitoring System analyzing HRV and FHR signals to detect potential abnormalities, combining advanced signal processing with an intuitive GUI.",
-      "overview_image": "https://i.postimg.cc/mB50r2F7/Bio-Rhythm-Analyzer-overview.png",
-      "github_link": "https://github.com/YassienTawfikk/CTG-Monitor.git",
-      "video_demo": "https://github.com/user-attachments/assets/81f050d4-e398-4a57-8f2a-261e20b89963",
-      "tech_stack": [
-        "Python",
-        "PyQt / Qt Designer",
-        "NumPy",
-        "Matplotlib",
-        "SciPy"
-      ],
-      "tags": [
-        "Biomedical Signal Processing",
-        "Heart Rate Variability",
-        "Fetal Heart Monitoring",
-        "CTG",
-        "Healthcare",
-        "Medical Application"
-      ],
-      "highlights": [
-        "Real-time HRV analysis with SDNN, RMSSD, pNN50 metrics.",
-        "Filtered and raw signal visualization for detailed analysis.",
-        "FHR monitoring with baseline, STV, and acceleration/deceleration detection.",
-        "Color-coded anomaly indicators for quick assessment.",
-        "Graphical interface designed for healthcare professionals.",
-        "Detailed statistics including RR interval histograms and outlier detection."
-      ],
-      "year": "2024",
-      "long_description": "BioRhythm Analyzer is a desktop application designed for healthcare professionals to monitor and analyze fetal and maternal heart rate signals. It offers real-time HRV and FHR signal analysis, highlighting critical events with visual indicators and detailed metrics. The system supports advanced filtering, signal visualization, and statistical reporting, making it an essential tool for fetal monitoring and heart failure detection in clinical environments."
+      "long_description": "MR Frequency Sculptor is a Python-based tool designed to explore MRI frequency domain manipulations. Users can apply full, partial, low-pass, or high-pass k-space filters to images and visualize the impact on reconstruction quality. The project emphasizes understanding the physics behind MRI reconstruction, including the Fourier relationship between k-space and spatial images. It provides both GUI and CLI workflows, supports multiple data sources, computes quantitative metrics, and generates automated analysis reports for comprehensive experimentation.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "Signal Reconstruction Application",
@@ -420,7 +484,12 @@
         "Real-time updates and resizable, responsive UI."
       ],
       "year": "2024",
-      "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist\u2013Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing."
+      "long_description": "The Signal Reconstruction Application is a hands-on educational tool designed to demonstrate the importance of the Nyquist\u2013Shannon sampling theorem and signal reconstruction. Users can compose or load signals, adjust sampling frequency, apply noise, and select different interpolation methods to observe their effects in real time. The application also provides frequency domain analysis and interactive visual comparisons, making it ideal for students and educators in digital signal processing.",
+      "domain": {
+        "name": "Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "Digital Filter Application",
@@ -450,7 +519,12 @@
         "Export filter configurations to C code and save/load in CSV or text format."
       ],
       "year": "2024",
-      "long_description": "The Digital Filter Application allows users to design and experiment with digital filters interactively. Users can manipulate zeros and poles on the z-plane, visualize the resulting magnitude and phase response in real time, and apply the filters to arbitrary signals. Advanced features include filter libraries, all-pass phase correction, signal playback with variable speed, and exporting configurations to C code for practical use."
+      "long_description": "The Digital Filter Application allows users to design and experiment with digital filters interactively. Users can manipulate zeros and poles on the z-plane, visualize the resulting magnitude and phase response in real time, and apply the filters to arbitrary signals. Advanced features include filter libraries, all-pass phase correction, signal playback with variable speed, and exporting configurations to C code for practical use.",
+      "domain": {
+        "name": "Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "Soundprints",
@@ -485,7 +559,12 @@
         "First-run preprocessing with reuse for subsequent runs."
       ],
       "year": "2024",
-      "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing."
+      "long_description": "Soundprints is an advanced desktop application for audio recognition, combining spectrogram-based feature extraction, perceptual hashing, and similarity analysis. Users can identify songs, vocals, or music from a pre-saved database, mix audio files, and analyze similarity scores efficiently. The system is optimized for educational, research, and practical applications in audio signal processing.",
+      "domain": {
+        "name": "Audio & Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "Oral Cancer Prediction",
@@ -521,7 +600,12 @@
         "Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization."
       ],
       "year": "2024",
-      "long_description": "This project implements a robust machine learning pipeline for predicting oral cancer from microbiome data (16S rRNA and WGS) using Random Forests. It integrates professional CLI tools for experiment reproducibility and flexible configuration, while SHAP explainability provides insights into the most influential microbial features. The system achieves high predictive performance and supports both research and clinical-focused applications, demonstrating the potential of microbiome-based non-invasive diagnostics."
+      "long_description": "This project implements a robust machine learning pipeline for predicting oral cancer from microbiome data (16S rRNA and WGS) using Random Forests. It integrates professional CLI tools for experiment reproducibility and flexible configuration, while SHAP explainability provides insights into the most influential microbial features. The system achieves high predictive performance and supports both research and clinical-focused applications, demonstrating the potential of microbiome-based non-invasive diagnostics.",
+      "domain": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "BreastCancer-XAI-Evaluation",
@@ -557,7 +641,12 @@
         "Transparent pipeline emphasizing trustworthiness in medical AI applications."
       ],
       "year": "2025",
-      "long_description": "BreastCancer-XAI-Evaluation is a medical AI project focused on building reliable and explainable breast cancer classifiers. Using clinical diagnostic features, the pipeline trains multiple ML models while handling class imbalance with SMOTE. SHAP is leveraged to provide global and local interpretability, ensuring that predictions are transparent and clinically trustworthy. Extensive evaluation metrics are included, emphasizing precision and recall alongside accuracy for real-world relevance."
+      "long_description": "BreastCancer-XAI-Evaluation is a medical AI project focused on building reliable and explainable breast cancer classifiers. Using clinical diagnostic features, the pipeline trains multiple ML models while handling class imbalance with SMOTE. SHAP is leveraged to provide global and local interpretability, ensuring that predictions are transparent and clinically trustworthy. Extensive evaluation metrics are included, emphasizing precision and recall alongside accuracy for real-world relevance.",
+      "domain": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "MediCluster",
@@ -587,7 +676,12 @@
         "High stability with ARI=1.0 and validated clustering metrics."
       ],
       "year": "2024",
-      "long_description": "MediCluster is a healthcare analytics project that segments patient datasets into meaningful clusters using K-Means and PCA. It preprocesses patient data with encoding, scaling, and weighted features, then identifies optimal clusters. PCA visualizations help in interpreting patient subgroups. The project also provides a joblib inference pipeline to predict clusters directly from new patient input, making it a complete unsupervised learning solution for medical data analysis."
+      "long_description": "MediCluster is a healthcare analytics project that segments patient datasets into meaningful clusters using K-Means and PCA. It preprocesses patient data with encoding, scaling, and weighted features, then identifies optimal clusters. PCA visualizations help in interpreting patient subgroups. The project also provides a joblib inference pipeline to predict clusters directly from new patient input, making it a complete unsupervised learning solution for medical data analysis.",
+      "domain": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "DriveSafe-Sign-Detection",
@@ -616,7 +710,12 @@
         "Modular project structure for scalability and experimentation."
       ],
       "year": "2024",
-      "long_description": "DriveSafe-Sign-Detection is a traffic sign recognition system developed with a custom CNN and MobileNetV2. Trained on the GTSRB dataset, the project achieves high accuracy in classifying 43 types of German traffic signs. The system includes modular components for data preprocessing, model training, evaluation, and visualization. Comparative analysis highlights the superior performance of the CNN over a frozen MobileNetV2 baseline, emphasizing end-to-end learning on task-specific features. Ideal for research, ADAS prototyping, and educational purposes."
+      "long_description": "DriveSafe-Sign-Detection is a traffic sign recognition system developed with a custom CNN and MobileNetV2. Trained on the GTSRB dataset, the project achieves high accuracy in classifying 43 types of German traffic signs. The system includes modular components for data preprocessing, model training, evaluation, and visualization. Comparative analysis highlights the superior performance of the CNN over a frozen MobileNetV2 baseline, emphasizing end-to-end learning on task-specific features. Ideal for research, ADAS prototyping, and educational purposes.",
+      "domain": {
+        "name": "AI & Data Science",
+        "icon": "fa-solid fa-robot"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "MusicSpectroNet",
@@ -649,7 +748,12 @@
         "Comparison study between tabular and image-based approaches demonstrates performance trade-offs."
       ],
       "year": "2024",
-      "long_description": "MusicSpectroNet investigates audio genre classification using two approaches: tabular ML on extracted audio features and CNNs on spectrogram images from the GTZAN dataset. The tabular ML approach (XGBoost) achieves 92.64% accuracy, significantly outperforming the CNN model. The project includes extensive preprocessing, feature extraction, and visualization of confusion matrices and feature importance, demonstrating real-world effectiveness of tabular audio features for music genre recognition."
+      "long_description": "MusicSpectroNet investigates audio genre classification using two approaches: tabular ML on extracted audio features and CNNs on spectrogram images from the GTZAN dataset. The tabular ML approach (XGBoost) achieves 92.64% accuracy, significantly outperforming the CNN model. The project includes extensive preprocessing, feature extraction, and visualization of confusion matrices and feature importance, demonstrating real-world effectiveness of tabular audio features for music genre recognition.",
+      "domain": {
+        "name": "Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "SmartRetailRegressor",
@@ -680,7 +784,12 @@
         "Demonstrates practical application of ensemble models for retail sales prediction."
       ],
       "year": "2024",
-      "long_description": "SmartRetailRegressor predicts weekly sales for Walmart stores using Random Forest and XGBoost regression models. The project combines historical sales data with engineered date-based and holiday features, achieving high accuracy and strong generalization. Visualizations, feature importances, and tree snapshots provide interpretability, with Random Forest outperforming XGBoost across all error metrics."
+      "long_description": "SmartRetailRegressor predicts weekly sales for Walmart stores using Random Forest and XGBoost regression models. The project combines historical sales data with engineered date-based and holiday features, achieving high accuracy and strong generalization. Visualizations, feature importances, and tree snapshots provide interpretability, with Random Forest outperforming XGBoost across all error metrics.",
+      "domain": {
+        "name": "Data Science & analytics",
+        "icon": "fa-solid fa-chart-line"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "PredictiLoan",
@@ -711,7 +820,12 @@
         "Shows practical comparison between linear and kernel-based models for financial risk assessment."
       ],
       "year": "2024",
-      "long_description": "PredictiLoan implements and compares Logistic Regression and SVM classifiers for predicting loan approval. Using a tabular dataset of applicant demographics, financial details, and credit scores, both models demonstrate high accuracy, with SVM slightly outperforming Logistic Regression. The project includes preprocessing, feature engineering, model evaluation (ROC, confusion matrices), and a ready-to-use pipeline for end-to-end predictions."
+      "long_description": "PredictiLoan implements and compares Logistic Regression and SVM classifiers for predicting loan approval. Using a tabular dataset of applicant demographics, financial details, and credit scores, both models demonstrate high accuracy, with SVM slightly outperforming Logistic Regression. The project includes preprocessing, feature engineering, model evaluation (ROC, confusion matrices), and a ready-to-use pipeline for end-to-end predictions.",
+      "domain": {
+        "name": "Data Science & analytics",
+        "icon": "fa-solid fa-chart-line"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "MovieMatch100K",
@@ -741,7 +855,12 @@
         "Modular design for easily switching between recommendation methods."
       ],
       "year": "2024",
-      "long_description": "MovieMatch100K is a modular recommendation system built on the MovieLens 100K dataset. It implements User-Based and Item-Based collaborative filtering as well as SVD matrix factorization. Each method predicts top-k movie recommendations, evaluated with Precision@k and Recall@k metrics. The system provides a clean modular design for testing multiple collaborative filtering strategies and comparing their performance. The SVD-based model achieves the best results, effectively learning latent features for improved recommendation quality."
+      "long_description": "MovieMatch100K is a modular recommendation system built on the MovieLens 100K dataset. It implements User-Based and Item-Based collaborative filtering as well as SVD matrix factorization. Each method predicts top-k movie recommendations, evaluated with Precision@k and Recall@k metrics. The system provides a clean modular design for testing multiple collaborative filtering strategies and comparing their performance. The SVD-based model achieves the best results, effectively learning latent features for improved recommendation quality.",
+      "domain": {
+        "name": "AI & Data Science",
+        "icon": "fa-solid fa-robot"
+      },
+      "category": "AI & Data Science"
     },
     {
       "title": "FaceVector",
@@ -772,7 +891,12 @@
         "Intuitive GUI for selecting images, viewing results, and adjusting detection parameters."
       ],
       "year": "2025",
-      "long_description": "FaceVector combines classical face detection using Haar cascades with PCA-based recognition to classify identities efficiently. It flattens face images, computes eigenfaces, projects new images into eigenspace, and predicts identities using Euclidean distance. The system is optimized for small training datasets, supports RGB and grayscale images, and includes automatic caching and evaluation. Designed for fast, reproducible facial analysis with clear visualization of detection and recognition results."
+      "long_description": "FaceVector combines classical face detection using Haar cascades with PCA-based recognition to classify identities efficiently. It flattens face images, computes eigenfaces, projects new images into eigenspace, and predicts identities using Euclidean distance. The system is optimized for small training datasets, supports RGB and grayscale images, and includes automatic caching and evaluation. Designed for fast, reproducible facial analysis with clear visualization of detection and recognition results.",
+      "domain": {
+        "name": "AI & Data Science",
+        "icon": "fa-solid fa-robot"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "EdgeEnhance",
@@ -802,7 +926,12 @@
         "Supports grayscale and color images, suitable for biomedical and structural analysis."
       ],
       "year": "2025",
-      "long_description": "EdgeEnhance combines classical edge detection methods (Canny) with Hough Transform-based shape detection and deformable contour models (Active Contours) to extract structural boundaries from images. The toolkit captures fine edges, detects geometric shapes like lines, circles, and ellipses, and evolves snake contours to compute metrics such as area and perimeter. Ideal for biomedical imaging, object boundary extraction, and morphological analysis, with full reproducibility via a Python pipeline."
+      "long_description": "EdgeEnhance combines classical edge detection methods (Canny) with Hough Transform-based shape detection and deformable contour models (Active Contours) to extract structural boundaries from images. The toolkit captures fine edges, detects geometric shapes like lines, circles, and ellipses, and evolves snake contours to compute metrics such as area and perimeter. Ideal for biomedical imaging, object boundary extraction, and morphological analysis, with full reproducibility via a Python pipeline.",
+      "domain": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "SiftSee",
@@ -832,7 +961,12 @@
         "Analyze performance with timing comparisons and visual inspection."
       ],
       "year": "2025",
-      "long_description": "SiftSee is a Python-based computer vision toolkit for feature detection and matching. It integrates Harris corner detection and SIFT for extracting keypoints and descriptors, and performs template matching using SSD and Normalized Cross-Correlation. The interactive GUI allows visualization of keypoints, descriptors, and matched results, making it suitable for image understanding tasks in biometrics, medical imaging, and academic research. The project emphasizes reproducibility, modular design, and performance evaluation."
+      "long_description": "SiftSee is a Python-based computer vision toolkit for feature detection and matching. It integrates Harris corner detection and SIFT for extracting keypoints and descriptors, and performs template matching using SSD and Normalized Cross-Correlation. The interactive GUI allows visualization of keypoints, descriptors, and matched results, making it suitable for image understanding tasks in biometrics, medical imaging, and academic research. The project emphasizes reproducibility, modular design, and performance evaluation.",
+      "domain": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "SigmaVision",
@@ -864,7 +998,12 @@
         "Useful for medical imaging, pattern discovery, and teaching purposes in image processing."
       ],
       "year": "2025",
-      "long_description": "SigmaVision is a Python-based image analysis toolkit that integrates classical thresholding and unsupervised machine learning for segmentation tasks. It allows users to apply Otsu, Optimal, and Spectral thresholding techniques alongside clustering-based segmentation methods like K-Means, Mean Shift, Region Growing, and Agglomerative Clustering. The interactive GUI enables side-by-side visualization of original and processed images, making it ideal for research, medical imaging, and educational demonstrations in image processing."
+      "long_description": "SigmaVision is a Python-based image analysis toolkit that integrates classical thresholding and unsupervised machine learning for segmentation tasks. It allows users to apply Otsu, Optimal, and Spectral thresholding techniques alongside clustering-based segmentation methods like K-Means, Mean Shift, Region Growing, and Agglomerative Clustering. The interactive GUI enables side-by-side visualization of original and processed images, making it ideal for research, medical imaging, and educational demonstrations in image processing.",
+      "domain": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "category": "Computer Vision & Image Processing"
     },
     {
       "title": "Dynamic Multi-Channel Signal Viewer",
@@ -894,7 +1033,12 @@
         "Circular signal visualization and real-time weather signal indication."
       ],
       "year": "2024",
-      "long_description": "The Dynamic Multi-Channel Signal Viewer provides a versatile platform for visualizing and managing medical signals like ECG, EMG, and EEG. Users can manipulate multiple graphs, link/unlink playback, customize signal appearance, and generate PDF reports using the Glue Window. Advanced features include circular signal plotting and real-time weather signal indication for enhanced monitoring and analysis."
+      "long_description": "The Dynamic Multi-Channel Signal Viewer provides a versatile platform for visualizing and managing medical signals like ECG, EMG, and EEG. Users can manipulate multiple graphs, link/unlink playback, customize signal appearance, and generate PDF reports using the Glue Window. Advanced features include circular signal plotting and real-time weather signal indication for enhanced monitoring and analysis.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Biomedical & Signal Processing"
     },
     {
       "title": "LifeStream",
@@ -934,7 +1078,12 @@
         "End-to-end firmware + mobile app ecosystem built from scratch."
       ],
       "year": "2025",
-      "long_description": "LifeStream is a full-stack mobile and wearable ecosystem enabling real-time heart monitoring and emergency response. The Flutter app connects to a custom ESP32-based device that streams BPM readings directly to Firebase. Users get an ECG-style live graph, anomaly detection alerts, and an integrated SOS mechanism that sends precise coordinates and heart-rate data to trusted contacts. The system supports live location tracking, friend management, profile synchronization, and privacy-first design using encrypted local storage and secure Firebase authentication. Alongside the mobile application, the project includes hardware firmware for ESP32/ESP8266 with pulse-sensor processing and seamless cloud integration."
+      "long_description": "LifeStream is a full-stack mobile and wearable ecosystem enabling real-time heart monitoring and emergency response. The Flutter app connects to a custom ESP32-based device that streams BPM readings directly to Firebase. Users get an ECG-style live graph, anomaly detection alerts, and an integrated SOS mechanism that sends precise coordinates and heart-rate data to trusted contacts. The system supports live location tracking, friend management, profile synchronization, and privacy-first design using encrypted local storage and secure Firebase authentication. Alongside the mobile application, the project includes hardware firmware for ESP32/ESP8266 with pulse-sensor processing and seamless cloud integration.",
+      "domain": {
+        "name": "Mobile & IoT System",
+        "icon": "fa-solid fa-mobile-screen"
+      },
+      "category": "Embedded Systems & IoT"
     },
     {
       "title": "Automated Defibrillator System",
@@ -966,7 +1115,12 @@
         "Bluetooth communication links software detection with hardware execution."
       ],
       "year": "2025",
-      "long_description": "The Automated Defibrillator System bridges software and embedded hardware for safe arrhythmia detection and response. ECG signals are processed in real-time by a desktop application that calculates BPM and identifies tachycardia or bradycardia events. Upon detecting an arrhythmia, the system commands an Arduino-controlled circuit to deliver a controlled low-voltage shock. The system includes temperature monitoring, GUI visualization, and logging, providing a safe, educational environment for understanding biomedical signal processing and hardware integration."
+      "long_description": "The Automated Defibrillator System bridges software and embedded hardware for safe arrhythmia detection and response. ECG signals are processed in real-time by a desktop application that calculates BPM and identifies tachycardia or bradycardia events. Upon detecting an arrhythmia, the system commands an Arduino-controlled circuit to deliver a controlled low-voltage shock. The system includes temperature monitoring, GUI visualization, and logging, providing a safe, educational environment for understanding biomedical signal processing and hardware integration.",
+      "domain": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "category": "Embedded Systems & IoT"
     },
     {
       "title": "STM32LabSuite",
@@ -1001,7 +1155,12 @@
         "Proteus simulation included for each subproject and deployable on STM32 hardware."
       ],
       "year": "2025",
-      "long_description": "STM32LabSuite is a modular collection of three STM32F401VE embedded systems projects that showcase real-time control, interrupt-driven processing, and modular driver abstraction. Each project focuses on a key embedded concept: EXTI-based real-time counting and display, keypad-driven display logic with GPIO remapping, and conveyor control with motor PWM and IR-based object detection. Designed for both Proteus simulation and hardware deployment, the suite provides hands-on experience with low-level STM32 peripherals, structured C programming, and industrial automation techniques."
+      "long_description": "STM32LabSuite is a modular collection of three STM32F401VE embedded systems projects that showcase real-time control, interrupt-driven processing, and modular driver abstraction. Each project focuses on a key embedded concept: EXTI-based real-time counting and display, keypad-driven display logic with GPIO remapping, and conveyor control with motor PWM and IR-based object detection. Designed for both Proteus simulation and hardware deployment, the suite provides hands-on experience with low-level STM32 peripherals, structured C programming, and industrial automation techniques.",
+      "domain": {
+        "name": "Embedded Systems",
+        "icon": "fa-solid fa-microchip"
+      },
+      "category": "Embedded Systems & IoT"
     },
     {
       "title": "CheckMate - Chess Game",
@@ -1027,7 +1186,12 @@
         "Tracks captured pieces and player timers."
       ],
       "year": "2024",
-      "long_description": "CheckMate is a Java-based chess game with a GUI built using Java Swing. Players can customize their names and themes, move pieces according to chess rules, and visualize valid moves. The application provides an interactive experience with gameplay tracking, captured piece display, and theme selection for enhanced engagement."
+      "long_description": "CheckMate is a Java-based chess game with a GUI built using Java Swing. Players can customize their names and themes, move pieces according to chess rules, and visualize valid moves. The application provides an interactive experience with gameplay tracking, captured piece display, and theme selection for enhanced engagement.",
+      "domain": {
+        "name": "Game Development",
+        "icon": "fa-solid fa-gamepad"
+      },
+      "category": "Game Development"
     }
   ]
 }

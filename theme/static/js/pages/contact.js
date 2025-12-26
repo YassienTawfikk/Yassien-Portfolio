@@ -9,7 +9,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
             navigator.clipboard.writeText(text).then(() => {
                 feedbackEl.textContent = 'Copied!';
-                setTimeout(() => feedbackEl.textContent = '', 2000);
+                this.classList.add('copied');
+
+                // Change icon to checkmark temporarily
+                const icon = this.querySelector('i');
+                const originalIconClass = icon.className;
+                icon.className = 'fa-solid fa-check';
+
+                setTimeout(() => {
+                    feedbackEl.textContent = '';
+                    this.classList.remove('copied');
+                    icon.className = originalIconClass;
+                }, 2000);
             });
         });
     });

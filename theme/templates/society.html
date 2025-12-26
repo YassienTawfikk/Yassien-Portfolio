@@ -49,7 +49,7 @@
                     <span class="head-font card-title">{{ item.role or 'Unknown Title' }}</span>
                     <span class="body-font card-subtitle">{{ item.organization or 'Unknown Subtitle' }}</span>
                     {% if item.description is iterable and item.description is not string %}
-                    <ul class="body-font card-paragraph" style="padding-left: 1.2rem; margin-top: 5px;">
+                    <ul class="body-font card-paragraph" style="margin-top: 5px;">
                         {% for desc in item.description %}
                         <li style="margin-bottom: 5px;">{{ desc }}</li>
                         {% endfor %}
