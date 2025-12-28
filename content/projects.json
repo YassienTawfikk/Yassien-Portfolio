@@ -1125,7 +1125,7 @@
     {
       "title": "STM32LabSuite",
       "short_description": "Modular umbrella repository of three STM32F401VE embedded projects with real-time control, interrupt handling, and modular driver abstraction.",
-      "overview_image": "https://i.postimg.cc/6WcPx9XK/STM32Lab-Suite-overview.png",
+      "overview_image": "https://i.postimg.cc/FHNYzFDM/STM32Lab-Suite.png",
       "github_link": "https://github.com/YassienTawfikk/STM32LabSuite",
       "tech_stack": [
         "C",
@@ -1156,6 +1156,122 @@
       ],
       "year": "2025",
       "long_description": "STM32LabSuite is a modular collection of three STM32F401VE embedded systems projects that showcase real-time control, interrupt-driven processing, and modular driver abstraction. Each project focuses on a key embedded concept: EXTI-based real-time counting and display, keypad-driven display logic with GPIO remapping, and conveyor control with motor PWM and IR-based object detection. Designed for both Proteus simulation and hardware deployment, the suite provides hands-on experience with low-level STM32 peripherals, structured C programming, and industrial automation techniques.",
+      "domain": {
+        "name": "Embedded Systems",
+        "icon": "fa-solid fa-microchip"
+      },
+      "category": "Embedded Systems & IoT"
+    },
+    {
+      "title": "ConveyorX",
+      "short_description": "Real-time conveyor belt monitoring system using STM32F401VE to track object speed and count via IR sensors and PWM motor control.",
+      "overview_image": "https://i.postimg.cc/BZkkcXF2/453623025-984412f8-db41-4e62-95c0-4b706ce76adc.png",
+      "github_link": "https://github.com/YassienTawfikk/ConveyorX.git",
+      "video_demo": "https://github.com/user-attachments/assets/6a6e361f-a388-491d-9a0c-7f26c36ff87f",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "PWM",
+        "ADC",
+        "LCD"
+      ],
+      "tags": [
+        "Embedded Systems",
+        "STM32",
+        "Automation",
+        "Object Detection",
+        "Speed Measurement",
+        "C Programming",
+        "Proteus Simulation"
+      ],
+      "highlights": [
+        "Precise conveyor speed measurement using Timer Input Capture.",
+        "Reliable object counting via IR sensors and GPIO polling.",
+        "Adjustable DC motor speed control using PWM and Potentiometer (ADC).",
+        "Real-time visualization of Speed and Object Count on an LCD interface.",
+        "Modular driver design including RCC, GPIO, PWM, and LCD."
+      ],
+      "year": "2025",
+      "long_description": "ConveyorX is a real-time embedded system developed on the STM32F401VE microcontroller designed to simulate and monitor an industrial conveyor belt environment. It utilizes Timer Input Capture to accurately measure belt speed and employs IR sensors with GPIO polling to count objects passing through the system. The project features a dynamic motor control system where speed is regulated via PWM based on potentiometer input (ADC), with all critical metrics displayed in real-time on an LCD screen.",
+      "domain": {
+        "name": "Embedded Systems",
+        "icon": "fa-solid fa-microchip"
+      },
+      "category": "Embedded Systems & IoT"
+    },
+    {
+      "title": "InterruptHandler",
+      "short_description": "Real-time embedded project demonstrating external interrupts (EXTI) to control a 7-segment display and LED using an STM32F401VE.",
+      "overview_image": "https://i.postimg.cc/05FFdbSp/449271529-71f2e2ad-f7e6-4b17-839e-11ace7bb7ff3.png",
+      "github_link": "https://github.com/YassienTawfikk/InterruptHandler.git",
+      "video_demo": "https://github.com/user-attachments/assets/4482cfc3-b778-4457-8908-76c10578a72c",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "EXTI"
+      ],
+      "tags": [
+        "Embedded Systems",
+        "STM32",
+        "Real-Time",
+        "Interrupts",
+        "Firmware",
+        "Proteus Simulation",
+        "C Programming"
+      ],
+      "highlights": [
+        "Custom EXTI driver supporting rising, falling, and dual-edge triggers.",
+        "Real-time counter updates via ISRs with 3-digit 7-segment display multiplexing.",
+        "Critical section protection using __disable_irq() to prevent race conditions.",
+        "Three-button interface for counter control (Increment/Decrement) and LED toggling.",
+        "Designed for both Proteus simulation and hardware deployment."
+      ],
+      "year": "2025",
+      "long_description": "InterruptHandler is a real-time embedded system built on the STM32F401VE microcontroller. It features a custom External Interrupt (EXTI) driver to manage hardware events from three push buttons, allowing for immediate response to user input. The system controls a multiplexed 3-digit 7-segment display and an LED indicator. Key engineering principles demonstrated include interrupt-driven input handling, race condition protection via critical sections, and efficient display multiplexing to ensure smooth visual output.",
+      "domain": {
+        "name": "Embedded Systems",
+        "icon": "fa-solid fa-microchip"
+      },
+      "category": "Embedded Systems & IoT"
+    },
+    {
+      "title": "Press2Display",
+      "short_description": "Modular embedded system interfacing a 4x3 matrix keypad with a 2-digit 7-segment display using an STM32F401VE.",
+      "overview_image": "https://i.postimg.cc/HWVFyQr4/449270137-194055fe-b6da-4612-b0b3-9ff41593cdd5.png",
+      "github_link": "https://github.com/YassienTawfikk/Press2Display.git",
+      "video_demo": "https://github.com/user-attachments/assets/5651b9b6-9adb-42f5-9cc9-276a65331b49",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "Keypad Driver"
+      ],
+      "tags": [
+        "Embedded Systems",
+        "STM32",
+        "Keypad Interfacing",
+        "Multiplexing",
+        "C Programming",
+        "Firmware",
+        "Proteus Simulation"
+      ],
+      "highlights": [
+        "Flexible GPIO remapping utilizing PinConfig abstraction.",
+        "Real-time 2-digit multiplexed 7-segment display rendering.",
+        "Matrix keypad scanning algorithm with debounce handling.",
+        "Lookup table-based digit rendering replacing complex switch-case logic.",
+        "Modular driver architecture ensuring compatibility with Proteus and real hardware."
+      ],
+      "year": "2025",
+      "long_description": "Press2Display is a modular embedded system that interfaces a 4x3 matrix keypad with a 2-digit 7-segment display using the STM32F401VE microcontroller. It demonstrates key principles of driver abstraction, multiplexing, and efficient GPIO remapping in embedded C. The system scans the keypad row-by-row, maps inputs via a lookup table, and updates the display using high-speed multiplexing for flicker-free output. Designed for educational simulation and hardware deployment, it highlights robust low-level software design.",
       "domain": {
         "name": "Embedded Systems",
         "icon": "fa-solid fa-microchip"
