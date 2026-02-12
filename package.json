@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "build": "python3 scripts/build.py"
+        "build": "python3 scripts/build.py",
+        "start": "python3 scripts/server.py"
     }
 }

@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let timer;
+    let retryCount = 0;
+    const maxRetries = 10;
 
     function setupNavInteraction() {
         const trigger = document.getElementById('hover-trigger');
@@ -7,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (trigger && navBlock) {
             console.log('Trigger and NavBlock found, adding event listeners.');
-
 
             trigger.addEventListener('mouseover', function () {
                 if (window.innerWidth > 768) {
@@ -31,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-
             trigger.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
                     e.stopPropagation();
@@ -52,8 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         } else {
-            console.log('Trigger or NavBlock not found, retrying...');
-            setTimeout(setupNavInteraction, 500); // Retry setting up interactions every 500ms
+            retryCount++;
+            if (retryCount < maxRetries) {
+                console.warn(`Navbar elements not found, retrying (${retryCount}/${maxRetries})...`);
+                setTimeout(setupNavInteraction, 500);
+            } else {
+                console.warn('Navbar elements not found after maximum retries. Aborting setup.');
+            }
         }
     }
 
