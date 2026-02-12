@@ -22,6 +22,23 @@ This is the **V2** iteration of my personal portfolio. It is a high-performance,
 - **Styling**: Bootstrap 5, FontAwesome
 - **Deployment**: Vercel (Static)
 
+## Running Locally
+
+1. **Build the site**:
+   ```bash
+   npm run build
+   # or
+   python3 scripts/build.py
+   ```
+
+2. **Start the server**:
+   ```bash
+   npm start
+   # or
+   python3 scripts/server.py
+   ```
+   Open [http://localhost:8000](http://localhost:8000) in your browser.
+
 ---
 
 ### Author

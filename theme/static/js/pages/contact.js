@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 3. EmailJS Form
     if (window.emailjs) {
-        emailjs.init("YOUR_PUBLIC_KEY"); // User needs to provide this or I should extract it if visible. 
+        emailjs.init("A03Gz-zzs0j09uVz3");
         // Note: The Dash app included the script but I didn't see the init call in app.py or contact.py.
         // It might be in src/data/contact.json or environment vars. 
         // For now I will assume standard usage or leave a placeholder. 
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
     submitBtn.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const serviceID = 'default_service'; // Placeholder
-        const templateID = 'template_id';    // Placeholder
+        const serviceID = 'service_2k9xyz';
+        const templateID = 'template_d4ryemm';
 
         const params = {
             from_name: nameInput.value,
@@ -114,37 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
             !params.reply_to || !params.reply_to.trim() ||
             !params.message || !params.message.trim()) {
 
-            console.log("Validation failed. Showing modal.");
-            // Show modal
-            modalTitle.textContent = "Action Required";
-            modalMsg.textContent = "Please fill in all the fields.";
-
-            // Clear targetUrl so clicking OK doesn't open a link
-            targetUrl = '';
-
-            // Only show one button for simple alert if preferred, or keep both. 
-            // The existing modal has "Continue to Site" and "Cancel". 
-            // We can repurpose "Confirm" to just close it, or hide "Cancel".
-
-            // For simplicity, we just show it. The existing "Continue to Site" (confirmBtn) closes it if no URL.
-            // Let's hide the cancel button for this specific alert to make it cleaner? 
-            // Or just leave it as is. The user just asked for "a box".
-
-            if (cancelBtn) cancelBtn.style.display = 'none'; // Hide cancel for this warning
-            if (confirmBtn) confirmBtn.textContent = 'OK';   // Rename main button
-
-            // We need to reset these when the modal closes or opens for other things, but strictly for this task:
-            modal.style.display = 'flex';
-            setTimeout(() => modal.classList.add('show'), 10);
-
-            // Reset button state for next time (optional but good practice if shared)
-            // But since this is a specific flow, let's keep it simple.
-            // Note: The social links might need the buttons back. 
-            // Ideally we should have a helper to showModal(title, msg, showCancel).
-            // But I will stick to inline modification for unnecessary complexity avoidance unless requested.
-
-            // Re-attach close listener to restore buttons? 
-            // Let's just set them here.
+            feedback.textContent = "Please fill in all the fields.";
+            feedback.style.color = "red";
 
             return;
         }

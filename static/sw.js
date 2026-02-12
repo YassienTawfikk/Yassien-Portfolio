@@ -46,13 +46,14 @@ self.addEventListener('fetch', (event) => {
     }
 
     // 2. External Images (PostImages, GitHub Assets) & Static Files (CSS/JS) -> Stale-While-Revalidate
-    if (
-        event.request.destination === 'image' ||
-        event.request.destination === 'style' ||
-        event.request.destination === 'script' ||
-        url.hostname.includes('postimg.cc') ||
-        url.hostname.includes('githubusercontent.com')
-    ) {
+    if ((url.protocol === 'http:' || url.protocol === 'https:') &&
+        (
+            event.request.destination === 'image' ||
+            event.request.destination === 'style' ||
+            event.request.destination === 'script' ||
+            url.hostname.includes('postimg.cc') ||
+            url.hostname.includes('githubusercontent.com')
+        )) {
         event.respondWith(
             caches.open(ASSETS_CACHE).then((cache) => {
                 return cache.match(event.request).then((cachedResponse) => {
