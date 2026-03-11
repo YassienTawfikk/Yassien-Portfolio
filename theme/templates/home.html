@@ -4,7 +4,6 @@
 
 {% block head_css %}
 <link rel="stylesheet" href="/css/pages/home.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
 {% endblock %}
 
 {% block content %}
@@ -59,11 +58,37 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-    var pdfjsLib = window.pdfjsLib;
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     var RESUME_URL = "{{ home.cv }}";
+</script>
+<script>
+    // PERF-004: Lazy-load pdf.js only when Resume modal opens (saves ~1.5MB on initial load)
+    (function() {
+        var pdfLoaded = false;
+        var resumeModal = document.getElementById('resume-modal');
+        if (!resumeModal) return;
+
+        resumeModal.addEventListener('show.bs.modal', function handler() {
+            if (pdfLoaded) return;
+            pdfLoaded = true;
+
+            // Load pdf.js CSS
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css';
+            document.head.appendChild(link);
+
+            // Load pdf.js library
+            var script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+            script.onload = function() {
+                var pdfjsLib = window.pdfjsLib;
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            };
+            document.head.appendChild(script);
+        });
+    })();
 </script>
 <script src="/js/pages/pdf_viewer.js?v={{ now }}_16"></script>
 {% endblock %}
+

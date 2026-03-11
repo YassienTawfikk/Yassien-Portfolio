@@ -14,24 +14,44 @@ document.addEventListener("DOMContentLoaded", function () {
     let maxZoom = 10000.0;
     let baseWidth = 0;
 
+    // PERF-004: Wait for lazy-loaded pdfjsLib to become available
+    function waitForPdfJs(callback, maxWait) {
+        maxWait = maxWait || 5000;
+        var elapsed = 0;
+        var interval = setInterval(function() {
+            if (window.pdfjsLib) {
+                clearInterval(interval);
+                callback();
+            } else if (elapsed >= maxWait) {
+                clearInterval(interval);
+                console.error('pdf.js failed to load within ' + maxWait + 'ms');
+                if (fallback) fallback.style.display = 'block';
+                if (container) container.style.display = 'none';
+            }
+            elapsed += 100;
+        }, 100);
+    }
+
     // Initial Load
     const resumeModal = document.getElementById('resume-modal');
     if (resumeModal) {
         resumeModal.addEventListener('shown.bs.modal', function () {
             if (!pdfDoc) {
-                if (typeof RESUME_URL !== 'undefined' && RESUME_URL) {
-                    pdfjsLib.getDocument(RESUME_URL).promise.then(function (pdfDoc_) {
-                        pdfDoc = pdfDoc_;
-                        renderAllPages();
-                    }).catch(function (error) {
-                        console.error('Error loading PDF:', error);
-                        if (fallback) {
-                            fallback.style.display = 'block';
-                            fallback.innerHTML += '<br><br><span style="color: red; font-size: 0.9em;">Debug Error: ' + error.message + '</span>';
-                        }
-                        if (container) container.style.display = 'none';
-                    });
-                }
+                waitForPdfJs(function() {
+                    if (typeof RESUME_URL !== 'undefined' && RESUME_URL) {
+                        pdfjsLib.getDocument(RESUME_URL).promise.then(function (pdfDoc_) {
+                            pdfDoc = pdfDoc_;
+                            renderAllPages();
+                        }).catch(function (error) {
+                            console.error('Error loading PDF:', error);
+                            if (fallback) {
+                                fallback.style.display = 'block';
+                                fallback.innerHTML += '<br><br><span style="color: red; font-size: 0.9em;">Debug Error: ' + error.message + '</span>';
+                            }
+                            if (container) container.style.display = 'none';
+                        });
+                    }
+                });
             } else {
                 renderAllPages();
             }

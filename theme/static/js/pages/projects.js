@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const videoUrl = this.getAttribute('data-video-url');
             const title = this.getAttribute('data-project-title');
 
+            // SEC-002: Validate video URL origin before injection into srcdoc
+            const ALLOWED_VIDEO_ORIGIN = 'https://github.com/user-attachments/assets/';
+            if (!videoUrl || !videoUrl.startsWith(ALLOWED_VIDEO_ORIGIN)) {
+                console.warn('Blocked video URL — not from allowed origin:', videoUrl);
+                return;
+            }
+
             modalTitle.textContent = title;
 
             // Replicate the iframe structure from Dash app to ensuring no-referrer
