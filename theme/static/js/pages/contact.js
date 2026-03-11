@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // =========================================================
     // 1. Copy to Clipboard
+    // =========================================================
     const copyBtns = document.querySelectorAll('.copy-btn');
     copyBtns.forEach(btn => {
         btn.addEventListener('click', function () {
             const text = this.getAttribute('data-text');
-            const feedbackId = this.id.replace('btn', 'feedback').replace('copy-', '');
             const feedbackEl = document.nextElementSibling || this.parentElement.querySelector('.copy-feedback');
 
             navigator.clipboard.writeText(text).then(() => {
                 feedbackEl.textContent = 'Copied!';
                 this.classList.add('copied');
 
-                // Change icon to checkmark temporarily
                 const icon = this.querySelector('i');
                 const originalIconClass = icon.className;
                 icon.className = 'fa-solid fa-check';
@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // =========================================================
     // 2. Notification Modal for Socials
+    // =========================================================
     const modal = document.getElementById('cv-modal');
     const modalTitle = document.getElementById('notification-title');
     const modalMsg = document.getElementById('confirm-message-text');
@@ -42,23 +44,17 @@ document.addEventListener('DOMContentLoaded', function () {
             modalTitle.textContent = this.getAttribute('data-notify-title');
             modalMsg.textContent = this.getAttribute('data-notify-desc');
 
-            // Reset buttons for social notification
             if (cancelBtn) cancelBtn.style.display = 'inline-block';
             if (confirmBtn) confirmBtn.textContent = 'Continue to Site';
 
             modal.style.display = 'flex';
-            // Slight delay to allow display:flex to apply before adding opacity class for transition
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
+            setTimeout(() => { modal.classList.add('show'); }, 10);
         });
     });
 
     function closeModal() {
         modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300); // 300ms matches CSS transition
+        setTimeout(() => { modal.style.display = 'none'; }, 300);
     }
 
     if (confirmBtn) {
@@ -67,77 +63,101 @@ document.addEventListener('DOMContentLoaded', function () {
             closeModal();
         });
     }
-
     if (cancelBtn) {
-        cancelBtn.addEventListener('click', function () {
-            closeModal();
-        });
+        cancelBtn.addEventListener('click', function () { closeModal(); });
     }
-
     if (overlay) {
-        overlay.addEventListener('click', function () {
-            closeModal();
-        });
+        overlay.addEventListener('click', function () { closeModal(); });
     }
 
-    // 3. EmailJS Form
+    // =========================================================
+    // 3. Toast Notification System
+    // =========================================================
+    const toast = document.getElementById('form-toast');
+    let toastTimer = null;
+
+    function showToast(msg, type) {
+        // type: 'warning', 'success', 'error'
+        if (toastTimer) clearTimeout(toastTimer);
+
+        toast.textContent = msg;
+        toast.className = 'form-toast form-toast--' + type + ' form-toast--visible';
+
+        // Auto-hide after 4 seconds (except 'sending' which stays)
+        if (type !== 'sending') {
+            toastTimer = setTimeout(function () {
+                toast.classList.remove('form-toast--visible');
+            }, 4000);
+        }
+    }
+
+    function hideToast() {
+        if (toastTimer) clearTimeout(toastTimer);
+        toast.classList.remove('form-toast--visible');
+    }
+
+    // =========================================================
+    // 4. EmailJS Contact Form
+    // =========================================================
     if (window.emailjs) {
         emailjs.init("A03Gz-zzs0j09uVz3");
-        // Note: The Dash app included the script but I didn't see the init call in app.py or contact.py.
-        // It might be in src/data/contact.json or environment vars. 
-        // For now I will assume standard usage or leave a placeholder. 
-        // Actually app.py included "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js".
-        // Use logic from existing codebase if found. 
-        // I'll try to find where emailjs.init is called. 
     }
 
     const submitBtn = document.getElementById('zen-submit-btn');
     const nameInput = document.getElementById('from_name');
     const emailInput = document.getElementById('reply_to');
     const msgInput = document.getElementById('message');
-    const feedback = document.getElementById('zen-form-feedback');
 
-    submitBtn.addEventListener('click', function (e) {
-        e.preventDefault();
+    submitBtn.addEventListener('click', function () {
+        // Client-side validation
+        if (!nameInput.value.trim() || !emailInput.value.trim() || !msgInput.value.trim()) {
+            showToast('Please fill in all the fields.', 'warning');
+            return;
+        }
 
-        const serviceID = 'service_2k9xyz';
-        const templateID = 'template_d4ryemm';
+        // Simple email format check
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            showToast('Please enter a valid email address.', 'warning');
+            return;
+        }
 
-        const params = {
+        // Disable button to prevent double-send
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.pointerEvents = 'none';
+        showToast('Sending your message...', 'sending');
+
+        var params = {
             from_name: nameInput.value,
             reply_to: emailInput.value,
             message: msgInput.value
         };
-        console.log("Contact form params:", params);
 
-        if (!params.from_name || !params.from_name.trim() ||
-            !params.reply_to || !params.reply_to.trim() ||
-            !params.message || !params.message.trim()) {
-
-            feedback.textContent = "Please fill in all the fields.";
-            feedback.style.color = "red";
-
-            return;
-        }
-
-        feedback.textContent = "Sending...";
-
-        // Try to send if emailjs is defined
         if (window.emailjs) {
-            emailjs.send(serviceID, templateID, params)
-                .then(() => {
-                    feedback.textContent = "Message Sent!";
-                    feedback.style.color = "green";
+            emailjs.send('service_2k9xyz', 'template_d4ryemm', params)
+                .then(function () {
+                    showToast('Message sent successfully!', 'success');
                     nameInput.value = '';
                     emailInput.value = '';
                     msgInput.value = '';
-                }, (err) => {
-                    feedback.textContent = "Failed to send. Please try direct email.";
-                    feedback.style.color = "red";
-                    console.log(JSON.stringify(err));
+                    resetButton();
+                }, function (err) {
+                    showToast('Failed to send. Please try direct email.', 'error');
+                    console.error('EmailJS error:', err);
+                    resetButton();
                 });
         } else {
-            feedback.textContent = "Email service not configured.";
+            showToast('Email service unavailable. Please use direct email.', 'error');
+            resetButton();
         }
     });
+
+    function resetButton() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        submitBtn.style.opacity = '';
+        submitBtn.style.pointerEvents = '';
+    }
 });

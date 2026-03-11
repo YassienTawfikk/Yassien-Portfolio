@@ -64,22 +64,24 @@
         </div>
 
         <!-- Form -->
+        <!-- Toast notification -->
+        <div id="form-toast" class="form-toast"></div>
+
         <div class="contact-form-container" id="zen-contact-form">
             <div>
                 <div class="zen-group">
                     <label for="from_name" class="zen-label">Name</label>
-                    <input type="text" id="from_name" class="zen-input" required autocomplete="off">
+                    <input type="text" id="from_name" class="zen-input" autocomplete="off">
                 </div>
                 <div class="zen-group">
                     <label for="reply_to" class="zen-label">Email</label>
-                    <input type="email" id="reply_to" class="zen-input" required autocomplete="off">
+                    <input type="email" id="reply_to" class="zen-input" autocomplete="off">
                 </div>
                 <div class="zen-group">
                     <label for="message" class="zen-label">Message</label>
-                    <textarea id="message" class="zen-input" required rows="3"></textarea>
+                    <textarea id="message" class="zen-input" rows="3"></textarea>
                 </div>
-                <button type="submit" class="zen-submit" id="zen-submit-btn">Send Message</button>
-                <div id="zen-form-feedback" class="zen-feedback"></div>
+                <button type="button" class="zen-submit" id="zen-submit-btn">Send Message</button>
             </div>
         </div>
     </div>
