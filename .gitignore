@@ -8,4 +8,5 @@
 .vscode/
 public/
 CLAUDE.md
-architecture_evaluation.md__pycache__/
+architecture_evaluation.md
+__pycache__/
