@@ -63,13 +63,28 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                // Force browser to always check server for SW updates (bypass HTTP cache)
+                navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
                     .then(registration => {
-                        console.log('SW registered: ', registration);
+                        console.log('SW registered:', registration.scope);
+                        // Force update check immediately
+                        registration.update();
                     })
-                    .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
+                    .catch(err => {
+                        console.log('SW registration failed:', err);
                     });
+
+                // One-time cleanup: purge old corrupt caches from v1/v2
+                if (window.caches) {
+                    caches.keys().then(names => {
+                        names.forEach(name => {
+                            if (name.includes('v1') || name.includes('v2')) {
+                                caches.delete(name);
+                                console.log('Purged old cache:', name);
+                            }
+                        });
+                    });
+                }
             });
         }
     </script>
