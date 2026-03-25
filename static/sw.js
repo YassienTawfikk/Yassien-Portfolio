@@ -1,18 +1,16 @@
 
-const CACHE_NAME = 'yassien-portfolio-v1';
-const ASSETS_CACHE = 'assets-cache-v1';
+const CACHE_NAME = 'yassien-portfolio-v2';
+const ASSETS_CACHE = 'assets-cache-v2';
 const PRECACHE_URLS = []; // Will be populated by build script during deployment
 
 // Install Event: Cache core static assets immediately
 self.addEventListener('install', (event) => {
-    // Aggressive Pre-caching
     event.waitUntil(
         caches.open(ASSETS_CACHE).then((cache) => {
-            // Add core assets + dynamic image list
             return cache.addAll(PRECACHE_URLS);
         })
     );
-    self.skipWaiting(); // Activate worker immediately
+    self.skipWaiting();
 });
 
 // Activate Event: Clean up old caches
@@ -34,34 +32,30 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
 
+    // Only handle http/https
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
     // 1. Navigation Requests (HTML pages) -> Network First
     if (event.request.mode === 'navigate') {
         event.respondWith(
             fetch(event.request)
-                .catch(() => {
-                    return caches.match(event.request);
-                })
+                .catch(() => caches.match(event.request))
         );
         return;
     }
 
-    // 2. External Images (PostImages, GitHub Assets) & Static Files (CSS/JS) -> Stale-While-Revalidate
-    if ((url.protocol === 'http:' || url.protocol === 'https:') &&
-        (
-            event.request.destination === 'image' ||
-            event.request.destination === 'style' ||
-            event.request.destination === 'script' ||
-            url.hostname.includes('postimg.cc') ||
-            url.hostname.includes('githubusercontent.com')
-        )) {
+    // 2. Same-origin static assets (CSS/JS/images) -> Stale-While-Revalidate
+    if (url.origin === self.location.origin) {
         event.respondWith(
             caches.open(ASSETS_CACHE).then((cache) => {
                 return cache.match(event.request).then((cachedResponse) => {
                     const fetchPromise = fetch(event.request).then((networkResponse) => {
-                        cache.put(event.request, networkResponse.clone());
+                        if (networkResponse.status === 200) {
+                            cache.put(event.request, networkResponse.clone());
+                        }
                         return networkResponse;
-                    });
-                    // Return cached response immediately if available, otherwise wait for network
+                    }).catch(() => cachedResponse);
+
                     return cachedResponse || fetchPromise;
                 });
             })
@@ -69,6 +63,27 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Default: Network Only
-    event.respondWith(fetch(event.request));
+    // 3. Cross-origin resources (postimg, fonts, CDNs) -> Network First, cache on success
+    //    Do NOT use respondWith for cross-origin — let the browser handle it natively.
+    //    Only intercept if we have a cached copy to serve as fallback.
+    if (event.request.destination === 'image' ||
+        event.request.destination === 'style' ||
+        event.request.destination === 'font') {
+        event.respondWith(
+            fetch(event.request).then((networkResponse) => {
+                // Only cache same-origin or CORS responses (status > 0)
+                if (networkResponse.status === 200) {
+                    const clone = networkResponse.clone();
+                    caches.open(ASSETS_CACHE).then((cache) => cache.put(event.request, clone));
+                }
+                return networkResponse;
+            }).catch(() => {
+                // Network failed — try cache, otherwise let browser show its default error
+                return caches.match(event.request);
+            })
+        );
+        return;
+    }
+
+    // Default: Don't intercept — let the browser handle it natively
 });
