@@ -107,7 +107,11 @@ def load_data(data_dir):
                     config = data.get('config', {})
                     image_host = config.get('image_host', '')
                     if 'overview_image_id' in proj:
-                        proj['overview_image'] = image_host + proj['overview_image_id']
+                        img_id = proj['overview_image_id']
+                        if img_id.startswith('http://') or img_id.startswith('https://'):
+                            proj['overview_image'] = img_id
+                        else:
+                            proj['overview_image'] = image_host + img_id
                     
                     if 'domain_id' in proj:
                         domain_info = config.get('taxonomies', {}).get('domains', {}).get(proj['domain_id'], {})
