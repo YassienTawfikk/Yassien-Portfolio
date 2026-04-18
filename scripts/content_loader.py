@@ -75,13 +75,60 @@ def validate_content(data):
 
 
 def load_data(data_dir):
-    """Load all JSON files from the content directory."""
+    """Load all JSON files from the content directory and Markdown from projects."""
+    import datetime
+    import frontmatter
+    import markdown
+    
     data = {}
+    config_path = os.path.join(data_dir, 'config.json')
+    if os.path.exists(config_path):
+        with open(config_path, 'r', encoding='utf-8') as f:
+            data['config'] = json.load(f)
+            
+    # Load JSON files
     for filename in os.listdir(data_dir):
         if filename.endswith('.json'):
             key = filename.replace('.json', '')
-            with open(os.path.join(data_dir, filename), 'r') as f:
+            with open(os.path.join(data_dir, filename), 'r', encoding='utf-8') as f:
                 data[key] = json.load(f)
+
+    # Load Markdown projects
+    projects_dir = os.path.join(data_dir, 'projects')
+    projects_list = []
+    if os.path.exists(projects_dir):
+        for filename in os.listdir(projects_dir):
+            if filename.endswith('.md'):
+                with open(os.path.join(projects_dir, filename), 'r', encoding='utf-8') as f:
+                    post = frontmatter.load(f)
+                    proj = post.metadata
+                    proj['long_description'] = markdown.markdown(post.content)
+                    
+                    config = data.get('config', {})
+                    image_host = config.get('image_host', '')
+                    if 'overview_image_id' in proj:
+                        proj['overview_image'] = image_host + proj['overview_image_id']
+                    
+                    if 'domain_id' in proj:
+                        domain_info = config.get('taxonomies', {}).get('domains', {}).get(proj['domain_id'], {})
+                        proj['domain'] = {
+                            'name': domain_info.get('name', ''),
+                            'icon': domain_info.get('icon', '')
+                        }
+                        
+                    if 'category_id' in proj:
+                        proj['category'] = config.get('taxonomies', {}).get('categories', {}).get(proj['category_id'], '')
+                        
+                    projects_list.append(proj)
+                    
+    data['projects'] = {'Projects': projects_list}
+
+    # Automatically calculate age based on 2003
+    if 'about' in data and 'description' in data['about']:
+        current_year = datetime.datetime.now().year
+        age = current_year - 2003
+        data['about']['description'] = data['about']['description'].replace('{age}', str(age))
+        
     return data
 
 
