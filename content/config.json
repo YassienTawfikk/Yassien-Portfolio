@@ -1,0 +1,59 @@
+{
+  "image_host": "https://i.postimg.cc/",
+  "taxonomies": {
+    "domains": {
+      "biomedical_engineering": {
+        "name": "Biomedical Engineering",
+        "icon": "fa-solid fa-heart-pulse"
+      },
+      "medical_ai": {
+        "name": "Medical AI",
+        "icon": "fa-solid fa-brain"
+      },
+      "web_mobile_app": {
+        "name": "Web & Mobile App",
+        "icon": "fa-solid fa-laptop-code"
+      },
+      "game_development": {
+        "name": "Game Development",
+        "icon": "fa-solid fa-gamepad"
+      },
+      "ai_data_science": {
+        "name": "AI & Data Science",
+        "icon": "fa-solid fa-robot"
+      },
+      "signal_processing": {
+        "name": "Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "audio_signal_processing": {
+        "name": "Audio & Signal Processing",
+        "icon": "fa-solid fa-wave-square"
+      },
+      "data_science_analytics": {
+        "name": "Data Science & analytics",
+        "icon": "fa-solid fa-chart-line"
+      },
+      "computer_vision": {
+        "name": "Computer Vision",
+        "icon": "fa-solid fa-eye"
+      },
+      "embedded_systems": {
+        "name": "Embedded Systems",
+        "icon": "fa-solid fa-microchip"
+      },
+      "mobile_iot": {
+        "name": "Mobile & IoT System",
+        "icon": "fa-solid fa-mobile-screen"
+      }
+    },
+    "categories": {
+      "biomedical_signal_processing": "Biomedical & Signal Processing",
+      "ai_data_science": "AI & Data Science",
+      "web_mobile_software": "Web, Mobile & Software",
+      "game_development": "Game Development",
+      "computer_vision_image_processing": "Computer Vision & Image Processing",
+      "embedded_systems_iot": "Embedded Systems & IoT"
+    }
+  }
+}
