@@ -8,6 +8,7 @@ year: '2025'
 domain_id: biomedical_engineering
 category_id: biomedical_signal_processing
 github_link: https://github.com/YassienTawfikk/SensiFoot.git
+video_demo: https://github.com/user-attachments/assets/094af44e-0ffe-499f-aefa-ac6f6937e622
 order: 1
 tech_stack:
 - Python
