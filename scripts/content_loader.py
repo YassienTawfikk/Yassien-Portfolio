@@ -167,9 +167,12 @@ def process_projects(site_data):
             categories[cat] = []
         categories[cat].append(p)
 
-    # Sort by 'order' field within each category
+    # Sort featured projects deterministically
+    featured_projects.sort(key=lambda x: (x.get('order', 99), x.get('title', '')))
+
+    # Sort by 'order' and 'title' within each category
     for cat in categories:
-        categories[cat].sort(key=lambda x: x.get('order', 99))
+        categories[cat].sort(key=lambda x: (x.get('order', 99), x.get('title', '')))
 
     site_data['projects_context'] = {
         'featured_projects': featured_projects,
