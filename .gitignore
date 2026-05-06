@@ -10,3 +10,4 @@ public/
 CLAUDE.md
 architecture_evaluation.md
 __pycache__/
+.run_command

@@ -45,6 +45,14 @@
       "mobile_iot": {
         "name": "Mobile & IoT System",
         "icon": "fa-solid fa-mobile-screen"
+      },
+      "multi_agent_system": {
+        "name": "Multi-Agent System",
+        "icon": "fa-solid fa-network-wired"
+      },
+      "medical_imaging": {
+        "name": "Medical Imaging",
+        "icon": "fa-solid fa-x-ray"
       }
     },
     "categories": {
@@ -53,7 +61,8 @@
       "web_mobile_software": "Web, Mobile & Software",
       "game_development": "Game Development",
       "computer_vision_image_processing": "Computer Vision & Image Processing",
-      "embedded_systems_iot": "Embedded Systems & IoT"
+      "embedded_systems_iot": "Embedded Systems & IoT",
+      "decision_support_system": "Decision Support System"
     }
   }
 }
