@@ -2,7 +2,7 @@
 title: CyberMazer-2077
 short_description: Interactive maze game with Mini and Mega sizes, solved using dynamic
   programming and visualized paths.
-overview_image_id: qp6W6V8G/Cyber-Mazer-2077-overview.png
+overview_image_id: /images/projects/CyberMazer_Poster.webp
 year: '2024'
 domain_id: game_development
 category_id: game_development

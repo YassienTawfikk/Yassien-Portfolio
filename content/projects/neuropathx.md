@@ -2,7 +2,7 @@
 title: NeuroPathX
 short_description: End-to-end web platform for MRI brain tumor analysis using an Xception-based
   deep learning model with real-time inference and automated clinical reporting.
-overview_image_id: L9DX1Zzk/528909957-d55cddc4-67d7-4443-9b0a-83968fdc7baa.png
+overview_image_id: /images/projects/NeuroPathX_Poster.webp
 year: '2025'
 domain_id: medical_ai
 category_id: ai_data_science

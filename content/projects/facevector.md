@@ -9,7 +9,7 @@ highlights:
 - Performance evaluation with ROC curves and classification metrics.
 - Intuitive GUI for selecting images, viewing results, and adjusting detection parameters.
 order: 2
-overview_image_id: tX0whS5w/Face-Vector-overview.png
+overview_image_id: /images/projects/FaceVector_Poster.webp
 short_description: Modular computer vision system for face detection and recognition
   using PCA-based embeddings.
 tags:

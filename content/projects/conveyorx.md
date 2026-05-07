@@ -9,7 +9,7 @@ highlights:
 - Real-time visualization of Speed and Object Count on an LCD interface.
 - Modular driver design including RCC, GPIO, PWM, and LCD.
 order: 4
-overview_image_id: BZkkcXF2/453623025-984412f8-db41-4e62-95c0-4b706ce76adc.png
+overview_image_id: /images/projects/ConveyorX_Poster.webp
 short_description: Real-time conveyor belt monitoring system using STM32F401VE to
   track object speed and count via IR sensors and PWM motor control.
 tags:

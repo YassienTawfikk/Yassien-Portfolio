@@ -9,7 +9,7 @@ highlights:
 - Grad-CAM integration for visual explainability of model decisions.
 - Modular pipeline for data handling, training, and evaluation.
 order: 3
-overview_image_id: RhKr267N/gradcam-batch.png
+overview_image_id: /images/projects/GradcamBatch_Poster.webp
 short_description: Deep learning pipeline for detecting pediatric pneumonia using
   a fine-tuned ResNet-50. Features two-stage training and Grad-CAM explainability.
 tags:

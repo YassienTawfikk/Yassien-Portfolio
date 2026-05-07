@@ -2,7 +2,7 @@
 title: PredictiLoan
 short_description: Loan approval prediction using Logistic Regression and SVM on tabular
   financial data.
-overview_image_id: TdfssKBt/Predicti-Loan-overview.png
+overview_image_id: /images/projects/PredictiLoan_Poster.webp
 year: '2024'
 domain_id: data_science_analytics
 category_id: ai_data_science

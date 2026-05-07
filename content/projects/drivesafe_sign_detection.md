@@ -9,7 +9,7 @@ highlights:
 - 'Comprehensive visualizations: training curves, confusion matrix, class distribution.'
 - Modular project structure for scalability and experimentation.
 order: 7
-overview_image_id: JRHSHVbv/Drive-Safe-Sign-Detection-overview.png
+overview_image_id: /images/projects/DriveSafeSignDetection_Poster.webp
 short_description: Deep learning-based traffic sign detection system using a custom
   CNN and MobileNetV2 for classifying 43 German traffic signs.
 tags:

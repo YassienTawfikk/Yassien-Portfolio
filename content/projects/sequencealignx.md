@@ -2,7 +2,7 @@
 title: SequenceAlignX
 short_description: Interactive local sequence alignment tool with stepwise matrix
   filling, real-time tracing, and quiz-style 'Guess Mode' for learning.
-overview_image_id: NsBnnKZ3/Sequence-Align-X-overview.png
+overview_image_id: /images/projects/SequenceAlignX_Poster.webp
 year: '2025'
 domain_id: biomedical_engineering
 category_id: web_mobile_software

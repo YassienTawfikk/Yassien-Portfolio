@@ -10,7 +10,7 @@ highlights:
 - Real-time quantitative evaluation metrics computing MAE, CNR, and SNR.
 - Configurable degradation modeling dynamically injecting noise and scatter.
 order: 3
-overview_image_id: K837RwQv/Bone-Vision-Design.png
+overview_image_id: /images/projects/BoneVision_Poster.webp
 short_description: Advanced Python desktop application simulating dual-energy X-ray acquisition and performing mathematical material decomposition to visualize separate bone and soft-tissue maps.
 tags:
 - Medical Imaging

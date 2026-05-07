@@ -10,7 +10,7 @@ highlights:
 - 'High predictive performance: 92.89% accuracy, AUROC 0.9714, PR-AUC 0.9588.'
 - Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization.
 order: 4
-overview_image_id: tqpccs8d/Oral-Cancer-Prediction-overview.png
+overview_image_id: /images/projects/OralCancerPrediction_Poster.webp
 short_description: Machine learning pipeline for predicting oral cancer from microbiome
   data, with SHAP-based explainability and a PyTorch Lightning-style CLI.
 tags:

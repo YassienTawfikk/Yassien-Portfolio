@@ -3,7 +3,7 @@ title: Dynamic Multi-Channel Signal Viewer
 short_description: Python & Qt-based desktop app for visualizing, customizing, and
   managing multiple medical signals (ECG, EMG, EEG) with playback, linking, and reporting
   features.
-overview_image_id: GbT6Twk5/Dynamic-Multi-Channel-Signal-Viewer-overview.png
+overview_image_id: /images/projects/DynamicMultiChannelSignalViewer_Poster.webp
 year: '2024'
 domain_id: biomedical_engineering
 category_id: biomedical_signal_processing

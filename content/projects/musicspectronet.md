@@ -2,7 +2,7 @@
 title: MusicSpectroNet
 short_description: Music genre classification on the GTZAN dataset using tabular ML
   and CNN-based spectrogram analysis.
-overview_image_id: RMc8G7pd/Music-Spectro-Net-overview.png
+overview_image_id: /images/projects/MusicSpectroNet_Poster.webp
 year: '2024'
 domain_id: signal_processing
 category_id: ai_data_science

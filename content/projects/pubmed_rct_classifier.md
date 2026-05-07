@@ -11,7 +11,7 @@ highlights:
 - 'Strong performance in experimental sections (Methods F1: 0.91, Results F1: 0.89).'
 - Modular pipeline design for easy training, evaluation, and inference.
 order: 6
-overview_image_id: 50tcbKS4/20260102-0508-Pub-Med-Classifier-Poster-simple-compose-01kdyatvr0ejna9e8zh219jfqf.png
+overview_image_id: /images/projects/PubMed_Poster.webp
 short_description: Transformer-based NLP pipeline that automatically categorize medical
   abstract sentences into functional sections.
 tags:

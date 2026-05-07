@@ -3,7 +3,7 @@ title: 2D Beamforming Simulator
 short_description: Interactive simulator for exploring 2D beamforming scenarios in
   communications, ultrasound, and tumor ablation with real-time visualization and
   array customization.
-overview_image_id: wgGSBTsg/2D-Beamforming-Simulator-overview.png
+overview_image_id: /images/projects/Beamforming_Poster.webp
 year: '2025'
 domain_id: signal_processing
 category_id: biomedical_signal_processing

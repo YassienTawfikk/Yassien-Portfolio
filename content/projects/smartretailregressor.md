@@ -2,7 +2,7 @@
 title: SmartRetailRegressor
 short_description: Sales forecasting for Walmart stores using Random Forest and XGBoost
   with advanced feature engineering.
-overview_image_id: byg5fzhj/Smart-Retail-Regressor-overview.png
+overview_image_id: /images/projects/SmartRetailRegressor_Poster.webp
 year: '2024'
 domain_id: data_science_analytics
 category_id: ai_data_science

@@ -10,7 +10,7 @@ highlights:
 - Convert color images to grayscale for simplified analysis and processing.
 - Intuitive GUI to apply various processing techniques interactively.
 order: 3
-overview_image_id: Zb4QQWXj/Pixelizing-overview.png
+overview_image_id: /images/projects/Pixelizing_Poster.webp
 short_description: A modular image processing toolkit for noise addition, filtering,
   edge detection, and image enhancement.
 tags:

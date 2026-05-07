@@ -3,7 +3,7 @@ title: BioRhythm Analyzer
 short_description: CTG Heart Failure Monitoring System analyzing HRV and FHR signals
   to detect potential abnormalities, combining advanced signal processing with an
   intuitive GUI.
-overview_image_id: fTV2pXSq/CTG-Monitor-Design.png
+overview_image_id: /images/projects/CTGMonitor_Poster.webp
 year: '2024'
 domain_id: biomedical_engineering
 category_id: biomedical_signal_processing

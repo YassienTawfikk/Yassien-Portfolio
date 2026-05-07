@@ -9,7 +9,7 @@ highlights:
 - Three-button interface for counter control (Increment/Decrement) and LED toggling.
 - Designed for both Proteus simulation and hardware deployment.
 order: 5
-overview_image_id: 05FFdbSp/449271529-71f2e2ad-f7e6-4b17-839e-11ace7bb7ff3.png
+overview_image_id: /images/projects/InterruptHandler_Poster.webp
 short_description: Real-time embedded project demonstrating external interrupts (EXTI)
   to control a 7-segment display and LED using an STM32F401VE.
 tags:

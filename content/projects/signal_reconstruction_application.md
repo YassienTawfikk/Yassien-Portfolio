@@ -2,7 +2,7 @@
 title: Signal Reconstruction Application
 short_description: Educational desktop app demonstrating signal sampling and reconstruction
   techniques, illustrating the Nyquist rate and interpolation methods.
-overview_image_id: vYhKwQdj/Signal-Reconstruction-Application-overview.png
+overview_image_id: /images/projects/SignalReconstructionApplication_Poster.webp
 year: '2024'
 domain_id: signal_processing
 category_id: biomedical_signal_processing

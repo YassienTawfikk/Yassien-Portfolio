@@ -9,7 +9,7 @@ highlights:
 - Lookup table-based digit rendering replacing complex switch-case logic.
 - Modular driver architecture ensuring compatibility with Proteus and real hardware.
 order: 6
-overview_image_id: HWVFyQr4/449270137-194055fe-b6da-4612-b0b3-9ff41593cdd5.png
+overview_image_id: /images/projects/Press2Display_Poster.webp
 short_description: Modular embedded system interfacing a 4x3 matrix keypad with a
   2-digit 7-segment display using an STM32F401VE.
 tags:

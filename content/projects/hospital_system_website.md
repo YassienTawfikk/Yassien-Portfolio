@@ -3,7 +3,7 @@ title: Hospital System Website
 short_description: A comprehensive Hospital Management System built with Flask, providing
   seamless interactions for patients, doctors, and administrators with appointments,
   prescriptions, and profiles.
-overview_image_id: mbxJQXwq/Hospital-System-Website-overview.png
+overview_image_id: /images/projects/HospitalSystem_Poster.webp
 year: '2025'
 domain_id: web_mobile_app
 category_id: web_mobile_software

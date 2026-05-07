@@ -3,7 +3,7 @@ title: SensiFoot
 short_description: High-fidelity biomedical diagnostic interface and hardware simulator
   processing FSR telemetry for real-time biomechanical diagnostics like CoP and Gait
   Phase analysis.
-overview_image_id: 5yC1PGRK/Sensi-Foot-Design.jpg
+overview_image_id: /images/projects/SensiFoot_Poster.webp
 year: '2025'
 domain_id: biomedical_engineering
 category_id: biomedical_signal_processing
