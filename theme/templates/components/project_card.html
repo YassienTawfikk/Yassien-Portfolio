@@ -1,7 +1,7 @@
 {% macro project_card(project, is_featured=False) %}
 <div class="project-card {{ 'featured-card' if is_featured else '' }}">
     <div class="project-image-container">
-        <img src="{{ project.overview_image }}" class="project-image" alt="{{ project.title }} Overview" loading="lazy">
+        <img src="{{ project.overview_image }}" class="project-image" alt="{{ project.title }} Overview" loading="lazy" decoding="async">
         {% if is_featured %}
         <div class="live-badge">LIVE DEMO</div>
         {% endif %}

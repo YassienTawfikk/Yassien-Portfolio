@@ -121,3 +121,17 @@
         opacity: 0.6;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    #global-preloader,
+    .zen-signature,
+    .zen-signature::after,
+    .zen-subtext {
+        animation: none;
+        transition-duration: 0.01ms;
+    }
+
+    .zen-subtext {
+        opacity: 1;
+    }
+}

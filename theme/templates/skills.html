@@ -23,7 +23,7 @@
             <div class="skills-grid">
                 {% for skill in category.skills %}
                 <div class="skill-card" data-name="{{ skill.name }}" data-desc="{{ skill.description or 'No description available.' }}" data-img="{{ skill.image_url }}">
-                    <img src="{{ skill.image_url }}" class="skill-icon">
+                    <img src="{{ skill.image_url }}" class="skill-icon" loading="lazy" decoding="async" alt="">
                     <span class="skill-name body-font">{{ skill.name }}</span>
                     {% if skill.details %}
                     <span class="skill-details-hint body-font">{{ skill.details }}</span>

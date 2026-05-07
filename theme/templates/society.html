@@ -19,7 +19,7 @@
                 <div class="member-fig">
                     <div class="image">
                         {% if item.image_url %}
-                        <img src="{{ item.image_url }}" loading="lazy">
+                        <img src="{{ item.image_url }}" loading="lazy" decoding="async" alt="">
                         {% endif %}
                     </div>
                     
@@ -76,7 +76,7 @@
                 <div class="modal-body">
                     <div class="gallery-container">
                         <button class="gallery-nav prev" id="society-modal-prev" title="Previous"><i class="fas fa-chevron-left"></i></button>
-                        <img id="society-modal-cert-image" src="" class="gallery-image">
+                        <img id="society-modal-cert-image" src="" class="gallery-image" decoding="async" alt="">
                         <button class="gallery-nav next" id="society-modal-next" title="Next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>

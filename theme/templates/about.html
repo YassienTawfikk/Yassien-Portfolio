@@ -8,9 +8,9 @@
 
 {% block content %}
 <div class="images-holder">
-    <span class="image-box image"><img src="{{ about.image_01 }}" loading="lazy"></span>
-    <span class="image-box image"><img src="{{ about.image_02 }}" loading="lazy"></span>
-    <span class="image-box image"><img src="{{ about.image_03 }}" loading="lazy"></span>
+    <span class="image-box image"><img src="{{ about.image_01 }}" data-preload-critical fetchpriority="high" decoding="async" alt=""></span>
+    <span class="image-box image"><img src="{{ about.image_02 }}" loading="lazy" decoding="async" alt=""></span>
+    <span class="image-box image"><img src="{{ about.image_03 }}" loading="lazy" decoding="async" alt=""></span>
 </div>
 
 <div class="main-container">
