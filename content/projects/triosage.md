@@ -4,7 +4,7 @@ short_description: An advanced multi-agent decision support system that processe
   user scenarios through a sequential pipeline of specialized AI agents for unbiased,
   actionable advice.
 order: 2
-overview_image_id: https://i.postimg.cc/QxSr9WB8/Trio-Sage-Poster.png
+overview_image_id: /images/projects/TrioSage_Poster.webp
 year: '2026'
 domain_id: multi_agent_system
 category_id: decision_support_system

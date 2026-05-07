@@ -2,7 +2,7 @@
 title: EdgeEnhance
 short_description: Edge and boundary detection toolkit integrating Canny, Hough Transform,
   and Active Contour Models for image analysis.
-overview_image_id: XVMmwH8P/Edge-Enhance-overview.png
+overview_image_id: /images/projects/EdgeEnhance_Poster.webp
 year: '2025'
 domain_id: computer_vision
 category_id: computer_vision_image_processing

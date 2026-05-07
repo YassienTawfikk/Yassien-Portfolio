@@ -2,7 +2,7 @@
 title: Soundprints
 short_description: Shazam-like audio recognition app using spectrogram-based fingerprinting
   and similarity analysis, with support for audio mixing.
-overview_image_id: nF2WfHJJ/Soundprints-overview.png
+overview_image_id: /images/projects/Soundprints_Poster.webp
 year: '2024'
 domain_id: audio_signal_processing
 category_id: biomedical_signal_processing

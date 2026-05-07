@@ -11,7 +11,7 @@ highlights:
 - Upload and playback of ECG recordings with session management controls.
 - Clinically inspired PyQt5 interface with clear visualization of vital signals.
 order: 1
-overview_image_id: DzNQFvLV/Pulse-Spy-Design.png
+overview_image_id: /images/projects/PulseSpy_Poster.webp
 short_description: Deep learning-based arrhythmia detection system, classifies Normal
   rhythm, Atrial Fibrillation (AFib), Tachycardia, and Bradycardia embedded in ECG
   monitoring system with real-time visualization for patient monitoring.

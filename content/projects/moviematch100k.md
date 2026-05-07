@@ -2,7 +2,7 @@
 title: MovieMatch100K
 short_description: A modular movie recommendation system using the MovieLens 100K
   dataset with collaborative filtering and SVD.
-overview_image_id: tXhfD3vJ/Movie-Match100K-overview.png
+overview_image_id: /images/projects/MovieMatch100K_Poster.webp
 year: '2024'
 domain_id: ai_data_science
 category_id: ai_data_science

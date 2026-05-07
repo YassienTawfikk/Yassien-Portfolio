@@ -3,7 +3,7 @@ title: AudiophileEQ
 short_description: A versatile desktop signal equalizer for audio, music, speech,
   and biomedical signals, allowing dynamic frequency adjustments with interactive
   visualization.
-overview_image_id: mT1K1fQj/Audiophile-EQ-overview.png
+overview_image_id: /images/projects/AudiophileEQ_Poster.webp
 year: '2025'
 domain_id: audio_signal_processing
 category_id: biomedical_signal_processing

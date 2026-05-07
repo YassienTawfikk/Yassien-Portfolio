@@ -10,7 +10,7 @@ highlights:
 - Modular driver architecture for GPIO, TIM, EXTI, ADC, LCD.
 - Proteus simulation included for each subproject and deployable on STM32 hardware.
 order: 3
-overview_image_id: FHNYzFDM/STM32Lab-Suite.png
+overview_image_id: /images/projects/STM32LabSuite_Poster.webp
 short_description: Modular umbrella repository of three STM32F401VE embedded projects
   with real-time control, interrupt handling, and modular driver abstraction.
 tags:

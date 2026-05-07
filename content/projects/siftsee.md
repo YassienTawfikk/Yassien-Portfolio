@@ -10,7 +10,7 @@ highlights:
 - Interactive GUI with visualizations of keypoints, descriptors, and matched pairs.
 - Analyze performance with timing comparisons and visual inspection.
 order: 4
-overview_image_id: Zb4QQWX1/Sift-See-overview.png
+overview_image_id: /images/projects/SiftSee_Poster.webp
 short_description: A feature detection and matching toolkit using Harris corners,
   SIFT descriptors, and template matching.
 tags:

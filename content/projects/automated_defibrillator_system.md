@@ -9,7 +9,7 @@ highlights:
 - Interactive GUI displaying ECG signals, BPM, alerts, and shock logs.
 - Bluetooth communication links software detection with hardware execution.
 order: 2
-overview_image_id: 4XHjHkzp/Automated-Defibrillator-System-overview.png
+overview_image_id: /images/projects/AutomatedDefibrillatorSystem_Poster.webp
 short_description: Prototype system integrating real-time ECG analysis with Arduino-controlled
   shock delivery for arrhythmia detection and safe hardware simulation.
 tags:

@@ -2,7 +2,7 @@
 title: SigmaVision
 short_description: A modular image analysis toolkit combining thresholding techniques
   with unsupervised machine learning-based segmentation.
-overview_image_id: tqpccsLy/Sigma-Vision-overview.png
+overview_image_id: /images/projects/SigmaVision_Poster.webp
 year: '2025'
 domain_id: computer_vision
 category_id: computer_vision_image_processing

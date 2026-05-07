@@ -10,7 +10,7 @@ highlights:
 - Illustrates Fourier relationships between k-space and spatial domain, and artifacts
   from undersampling.
 order: 5
-overview_image_id: cx0zzvPh/MR-Frequency-Sculptor-overview.png
+overview_image_id: /images/projects/MRFrequencySculptor_Poster.webp
 short_description: Interactive Python tool for exploring k-space manipulations in
   MRI, visualizing reconstruction effects, and analyzing image quality.
 tags:

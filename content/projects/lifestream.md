@@ -12,7 +12,7 @@ highlights:
 - Clean architecture with Riverpod and modular feature-first structure.
 - End-to-end firmware + mobile app ecosystem built from scratch.
 order: 1
-overview_image_id: D2qD5rpX/Life-Stream-overview.png
+overview_image_id: /images/projects/LifeStream_Poster.webp
 short_description: Mobile health and safety platform integrating a wearable ESP32
   device for real-time heart monitoring, SOS alerts, and live location tracking.
 tags:

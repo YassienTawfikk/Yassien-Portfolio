@@ -2,7 +2,7 @@
 title: SonoMetric
 short_description: Medical-grade Pulsed Doppler Ultrasound simulation with a high-fidelity
   physics engine, real-time STFT spectral analysis, and laminar flow modeling.
-overview_image_id: https://res.cloudinary.com/dzn4mqtzg/image/upload/v1766534803/SonoMetric_Poster_c5xwx2.png
+overview_image_id: /images/projects/SonoMetric_Poster.webp
 year: '2025'
 domain_id: biomedical_engineering
 category_id: biomedical_signal_processing

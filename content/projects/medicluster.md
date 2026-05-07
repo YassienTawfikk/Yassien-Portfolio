@@ -9,7 +9,7 @@ highlights:
 - Automated inference pipeline for new patient input.
 - High stability with ARI=1.0 and validated clustering metrics.
 order: 5
-overview_image_id: jsz9vH35/Medi-Cluster-overview.png
+overview_image_id: /images/projects/MediCluster_Poster.webp
 short_description: Patient dataset clustering using K-Means and PCA for identifying
   meaningful patient subgroups.
 tags:

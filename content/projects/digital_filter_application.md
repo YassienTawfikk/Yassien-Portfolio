@@ -3,7 +3,7 @@ title: Digital Filter Application
 short_description: Interactive tool for designing, visualizing, and applying digital
   filters using z-plane zero-pole manipulation, with real-time frequency response
   and signal processing.
-overview_image_id: dJZgZP84/Digital-Filter-Application-overview.png
+overview_image_id: /images/projects/DigitalFilterApplication_Poster.webp
 year: '2024'
 domain_id: signal_processing
 category_id: biomedical_signal_processing

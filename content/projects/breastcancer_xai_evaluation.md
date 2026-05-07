@@ -12,7 +12,7 @@ highlights:
 - 'Clinical-style evaluation metrics: Precision, Recall, F1-score, ROC-AUC, PR curves.'
 - Transparent pipeline emphasizing trustworthiness in medical AI applications.
 order: 2
-overview_image_id: BJPRP9xF/Breast-Cancer-XAI-Evaluation-overview.png
+overview_image_id: /images/projects/BreastCancerXAIEvaluation_Poster.webp
 short_description: Exploring explainable AI for breast cancer classification with
   SHAP interpretability, precision-recall metrics, and handling imbalanced datasets.
 tags:

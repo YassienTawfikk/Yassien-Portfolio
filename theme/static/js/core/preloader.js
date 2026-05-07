@@ -2,11 +2,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("global-preloader");
     const FADE_OUT_DELAY = 500;
-    const FAILSAFE_TIMEOUT = 15000;
+    const FAILSAFE_TIMEOUT = 3000;
     const DOM_STABILIZATION_DELAY = 100;
 
     let failsafeTimer;
     let isTransitioning = false;
+
+    // ADDED INITIAL GLOBAL FAILSAFE: Ensure we NEVER block forever even if window.load hangs
+    let initialFailsafe = setTimeout(forceHide, FAILSAFE_TIMEOUT);
 
     // --- Core Visualization Control ---
 
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (preloader && !preloader.classList.contains("hidden")) {
             // Cancel failsafe since we are closing naturally (or forced)
             clearTimeout(failsafeTimer);
+            clearTimeout(initialFailsafe);
 
             setTimeout(() => {
                 preloader.classList.add("hidden");
@@ -47,18 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             // Select all images in the content area (including lazy loaded ones, as we want the "fully loaded" feel)
             // Note: Since we have aggressive pre-caching, this should be fast.
-            const images = Array.from(document.querySelectorAll("#page-content img"));
+            const images = Array.from(document.querySelectorAll(".main-content img"));
 
             if (images.length === 0) {
                 hidePreloader();
                 return;
             }
 
-            // User requested explicit 15-second timeout or until images are loaded
+            // User requested explicit 3-second timeout or until images are loaded
             const loadFailsafe = setTimeout(() => {
-                console.warn("Preloader timeout (15s) reached. Forcing hide.");
+                console.warn(`Preloader timeout (${FAILSAFE_TIMEOUT}ms) reached. Forcing hide.`);
                 hidePreloader();
-            }, 15000);
+            }, FAILSAFE_TIMEOUT);
 
             const imagePromises = images.map((img) => {
                 return new Promise((resolve) => {
@@ -149,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const contentDiv = document.getElementById("page-content");
+    const contentDiv = document.querySelector(".main-content");
     if (contentDiv) {
         observer.observe(contentDiv, { childList: true, subtree: true });
     }

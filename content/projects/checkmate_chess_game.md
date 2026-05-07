@@ -2,7 +2,7 @@
 title: CheckMate - Chess Game
 short_description: Two-player chess game with GUI using Java Swing, featuring move
   validation, themes, and gameplay tracking.
-overview_image_id: 7qJjJ8gn/Check-Mate-Chess-Game-overview.png
+overview_image_id: /images/projects/CheckMateChessGame_Poster.webp
 year: '2024'
 domain_id: game_development
 category_id: game_development

@@ -11,7 +11,7 @@ highlights:
 - Asynchronous processing with worker threads for responsive UI.
 - Dual output viewports with export support.
 order: 1
-overview_image_id: yVF5nmpS/Image-FT-Mixer-Pro-overview.png
+overview_image_id: /images/projects/ImageFTMixerPro_Poster.webp
 short_description: Desktop application for analyzing, visualizing, and mixing Fourier
   Transform components from up to four images.
 tags:

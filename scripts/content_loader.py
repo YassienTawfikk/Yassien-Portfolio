@@ -108,7 +108,7 @@ def load_data(data_dir):
                     image_host = config.get('image_host', '')
                     if 'overview_image_id' in proj:
                         img_id = proj['overview_image_id']
-                        if img_id.startswith('http://') or img_id.startswith('https://'):
+                        if img_id.startswith('http://') or img_id.startswith('https://') or img_id.startswith('/'):
                             proj['overview_image'] = img_id
                         else:
                             proj['overview_image'] = image_host + img_id
