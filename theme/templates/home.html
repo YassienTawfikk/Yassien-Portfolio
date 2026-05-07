@@ -9,7 +9,7 @@
 {% block content %}
 <div class="intro-wrapper">
     <div class="profile-section">
-        <img src="{{ home['profile photo'] }}" class="home-intro-image" alt="Profile Photo">
+        <img src="{{ home['profile photo'] }}" class="home-intro-image" alt="Profile Photo" data-preload-critical fetchpriority="high" decoding="async">
     </div>
     <div class="heading-section">
         <span class="name-title">
@@ -91,4 +91,3 @@
 </script>
 <script src="/js/pages/pdf_viewer.js?v={{ now }}_16"></script>
 {% endblock %}
-

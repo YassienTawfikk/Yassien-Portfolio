@@ -11,7 +11,7 @@
     <!-- Visual Section (Left) -->
     <div class="contact-visual-section">
         {% if contact.profile.image %}
-        <img src="{{ contact.profile.image }}" alt="Contact Visual">
+        <img src="{{ contact.profile.image }}" alt="Contact Visual" data-preload-critical fetchpriority="high" decoding="async">
         {% endif %}
     </div>
 

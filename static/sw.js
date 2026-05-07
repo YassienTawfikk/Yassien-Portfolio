@@ -7,7 +7,13 @@ const PRECACHE_URLS = []; // Will be populated by build script during deployment
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(ASSETS_CACHE).then((cache) => {
-            return cache.addAll(PRECACHE_URLS);
+            return Promise.all(
+                PRECACHE_URLS.map((url) => {
+                    return cache.add(url).catch((error) => {
+                        console.warn('Precache skipped:', url, error);
+                    });
+                })
+            );
         })
     );
     self.skipWaiting();
@@ -30,6 +36,8 @@ self.addEventListener('activate', (event) => {
 
 // Fetch Event
 self.addEventListener('fetch', (event) => {
+    if (event.request.method !== 'GET') return;
+
     const url = new URL(event.request.url);
 
     // ONLY handle same-origin requests.
@@ -40,7 +48,18 @@ self.addEventListener('fetch', (event) => {
     if (event.request.mode === 'navigate') {
         event.respondWith(
             fetch(event.request)
-                .catch(() => caches.match(event.request))
+                .then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        caches.open(ASSETS_CACHE).then((cache) => {
+                            cache.put(event.request, networkResponse.clone());
+                        });
+                    }
+                    return networkResponse;
+                })
+                .catch(() => {
+                    return caches.match(event.request)
+                        .then((cachedResponse) => cachedResponse || caches.match('/index.html'));
+                })
         );
         return;
     }

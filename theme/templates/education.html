@@ -9,8 +9,8 @@
 {% block content %}
 <div class="education-port">
     <div class="image-holder">
-        <div><img src="{{ education.image_01 }}"></div>
-        <div><img src="{{ education.image_02 }}"></div>
+        <div><img src="{{ education.image_01 }}" data-preload-critical fetchpriority="high" decoding="async" alt=""></div>
+        <div><img src="{{ education.image_02 }}" loading="lazy" decoding="async" alt=""></div>
     </div>
     <div class="education-container">
         <span class="unified-page-title title-left underline-80px">Education</span>

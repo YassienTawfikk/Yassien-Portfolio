@@ -1,160 +1,102 @@
-/* Smart Global Preloader Logic */
+/* Global Preloader Behavior */
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("global-preloader");
-    const FADE_OUT_DELAY = 500;
-    const FAILSAFE_TIMEOUT = 3000;
-    const DOM_STABILIZATION_DELAY = 100;
+    if (!preloader) return;
 
-    let failsafeTimer;
-    let isTransitioning = false;
+    const MIN_VISIBLE_TIME = 550;
+    const MAX_INITIAL_WAIT = 2800;
+    const TRANSITION_FAILSAFE = 3500;
+    const DOM_STABILIZATION_DELAY = 80;
 
-    // ADDED INITIAL GLOBAL FAILSAFE: Ensure we NEVER block forever even if window.load hangs
-    let initialFailsafe = setTimeout(forceHide, FAILSAFE_TIMEOUT);
+    const shownAt = performance.now();
+    let transitionTimer;
+    let hidden = false;
 
-    // --- Core Visualization Control ---
-
-    function showPreloader() {
-        if (preloader && preloader.classList.contains("hidden")) {
-            preloader.classList.remove("hidden");
-            isTransitioning = true;
-
-            // Always set a failsafe when showing
-            clearTimeout(failsafeTimer);
-            failsafeTimer = setTimeout(forceHide, FAILSAFE_TIMEOUT);
-        }
+    function wait(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
-    function forceHide() {
-        if (preloader && !preloader.classList.contains("hidden")) {
-            console.warn("Preloader failsafe triggered: forcing hide.");
-            hidePreloader();
+    function waitForImage(img) {
+        if (!img || (img.complete && img.naturalWidth > 0)) {
+            return Promise.resolve();
         }
+
+        return new Promise((resolve) => {
+            const done = () => resolve();
+            img.addEventListener("load", done, { once: true });
+            img.addEventListener("error", done, { once: true });
+        }).then(() => {
+            if (img.decode && img.complete && img.naturalWidth > 0) {
+                return img.decode().catch(() => undefined);
+            }
+            return undefined;
+        });
+    }
+
+    function getCriticalImages() {
+        return Array.from(document.querySelectorAll(".main-content img[data-preload-critical]"));
+    }
+
+    function raceWithTimeout(promise, timeout) {
+        return Promise.race([
+            promise,
+            wait(timeout)
+        ]);
     }
 
     function hidePreloader() {
-        if (preloader && !preloader.classList.contains("hidden")) {
-            // Cancel failsafe since we are closing naturally (or forced)
-            clearTimeout(failsafeTimer);
-            clearTimeout(initialFailsafe);
+        if (hidden) return;
 
-            setTimeout(() => {
-                preloader.classList.add("hidden");
-                isTransitioning = false;
-            }, FADE_OUT_DELAY);
-        }
+        const elapsed = performance.now() - shownAt;
+        const remaining = Math.max(0, MIN_VISIBLE_TIME - elapsed);
+
+        hidden = true;
+        clearTimeout(transitionTimer);
+
+        setTimeout(() => {
+            preloader.classList.add("hidden");
+        }, remaining);
     }
 
-    // --- Strict Wait Logic ---
+    function showForNavigation() {
+        if (!preloader.classList.contains("hidden")) return;
 
-    function waitForImagesAndHide() {
-        // give the DOM a moment to settle (unfolding logic, etc)
+        preloader.classList.remove("hidden");
+        clearTimeout(transitionTimer);
+        transitionTimer = setTimeout(() => {
+            preloader.classList.add("hidden");
+        }, TRANSITION_FAILSAFE);
+    }
+
+    function readyInitialView() {
         setTimeout(() => {
-            // Select all images in the content area (including lazy loaded ones, as we want the "fully loaded" feel)
-            // Note: Since we have aggressive pre-caching, this should be fast.
-            const images = Array.from(document.querySelectorAll(".main-content img"));
-
-            if (images.length === 0) {
-                hidePreloader();
-                return;
-            }
-
-            // User requested explicit 3-second timeout or until images are loaded
-            const loadFailsafe = setTimeout(() => {
-                console.warn(`Preloader timeout (${FAILSAFE_TIMEOUT}ms) reached. Forcing hide.`);
-                hidePreloader();
-            }, FAILSAFE_TIMEOUT);
-
-            const imagePromises = images.map((img) => {
-                return new Promise((resolve) => {
-                    // specific check for already loaded images
-                    if (img.complete && img.naturalHeight !== 0) {
-                        resolve();
-                    } else {
-                        // attach listeners
-                        img.addEventListener("load", () => resolve(), { once: true });
-                        img.addEventListener("error", () => resolve(), { once: true }); // resolve on error too so we don't hang
-                    }
-                });
-            });
-
-            Promise.all(imagePromises)
-                .then(() => {
-                    clearTimeout(loadFailsafe); // Clear the failsafe if we finish early
-                    hidePreloader();
-                })
-                .catch((e) => {
-                    console.error("Preloader error:", e);
-                    hidePreloader();
-                });
-
+            const imagePromises = getCriticalImages().map(waitForImage);
+            raceWithTimeout(Promise.all(imagePromises), MAX_INITIAL_WAIT)
+                .then(hidePreloader)
+                .catch(hidePreloader);
         }, DOM_STABILIZATION_DELAY);
     }
 
-    // --- Triggers ---
-
-    // 1. Initial Load
-    window.addEventListener("load", () => {
-        waitForImagesAndHide();
+    readyInitialView();
+    window.addEventListener("load", hidePreloader, { once: true });
+    window.addEventListener("pageshow", function (event) {
+        if (event.persisted) hidePreloader();
     });
 
-    // Track current path to detect actual page changes vs hash changes
-    let currentPath = window.location.pathname;
+    document.addEventListener("click", function (event) {
+        const link = event.target.closest("a");
+        if (!link || !link.href || event.defaultPrevented) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-    // 2. Click Navigation (Internal Links)
-    document.addEventListener("click", function (e) {
-        const target = e.target.closest("a");
-        if (target && target.href && target.href.startsWith(window.location.origin)) {
-            const isBlank = target.getAttribute("target") === "_blank";
-            const isDownload = target.hasAttribute("download");
+        const url = new URL(link.href, window.location.href);
+        const isSameOrigin = url.origin === window.location.origin;
+        const isSameDocument = url.pathname === window.location.pathname && url.search === window.location.search;
+        const isHashOnly = isSameDocument && url.hash;
+        const opensNewContext = link.target && link.target !== "_self";
+        const isDownload = link.hasAttribute("download");
 
-            // robust check for same-page hash navigation
-            // If path and query are same, but hash is different (or present), it's a local jump
-            const isSamePage = (target.pathname === window.location.pathname) &&
-                (target.search === window.location.search);
-
-            const hasHash = target.getAttribute("href").includes("#") || target.hash.length > 0;
-
-            // If it's a hash jump on the same page, do NOT show preloader
-            if (isSamePage && hasHash) {
-                return;
-            }
-
-            // Normal Navigation Check
-            if (!isBlank && !isSamePage && !isDownload) {
-                showPreloader();
-            }
+        if (isSameOrigin && !isHashOnly && !opensNewContext && !isDownload) {
+            showForNavigation();
         }
     });
-
-    // 3. History Navigation
-    window.addEventListener("popstate", () => {
-        // Only trigger if the actual path changed (ignore hash changes)
-        const newPath = window.location.pathname;
-        if (newPath !== currentPath) {
-            currentPath = newPath;
-            showPreloader();
-        }
-    });
-
-    // 4. Dash Content Injection (MutationObserver)
-    const observer = new MutationObserver(function (mutations) {
-        let significantMutation = false;
-        mutations.forEach((mutation) => {
-            if (mutation.addedNodes.length > 0) {
-                significantMutation = true;
-            }
-        });
-
-        if (significantMutation) {
-            // New content injected by Dash.
-            // If we are currently showing the loader (from click listener), this logic will check images & hide it.
-            // If the loader wasn't showing (background update?), this might hide strictly, but that's okay.
-            waitForImagesAndHide();
-        }
-    });
-
-    const contentDiv = document.querySelector(".main-content");
-    if (contentDiv) {
-        observer.observe(contentDiv, { childList: true, subtree: true });
-    }
 });
