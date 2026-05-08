@@ -41,6 +41,10 @@ def setup_output():
         if os.path.exists(src):
             shutil.copytree(src, os.path.join(OUTPUT_DIR, subdir))
 
+    well_known_src = os.path.join(PROJECT_ROOT, 'static', '.well-known')
+    if os.path.exists(well_known_src):
+        shutil.copytree(well_known_src, os.path.join(OUTPUT_DIR, '.well-known'))
+
 
 def render_pages(site_data):
     """Render all Jinja2 templates with site data."""

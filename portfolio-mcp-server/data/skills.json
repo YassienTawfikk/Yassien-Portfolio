@@ -1,0 +1,159 @@
+{
+  "categories": [
+    {
+      "name": "AI & Deep Learning",
+      "skills": [
+        {
+          "name": "Neural Network Design",
+          "project_ids": [
+            "neuropathx",
+            "pediatric-radiograph-diagnosis",
+            "pulsespy"
+          ]
+        },
+        {
+          "name": "Medical Image Segmentation",
+          "project_ids": [
+            "neuropathx",
+            "pediatric-radiograph-diagnosis"
+          ]
+        },
+        {
+          "name": "Explainable AI",
+          "project_ids": [
+            "breastcancer-xai-evaluation",
+            "pediatric-radiograph-diagnosis"
+          ]
+        },
+        {
+          "name": "Classical Machine Learning",
+          "project_ids": [
+            "breastcancer-xai-evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Vision & Imaging",
+      "skills": [
+        {
+          "name": "Image Preprocessing",
+          "project_ids": [
+            "image-ft-mixer-pro",
+            "siftsee"
+          ]
+        },
+        {
+          "name": "Feature Extraction",
+          "project_ids": [
+            "siftsee",
+            "image-ft-mixer-pro"
+          ]
+        },
+        {
+          "name": "Medical Imaging",
+          "project_ids": [
+            "neuropathx",
+            "pediatric-radiograph-diagnosis",
+            "sonometric"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frameworks & Tools",
+      "skills": [
+        {
+          "name": "Python",
+          "project_ids": [
+            "neuropathx",
+            "breastcancer-xai-evaluation",
+            "pulsespy"
+          ]
+        },
+        {
+          "name": "PyTorch",
+          "project_ids": [
+            "pediatric-radiograph-diagnosis"
+          ]
+        },
+        {
+          "name": "TensorFlow",
+          "project_ids": [
+            "neuropathx"
+          ]
+        },
+        {
+          "name": "Scikit-learn",
+          "project_ids": [
+            "breastcancer-xai-evaluation"
+          ]
+        },
+        {
+          "name": "OpenCV",
+          "project_ids": [
+            "siftsee",
+            "image-ft-mixer-pro"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Software Engineering",
+      "skills": [
+        {
+          "name": "FastAPI",
+          "project_ids": [
+            "neuropathx"
+          ]
+        },
+        {
+          "name": "HTML/CSS/JavaScript",
+          "project_ids": [
+            "hospital-system-website",
+            "neuropathx",
+            "sequencealignx"
+          ]
+        },
+        {
+          "name": "GUI Development",
+          "project_ids": [
+            "image-ft-mixer-pro",
+            "pulsespy"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Biomedical & Embedded",
+      "skills": [
+        {
+          "name": "Signal Processing",
+          "project_ids": [
+            "pulsespy",
+            "sonometric"
+          ]
+        },
+        {
+          "name": "STM32",
+          "project_ids": [
+            "stm32labsuite"
+          ]
+        },
+        {
+          "name": "Embedded Systems",
+          "project_ids": [
+            "lifestream",
+            "stm32labsuite"
+          ]
+        },
+        {
+          "name": "Bioinformatics",
+          "project_ids": [
+            "sequencealignx"
+          ]
+        }
+      ]
+    }
+  ]
+}

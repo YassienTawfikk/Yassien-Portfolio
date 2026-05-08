@@ -1,0 +1,853 @@
+{
+  "projects": [
+    {
+      "id": "neuropathx",
+      "title": "NeuroPathX",
+      "category": "Medical AI",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "TensorFlow",
+        "FastAPI",
+        "NumPy",
+        "scikit-learn",
+        "Pillow",
+        "HTML/CSS/JS"
+      ],
+      "highlights": [
+        "Xception-based CNN achieving 92% accuracy on brain tumor MRI classification.",
+        "Classifies Glioma, Meningioma, Pituitary tumors, and No Tumor.",
+        "Automated PDF-style clinical report generation for each scan.",
+        "Frontend-backend web platform with FastAPI and simple HTTP server frontend."
+      ],
+      "github": "https://github.com/YassienTawfikk/NeuroPathX"
+    },
+    {
+      "id": "breastcancer-xai-evaluation",
+      "title": "BreastCancer-XAI-Evaluation",
+      "category": "Medical AI",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "scikit-learn",
+        "pandas",
+        "matplotlib",
+        "seaborn",
+        "imbalanced-learn",
+        "SHAP",
+        "argparse/jsonargparse"
+      ],
+      "highlights": [
+        "Binary classification of breast tumors using Logistic Regression, Random Forest, and SVM.",
+        "High performance across models: Accuracy 95-96%, ROC-AUC 0.99, Precision and Recall 95-97%.",
+        "Class imbalance addressed via SMOTE to improve model reliability.",
+        "Global and local explainability with SHAP summary and waterfall plots."
+      ],
+      "github": "https://github.com/YassienTawfikk/BreastCancer-XAI-Evaluation"
+    },
+    {
+      "id": "pediatric-radiograph-diagnosis",
+      "title": "Pediatric Radiograph Diagnosis",
+      "category": "Medical AI",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "TensorFlow/Keras",
+        "ResNet-50",
+        "Grad-CAM",
+        "Scikit-learn",
+        "Matplotlib",
+        "Jupyter Notebook"
+      ],
+      "highlights": [
+        "Fine-tuned ResNet-50 architecture for pediatric pneumonia detection.",
+        "Achieved 93.59% sensitivity, minimizing false negatives.",
+        "Two-stage training strategy: feature extraction followed by fine-tuning.",
+        "Grad-CAM integration for visual explainability of model decisions."
+      ],
+      "github": "https://github.com/YassienTawfikk/Pediatric-Radiograph-Diagnosis"
+    },
+    {
+      "id": "pulsespy",
+      "title": "PulseSpy",
+      "category": "Medical AI",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "pyqtgraph",
+        "NumPy",
+        "SciPy",
+        "TensorFlow/Keras",
+        "pandas",
+        "wfdb",
+        "QSound"
+      ],
+      "highlights": [
+        "Deep learning-based arrhythmia detection using a custom CNN model.",
+        "Real-time ECG visualization and live heart-rate monitoring.",
+        "Classifies Normal rhythm, Atrial Fibrillation, Tachycardia, and Bradycardia.",
+        "Hybrid signal processing with dynamic QRS and P-wave detection."
+      ],
+      "github": "https://github.com/YassienTawfikk/PulseSpy.git"
+    },
+    {
+      "id": "image-ft-mixer-pro",
+      "title": "Image FT Mixer Pro",
+      "category": "Computer Vision",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "OpenCV",
+        "NumPy"
+      ],
+      "highlights": [
+        "Supports four simultaneous image viewports with unified resizing.",
+        "Interactive FT visualization with magnitude, phase, real, and imaginary modes.",
+        "Brightness and contrast adjustment using mouse drag controls.",
+        "Frequency-domain mixing using Gaussian region masks."
+      ],
+      "github": "https://github.com/YassienTawfikk/Image-FT-Mixer-Pro.git"
+    },
+    {
+      "id": "lifestream",
+      "title": "LifeStream",
+      "category": "Mobile & IoT System",
+      "year": "2025",
+      "tech_stack": [
+        "Flutter",
+        "Firebase",
+        "OpenStreetMap",
+        "Riverpod",
+        "GoRouter",
+        "ESP32",
+        "ESP8266",
+        "Arduino",
+        "PPG Sensor"
+      ],
+      "highlights": [
+        "Real-time BPM streaming from ESP32 wearable using Firebase Realtime Database.",
+        "ECG-style waveform visualization with dynamic heart rhythm tracking.",
+        "Automatic SOS alerts delivering location and heart rate to trusted contacts.",
+        "End-to-end firmware and mobile app ecosystem built from scratch."
+      ],
+      "github": "https://github.com/YassienTawfikk/LifeStream"
+    },
+    {
+      "id": "triosage-ai",
+      "title": "TrioSage-AI",
+      "category": "Multi-Agent System",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "LLM Workflows",
+        "Multi-Agent Design",
+        "Clinical Reasoning"
+      ],
+      "highlights": [
+        "Uses a multi-agent design for decomposing medical decision-support tasks.",
+        "Demonstrates structured reasoning and coordination across specialized roles.",
+        "Kept as decision support, not as an autonomous treatment system."
+      ],
+      "github": null
+    },
+    {
+      "id": "hospital-system-website",
+      "title": "Hospital System Website",
+      "category": "Web & Mobile App",
+      "year": "2024",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "highlights": [
+        "Patient-facing healthcare web interface.",
+        "Structured presentation of hospital services and departments.",
+        "Responsive frontend implementation."
+      ],
+      "github": null
+    },
+    {
+      "id": "sequencealignx",
+      "title": "SequenceAlignX",
+      "category": "Web & Mobile App",
+      "year": "2025",
+      "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bioinformatics Algorithms"
+      ],
+      "highlights": [
+        "Web-based sequence alignment workflow.",
+        "Applies algorithmic thinking to biological data.",
+        "Shows crossover between biomedical engineering and software tooling."
+      ],
+      "github": null
+    },
+    {
+      "id": "stm32labsuite",
+      "title": "STM32LabSuite",
+      "category": "Embedded Systems",
+      "year": "2024",
+      "tech_stack": [
+        "STM32",
+        "Embedded C",
+        "Microcontrollers",
+        "Peripherals"
+      ],
+      "highlights": [
+        "STM32-focused embedded development project.",
+        "Demonstrates low-level firmware and peripheral control.",
+        "Relevant to biomedical device prototyping."
+      ],
+      "github": null
+    },
+    {
+      "id": "sonometric",
+      "title": "SonoMetric",
+      "category": "Biomedical Engineering",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Signal Processing",
+        "Image Analysis"
+      ],
+      "highlights": [
+        "Biomedical analysis tool focused on measurement workflows.",
+        "Bridges imaging/signal concepts with practical software interfaces.",
+        "Demonstrates healthcare-oriented computational engineering."
+      ],
+      "github": null
+    },
+    {
+      "id": "siftsee",
+      "title": "SiftSee",
+      "category": "Computer Vision",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "Image Processing"
+      ],
+      "highlights": [
+        "Feature extraction and local descriptor workflows.",
+        "Classical computer vision implementation.",
+        "Useful foundation for visual matching and image analysis systems."
+      ],
+      "github": null
+    },
+    {
+      "id": "2d-beamforming-simulator",
+      "title": "2D Beamforming Simulator",
+      "category": "Signal Processing",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter"
+      ],
+      "highlights": [
+        "Real-time beam steering with adjustable angles and multiple array units.",
+        "Supports linear and curved array geometries with customizable parameters.",
+        "Visualizes constructive/destructive interference and beam profiles.",
+        "Scenario-based simulations: 5G communications, ultrasound imaging, and tumor ablation.",
+        "Equations implemented for phase shift, intensity maps, and array factor computations."
+      ],
+      "github": "https://github.com/YassienTawfikk/Beamforming-Simulator.git"
+    },
+    {
+      "id": "audiophileeq",
+      "title": "AudiophileEQ",
+      "category": "Audio & Signal Processing",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "PyQt / Tkinter",
+        "Signal Processing",
+        "Spectrogram Analysis",
+        "Wiener Filtering"
+      ],
+      "highlights": [
+        "Multiple equalizer modes including uniform range, instrument-specific, vowel removal, and Wiener filter for noise reduction.",
+        "Interactive GUI with dynamic sliders, spectrogram visualization, and playback controls.",
+        "Supports audio, musical, and biomedical signals for versatile experimentation.",
+        "Real-time reconstruction of adjusted signals for intuitive audio manipulation.",
+        "Audiogram scale and hybrid sound modes for advanced signal analysis."
+      ],
+      "github": "https://github.com/YassienTawfikk/AudiophileEQ.git"
+    },
+    {
+      "id": "automated-defibrillator-system",
+      "title": "Automated Defibrillator System",
+      "category": "Biomedical Engineering",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "Arduino",
+        "ECG Signal Processing",
+        "PyQt / Tkinter",
+        "Bluetooth Communication"
+      ],
+      "highlights": [
+        "Real-time ECG analysis for tachycardia and bradycardia detection.",
+        "Automated shock delivery using Arduino with safe low-voltage simulation.",
+        "Temperature monitoring to ensure safe hardware operation.",
+        "Interactive GUI displaying ECG signals, BPM, alerts, and shock logs.",
+        "Bluetooth communication links software detection with hardware execution."
+      ],
+      "github": "https://github.com/YassienTawfikk/Automated_Defibrillator.git"
+    },
+    {
+      "id": "biorhythm-analyzer",
+      "title": "BioRhythm Analyzer",
+      "category": "Biomedical Engineering",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "highlights": [
+        "Real-time HRV analysis with SDNN, RMSSD, pNN50 metrics.",
+        "Filtered and raw signal visualization for detailed analysis.",
+        "FHR monitoring with baseline, STV, and acceleration/deceleration detection.",
+        "Color-coded anomaly indicators for quick assessment.",
+        "Graphical interface designed for healthcare professionals.",
+        "Detailed statistics including RR interval histograms and outlier detection."
+      ],
+      "github": "https://github.com/YassienTawfikk/CTG-Monitor.git"
+    },
+    {
+      "id": "bonevision-dx-ray",
+      "title": "BoneVision DX-Ray",
+      "category": "Medical Imaging",
+      "year": "2026",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "NumPy",
+        "SciPy",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "Dual-Energy X-Ray material decomposition simulation separating bone and soft tissue.",
+        "Interactive visualization of Low-E and High-E projections using the Beer-Lambert law.",
+        "Digital phantom library (Ribcage, Cylinder, Layers) at 512x512 resolution.",
+        "Real-time quantitative evaluation metrics computing MAE, CNR, and SNR.",
+        "Configurable degradation modeling dynamically injecting noise and scatter."
+      ],
+      "github": "https://github.com/YassienTawfikk/BoneVision-DX-ray.git"
+    },
+    {
+      "id": "checkmate-chess-game",
+      "title": "CheckMate - Chess Game",
+      "category": "Game Development",
+      "year": "2024",
+      "tech_stack": [
+        "Java",
+        "Java Swing",
+        "GUI Development"
+      ],
+      "highlights": [
+        "Graphical interface with dynamic themes.",
+        "Full chess rules implementation including check/checkmate.",
+        "Interactive gameplay with valid move highlighting.",
+        "Tracks captured pieces and player timers."
+      ],
+      "github": "https://github.com/YassienTawfikk/CheckMate.git"
+    },
+    {
+      "id": "conveyorx",
+      "title": "ConveyorX",
+      "category": "Embedded Systems",
+      "year": "2025",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "PWM",
+        "ADC",
+        "LCD"
+      ],
+      "highlights": [
+        "Precise conveyor speed measurement using Timer Input Capture.",
+        "Reliable object counting via IR sensors and GPIO polling.",
+        "Adjustable DC motor speed control using PWM and Potentiometer (ADC).",
+        "Real-time visualization of Speed and Object Count on an LCD interface.",
+        "Modular driver design including RCC, GPIO, PWM, and LCD."
+      ],
+      "github": "https://github.com/YassienTawfikk/ConveyorX.git"
+    },
+    {
+      "id": "cybermazer-2077",
+      "title": "CyberMazer-2077",
+      "category": "Game Development",
+      "year": "2024",
+      "tech_stack": [
+        "HTML/CSS/JS",
+        "Tkinter / Pygame",
+        "Dynamic Programming"
+      ],
+      "highlights": [
+        "Mini and Mega maze options.",
+        "Interactive start point selection.",
+        "Dynamic programming algorithm for optimized pathfinding.",
+        "Visual representation of trajectories for both maze sizes."
+      ],
+      "github": "https://github.com/YassienTawfikk/CyberMazer-2077.git"
+    },
+    {
+      "id": "digital-filter-application",
+      "title": "Digital Filter Application",
+      "category": "Signal Processing",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Tkinter / PyQt",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "Interactive z-plane interface for placing zeros and poles.",
+        "Real-time magnitude and phase response updates.",
+        "Built-in library with 10+ standard digital filters (Butterworth, Chebyshev, Bessel, Elliptic, etc.).",
+        "Real-time signal processing with adjustable temporal resolution.",
+        "Phase correction using all-pass filters with customizable coefficients.",
+        "Export filter configurations to C code and save/load in CSV or text format."
+      ],
+      "github": "https://github.com/YassienTawfikk/Z-Domain-Filter"
+    },
+    {
+      "id": "drivesafe-sign-detection",
+      "title": "DriveSafe-Sign-Detection",
+      "category": "AI & Data Science",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "TensorFlow/Keras",
+        "CNN",
+        "MobileNetV2",
+        "GTSRB Dataset"
+      ],
+      "highlights": [
+        "Custom CNN achieving 96.23% accuracy on GTSRB test set.",
+        "MobileNetV2 used as baseline for comparative evaluation.",
+        "Full training pipeline with preprocessing, augmentation, and evaluation.",
+        "Comprehensive visualizations: training curves, confusion matrix, class distribution.",
+        "Modular project structure for scalability and experimentation."
+      ],
+      "github": "https://github.com/YassienTawfikk/DriveSafe-Sign-Detection.git"
+    },
+    {
+      "id": "dynamic-multi-channel-signal-viewer",
+      "title": "Dynamic Multi-Channel Signal Viewer",
+      "category": "Biomedical Engineering",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "Dynamic playback controls with adjustable speed and signal switching.",
+        "Graph linking/unlinking for synchronized viewing of multiple signals.",
+        "Add, merge, or overlay signals for comparison.",
+        "Signal customization: color, labels, titles, zoom/pan.",
+        "Glue window to combine signals and generate PDF reports.",
+        "Circular signal visualization and real-time weather signal indication."
+      ],
+      "github": "https://github.com/YassienTawfikk/Dynamic-Multi-Channel-Signal-Viewer"
+    },
+    {
+      "id": "edgeenhance",
+      "title": "EdgeEnhance",
+      "category": "Computer Vision",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "Matplotlib",
+        "scikit-image"
+      ],
+      "highlights": [
+        "Implemented Canny edge detection with optimized parameters for fine-grained edge maps.",
+        "Applied Hough Transform to detect lines, circles, and ellipses with accumulator voting.",
+        "Active Contour Models (Snakes) used to dynamically evolve contours around objects.",
+        "Outputs metrics like area, perimeter, and chain code for extracted shapes.",
+        "Supports grayscale and color images, suitable for biomedical and structural analysis."
+      ],
+      "github": "https://github.com/YassienTawfikk/EdgeEnhance"
+    },
+    {
+      "id": "facevector",
+      "title": "FaceVector",
+      "category": "AI & Data Science",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "PyQt5",
+        "NumPy",
+        "scikit-learn",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "Real-time face detection using Haar cascades.",
+        "PCA-based face recognition with dynamic training and embedding projection.",
+        "Supports both RGB and grayscale datasets with train/test splitting.",
+        "Performance evaluation with ROC curves and classification metrics.",
+        "Intuitive GUI for selecting images, viewing results, and adjusting detection parameters."
+      ],
+      "github": "https://github.com/YassienTawfikk/FaceVector"
+    },
+    {
+      "id": "interrupthandler",
+      "title": "InterruptHandler",
+      "category": "Embedded Systems",
+      "year": "2025",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "EXTI"
+      ],
+      "highlights": [
+        "Custom EXTI driver supporting rising, falling, and dual-edge triggers.",
+        "Real-time counter updates via ISRs with 3-digit 7-segment display multiplexing.",
+        "Critical section protection using __disable_irq() to prevent race conditions.",
+        "Three-button interface for counter control (Increment/Decrement) and LED toggling.",
+        "Designed for both Proteus simulation and hardware deployment."
+      ],
+      "github": "https://github.com/YassienTawfikk/InterruptHandler.git"
+    },
+    {
+      "id": "medicluster",
+      "title": "MediCluster",
+      "category": "Medical AI",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "scikit-learn",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Joblib"
+      ],
+      "highlights": [
+        "Optimized K-Means clustering with best k selection.",
+        "PCA for dimensionality reduction and 2D/3D visualization of clusters.",
+        "Weighted medical indicators for enhanced feature importance.",
+        "Automated inference pipeline for new patient input.",
+        "High stability with ARI=1.0 and validated clustering metrics."
+      ],
+      "github": "https://github.com/YassienTawfikk/MediCluster.git"
+    },
+    {
+      "id": "moviematch100k",
+      "title": "MovieMatch100K",
+      "category": "AI & Data Science",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "Surprise",
+        "PyTorch"
+      ],
+      "highlights": [
+        "Supports User-Based, Item-Based, and SVD Matrix Factorization models.",
+        "Top-k movie recommendations generated with evaluation metrics.",
+        "Precision@k and Recall@k used for practical performance evaluation.",
+        "SVD model achieves 41.78% Precision@5 and 14.75% Recall@5.",
+        "Modular design for easily switching between recommendation methods."
+      ],
+      "github": "https://github.com/YassienTawfikk/MovieMatch100K.git"
+    },
+    {
+      "id": "mr-frequency-sculptor",
+      "title": "MR Frequency Sculptor",
+      "category": "Biomedical Engineering",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "Matplotlib",
+        "PyQt / Tkinter",
+        "SciPy"
+      ],
+      "highlights": [
+        "Full, partial, low-pass, and high-pass k-space reconstruction methods for MRI images.",
+        "Interactive GUI for real-time visualization and comparison of reconstructed images.",
+        "Quantitative metrics including sharpness, noise, and mean absolute error (MAE).",
+        "Supports synthetic phantoms (Shepp-Logan), real MRI slices, and custom images.",
+        "Illustrates Fourier relationships between k-space and spatial domain, and artifacts from undersampling."
+      ],
+      "github": "https://github.com/YassienTawfikk/MR-Frequency-Sculptor"
+    },
+    {
+      "id": "musicspectronet",
+      "title": "MusicSpectroNet",
+      "category": "Signal Processing",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Librosa",
+        "PyTorch",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "highlights": [
+        "Tabular ML (XGBoost) achieved 92.64% test accuracy using extracted audio features.",
+        "CNN on spectrogram images was explored but achieved 23.33% accuracy.",
+        "Feature importance analysis highlights perceptual, spectral, and tonal characteristics as key indicators.",
+        "Pipeline supports 3-second segment feature extraction and preprocessing.",
+        "Comparison study between tabular and image-based approaches demonstrates performance trade-offs."
+      ],
+      "github": "https://github.com/YassienTawfikk/MusicSpectroNet.git"
+    },
+    {
+      "id": "oral-cancer-prediction",
+      "title": "Oral Cancer Prediction",
+      "category": "Medical AI",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "PyTorch Lightning",
+        "scikit-learn",
+        "pandas",
+        "matplotlib",
+        "shap",
+        "jsonargparse"
+      ],
+      "highlights": [
+        "Non-invasive oral cancer prediction using microbiome profiles from TCMA.",
+        "Random Forest classifier with class weighting for balanced performance.",
+        "SHAP-based feature explainability highlighting influential microbial taxa.",
+        "Professional CLI for flexible hyperparameter tuning and data configuration.",
+        "High predictive performance: 92.89% accuracy, AUROC 0.9714, PR-AUC 0.9588.",
+        "Comprehensive pipeline including preprocessing, modeling, evaluation, and visualization."
+      ],
+      "github": "https://github.com/YassienTawfikk/Oral-Cancer-Prediction.git"
+    },
+    {
+      "id": "pixelizing",
+      "title": "Pixelizing",
+      "category": "Computer Vision",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "PyQt"
+      ],
+      "highlights": [
+        "Add uniform noise to images for testing filter effectiveness.",
+        "Apply Median filtering to reduce 'salt and pepper' noise without blurring edges.",
+        "Edge detection using Prewitt operator for horizontal and vertical gradient detection.",
+        "Enhance image contrast using histogram equalization and CDF visualization.",
+        "Convert color images to grayscale for simplified analysis and processing.",
+        "Intuitive GUI to apply various processing techniques interactively."
+      ],
+      "github": "https://github.com/YassienTawfikk/Pixelizer.git"
+    },
+    {
+      "id": "predictiloan",
+      "title": "PredictiLoan",
+      "category": "Data Science & analytics",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "highlights": [
+        "SVM achieved 93.68% test accuracy, slightly outperforming Logistic Regression (91.57%).",
+        "ROC curves and confusion matrices illustrate strong classifier performance and recall.",
+        "Dataset preprocessing includes categorical encoding, scaling, and SMOTE for imbalance.",
+        "Pipeline supports end-to-end prediction from raw CSV inputs.",
+        "Shows practical comparison between linear and kernel-based models for financial risk assessment."
+      ],
+      "github": "https://github.com/YassienTawfikk/PredictiLoan.git"
+    },
+    {
+      "id": "press2display",
+      "title": "Press2Display",
+      "category": "Embedded Systems",
+      "year": "2025",
+      "tech_stack": [
+        "C",
+        "STM32F401VE",
+        "CMake",
+        "Proteus",
+        "GPIO",
+        "Keypad Driver"
+      ],
+      "highlights": [
+        "Flexible GPIO remapping utilizing PinConfig abstraction.",
+        "Real-time 2-digit multiplexed 7-segment display rendering.",
+        "Matrix keypad scanning algorithm with debounce handling.",
+        "Lookup table-based digit rendering replacing complex switch-case logic.",
+        "Modular driver architecture ensuring compatibility with Proteus and real hardware."
+      ],
+      "github": "https://github.com/YassienTawfikk/Press2Display.git"
+    },
+    {
+      "id": "pubmed-rct-classifier",
+      "title": "PubMed RCT Classifier",
+      "category": "Medical AI",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "TensorFlow/Keras",
+        "Transformers",
+        "Scikit-learn",
+        "Matplotlib",
+        "Pandas",
+        "NumPy"
+      ],
+      "highlights": [
+        "Achieved 84.9% Accuracy and 0.85 Weighted F1-Score on the PubMed 200k RCT dataset.",
+        "Classifies sentences into Background, Objective, Methods, Results, and Conclusions.",
+        "State-of-the-art Transformer architecture optimized for long-form medical text.",
+        "Comprehensive evaluation suite including PR curves, confusion matrices, and per-class metrics.",
+        "Strong performance in experimental sections (Methods F1: 0.91, Results F1: 0.89).",
+        "Modular pipeline design for easy training, evaluation, and inference."
+      ],
+      "github": "https://github.com/YassienTawfikk/PubMed-RCT-Classifier"
+    },
+    {
+      "id": "sensifoot",
+      "title": "SensiFoot",
+      "category": "Biomedical Engineering",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "PyQt5",
+        "NumPy",
+        "OpenCV"
+      ],
+      "highlights": [
+        "Precise 6-array anatomical mesh for localized plantar pressure visualization.",
+        "Real-time FSR physics pipeline converting raw voltage to applied force (Newtons).",
+        "Dynamic Biomechanical Gait Phase HUD detecting Heel Strike, Mid-Stance, and Toe-Off.",
+        "Real-time Center of Pressure (CoP) tracking using weighted spatial centroids.",
+        "Localized Ulcer Risk Alarm triggered by critical pressure thresholds (>85N).",
+        "Commercial-grade 'Clinical Dark Mode' UI built with PyQt5 and custom QPainter elements."
+      ],
+      "github": "https://github.com/YassienTawfikk/SensiFoot.git"
+    },
+    {
+      "id": "sigmavision",
+      "title": "SigmaVision",
+      "category": "Computer Vision",
+      "year": "2025",
+      "tech_stack": [
+        "Python",
+        "OpenCV",
+        "NumPy",
+        "PyQt",
+        "scikit-learn"
+      ],
+      "highlights": [
+        "Apply classical thresholding techniques: Otsu, Optimal Global, and Spectral Thresholding.",
+        "Segment images using unsupervised ML: K-Means, Region Growing, Agglomerative Clustering, and Mean Shift.",
+        "Interactive GUI visualizes results side-by-side with original images for easy comparison.",
+        "Supports both grayscale and color images with adjustable parameters for clustering algorithms.",
+        "Useful for medical imaging, pattern discovery, and teaching purposes in image processing."
+      ],
+      "github": "https://github.com/YassienTawfikk/SegmaVision"
+    },
+    {
+      "id": "signal-reconstruction-application",
+      "title": "Signal Reconstruction Application",
+      "category": "Signal Processing",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "PyQt / Qt Designer",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "Visualize original and reconstructed signals with sampling points.",
+        "Compare interpolation methods: Shannon, Lanczos, Step.",
+        "Frequency domain inspection to detect aliasing.",
+        "Customizable signal composer with multiple sinusoidal terms.",
+        "Adjustable sampling frequency with quick validation.",
+        "Add noise to study its effect on reconstruction.",
+        "Real-time updates and resizable, responsive UI."
+      ],
+      "github": "https://github.com/YassienTawfikk/Nyquist-Signal-Reconstructor.git"
+    },
+    {
+      "id": "smartretailregressor",
+      "title": "SmartRetailRegressor",
+      "category": "Data Science & analytics",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "XGBoost",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "highlights": [
+        "Random Forest achieved 97.69% R² score, outperforming XGBoost.",
+        "Extensive feature engineering including holiday distances, periodicity encoding, and store metadata.",
+        "Visualizations include Actual vs Predicted and feature importance for interpretability.",
+        "Pipeline supports reproducible training via shell script or CLI.",
+        "Demonstrates practical application of ensemble models for retail sales prediction."
+      ],
+      "github": "https://github.com/YassienTawfikk/SmartRetailRegressor.git"
+    },
+    {
+      "id": "soundprints",
+      "title": "Soundprints",
+      "category": "Audio & Signal Processing",
+      "year": "2024",
+      "tech_stack": [
+        "Python",
+        "NumPy",
+        "SciPy",
+        "Librosa",
+        "Matplotlib",
+        "Tkinter / PyQt"
+      ],
+      "highlights": [
+        "Generates spectrograms for songs, vocals, and instruments.",
+        "Extracts spectral, tonal, temporal features and MFCCs.",
+        "Perceptual hashing for efficient audio fingerprinting.",
+        "Similarity analysis with sortable match table.",
+        "Weighted audio mixing and recognition.",
+        "Database stored locally with future server scalability in mind.",
+        "First-run preprocessing with reuse for subsequent runs."
+      ],
+      "github": "https://github.com/YassienTawfikk/Soundprints.git"
+    }
+  ]
+}
