@@ -1,0 +1,10 @@
+{
+  "mcpServers": [
+    {
+      "name": "yassien-portfolio",
+      "url": "https://yassientawfikk-portfolio-mcp-server.hf.space/sse",
+      "transport": "sse",
+      "description": "Yassien Tawfik's portfolio data — projects, skills, education, and bio."
+    }
+  ]
+}
