@@ -1,0 +1,97 @@
+{
+  "education": [
+    {
+      "institution": "Cairo University",
+      "faculty": "Faculty of Engineering",
+      "program": "Biomedical Engineering",
+      "degree": "B.Sc. in Biomedical Engineering",
+      "status": "Final-year",
+      "expected_graduation": "June 2026",
+      "gpa": "3.4",
+      "description": "Pursuing a rigorous intersection of Biomedical Engineering and Artificial Intelligence, specializing in Deep Learning, Computer Vision, and Signal Processing with a focus on scalable ML pipelines for medical diagnostics."
+    }
+  ],
+  "graduate_admission": {
+    "institution": "University of Calgary",
+    "program": "MSc",
+    "start_date": "August 2026",
+    "supervisor": "Dr. Roberto Souza",
+    "status": "Accepted"
+  },
+  "key_courses": {
+    "ai_and_cs": [
+      "Deep Learning",
+      "Computer Vision",
+      "Machine Learning",
+      "Data Structures",
+      "Embedded Systems",
+      "IoT"
+    ],
+    "biomedical_engineering": [
+      "Digital Signal Processing (DSP)",
+      "Biosignals",
+      "Medical Instrumentation",
+      "Clinical Engineering",
+      "Physiology & Anatomy"
+    ],
+    "mathematics_and_theory": [
+      "Linear Algebra",
+      "Statistics & Probability",
+      "Numerical Methods",
+      "Control Systems"
+    ]
+  },
+  "credentials": [
+    {
+      "id": "exp_001",
+      "role": "Machine Learning Intern",
+      "organization": "Elevvo",
+      "date": "September 2025",
+      "type": "Internship",
+      "description": "One-month intensive program focused on machine learning methodologies.",
+      "link": "https://elevvo.tech"
+    },
+    {
+      "id": "exp_002",
+      "role": "Microscopy & Digital Pathology Intern",
+      "organization": "Optoscient Ltd.",
+      "date": "August 17, 2025 - August 28, 2025",
+      "type": "Internship",
+      "description": "Specialized training in digital pathology systems and microscopy.",
+      "link": "https://optoscient.com"
+    },
+    {
+      "id": "exp_003",
+      "role": "Biomedical Trainee",
+      "organization": "Baheya Foundation",
+      "date": "August 2024",
+      "type": "Clinical Training",
+      "description": "Ninety-hour advanced rotation covering oncology, nuclear medicine, radiology, and medical equipment maintenance.",
+      "link": "https://baheya.org/en"
+    },
+    {
+      "id": "course_001",
+      "title": "MR Physics: Generating and Acquiring the MR Signal",
+      "issuer": "Siemens Healthineers Academy",
+      "date": "October 22, 2025"
+    },
+    {
+      "id": "course_002",
+      "title": "MR Essentials: Cardiac Essentials PMU",
+      "issuer": "Siemens Healthineers Academy",
+      "date": "September 6, 2025"
+    },
+    {
+      "id": "course_003",
+      "title": "CT Essentials: Basics Online Training",
+      "issuer": "Siemens Healthineers Academy",
+      "date": "June 2, 2025"
+    },
+    {
+      "id": "course_004",
+      "title": "Frontend Web Development",
+      "issuer": "Udacity",
+      "date": "July 2023"
+    }
+  ]
+}

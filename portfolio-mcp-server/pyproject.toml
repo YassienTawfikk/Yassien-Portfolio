@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yassien-portfolio-mcp-server"
+version = "0.1.0"
+description = "Read-only MCP server exposing Yassien Tawfik's portfolio data as resources and safe read tools."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[tool.portfolio-mcp-server.environment]
+python = "3.11"
+venv = "/Users/yassientawfik/portfolio-mcp-server/.venv"
+
+[project.scripts]
+yassien-portfolio-mcp = "server:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = [
+    "server.py",
+    "data",
+    "README.md",
+]
