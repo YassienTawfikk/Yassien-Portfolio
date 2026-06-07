@@ -3,7 +3,7 @@
 {% block title %}Education | Yassien Tawfik{% endblock %}
 
 {% block head_css %}
-<link rel="stylesheet" href="/css/pages/education.css">
+<link rel="stylesheet" href="/css/pages/education.css?v=4">
 {% endblock %}
 
 {% block content %}
@@ -14,39 +14,109 @@
     </div>
     <div class="education-container">
         <span class="unified-page-title title-left underline-80px">Education</span>
-        <span class="subtitle body-font">{{ education.university }} - {{ education.faculty }}</span>
-        <span class="subsubtitle body-font">{{ education.degree }} - Expected Graduation: {{ education.expected_graduation }} - GPA: {{ education.gpa }}</span>
-        <span class="body-text body-font">{{ education.description }}</span>
         
-        <div class="courses-container">
-            <span class="head-font">Key Courses</span>
-            <ul>
-                <li class="body-font courses-head">Core Biomedical Courses:</li>
-                <ul class="list-body-font">
-                    {% for course in education.key_courses.biomedical_engineering %}
-                    <li class="body-font courses-lists">{{ course }}</li>
-                    {% endfor %}
-                </ul>
+        <div class="slider-viewport">
+            <div class="slider-track" id="education-slider-track">
                 
-                <li class="body-font courses-head">Technical and Programming Courses:</li>
-                <ul class="list-body-font">
-                    {% for course in education.key_courses.ai_and_cs %}
-                    <li class="body-font courses-lists">{{ course }}</li>
-                    {% endfor %}
-                </ul>
-                
-                <li class="body-font courses-head">Mathematics Courses:</li>
-                <ul class="list-body-font">
-                    {% for course in education.key_courses.mathematics_and_theory %}
-                    <li class="body-font courses-lists">{{ course }}</li>
-                    {% endfor %}
-                </ul>
-            </ul>
+                <!-- Slide 1: BSc -->
+                <div class="slide-panel">
+                    <div class="degree-header">
+                        <span class="subtitle body-font">
+                            {{ education.bsc.university }}{% if education.bsc.faculty %} — {{ education.bsc.faculty }}{% endif %}
+                        </span>
+                        <div class="degree-line">
+                            <span class="subsubtitle body-font">{{ education.bsc.degree }} · {{ education.bsc.duration }}{% if education.bsc.gpa %} · GPA: {{ education.bsc.gpa }}{% endif %}</span>
+                            <span class="status-tag body-font">{{ education.bsc.status }}</span>
+                        </div>
+                    </div>
+
+                    <div class="specialization-line body-text body-font">
+                        {{ education.bsc.specialization }}
+                    </div>
+
+                    <div class="project-block">
+                        <span class="small-label head-font">GRADUATION PROJECT</span>
+                        <div class="project-card">
+                            <span class="card-title head-font">{{ education.bsc.graduation_project.title }}</span>
+                            <p class="card-desc body-font">{{ education.bsc.graduation_project.description }}</p>
+                            <span class="card-tag body-font">{{ education.bsc.graduation_project.tag }}</span>
+                        </div>
+                    </div>
+
+                    <div class="courses-container">
+                        <span class="small-label head-font">KEY COURSES</span>
+                        
+                        <div class="course-group">
+                            <span class="group-label body-font">Biomedical & Clinical</span>
+                            <div class="chips-container">
+                                {% for course in education.bsc.key_courses.biomedical_clinical %}
+                                <span class="course-chip body-font">{{ course }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="course-group">
+                            <span class="group-label body-font">AI & Software</span>
+                            <div class="chips-container">
+                                {% for course in education.bsc.key_courses.ai_software %}
+                                <span class="course-chip body-font">{{ course }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: MSc -->
+                {% if education.showMasters %}
+                <div class="slide-panel">
+                    <div class="degree-header">
+                        <span class="subtitle body-font">
+                            {{ education.msc.university }}
+                        </span>
+                        <div class="degree-line">
+                            <span class="subsubtitle body-font">{{ education.msc.degree }} · {{ education.msc.duration }}</span>
+                            <span class="status-tag body-font">{{ education.msc.status }}</span>
+                        </div>
+                    </div>
+
+                    <div class="specialization-line body-text body-font">
+                        {{ education.msc.specialization }}
+                    </div>
+
+                    <div class="project-block">
+                        <span class="small-label head-font">RESEARCH</span>
+                        <div class="project-card">
+                            <span class="card-title head-font">{{ education.msc.research_block.title }}</span>
+                            <p class="card-desc body-font">{{ education.msc.research_block.description }}</p>
+                            <span class="card-tag body-font">{{ education.msc.research_block.tag }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
         </div>
+
+        {% if education.showMasters %}
+        <div class="slider-controls">
+            <button class="slider-btn body-font" id="btn-bsc" disabled>← BSc</button>
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+            </div>
+            <button class="slider-btn body-font" id="btn-msc">MSc →</button>
+        </div>
+        {% endif %}
     </div>
 </div>
 
 {% with label="Society", url="/society.html", style="margin-top: 0" %}
     {% include "components/footer_nav.html" %}
 {% endwith %}
+{% endblock %}
+
+{% block scripts %}
+{% if education.showMasters %}
+<script src="/js/pages/education.js"></script>
+{% endif %}
 {% endblock %}

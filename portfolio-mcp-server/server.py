@@ -51,8 +51,14 @@ def read_skills() -> str:
 
 @mcp.resource("portfolio://education")
 def read_education() -> str:
-    """Return Yassien Tawfik's education, MSc admission, and credentials."""
+    """Return Yassien Tawfik's education and MSc admission."""
     return _json_response(_load_json("education.json"))
+
+
+@mcp.resource("portfolio://credentials")
+def read_credentials() -> str:
+    """Return Yassien Tawfik's credentials and field experience."""
+    return _json_response(_load_json("credentials.json"))
 
 
 @mcp.tool()

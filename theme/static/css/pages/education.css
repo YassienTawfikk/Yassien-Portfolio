@@ -1,32 +1,30 @@
 /* =========================================================
-   Education Page Layout
+   Education Page Layout (Minimalist Rebuild)
    ========================================================= */
 
 .education-port {
     display: flex;
+    min-height: calc(100vh - 80px);
+    align-items: stretch;
 }
 
-/* Sticky image sidebar */
+/* Image sidebar */
 .image-holder {
     display: flex;
-    height: 100vh;
-    position: sticky;
-    top: 0;
+    flex: 0 0 auto;
+    width: 45%;
 }
 
 .image-holder div {
     height: 100%;
+    width: 50%;
 }
 
-.image-holder div:last-child {
-    position: relative;
-    left: 10px;
-    bottom: -10%;
-}
-
-.image-holder div>img {
-    height: 90%;
+.image-holder div > img {
+    height: 100%;
+    width: 100%;
     filter: grayscale(100%);
+    object-fit: cover;
 }
 
 /* =========================================================
@@ -37,61 +35,229 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 80px;
+    margin-left: 40px;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Override global title for space conservation */
+.education-container .unified-page-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
 }
 
 /* =========================================================
-   Text Styling
+   Typography & Elements
    ========================================================= */
 
-/* title removed - replaced by unified-page-title */
+.degree-header {
+    margin-bottom: 12px;
+}
 
 .subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    display: block;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.degree-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .subsubtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-bottom: 35px;
-    display: block;
+    font-size: 0.95rem;
+    color: #999;
+    font-weight: 300;
 }
 
-.body-text {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    max-width: 90%;
+.status-tag {
+    border: 1px solid #444;
+    color: #aaa;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.specialization-line {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.small-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: inline-block;
 }
 
 /* =========================================================
-   Courses Section
+   Project Block (Minimalist Redesign)
    ========================================================= */
 
-.courses-head {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.project-block {
+    margin-bottom: 25px;
+    max-width: 95%;
+}
+
+.project-card {
+    padding: 2px 0 2px 16px;
+    border-left: 1px solid #444;
+    background: transparent;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 400;
     display: block;
+    margin-bottom: 6px;
+    color: #eee;
+    letter-spacing: 0.5px;
 }
 
-.courses-lists {
-    font-size: 0.95rem;
+.card-desc {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 8px;
     line-height: 1.6;
-    position: relative;
-    left: 0;
-    transition: left 0.5s ease;
+    font-weight: 300;
 }
 
-.courses-lists:hover {
-    left: 10px;
+.card-tag {
+    color: #666;
+    font-size: 0.8rem;
+    font-style: italic;
+    display: inline-block;
 }
+
+/* =========================================================
+   Courses Section (Text-based Lists)
+   ========================================================= */
 
 .courses-container {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    max-width: 95%;
+}
+
+.course-group {
+    margin-bottom: 14px;
+}
+
+.group-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+    color: #aaa;
+}
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+}
+
+.course-chip {
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: 300;
+}
+
+/* Elegant dot separators */
+.course-chip::after {
+    content: '•';
+    margin: 0 10px;
+    color: #333;
+}
+
+.course-chip:last-child::after {
+    content: '';
+    margin: 0;
+}
+
+/* =========================================================
+   Slider Mechanism
+   ========================================================= */
+
+.slider-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    width: 100%;
+}
+
+.slide-panel {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    margin-top: 15px;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+.slider-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    padding: 5px;
+}
+
+.slider-btn:hover:not(:disabled) {
+    color: #fff;
+}
+
+.slider-btn:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff;
+    transform: scale(1.5);
 }
 
 /* =========================================================
@@ -99,58 +265,46 @@
    ========================================================= */
 
 @media (max-width: 975px) {
-    .image-holder>div:last-child {
+    .image-holder {
+        width: 25%;
+    }
+    .image-holder > div:last-child {
         display: none;
     }
-
-    .image-holder div>img {
-        height: 100%;
+    .image-holder > div:first-child {
+        width: 100%;
     }
-
     .education-container {
-        margin-left: 10px;
+        margin-left: 40px;
     }
-
-    .courses-container {
-        margin-bottom: 0;
-    }
-
 }
 
 @media (max-width: 860px) {
-    .image-holder div:last-child {
+    .image-holder > div:last-child {
         display: none;
     }
 
     .education-container {
         margin: 0;
-        padding: 50px 20px;
+        padding: 50px 30px;
         align-items: center;
         text-align: center;
+        max-width: 100%;
     }
 
-    .title {
-        font-size: var(--mobile-font-h1);
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
+    .slide-panel {
+        padding-right: 0;
     }
 
-    .subtitle {
-        font-size: var(--mobile-font-h2);
+    .project-card {
+        border-left: none;
+        padding: 0;
+        border-top: 1px solid #222;
+        padding-top: 15px;
     }
 
-    .subsubtitle {
-        font-size: var(--mobile-font-h3);
-    }
-
-    .body-text {
-        font-size: var(--mobile-font-p);
-    }
-
-    .title:after {
-        left: 50%;
-        transform: translateX(-50%);
+    .chips-container {
+        justify-content: center;
     }
 }
 
@@ -161,12 +315,12 @@
     }
 
     .image-holder {
-        height: 40vh;
+        height: 45vh;
         width: 100%;
-        justify-content: center;
-        margin-bottom: 20px;
         position: relative;
         top: auto;
+        margin-bottom: 20px;
+        justify-content: center;
     }
 
     .image-holder div {
@@ -176,61 +330,27 @@
         align-items: center;
     }
 
-    /* Ensure first image is shown */
-    .image-holder>div:first-child {
+    .image-holder > div:first-child {
         display: flex;
     }
 
-    .image-holder>div:last-child {
+    .image-holder > div:last-child {
         display: none;
     }
 
-    .image-holder div>img {
+    .image-holder div > img {
         height: 100%;
         width: auto;
         object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
     .education-container {
-        margin-left: 0;
         padding: 0 20px 40px;
+    }
+
+    .slider-controls {
+        max-width: 100%;
         width: 100%;
-        align-items: center;
-        text-align: center;
-    }
-
-    .title {
-        font-size: var(--mobile-font-h1);
-        margin-bottom: 15px;
-        left: 0;
-    }
-
-    .title:after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .subtitle {
-        font-size: var(--mobile-font-h2);
-    }
-
-    .subsubtitle {
-        font-size: var(--mobile-font-h3);
-        color: var(--secondary-white-color);
-    }
-
-    .courses-head {
-        font-size: var(--mobile-font-h3);
-    }
-
-    .courses-lists {
-        font-size: var(--mobile-font-p);
-    }
-
-    .courses-container {
-        text-align: left;
-        width: 100%;
+        justify-content: space-between;
     }
 }

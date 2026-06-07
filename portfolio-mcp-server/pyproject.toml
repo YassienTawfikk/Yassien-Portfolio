@@ -14,7 +14,7 @@ dependencies = [
 
 [tool.portfolio-mcp-server.environment]
 python = "3.11"
-venv = "/Users/yassientawfik/portfolio-mcp-server/.venv"
+venv = "/Users/yassientawfik/Documents/Projects/Software Dev/General-Venv/.venv/"
 
 [project.scripts]
 yassien-portfolio-mcp = "server:main"
@@ -25,3 +25,7 @@ only-include = [
     "data",
     "README.md",
 ]
+
+[tool.pyright]
+venvPath = "/Users/yassientawfik/Documents/Projects/Software Dev/General-Venv"
+venv = ".venv"
