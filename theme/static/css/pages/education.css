@@ -20,11 +20,16 @@
     width: 50%;
 }
 
-.image-holder div > img {
+.image-holder div>img {
     height: 100%;
     width: 100%;
     filter: grayscale(100%);
     object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.image-holder.hover-color div>img:hover {
+    filter: grayscale(0%);
 }
 
 /* =========================================================
@@ -268,19 +273,22 @@
     .image-holder {
         width: 25%;
     }
-    .image-holder > div:last-child {
+
+    .image-holder>div:last-child {
         display: none;
     }
-    .image-holder > div:first-child {
+
+    .image-holder>div:first-child {
         width: 100%;
     }
+
     .education-container {
         margin-left: 40px;
     }
 }
 
 @media (max-width: 860px) {
-    .image-holder > div:last-child {
+    .image-holder>div:last-child {
         display: none;
     }
 
@@ -330,15 +338,15 @@
         align-items: center;
     }
 
-    .image-holder > div:first-child {
+    .image-holder>div:first-child {
         display: flex;
     }
 
-    .image-holder > div:last-child {
+    .image-holder>div:last-child {
         display: none;
     }
 
-    .image-holder div > img {
+    .image-holder div>img {
         height: 100%;
         width: auto;
         object-fit: cover;

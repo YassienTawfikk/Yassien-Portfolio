@@ -3,30 +3,66 @@
 {% block title %}Education | Yassien Tawfik{% endblock %}
 
 {% block head_css %}
-<link rel="stylesheet" href="/css/pages/education.css?v=4">
+<link rel="stylesheet" href="/css/pages/education.css?v=5">
 {% endblock %}
 
 {% block content %}
 <div class="education-port">
-    <div class="image-holder">
-        <div><img src="{{ education.image_01 }}" data-preload-critical fetchpriority="high" decoding="async" alt=""></div>
+    <div class="image-holder hover-color">
+        <div><img src="{{ education.image_01 }}" data-preload-critical fetchpriority="high" decoding="async" alt="">
+        </div>
         <div><img src="{{ education.image_02 }}" loading="lazy" decoding="async" alt=""></div>
     </div>
     <div class="education-container">
         <span class="unified-page-title title-left underline-80px">Education</span>
-        
+
         <div class="slider-viewport">
             <div class="slider-track" id="education-slider-track">
-                
-                <!-- Slide 1: BSc -->
+
+                <!-- Slide 1: MSc -->
+                {% if education.showMasters %}
                 <div class="slide-panel">
                     <div class="degree-header">
                         <span class="subtitle body-font">
-                            {{ education.bsc.university }}{% if education.bsc.faculty %} — {{ education.bsc.faculty }}{% endif %}
+                            {{ education.msc.university }}
                         </span>
                         <div class="degree-line">
-                            <span class="subsubtitle body-font">{{ education.bsc.degree }} · {{ education.bsc.duration }}{% if education.bsc.gpa %} · GPA: {{ education.bsc.gpa }}{% endif %}</span>
+                            <span class="subsubtitle body-font">{{ education.msc.degree }} · {{ education.msc.duration
+                                }}</span>
+                            {% if education.msc.status %}
+                            <span class="status-tag body-font">{{ education.msc.status }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="specialization-line body-text body-font">
+                        {{ education.msc.specialization }}
+                    </div>
+
+                    <div class="project-block">
+                        <span class="small-label head-font">RESEARCH</span>
+                        <div class="project-card">
+                            <span class="card-title head-font">{{ education.msc.research_block.title }}</span>
+                            <p class="card-desc body-font">{{ education.msc.research_block.description }}</p>
+                            <span class="card-tag body-font">{{ education.msc.research_block.tag }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Slide 2: BSc -->
+                <div class="slide-panel">
+                    <div class="degree-header">
+                        <span class="subtitle body-font">
+                            {{ education.bsc.university }}{% if education.bsc.faculty %} — {{ education.bsc.faculty }}{%
+                            endif %}
+                        </span>
+                        <div class="degree-line">
+                            <span class="subsubtitle body-font">{{ education.bsc.degree }} · {{ education.bsc.duration
+                                }}{% if education.bsc.gpa %} · GPA: {{ education.bsc.gpa }}{% endif %}</span>
+                            {% if education.bsc.status %}
                             <span class="status-tag body-font">{{ education.bsc.status }}</span>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -45,7 +81,7 @@
 
                     <div class="courses-container">
                         <span class="small-label head-font">KEY COURSES</span>
-                        
+
                         <div class="course-group">
                             <span class="group-label body-font">Biomedical & Clinical</span>
                             <div class="chips-container">
@@ -66,57 +102,29 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: MSc -->
-                {% if education.showMasters %}
-                <div class="slide-panel">
-                    <div class="degree-header">
-                        <span class="subtitle body-font">
-                            {{ education.msc.university }}
-                        </span>
-                        <div class="degree-line">
-                            <span class="subsubtitle body-font">{{ education.msc.degree }} · {{ education.msc.duration }}</span>
-                            <span class="status-tag body-font">{{ education.msc.status }}</span>
-                        </div>
-                    </div>
-
-                    <div class="specialization-line body-text body-font">
-                        {{ education.msc.specialization }}
-                    </div>
-
-                    <div class="project-block">
-                        <span class="small-label head-font">RESEARCH</span>
-                        <div class="project-card">
-                            <span class="card-title head-font">{{ education.msc.research_block.title }}</span>
-                            <p class="card-desc body-font">{{ education.msc.research_block.description }}</p>
-                            <span class="card-tag body-font">{{ education.msc.research_block.tag }}</span>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-
             </div>
         </div>
 
         {% if education.showMasters %}
         <div class="slider-controls">
-            <button class="slider-btn body-font" id="btn-bsc" disabled>← BSc</button>
+            <button class="slider-btn body-font" id="btn-msc" disabled>← MSc</button>
             <div class="slider-dots">
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
             </div>
-            <button class="slider-btn body-font" id="btn-msc">MSc →</button>
+            <button class="slider-btn body-font" id="btn-bsc">BSc →</button>
         </div>
         {% endif %}
     </div>
 </div>
 
 {% with label="Society", url="/society.html", style="margin-top: 0" %}
-    {% include "components/footer_nav.html" %}
+{% include "components/footer_nav.html" %}
 {% endwith %}
 {% endblock %}
 
 {% block scripts %}
 {% if education.showMasters %}
-<script src="/js/pages/education.js"></script>
+<script src="/js/pages/education.js?v=3"></script>
 {% endif %}
 {% endblock %}

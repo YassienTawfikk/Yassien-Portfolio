@@ -1,7 +1,7 @@
 {
-    "showMasters": false,
-    "image_01": "/images/education/educational-01.webp",
-    "image_02": "/images/education/educational-02.webp",
+    "showMasters": true,
+    "image_01": "/images/education/ucalgary-logo.webp",
+    "image_02": "/images/education/ucalgary-campus.webp",
     "bsc": {
         "university": "Cairo University",
         "faculty": "Faculty of Engineering",
@@ -39,7 +39,6 @@
         "university": "University of Calgary",
         "degree": "M.Sc. in Biomedical Engineering",
         "duration": "2026 – present",
-        "status": "Upcoming",
         "specialization": "AI tools for neonatal brain imaging · AI²Lab",
         "research_block": {
             "title": "AI²Lab — Dr. Roberto Souza",
