@@ -83,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.persisted) hidePreloader();
     });
 
+    // Extreme fallback: ALWAYS hide preloader after 4 seconds to prevent infinite loading screens
+    setTimeout(hidePreloader, 4000);
+
     document.addEventListener("click", function (event) {
         const link = event.target.closest("a");
         if (!link || !link.href || event.defaultPrevented) return;
